@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amara's Typing Quest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pinky:#a855f7; --ring:#3b82f6; --middle:#22c55e; --index:#f59e0b; --thumb:#ec4899;
+    --ink:#22303a; --ink-soft:#5a6b76; --paper:#ffffff; --cream:#f3f8fb;
+    --right:#16a34a; --wrong:#e0594a;
+    --shadow:0 8px 26px rgba(30,50,70,.14);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;font-family:'Nunito','Trebuchet MS',system-ui,sans-serif;color:var(--ink);
+    background:radial-gradient(900px 500px at 12% -8%,#7c3aed18,transparent 60%),
+               radial-gradient(800px 600px at 100% 0%,#0ea5e918,transparent 55%),
+               linear-gradient(180deg,#eef5fb,#e7f0f7);
+    min-height:100vh;padding:16px;line-height:1.5;
+  }
+  .wrap{max-width:860px;margin:0 auto}
+  header{background:linear-gradient(135deg,#5b3aa6,#7c3aed);color:#fff;border-radius:22px;padding:18px 22px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  header::after{content:"⌨️";position:absolute;right:-8px;bottom:-16px;font-size:110px;opacity:.16;transform:rotate(-10deg)}
+  header h1{font-family:'Fredoka',sans-serif;margin:0;font-size:clamp(1.4rem,5vw,2rem)}
+  header p{margin:4px 0 0;color:#e6dcff;font-weight:600}
+  .namebar{display:flex;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .namebar label{font-size:.85rem;color:#e6dcff;font-weight:700}
+  .namebar input{font-family:inherit;font-weight:700;border:none;border-radius:9px;padding:6px 10px;width:140px;font-size:.95rem}
+
+  .lessons{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 6px}
+  .lesson{border:none;cursor:pointer;font-family:'Fredoka',sans-serif;font-weight:600;font-size:.92rem;
+    background:var(--paper);color:var(--ink-soft);padding:10px 14px;border-radius:12px;box-shadow:var(--shadow);transition:transform .1s}
+  .lesson:hover{transform:translateY(-1px)}
+  .lesson.active{background:#7c3aed;color:#fff}
+
+  .stage{background:var(--paper);border-radius:20px;box-shadow:var(--shadow);padding:20px;margin-top:12px;text-align:center;position:relative}
+  .stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+  .stat{background:var(--cream);border-radius:12px;padding:8px 16px;min-width:84px}
+  .stat b{font-family:'Fredoka',sans-serif;font-size:1.25rem;color:#5b3aa6;display:block;line-height:1.1}
+  .stat span{font-size:.74rem;color:var(--ink-soft);font-weight:700}
+
+  .prompt{font-family:'Fredoka',sans-serif;letter-spacing:.06em;margin:6px 0 4px;min-height:74px;display:flex;align-items:center;justify-content:center;gap:2px;flex-wrap:wrap}
+  .prompt .big{font-size:64px;color:#5b3aa6;text-transform:uppercase}
+  .word span{font-size:46px;color:#c3cdd4;text-transform:uppercase;transition:color .12s}
+  .word span.done{color:var(--right)}
+  .word span.cur{color:#5b3aa6;border-bottom:5px solid #7c3aed;border-radius:2px}
+  .word.shake{animation:shake .3s}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+
+  .finger-hint{font-weight:800;color:var(--ink-soft);min-height:24px;margin-bottom:6px}
+  .hands{display:flex;gap:18px;justify-content:center;margin:4px 0 2px;flex-wrap:wrap}
+  .hand{display:flex;gap:5px;align-items:flex-end}
+  .fing{width:16px;height:30px;border-radius:8px;background:#dde6ec;opacity:.55;transition:all .12s}
+  .fing.lit{opacity:1;height:40px;box-shadow:0 0 0 3px #fff, 0 0 12px currentColor}
+  .hand-lbl{font-size:.7rem;color:var(--ink-soft);font-weight:700;align-self:center;margin:0 2px}
+  .thumb-dot{width:46px;height:14px;border-radius:8px;background:#dde6ec;opacity:.55;align-self:center}
+  .thumb-dot.lit{opacity:1;background:var(--thumb);box-shadow:0 0 12px var(--thumb)}
+
+  .keyboard{margin-top:14px;display:flex;flex-direction:column;gap:6px;align-items:center}
+  .krow{display:flex;gap:6px;justify-content:center}
+  .key{position:relative;width:46px;height:46px;border-radius:10px;background:#eef3f7;border:2px solid #dbe5ec;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;color:var(--ink);text-transform:uppercase;transition:all .1s}
+  .key.home{background:#fff}
+  .key.bump::after{content:"";position:absolute;bottom:7px;width:14px;height:3px;border-radius:2px;background:#9fb3c0}
+  .key.next{transform:translateY(-2px);box-shadow:0 0 0 3px #fff,0 0 0 6px currentColor;border-color:currentColor;background:#fff;animation:pulse 1s infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 3px #fff,0 0 0 6px currentColor}50%{box-shadow:0 0 0 3px #fff,0 0 0 9px currentColor}}
+  .key.good{background:var(--right)!important;color:#fff;border-color:var(--right)}
+  .key.bad{background:var(--wrong)!important;color:#fff;border-color:var(--wrong)}
+  .space{width:300px;max-width:70vw}
+
+  .legend{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:14px;font-size:.78rem;color:var(--ink-soft);font-weight:700}
+  .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:middle}
+
+  .toast{margin-top:12px;font-family:'Fredoka',sans-serif;font-size:1.05rem;color:#5b3aa6;min-height:26px}
+
+  .overlay{position:absolute;inset:0;background:rgba(255,255,255,.92);border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;z-index:5}
+  .overlay h2{font-family:'Fredoka',sans-serif;color:#5b3aa6;margin:0}
+  .overlay p{margin:0;color:var(--ink-soft);font-weight:700}
+  .overlay .play{background:#7c3aed;color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;border:none;border-radius:12px;padding:12px 26px;font-size:1.05rem;cursor:pointer}
+  .hidden{display:none}
+
+  @media(max-width:560px){
+    .key{width:34px;height:38px;font-size:.85rem}
+    .prompt .big{font-size:48px}
+    .space{width:200px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>⌨️ <span id="title">Amara's</span> Typing Quest</h1>
+    <p>Learn where the keys live — one finger at a time.</p>
+    <div class="namebar">
+      <label for="name">Player:</label>
+      <input id="name" value="Amara" maxlength="14" autocomplete="off">
+    </div>
+  </header>
+
+  <div class="lessons" id="lessons"></div>
+
+  <div class="stage" id="stage">
+    <div class="stats">
+      <div class="stat"><b id="sAcc">100%</b><span>Accuracy</span></div>
+      <div class="stat"><b id="sStreak">0</b><span>Streak 🔥</span></div>
+      <div class="stat"><b id="sCount">0</b><span>Keys typed</span></div>
+      <div class="stat"><b id="sWpm">0</b><span>Words/min</span></div>
+    </div>
+
+    <div class="finger-hint" id="hint">Pick a lesson and start typing!</div>
+
+    <div class="hands" id="hands">
+      <div class="hand" data-hand="L"></div>
+      <div class="hand-lbl">left</div>
+      <div class="thumb-dot" id="thumb"></div>
+      <div class="hand-lbl">right</div>
+      <div class="hand" data-hand="R"></div>
+    </div>
+
+    <div class="prompt" id="prompt"><span class="big">?</span></div>
+
+    <div class="keyboard" id="keyboard"></div>
+
+    <div class="legend">
+      <span><i style="background:var(--pinky)"></i>pinky</span>
+      <span><i style="background:var(--ring)"></i>ring</span>
+      <span><i style="background:var(--middle)"></i>middle</span>
+      <span><i style="background:var(--index)"></i>index</span>
+      <span><i style="background:var(--thumb)"></i>thumbs (space)</span>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <div class="overlay" id="overlay">
+      <h2>Ready to type?</h2>
+      <p>Put your fingers on the home row: <b>a s d f</b> &nbsp; <b>j k l ;</b></p>
+      <p>Feel the little bumps on <b>F</b> and <b>J</b> — those are home for your index fingers.</p>
+      <button class="play" id="playBtn">Start ▶</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var FINGER={
+    a:['L','pinky'],q:['L','pinky'],z:['L','pinky'],
+    s:['L','ring'],w:['L','ring'],x:['L','ring'],
+    d:['L','middle'],e:['L','middle'],c:['L','middle'],
+    f:['L','index'],g:['L','index'],r:['L','index'],t:['L','index'],v:['L','index'],b:['L','index'],
+    j:['R','index'],h:['R','index'],y:['R','index'],u:['R','index'],n:['R','index'],m:['R','index'],
+    k:['R','middle'],i:['R','middle'],',':['R','middle'],
+    l:['R','ring'],o:['R','ring'],'.':['R','ring'],
+    ';':['R','pinky'],p:['R','pinky'],'/':['R','pinky'],
+    ' ':['T','thumb']
+  };
+  var COLOR={pinky:'var(--pinky)',ring:'var(--ring)',middle:'var(--middle)',index:'var(--index)',thumb:'var(--thumb)'};
+  // finger order within a hand, pinky->index for left, index->pinky for right (so index fingers sit in the middle)
+  var L_ORDER=['pinky','ring','middle','index'];
+  var R_ORDER=['index','middle','ring','pinky'];
+
+  var LESSONS={
+    home:{label:'🏠 Home Row',keys:'asdfghjkl;'.split(''),mode:'keys'},
+    top:{label:'⬆️ Top Row',keys:'qwertyuiop'.split(''),mode:'keys'},
+    bottom:{label:'⬇️ Bottom Row',keys:'zxcvbnm'.split(''),mode:'keys'},
+    letters:{label:'🔤 All Letters',keys:'abcdefghijklmnopqrstuvwxyz'.split(''),mode:'keys'},
+    words:{label:'📝 Easy Words',words:('cat dog sun run hat big red fun map top sit pen bed jam fox ten win bug hop sad leg cup box '
+      +'jump fish star book tree milk play hand frog bird duck cake nest gift song rain moon').split(' '),mode:'words'}
+  };
+  var ROWS=['qwertyuiop','asdfghjkl;','zxcvbnm,./'];
+  var HOME='asdfghjkl;';
+
+  var state={lesson:'home',target:'',word:'',pos:0,total:0,correct:0,streak:0,best:0,started:false,wordChars:0,t0:0,active:false};
+
+  // build lesson buttons
+  var lessonsEl=document.getElementById('lessons');
+  Object.keys(LESSONS).forEach(function(k){
+    var b=document.createElement('button');b.className='lesson'+(k==='home'?' active':'');b.textContent=LESSONS[k].label;
+    b.onclick=function(){ setLesson(k); document.querySelectorAll('.lesson').forEach(function(x){x.classList.remove('active');}); b.classList.add('active'); };
+    lessonsEl.appendChild(b);
+  });
+
+  // build keyboard
+  var kb=document.getElementById('keyboard');
+  ROWS.forEach(function(row){
+    var r=document.createElement('div');r.className='krow';
+    row.split('').forEach(function(ch){
+      var k=document.createElement('div');k.className='key';
+      k.dataset.k=ch; k.textContent=ch;
+      if(HOME.indexOf(ch)>-1)k.classList.add('home');
+      if(ch==='f'||ch==='j')k.classList.add('bump');
+      r.appendChild(k);
+    });
+    kb.appendChild(r);
+  });
+  var spaceRow=document.createElement('div');spaceRow.className='krow';
+  var sp=document.createElement('div');sp.className='key space';sp.dataset.k=' ';sp.textContent='space';
+  spaceRow.appendChild(sp);kb.appendChild(spaceRow);
+
+  // build finger dots
+  function buildHand(hand,order){
+    var el=document.querySelector('.hand[data-hand="'+hand+'"]');
+    order.forEach(function(f){
+      var d=document.createElement('div');d.className='fing';d.dataset.f=f;d.style.color=COLOR[f];
+      el.appendChild(d);
+    });
+  }
+  buildHand('L',L_ORDER); buildHand('R',R_ORDER);
+
+  function keyEl(ch){ return document.querySelector('.key[data-k="'+ch+'"]'); }
+
+  function pick(arr,not){ var c; do{ c=arr[Math.floor(Math.random()*arr.length)]; }while(arr.length>1&&c===not); return c; }
+
+  function setLesson(k){
+    state.lesson=k; state.target=''; state.word=''; state.pos=0; state.wordChars=0; state.t0=0;
+    nextTarget(); render();
+  }
+
+  function nextTarget(){
+    var L=LESSONS[state.lesson];
+    if(L.mode==='keys'){
+      state.target=pick(L.keys,state.target);
+      state.word=''; state.pos=0;
+    } else {
+      if(!state.word || state.pos>=state.word.length){
+        state.word=pick(L.words,state.word); state.pos=0;
+      }
+      state.target=state.word[state.pos];
+    }
+  }
+
+  function fingerInfo(ch){ return FINGER[ch]||['',''] ; }
+
+  function render(){
+    // prompt
+    var p=document.getElementById('prompt');
+    if(LESSONS[state.lesson].mode==='keys'){
+      p.className='prompt';
+      p.innerHTML='<span class="big">'+ (state.target===' '?'␣':state.target) +'</span>';
+    } else {
+      p.className='prompt word'; p.innerHTML='';
+      state.word.split('').forEach(function(ch,i){
+        var s=document.createElement('span');s.textContent=ch;
+        if(i<state.pos)s.className='done'; else if(i===state.pos)s.className='cur';
+        p.appendChild(s);
+      });
+    }
+    // clear key highlights
+    document.querySelectorAll('.key').forEach(function(k){k.classList.remove('next');k.style.color='';});
+    var fi=fingerInfo(state.target), col=COLOR[fi[1]]||'#7c3aed';
+    var tk=keyEl(state.target);
+    if(tk){ tk.classList.add('next'); tk.style.color=col; }
+    // fingers
+    document.querySelectorAll('.fing').forEach(function(d){d.classList.remove('lit');});
+    document.getElementById('thumb').classList.remove('lit');
+    if(fi[0]==='T'){ document.getElementById('thumb').classList.add('lit'); }
+    else if(fi[0]){
+      var sel=document.querySelector('.hand[data-hand="'+fi[0]+'"] .fing[data-f="'+fi[1]+'"]');
+      if(sel)sel.classList.add('lit');
+    }
+    // hint text
+    var hand=fi[0]==='L'?'left':fi[0]==='R'?'right':'';
+    var hint=document.getElementById('hint');
+    if(fi[0]==='T') hint.innerHTML='Use either <b>thumb</b> for the space bar.';
+    else if(hand) hint.innerHTML='Use your <b style="color:'+col+'">'+hand+' '+fi[1]+'</b> finger.';
+    // stats
+    document.getElementById('sCount').textContent=state.total;
+    document.getElementById('sStreak').textContent=state.streak;
+    var acc=state.total?Math.round(state.correct/state.total*100):100;
+    document.getElementById('sAcc').textContent=acc+'%';
+    var wpm=0;
+    if(state.t0){ var mins=(Date.now()-state.t0)/60000; if(mins>0) wpm=Math.round((state.wordChars/5)/mins); }
+    document.getElementById('sWpm').textContent=wpm||0;
+  }
+
+  function toast(msg){ var t=document.getElementById('toast'); t.textContent=msg; }
+
+  function correctHit(){
+    var tk=keyEl(state.target);
+    if(tk){ tk.classList.add('good'); setTimeout(function(){tk.classList.remove('good');},160); }
+    state.total++; state.correct++; state.streak++; if(state.streak>state.best)state.best=state.streak;
+    if(LESSONS[state.lesson].mode==='words'){
+      if(!state.t0)state.t0=Date.now();
+      state.wordChars++; state.pos++;
+      if(state.pos>=state.word.length){ toast('Nice word! ✨'); }
+    }
+    // encouragement
+    if(state.streak>0 && state.streak%10===0){
+      var name=(document.getElementById('name').value||'You').trim();
+      var msgs=['🔥 '+state.streak+' in a row, '+name+'!','⭐ Amazing, '+name+'!','🚀 '+name+', you are flying!','💪 Keep going, '+name+'!'];
+      toast(msgs[Math.floor(Math.random()*msgs.length)]);
+    }
+    nextTarget(); render();
+  }
+
+  function wrongHit(pressed){
+    state.total++; state.streak=0;
+    var pk=keyEl(pressed);
+    if(pk){ pk.classList.add('bad'); setTimeout(function(){pk.classList.remove('bad');},220); }
+    var p=document.getElementById('prompt'); p.classList.add('shake'); setTimeout(function(){p.classList.remove('shake');},300);
+    // re-flash the correct key
+    var tk=keyEl(state.target);
+    if(tk){ var c=tk.style.color; tk.style.color=''; void tk.offsetWidth; tk.style.color=c; }
+    render();
+  }
+
+  function handleKey(e){
+    if(!state.active) return;
+    var k=e.key;
+    if(k===' '||k==='Spacebar'){ e.preventDefault(); k=' '; }
+    if(k.length!==1) return;            // ignore Shift, Enter, arrows, etc.
+    k=k.toLowerCase();
+    if(!(k in FINGER)) return;          // only keys we teach
+    if(k===state.target) correctHit(); else wrongHit(k);
+  }
+  document.addEventListener('keydown',handleKey);
+
+  // name -> title
+  document.getElementById('name').addEventListener('input',function(){
+    var n=(this.value||'').trim(); document.getElementById('title').textContent=(n||'Amara')+"'s";
+  });
+
+  // start overlay (also gives the iframe keyboard focus)
+  function start(){
+    document.getElementById('overlay').classList.add('hidden');
+    state.active=true; setLesson(state.lesson);
+    toast('Type the glowing key!');
+  }
+  document.getElementById('playBtn').addEventListener('click',start);
+  document.getElementById('overlay').addEventListener('click',function(e){ if(e.target.id!=='name') start(); });
+
+  setLesson('home'); state.active=false; render();
+})();
+</script>
+</body>
+</html>
