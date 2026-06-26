@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amara's Bees Reading Project</title>
+<style>
+  :root{
+    --dark:#3B2B17; --ink:#2E2519; --muted:#7A6A52;
+    --gold:#DB9B22; --gold-deep:#A9760F; --gold-soft:#FBEFD0;
+    --bg:#F6F0E4; --card:#FFFFFF; --line:#E6DCC6;
+    --ok-bg:#E5F3E8; --ok-line:#3A9D5A; --ok-tx:#1F6E38;
+    --no-bg:#FBE6E2; --no-line:#D8624A; --no-tx:#9C3522;
+    --radius:14px;
+    --font:'Trebuchet MS','Segoe UI',Verdana,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:780px;margin:0 auto;padding:0 18px 60px}
+
+  header{background:var(--dark);color:#fff;padding:34px 0 0;position:relative}
+  header .wrap{padding-bottom:14px}
+  .eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:#F2C969;margin:0 0 6px}
+  header h1{font-size:30px;line-height:1.15;margin:0 0 6px;font-weight:700}
+  header p.sub{margin:0;color:#E7D3A6;font-size:15px}
+  .wave{display:block;width:100%;height:34px;margin-top:18px}
+
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin:22px 0;box-shadow:0 1px 0 rgba(59,43,23,.04)}
+  .step-head{display:flex;align-items:center;gap:12px;margin:0 0 14px}
+  .badge{flex:0 0 38px;height:38px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px}
+  .step-head h2{font-size:20px;margin:0;color:var(--dark);font-weight:700}
+  .step-head .tag{margin:2px 0 0;font-size:13px;color:var(--muted)}
+
+  .passage h3{font-size:17px;color:var(--dark);margin:0 0 8px}
+  .passage p{font-size:16.5px;margin:0 0 12px}
+  .watch{background:var(--gold-soft);border-radius:10px;padding:10px 14px;font-size:14px;color:var(--gold-deep);margin-top:6px}
+  .watch b{color:var(--dark)}
+
+  .panel{background:var(--gold-soft);border-radius:10px;padding:12px 16px;margin:0 0 16px}
+  .panel .lbl{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 6px;font-weight:700}
+  .panel p{margin:0;font-size:15.5px;line-height:1.8}
+  .chip{display:inline-block;background:#fff;border:1px solid #E9CF92;color:var(--gold-deep);border-radius:8px;padding:4px 11px;margin:4px 6px 0 0;font-size:14px;font-weight:700}
+
+  .q{margin:0 0 18px}
+  .q:last-child{margin-bottom:0}
+  .q .qt{font-size:16px;font-weight:700;color:var(--dark);margin:0 0 8px}
+  .opt{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:10px 12px;margin:6px 0;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:15.5px;color:var(--ink);cursor:pointer;font-family:inherit;line-height:1.4}
+  .opt:hover{border-color:var(--gold);background:#FFFBF2}
+  .opt:focus-visible{outline:3px solid #F0CE7E;outline-offset:1px}
+  .opt .lt{flex:0 0 26px;height:26px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+  .opt.correct{background:var(--ok-bg);border-color:var(--ok-line);color:var(--ok-tx)}
+  .opt.correct .lt{border-color:var(--ok-line)}
+  .opt.wrong{background:var(--no-bg);border-color:var(--no-line);color:var(--no-tx)}
+  .opt.wrong .lt{border-color:var(--no-line)}
+  .opt.locked{cursor:default}
+  .fb{font-size:13.5px;font-weight:700;margin:6px 0 0;min-height:1px}
+
+  .row{border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin:8px 0;background:#fff}
+  .row.correct{border-color:var(--ok-line);background:var(--ok-bg)}
+  .row.wrong{border-color:var(--no-line);background:var(--no-bg)}
+  .row .top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .word{font-size:16px;font-weight:700;color:var(--dark)}
+  select{font-family:inherit;font-size:15px;height:32px;border-radius:8px;border:1px solid var(--line);padding:0 6px;background:#fff;color:var(--ink)}
+  select:focus-visible{outline:3px solid #F0CE7E;outline-offset:1px}
+  .hintbtn{background:none;border:none;color:var(--gold-deep);font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;padding:8px 0 0}
+  .hintbtn:hover{text-decoration:underline}
+  .clue{display:none;font-size:14px;color:var(--muted);background:#FBF6EA;border-radius:8px;padding:8px 10px;margin-top:8px}
+  .mark{display:block;font-size:13px;font-weight:700;margin-top:6px}
+  .crow{font-size:16px;line-height:1.9}
+  .crow select{margin:0 3px}
+
+  .controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+  button.act{font-family:inherit;font-size:15px;font-weight:700;border:none;border-radius:10px;padding:10px 16px;cursor:pointer}
+  .primary{background:var(--gold);color:#fff}
+  .primary:hover{background:var(--gold-deep)}
+  .ghost{background:#fff;color:var(--dark);border:1px solid var(--line)}
+  .ghost:hover{border-color:var(--gold)}
+  .score{margin-left:auto;font-size:15px;font-weight:700;color:var(--dark)}
+  .done{display:none;background:var(--gold-soft);border-radius:10px;padding:14px 16px;margin-top:14px;font-size:15px;color:var(--gold-deep);font-weight:700}
+
+  details.grown{background:var(--dark);color:#fff;border-radius:var(--radius);margin-top:26px;overflow:hidden}
+  details.grown summary{cursor:pointer;list-style:none;padding:18px 24px;font-size:17px;font-weight:700;display:flex;align-items:center;gap:10px}
+  details.grown summary::-webkit-details-marker{display:none}
+  details.grown summary .arr{margin-left:auto;transition:transform .2s}
+  details.grown[open] summary .arr{transform:rotate(180deg)}
+  .grown .body{padding:0 24px 22px;font-size:15px;color:#EADFC8}
+  .grown h4{color:#fff;font-size:15px;margin:18px 0 6px;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:4px}
+  .grown .key{font-weight:700;color:#F2C969}
+  .grown ul{margin:6px 0;padding-left:20px}
+  .grown li{margin:5px 0}
+
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:30px}
+
+  @media print{
+    body{background:#fff}
+    .controls,.hintbtn{display:none}
+    .clue{display:block !important}
+    .step,.row,details.grown{box-shadow:none}
+    details.grown{color:#000;background:#fff;border:1px solid #000}
+    details.grown summary,.grown h4,.grown .body{color:#000}
+    details > *{display:block !important}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Reading project &middot; grade 5</p>
+    <h1>Amara's bees reading project</h1>
+    <p class="sub">Read the passage, then work through four steps: read, comprehend, match, and use.</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0,20 C180,40 360,0 540,16 C720,32 900,4 1080,18 C1260,32 1380,12 1440,18 L1440,40 L0,40 Z" fill="#F6F0E4"/></svg>
+</header>
+
+<div class="wrap">
+
+  <!-- STEP 1: READ -->
+  <section class="step passage">
+    <div class="step-head"><div class="badge">1</div><div><h2>Read</h2><p class="tag">Read the passage carefully — you can read it twice.</p></div></div>
+    <h3>The busy world of bees</h3>
+    <p>Bees are small insects that play a giant role in nature. Most bees live together in groups called colonies, and a single honeybee colony can hold tens of thousands of bees. Inside the colony, every bee has a job to do. The queen lays all the eggs, the male drones help her, and thousands of female worker bees do almost everything else. Workers clean the hive, guard the entrance, care for the young, and fly out to find food. As a bee travels from flower to flower, it collects a sweet liquid called nectar and a fine yellow powder called pollen. Back at the hive, the bees turn the nectar into honey, which they store as food for the cold winter months when flowers no longer bloom.</p>
+    <p>Bees do far more than make honey. When a bee lands on a flower, grains of pollen stick to its fuzzy body. The bee then carries that pollen to the next flower, a process called pollination. Pollination allows plants to make seeds and grow fruit, so without bees, many of the foods people eat would slowly disappear. Bees have also developed amazing ways to share information. When a worker discovers a good patch of flowers, it returns to the hive and performs a special movement known as the waggle dance. The pattern of the dance tells the other bees exactly which direction to fly and how far to travel. Sadly, bees today face serious threats from disease, loss of habitat, and harmful chemicals called pesticides. Protecting bees is one important way to protect the food we all depend on.</p>
+    <div class="watch"><b>Words to watch:</b> colony, drone, nectar, pollen, hive, honey, pollination, pesticide.</div>
+  </section>
+
+  <!-- STEP 2: COMPREHEND -->
+  <section class="step">
+    <div class="step-head"><div class="badge">2</div><div><h2>Comprehend</h2><p class="tag">Tap your answer. Green means correct.</p></div></div>
+    <div id="quiz">
+      <div class="q" data-answer="B"><p class="qt">1. What is this passage mostly about?</p>
+        <button class="opt" data-opt="A"><span class="lt">A</span>How to start a honey business</button>
+        <button class="opt" data-opt="B"><span class="lt">B</span>Why bees are important and how they live</button>
+        <button class="opt" data-opt="C"><span class="lt">C</span>How flowers grow their seeds</button>
+        <button class="opt" data-opt="D"><span class="lt">D</span>Why winter is dangerous for plants</button>
+        <p class="fb"></p></div>
+      <div class="q" data-answer="C"><p class="qt">2. Which job do the worker bees do?</p>
+        <button class="opt" data-opt="A"><span class="lt">A</span>Lay all the eggs in the colony</button>
+        <button class="opt" data-opt="B"><span class="lt">B</span>Help the queen as male drones</button>
+        <button class="opt" data-opt="C"><span class="lt">C</span>Clean the hive and gather food</button>
+        <button class="opt" data-opt="D"><span class="lt">D</span>Sleep through the entire winter</button>
+        <p class="fb"></p></div>
+      <div class="q" data-answer="B"><p class="qt">3. In this passage, the word <em>pollination</em> means &mdash;</p>
+        <button class="opt" data-opt="A"><span class="lt">A</span>Turning nectar into honey</button>
+        <button class="opt" data-opt="B"><span class="lt">B</span>Carrying pollen from one flower to another</button>
+        <button class="opt" data-opt="C"><span class="lt">C</span>Dancing to share directions</button>
+        <button class="opt" data-opt="D"><span class="lt">D</span>Building a hive out of wax</button>
+        <p class="fb"></p></div>
+      <div class="q" data-answer="B"><p class="qt">4. Why do bees store honey in the hive?</p>
+        <button class="opt" data-opt="A"><span class="lt">A</span>To share it with other animals</button>
+        <button class="opt" data-opt="B"><span class="lt">B</span>To have food in the cold winter when flowers do not bloom</button>
+        <button class="opt" data-opt="C"><span class="lt">C</span>To make the hive smell sweet</button>
+        <button class="opt" data-opt="D"><span class="lt">D</span>To attract more flowers</button>
+        <p class="fb"></p></div>
+      <div class="q" data-answer="B"><p class="qt">5. What does the waggle dance tell the other bees?</p>
+        <button class="opt" data-opt="A"><span class="lt">A</span>When the queen will lay her eggs</button>
+        <button class="opt" data-opt="B"><span class="lt">B</span>Which direction to fly and how far to find flowers</button>
+        <button class="opt" data-opt="C"><span class="lt">C</span>How to turn nectar into honey</button>
+        <button class="opt" data-opt="D"><span class="lt">D</span>When winter will arrive</button>
+        <p class="fb"></p></div>
+      <div class="q" data-answer="C"><p class="qt">6. Why does the passage say protecting bees is important?</p>
+        <button class="opt" data-opt="A"><span class="lt">A</span>Because bees are the only insects that can fly</button>
+        <button class="opt" data-opt="B"><span class="lt">B</span>Because honey is the healthiest food in the world</button>
+        <button class="opt" data-opt="C"><span class="lt">C</span>Because bees help plants make the food people eat</button>
+        <button class="opt" data-opt="D"><span class="lt">D</span>Because bees cannot survive the winter</button>
+        <p class="fb"></p></div>
+    </div>
+    <div class="controls"><button class="act ghost" id="q-reset">Start over</button><span class="score" id="q-score"></span></div>
+    <div class="done" id="q-done"></div>
+  </section>
+
+  <!-- STEP 3: MATCH -->
+  <section class="step">
+    <div class="step-head"><div class="badge">3</div><div><h2>Match</h2><p class="tag">Match each word to its meaning. Use the sentence hints if you get stuck.</p></div></div>
+    <div class="panel"><p class="lbl">Definitions</p>
+      <p><b>A.</b> A fine yellow powder made by flowers<br>
+      <b>B.</b> A chemical used to kill pests, which can also harm bees<br>
+      <b>C.</b> A large group of bees that live and work together<br>
+      <b>D.</b> A sweet liquid found inside flowers that bees collect<br>
+      <b>E.</b> Carrying pollen from one flower to another so plants can make seeds<br>
+      <b>F.</b> A male bee whose main job is to help the queen</p>
+    </div>
+    <div id="match">
+      <div class="row" data-correct="C"><div class="top"><span class="word">colony</span><select aria-label="definition for colony" data-letters></select></div><button class="hintbtn">Show the sentence</button><p class="clue">Most bees live together in groups called colonies, and a single honeybee colony can hold tens of thousands of bees.</p><span class="mark"></span></div>
+      <div class="row" data-correct="F"><div class="top"><span class="word">drone</span><select aria-label="definition for drone" data-letters></select></div><button class="hintbtn">Show the sentence</button><p class="clue">The queen lays all the eggs, the male drones help her, and thousands of female worker bees do almost everything else.</p><span class="mark"></span></div>
+      <div class="row" data-correct="D"><div class="top"><span class="word">nectar</span><select aria-label="definition for nectar" data-letters></select></div><button class="hintbtn">Show the sentence</button><p class="clue">As a bee travels from flower to flower, it collects a sweet liquid called nectar and a fine yellow powder called pollen.</p><span class="mark"></span></div>
+      <div class="row" data-correct="A"><div class="top"><span class="word">pollen</span><select aria-label="definition for pollen" data-letters></select></div><button class="hintbtn">Show the sentence</button><p class="clue">It collects a sweet liquid called nectar and a fine yellow powder called pollen.</p><span class="mark"></span></div>
+      <div class="row" data-correct="E"><div class="top"><span class="word">pollination</span><select aria-label="definition for pollination" data-letters></select></div><button class="hintbtn">Show the sentence</button><p class="clue">The bee then carries that pollen to the next flower, a process called pollination.</p><span class="mark"></span></div>
+      <div class="row" data-correct="B"><div class="top"><span class="word">pesticide</span><select aria-label="definition for pesticide" data-letters></select></div><button class="hintbtn">Show the sentence</button><p class="clue">Bees today face serious threats from disease, loss of habitat, and harmful chemicals called pesticides.</p><span class="mark"></span></div>
+    </div>
+    <div class="controls"><button class="act primary" id="m-check">Check answers</button><button class="act ghost" id="m-reset">Start over</button><span class="score" id="m-score"></span></div>
+    <div class="done" id="m-done"></div>
+  </section>
+
+  <!-- STEP 4: USE -->
+  <section class="step">
+    <div class="step-head"><div class="badge">4</div><div><h2>Use</h2><p class="tag">Choose the word that best completes each new sentence.</p></div></div>
+    <div class="panel"><p class="lbl">Word bank</p>
+      <span class="chip">colony</span><span class="chip">drone</span><span class="chip">hive</span><span class="chip">honey</span><span class="chip">nectar</span><span class="chip">pesticide</span><span class="chip">pollen</span><span class="chip">pollination</span>
+    </div>
+    <div id="cloze">
+      <div class="row crow" data-correct="nectar">1. The hummingbird dipped its long beak into the flower to drink the sweet <select aria-label="blank 1" data-words></select>.<span class="mark"></span></div>
+      <div class="row crow" data-correct="pollen">2. When the bee landed on the daisy, yellow <select aria-label="blank 2" data-words></select> stuck all over its fuzzy legs.<span class="mark"></span></div>
+      <div class="row crow" data-correct="pollination">3. Without <select aria-label="blank 3" data-words></select>, apple trees could not make the fruit we pick each fall.<span class="mark"></span></div>
+      <div class="row crow" data-correct="colony">4. Thousands of ants live and work together in one busy <select aria-label="blank 4" data-words></select> under the ground.<span class="mark"></span></div>
+      <div class="row crow" data-correct="drone">5. The only job of a male <select aria-label="blank 5" data-words></select> is to help the queen of the hive.<span class="mark"></span></div>
+      <div class="row crow" data-correct="pesticide">6. The farmer stopped spraying <select aria-label="blank 6" data-words></select> on his crops because it was harming the local bees.<span class="mark"></span></div>
+      <div class="row crow" data-correct="hive">7. The beekeeper carefully opened the wooden <select aria-label="blank 7" data-words></select> to check on the honeycomb inside.<span class="mark"></span></div>
+      <div class="row crow" data-correct="honey">8. In autumn, the bees store sweet <select aria-label="blank 8" data-words></select> so they will have food to eat all winter.<span class="mark"></span></div>
+    </div>
+    <div class="controls"><button class="act primary" id="c-check">Check answers</button><button class="act ghost" id="c-reset">Start over</button><span class="score" id="c-score"></span></div>
+    <div class="done" id="c-done"></div>
+  </section>
+
+  <!-- GROWN-UP SECTION -->
+  <details class="grown">
+    <summary>For grown-ups: answer key &amp; teaching notes <span class="arr">&#9662;</span></summary>
+    <div class="body">
+      <p style="color:#E7D3A6">(If you are printing this, open this section first so it appears on the page.)</p>
+
+      <h4>Reading level</h4>
+      <p>The passage is written at roughly a grade-5 level: varied sentence length, a clear main-idea-and-details structure, and target vocabulary introduced with context clues so the meaning can be worked out from surrounding words.</p>
+
+      <h4>Step 2 &middot; comprehension answers</h4>
+      <p><span class="key">1-B</span> main idea &nbsp; <span class="key">2-C</span> key detail &nbsp; <span class="key">3-B</span> vocabulary in context &nbsp; <span class="key">4-B</span> cause and effect &nbsp; <span class="key">5-B</span> key detail &nbsp; <span class="key">6-C</span> inference / main idea</p>
+      <p>Question 6 is the true inference &mdash; the passage never says "bees help make our food" in one neat sentence, so she has to connect pollination with the foods people eat. If she gets the recall questions but misses 6, that is the skill to coach next: pulling an idea together from across the whole text.</p>
+
+      <h4>Step 3 &middot; matching answers</h4>
+      <p><span class="key">colony &rarr; C</span> &nbsp; <span class="key">drone &rarr; F</span> &nbsp; <span class="key">nectar &rarr; D</span> &nbsp; <span class="key">pollen &rarr; A</span> &nbsp; <span class="key">pollination &rarr; E</span> &nbsp; <span class="key">pesticide &rarr; B</span></p>
+      <p>Watch nectar and pollen &mdash; they appear in the same sentence and are easy to swap. The clue is the describing words: nectar is a "sweet liquid," pollen is a "yellow powder." Point her to those exact words.</p>
+
+      <h4>Step 4 &middot; fill-in-the-blank answers</h4>
+      <p><span class="key">1.</span> nectar &nbsp; <span class="key">2.</span> pollen &nbsp; <span class="key">3.</span> pollination &nbsp; <span class="key">4.</span> colony &nbsp; <span class="key">5.</span> drone &nbsp; <span class="key">6.</span> pesticide &nbsp; <span class="key">7.</span> hive &nbsp; <span class="key">8.</span> honey</p>
+      <p>Sentence 4 (ants living in a colony) is a deliberate transfer item &mdash; it uses "colony" outside of bees, which checks whether she understands the word's meaning rather than just its place in this passage.</p>
+
+      <h4>Extension activities (project capstone)</h4>
+      <ul>
+        <li>Draw the inside of a hive and label the queen, a drone, and a worker bee.</li>
+        <li>Find out which fruit or vegetable in your kitchen depends on bees, and write one sentence about it.</li>
+        <li>Write her own sentence for two or three of the vocabulary words &mdash; the hardest level, with no word bank.</li>
+        <li>Discuss: "What is one thing your family could do to help protect bees?"</li>
+      </ul>
+    </div>
+  </details>
+
+  <footer>Amara's bees reading project &middot; a four-step reading activity</footer>
+</div>
+
+<script>
+(function(){
+  var TOPIC='bees';
+  function saveScore(activity,score,total){
+    try{var data=JSON.parse(localStorage.getItem('amaraReading')||'{}');var k=TOPIC+':'+activity,p=data[k]||{};data[k]={best:Math.max(p.best||0,score),last:score,total:total,attempts:(p.attempts||0)+1,date:new Date().toISOString()};localStorage.setItem('amaraReading',JSON.stringify(data));}catch(e){}
+    if(window.amaraCloud&&window.amaraCloud.push)window.amaraCloud.push();
+  }
+  var qs=document.querySelectorAll('#quiz .q'), qAnswered=0, qScore=0;
+  function qUpdate(){
+    document.getElementById('q-score').textContent=qAnswered? (qScore+' / '+qs.length+' correct'):'';
+    if(qAnswered===qs.length){
+      var d=document.getElementById('q-done'); d.style.display='block'; saveScore('comprehend',qScore,qs.length);
+      d.textContent = qScore===qs.length ? "Amazing work, Amara \u2014 you got every question!" :
+        qScore>=4 ? ("Great job, Amara \u2014 "+qScore+" out of "+qs.length+". Look back at the passage for the ones you missed.") :
+        ("Good effort, Amara \u2014 "+qScore+" out of "+qs.length+". Read the passage again, press Start over, and try once more.");
+    }
+  }
+  qs.forEach(function(q){
+    var ans=q.getAttribute('data-answer'), opts=q.querySelectorAll('.opt'), fb=q.querySelector('.fb');
+    opts.forEach(function(o){
+      o.addEventListener('click',function(){
+        if(q.dataset.done) return; q.dataset.done='1'; qAnswered++;
+        opts.forEach(function(x){ x.classList.add('locked'); if(x.getAttribute('data-opt')===ans) x.classList.add('correct'); });
+        if(o.getAttribute('data-opt')===ans){ qScore++; fb.textContent='Correct!'; fb.style.color='var(--ok-tx)'; }
+        else { o.classList.add('wrong'); fb.textContent='Not quite \u2014 the correct answer is in green.'; fb.style.color='var(--no-tx)'; }
+        qUpdate();
+      });
+    });
+  });
+  document.getElementById('q-reset').addEventListener('click',function(){
+    qAnswered=0; qScore=0;
+    qs.forEach(function(q){ delete q.dataset.done; q.querySelector('.fb').textContent='';
+      q.querySelectorAll('.opt').forEach(function(x){ x.classList.remove('correct','wrong','locked'); }); });
+    document.getElementById('q-done').style.display='none'; qUpdate();
+  });
+
+  var letters=['A','B','C','D','E','F'];
+  document.querySelectorAll('select[data-letters]').forEach(function(sel){
+    sel.appendChild(new Option('\u2014 choose \u2014',''));
+    letters.forEach(function(l){ sel.appendChild(new Option(l,l)); });
+  });
+  document.querySelectorAll('#match .hintbtn').forEach(function(btn){
+    var clue=btn.nextElementSibling;
+    btn.addEventListener('click',function(){
+      var open=clue.style.display==='block';
+      clue.style.display=open?'none':'block';
+      btn.textContent=open?'Show the sentence':'Hide the sentence';
+    });
+  });
+  function checkRows(sel, total, doneEl, scoreEl, activity, makeMsg){
+    var rows=document.querySelectorAll(sel), score=0, blank=false;
+    rows.forEach(function(r){
+      var s=r.querySelector('select'), mark=r.querySelector('.mark'), correct=r.getAttribute('data-correct');
+      r.classList.remove('correct','wrong');
+      if(s.value===''){ blank=true; mark.textContent=''; return; }
+      if(s.value===correct){ r.classList.add('correct'); mark.textContent='Correct!'; mark.style.color='var(--ok-tx)'; score++; }
+      else { r.classList.add('wrong'); mark.textContent='Try a different choice.'; mark.style.color='var(--no-tx)'; }
+    });
+    var d=document.getElementById(doneEl);
+    if(blank){ document.getElementById(scoreEl).textContent='Answer every one first'; d.style.display='none'; return; }
+    document.getElementById(scoreEl).textContent=score+' / '+total+' correct';
+    d.style.display='block'; d.textContent=makeMsg(score); saveScore(activity,score,total);
+  }
+  document.getElementById('m-check').addEventListener('click',function(){
+    checkRows('#match .row',6,'m-done','m-score','match',function(s){
+      return s===6 ? "Perfect, Amara \u2014 all six! You used the sentences like a real reading detective." :
+        s>=4 ? ("Nice work, Amara \u2014 "+s+" out of 6. For the red ones, tap Show the sentence and look for clues near the word.") :
+        ("Good start, Amara \u2014 "+s+" out of 6. Use the sentence hints, then check again.");
+    });
+  });
+  document.getElementById('m-reset').addEventListener('click',function(){
+    document.querySelectorAll('#match .row').forEach(function(r){
+      r.classList.remove('correct','wrong'); r.querySelector('select').value=''; r.querySelector('.mark').textContent='';
+      var c=r.querySelector('.clue'); c.style.display='none'; r.querySelector('.hintbtn').textContent='Show the sentence';
+    });
+    document.getElementById('m-score').textContent=''; document.getElementById('m-done').style.display='none';
+  });
+
+  var words=['colony','drone','hive','honey','nectar','pesticide','pollen','pollination'];
+  document.querySelectorAll('select[data-words]').forEach(function(sel){
+    sel.appendChild(new Option('\u2014 choose \u2014',''));
+    words.forEach(function(w){ sel.appendChild(new Option(w,w)); });
+  });
+  document.getElementById('c-check').addEventListener('click',function(){
+    checkRows('#cloze .row',8,'c-done','c-score','use',function(s){
+      return s===8 ? "Outstanding, Amara \u2014 8 out of 8! You can use these words in brand-new sentences, which means they are really yours." :
+        s>=5 ? ("Well done, Amara \u2014 "+s+" out of 8. Reread the red sentences and ask which word truly fits.") :
+        ("Keep going, Amara \u2014 "+s+" out of 8. Read each sentence with your word to hear if it makes sense, then check again.");
+    });
+  });
+  document.getElementById('c-reset').addEventListener('click',function(){
+    document.querySelectorAll('#cloze .row').forEach(function(r){
+      r.classList.remove('correct','wrong'); r.querySelector('select').value=''; r.querySelector('.mark').textContent='';
+    });
+    document.getElementById('c-score').textContent=''; document.getElementById('c-done').style.display='none';
+  });
+})();
+</script>
+<script type="module" src="./firebase-sync.js"></script>
+</body>
+</html>

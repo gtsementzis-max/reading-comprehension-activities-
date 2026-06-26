@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amara — How to Write a Summary</title>
+<style>
+  :root{
+    --dark:#2C2150; --ink:#2A2440; --muted:#6E6890;
+    --accent:#534AB7; --accent-deep:#3C3489; --soft:#EEEDFE;
+    --bg:#F3F2FB; --card:#FFFFFF; --line:#DEDCF1;
+    --ok:#1F6E38; --gold:#DB9B22;
+    --radius:14px;
+    --font:'Trebuchet MS','Segoe UI',Verdana,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:780px;margin:0 auto;padding:0 18px 60px}
+
+  header{background:var(--dark);color:#fff;padding:34px 0 0;position:relative}
+  header .wrap{padding-bottom:14px}
+  .eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:#C9C4F2;margin:0 0 6px}
+  header h1{font-size:30px;line-height:1.15;margin:0 0 6px;font-weight:700}
+  header p.sub{margin:0;color:#CFCAF0;font-size:15px}
+  .wave{display:block;width:100%;height:34px;margin-top:18px}
+
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin:22px 0;box-shadow:0 1px 0 rgba(44,33,80,.04)}
+  .step-head{display:flex;align-items:center;gap:12px;margin:0 0 14px}
+  .badge{flex:0 0 38px;height:38px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px}
+  .step-head h2{font-size:20px;margin:0;color:var(--dark);font-weight:700}
+  .step-head .tag{margin:2px 0 0;font-size:13px;color:var(--muted)}
+
+  p.lead{font-size:16.5px;margin:0 0 10px}
+  .define{background:var(--soft);border-radius:10px;padding:12px 16px;font-size:15.5px;color:var(--accent-deep)}
+  .define b{color:var(--dark)}
+
+  ol.steps{margin:0;padding-left:0;list-style:none;counter-reset:s}
+  ol.steps li{counter-increment:s;position:relative;padding:10px 0 10px 44px;border-top:1px solid var(--line);font-size:16px}
+  ol.steps li:first-child{border-top:none}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:9px;width:28px;height:28px;border-radius:50%;background:var(--soft);color:var(--accent-deep);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+  ol.steps b{color:var(--dark)}
+
+  .model-block{margin:14px 0}
+  .model-label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:0 0 6px}
+  .idea{background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:10px 14px;margin:0 0 10px;font-size:15.5px}
+  .idea b{color:var(--accent-deep)}
+  .sample{background:var(--soft);border-radius:10px;padding:14px 16px;font-size:16px;line-height:1.7}
+  .sample .model-label{color:var(--accent-deep)}
+  .cut{font-size:14px;color:var(--muted);margin-top:10px}
+
+  .starters{background:#FBFBFE;border:1px dashed var(--line);border-radius:10px;padding:12px 16px;margin:0 0 14px;font-size:15.5px;line-height:1.9}
+  .starters b{color:var(--accent-deep)}
+  .openlink{display:inline-block;font-size:14px;font-weight:700;text-decoration:none;background:var(--accent);color:#fff;padding:8px 14px;border-radius:9px;margin-top:6px}
+  .openlink:hover{background:var(--accent-deep)}
+
+  textarea{width:100%;min-height:170px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:inherit;font-size:16px;line-height:1.7;color:var(--ink);resize:vertical}
+  textarea:focus{outline:3px solid #C9C4F2;outline-offset:1px;border-color:var(--accent)}
+  .writebar{display:flex;align-items:center;gap:14px;margin-top:8px;font-size:13px;color:var(--muted)}
+  .saved{color:var(--ok);font-weight:700;opacity:0;transition:opacity .3s}
+  .saved.show{opacity:1}
+
+  .check{list-style:none;padding:0;margin:6px 0 0}
+  .check li{display:flex;align-items:flex-start;gap:10px;padding:7px 0;font-size:15.5px}
+  .check input{width:20px;height:20px;margin-top:1px;accent-color:var(--accent);flex:0 0 auto}
+
+  .controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+  button.act{font-family:inherit;font-size:15px;font-weight:700;border:none;border-radius:10px;padding:10px 16px;cursor:pointer}
+  .primary{background:var(--accent);color:#fff}
+  .primary:hover{background:var(--accent-deep)}
+  .ghost{background:#fff;color:var(--dark);border:1px solid var(--line)}
+  .ghost:hover{border-color:var(--accent)}
+
+  details.grown{background:var(--dark);color:#fff;border-radius:var(--radius);margin-top:26px;overflow:hidden}
+  details.grown summary{cursor:pointer;list-style:none;padding:18px 24px;font-size:17px;font-weight:700;display:flex;align-items:center;gap:10px}
+  details.grown summary::-webkit-details-marker{display:none}
+  details.grown summary .arr{margin-left:auto;transition:transform .2s}
+  details.grown[open] summary .arr{transform:rotate(180deg)}
+  .grown .body{padding:0 24px 22px;font-size:15px;color:#D7D3F0}
+  .grown h4{color:#fff;font-size:15px;margin:18px 0 6px;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:4px}
+  .grown ul{margin:6px 0;padding-left:20px}
+  .grown li{margin:5px 0}
+
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:30px}
+
+  @media print{
+    body{background:#fff}
+    .controls,.openlink,.starters{display:none}
+    .step,details.grown{box-shadow:none}
+    details.grown{color:#000;background:#fff;border:1px solid #000}
+    details.grown summary,.grown h4,.grown .body{color:#000}
+    details > *{display:block !important}
+    textarea{border:1px solid #000;min-height:140px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Writing project &middot; grade 5</p>
+    <h1>How to write a summary</h1>
+    <p class="sub">Watch how a summary is built, then write your own.</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0,20 C180,40 360,0 540,16 C720,32 900,4 1080,18 C1260,32 1380,12 1440,18 L1440,40 L0,40 Z" fill="#F3F2FB"/></svg>
+</header>
+
+<div class="wrap">
+
+  <!-- WHAT IS A SUMMARY -->
+  <section class="step">
+    <div class="step-head"><div class="badge">?</div><div><h2>What is a summary?</h2><p class="tag">The big idea, in your own words.</p></div></div>
+    <p class="lead">A summary is a short retelling of something you read. It keeps only the <b>most important ideas</b> and leaves out the small details. A good summary is much shorter than the original, and it is written in <b>your own words</b> &mdash; not copied sentence by sentence.</p>
+    <div class="define"><b>Quick test:</b> if a friend read only your summary, would they understand what the whole passage was about? If yes, you did it well.</div>
+  </section>
+
+  <!-- THE STEPS -->
+  <section class="step">
+    <div class="step-head"><div class="badge">!</div><div><h2>Four steps to a great summary</h2><p class="tag">Follow them in order.</p></div></div>
+    <ol class="steps">
+      <li><b>Find the topic.</b> In a few words, what is the whole passage about?</li>
+      <li><b>Find the main idea of each paragraph.</b> Ask: what is the one most important thing this paragraph is telling me?</li>
+      <li><b>Cross out the small stuff.</b> Examples, extra facts, and little details do not belong in a summary.</li>
+      <li><b>Write 3 to 4 sentences in your own words.</b> Put the main ideas together, shortest and clearest way you can.</li>
+    </ol>
+  </section>
+
+  <!-- WATCH ME DO IT (MODEL) -->
+  <section class="step">
+    <div class="step-head"><div class="badge">1</div><div><h2>Watch me do it</h2><p class="tag">A summary of the marine life passage.</p></div></div>
+
+    <div class="model-block">
+      <p class="model-label">Step 2 &middot; main idea of each paragraph</p>
+      <div class="idea"><b>Paragraph 1:</b> The ocean has different layers, from the bright, warm surface to the cold, dark deep, and different animals live in each one.</div>
+      <div class="idea"><b>Paragraph 2:</b> Ocean animals survive using special features called adaptations, such as camouflage and making their own light.</div>
+    </div>
+
+    <div class="sample">
+      <p class="model-label">Step 4 &middot; my finished summary</p>
+      The ocean is the largest habitat on Earth, and it has different layers from the sunny surface down to the dark deep. Different animals live in each layer. To survive, ocean animals use special features called adaptations. For example, some fish use camouflage to hide, and some deep-sea animals make their own light.
+    </div>
+
+    <p class="cut"><b>Notice what I left out:</b> tuna, sharks, the octopus, and the anglerfish were all interesting <em>examples</em>, but a summary keeps only the big ideas &mdash; so most examples got crossed out. I also used my own words instead of copying whole sentences.</p>
+  </section>
+
+  <!-- NOW YOU TRY -->
+  <section class="step">
+    <div class="step-head"><div class="badge">2</div><div><h2>Now you try</h2><p class="tag">Write a summary of the bees passage.</p></div></div>
+    <p class="lead">Reread the bees passage, then use the same four steps. These sentence starters can help you begin &mdash; you do not have to use them all.</p>
+    <div class="starters">
+      <b>This passage is mostly about</b> ______ .<br>
+      <b>First, it explains</b> ______ .<br>
+      <b>It also tells how</b> ______ .<br>
+      <b>One important idea is</b> ______ .
+    </div>
+    <a class="openlink" href="amara-bees-reading.html">Open the bees passage to reread</a>
+
+    <div style="margin-top:16px">
+      <textarea id="draft" placeholder="Write your summary here in your own words. Try for 3 to 4 sentences."></textarea>
+      <div class="writebar"><span id="words">0 words</span><span class="saved" id="saved">Saved &#10003;</span></div>
+    </div>
+  </section>
+
+  <!-- SELF CHECK -->
+  <section class="step">
+    <div class="step-head"><div class="badge">3</div><div><h2>Check your own work</h2><p class="tag">Tick each box you can honestly say yes to.</p></div></div>
+    <ul class="check" id="check">
+      <li><input type="checkbox" id="c1"><label for="c1">I wrote it in my own words and did not copy whole sentences.</label></li>
+      <li><input type="checkbox" id="c2"><label for="c2">I included the topic &mdash; what the whole passage is about.</label></li>
+      <li><input type="checkbox" id="c3"><label for="c3">I included the main idea from both paragraphs.</label></li>
+      <li><input type="checkbox" id="c4"><label for="c4">I left out the small details and examples.</label></li>
+      <li><input type="checkbox" id="c5"><label for="c5">My summary is much shorter than the passage.</label></li>
+    </ul>
+    <div class="controls">
+      <button class="act primary" onclick="window.print()">Print my summary</button>
+      <button class="act ghost" id="clear">Clear my writing</button>
+    </div>
+  </section>
+
+  <!-- GROWN-UP -->
+  <details class="grown">
+    <summary>For grown-ups: how to coach this <span class="arr">&#9662;</span></summary>
+    <div class="body">
+      <h4>What a strong grade-5 summary looks like</h4>
+      <p>Three to four sentences, the main idea of each paragraph, no opinions, almost no examples, and clearly her own wording. Length is a fast signal: if her summary is nearly as long as the passage, she is retelling, not summarizing.</p>
+      <h4>The two skills to watch</h4>
+      <ul>
+        <li><b>Main idea vs. detail.</b> The most common slip is keeping a fun detail (the waggle dance, the anglerfish) while missing the bigger point. Ask: "is that the main idea, or just one example of it?"</li>
+        <li><b>Own words.</b> If a sentence matches the passage word-for-word, have her cover the text and say it out loud first, then write what she said.</li>
+      </ul>
+      <h4>A gentle way to give feedback</h4>
+      <p>Start with what worked ("you caught the main idea of paragraph one"), then offer one thing to try ("can we say this in fewer words?"). One improvement at a time is plenty.</p>
+      <p>Her writing and her check-marks are saved on this device, so she can come back and revise. There is no automatic score here on purpose &mdash; summarizing is a judgement skill, and your read of her work matters more than a number.</p>
+    </div>
+  </details>
+
+  <footer>Amara's writing project &middot; how to write a summary</footer>
+</div>
+
+<script>
+(function(){
+  var KEY='amaraWriting';
+  var draft=document.getElementById('draft');
+  var wordsEl=document.getElementById('words');
+  var savedEl=document.getElementById('saved');
+  var boxes=[].slice.call(document.querySelectorAll('#check input'));
+  var saveTimer, cloudTimer;
+
+  function load(){
+    try{
+      var d=JSON.parse(localStorage.getItem(KEY)||'{}');
+      if(d.bees) draft.value=d.bees;
+      if(Array.isArray(d.check)) boxes.forEach(function(b,i){ b.checked=!!d.check[i]; });
+    }catch(e){}
+    countWords();
+  }
+  function save(){
+    try{
+      localStorage.setItem(KEY, JSON.stringify({bees:draft.value, check:boxes.map(function(b){return b.checked;}), date:new Date().toISOString()}));
+      savedEl.classList.add('show');
+      clearTimeout(saveTimer);
+      saveTimer=setTimeout(function(){ savedEl.classList.remove('show'); },1200);
+    }catch(e){}
+    clearTimeout(cloudTimer);
+    cloudTimer=setTimeout(function(){ if(window.amaraCloud&&window.amaraCloud.push)window.amaraCloud.push(); },1500);
+  }
+  function countWords(){
+    var t=draft.value.trim();
+    var n=t?t.split(/\s+/).length:0;
+    wordsEl.textContent=n+(n===1?' word':' words');
+  }
+  draft.addEventListener('input',function(){ countWords(); save(); });
+  boxes.forEach(function(b){ b.addEventListener('change',save); });
+  document.getElementById('clear').addEventListener('click',function(){
+    if(confirm('Clear your summary and check-marks on every device?')){
+      draft.value=''; boxes.forEach(function(b){ b.checked=false; });
+      try{ localStorage.setItem(KEY, JSON.stringify({bees:'', check:[], date:new Date().toISOString()})); }catch(e){}
+      if(window.amaraCloud&&window.amaraCloud.push)window.amaraCloud.push();
+      countWords();
+    }
+  });
+  window.addEventListener('amara-writing-updated',function(){ if(!draft.value){ load(); } });
+  load();
+})();
+</script>
+<script type="module" src="./firebase-sync.js"></script>
+</body>
+</html>

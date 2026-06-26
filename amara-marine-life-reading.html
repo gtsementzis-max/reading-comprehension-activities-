@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amara's Marine Life Reading Project</title>
+<style>
+  :root{
+    --navy:#0B3A53; --ink:#173C4D; --muted:#5C7480;
+    --teal:#0E8C9C; --teal-deep:#0A6A77; --teal-soft:#DCEFF2;
+    --coral:#E2703A; --sand:#F7EAC9;
+    --bg:#EFF7F9; --card:#FFFFFF; --line:#D5E4E8;
+    --ok-bg:#E3F4EC; --ok-line:#2E9E6F; --ok-tx:#1B6E4B;
+    --no-bg:#FBE7E3; --no-line:#D8624A; --no-tx:#9C3522;
+    --radius:14px;
+    --font:'Trebuchet MS','Segoe UI',Verdana,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:780px;margin:0 auto;padding:0 18px 60px}
+
+  /* Header */
+  header{background:var(--navy);color:#fff;padding:34px 0 0;position:relative}
+  header .wrap{padding-bottom:14px}
+  .eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:#8FD0D9;margin:0 0 6px}
+  header h1{font-size:30px;line-height:1.15;margin:0 0 6px;font-weight:700}
+  header p.sub{margin:0;color:#BFE0E5;font-size:15px}
+  .wave{display:block;width:100%;height:34px;margin-top:18px}
+
+  /* Steps */
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin:22px 0;box-shadow:0 1px 0 rgba(11,58,83,.04)}
+  .step-head{display:flex;align-items:center;gap:12px;margin:0 0 14px}
+  .badge{flex:0 0 38px;height:38px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px}
+  .step-head h2{font-size:20px;margin:0;color:var(--navy);font-weight:700}
+  .step-head .tag{margin:2px 0 0;font-size:13px;color:var(--muted)}
+
+  /* Passage */
+  .passage h3{font-size:17px;color:var(--navy);margin:0 0 8px}
+  .passage p{font-size:16.5px;margin:0 0 12px}
+  .watch{background:var(--teal-soft);border-radius:10px;padding:10px 14px;font-size:14px;color:var(--teal-deep);margin-top:6px}
+  .watch b{color:var(--navy)}
+
+  /* Definitions / word bank panels */
+  .panel{background:var(--sand);border-radius:10px;padding:12px 16px;margin:0 0 16px}
+  .panel .lbl{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8a6d33;margin:0 0 6px;font-weight:700}
+  .panel p{margin:0;font-size:15.5px;line-height:1.8}
+  .chip{display:inline-block;background:#fff;border:1px solid #E4CE97;color:#8a6d33;border-radius:8px;padding:4px 11px;margin:4px 6px 0 0;font-size:14px;font-weight:700}
+
+  /* Questions */
+  .q{margin:0 0 18px}
+  .q:last-child{margin-bottom:0}
+  .q .qt{font-size:16px;font-weight:700;color:var(--navy);margin:0 0 8px}
+  .opt{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:10px 12px;margin:6px 0;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:15.5px;color:var(--ink);cursor:pointer;font-family:inherit;line-height:1.4}
+  .opt:hover{border-color:var(--teal);background:#F6FBFC}
+  .opt:focus-visible{outline:3px solid #9AD3DB;outline-offset:1px}
+  .opt .lt{flex:0 0 26px;height:26px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+  .opt.correct{background:var(--ok-bg);border-color:var(--ok-line);color:var(--ok-tx)}
+  .opt.correct .lt{border-color:var(--ok-line)}
+  .opt.wrong{background:var(--no-bg);border-color:var(--no-line);color:var(--no-tx)}
+  .opt.wrong .lt{border-color:var(--no-line)}
+  .opt.locked{cursor:default}
+  .fb{font-size:13.5px;font-weight:700;margin:6px 0 0;min-height:1px}
+
+  /* Match + cloze rows */
+  .row{border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin:8px 0;background:#fff}
+  .row.correct{border-color:var(--ok-line);background:var(--ok-bg)}
+  .row.wrong{border-color:var(--no-line);background:var(--no-bg)}
+  .row .top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .word{font-size:16px;font-weight:700;color:var(--navy)}
+  select{font-family:inherit;font-size:15px;height:32px;border-radius:8px;border:1px solid var(--line);padding:0 6px;background:#fff;color:var(--ink)}
+  select:focus-visible{outline:3px solid #9AD3DB;outline-offset:1px}
+  .hintbtn{background:none;border:none;color:var(--teal-deep);font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;padding:8px 0 0}
+  .hintbtn:hover{text-decoration:underline}
+  .clue{display:none;font-size:14px;color:var(--muted);background:#F2F8F9;border-radius:8px;padding:8px 10px;margin-top:8px}
+  .mark{display:block;font-size:13px;font-weight:700;margin-top:6px}
+  .crow{font-size:16px;line-height:1.9}
+  .crow select{margin:0 3px}
+
+  /* Controls */
+  .controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+  button.act{font-family:inherit;font-size:15px;font-weight:700;border:none;border-radius:10px;padding:10px 16px;cursor:pointer}
+  .primary{background:var(--teal);color:#fff}
+  .primary:hover{background:var(--teal-deep)}
+  .ghost{background:#fff;color:var(--navy);border:1px solid var(--line)}
+  .ghost:hover{border-color:var(--teal)}
+  .score{margin-left:auto;font-size:15px;font-weight:700;color:var(--navy)}
+  .done{display:none;background:var(--teal-soft);border-radius:10px;padding:14px 16px;margin-top:14px;font-size:15px;color:var(--teal-deep);font-weight:700}
+
+  /* Grown-up section */
+  details.grown{background:var(--navy);color:#fff;border-radius:var(--radius);margin-top:26px;overflow:hidden}
+  details.grown summary{cursor:pointer;list-style:none;padding:18px 24px;font-size:17px;font-weight:700;display:flex;align-items:center;gap:10px}
+  details.grown summary::-webkit-details-marker{display:none}
+  details.grown summary .arr{margin-left:auto;transition:transform .2s}
+  details.grown[open] summary .arr{transform:rotate(180deg)}
+  .grown .body{padding:0 24px 22px;font-size:15px;color:#DCEAEE}
+  .grown h4{color:#fff;font-size:15px;margin:18px 0 6px;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:4px}
+  .grown .key{font-weight:700;color:#8FD0D9}
+  .grown ul{margin:6px 0;padding-left:20px}
+  .grown li{margin:5px 0}
+
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:30px}
+
+  @media print{
+    body{background:#fff}
+    .controls,.hintbtn{display:none}
+    .clue{display:block !important}
+    .step,.row,details.grown{box-shadow:none}
+    details.grown{color:#000;background:#fff;border:1px solid #000}
+    details.grown summary,.grown h4,.grown .body{color:#000}
+    details > *{display:block !important}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Reading project &middot; grade 5</p>
+    <h1>Amara's marine life reading project</h1>
+    <p class="sub">Read the passage, then work through four steps: read, comprehend, match, and use.</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0,20 C180,40 360,0 540,16 C720,32 900,4 1080,18 C1260,32 1380,12 1440,18 L1440,40 L0,40 Z" fill="#EFF7F9"/></svg>
+</header>
+
+<div class="wrap">
+
+  <!-- STEP 1: READ -->
+  <section class="step passage">
+    <div class="step-head"><div class="badge">1</div><div><h2>Read</h2><p class="tag">Read the passage carefully — you can read it twice.</p></div></div>
+    <h3>Life in the ocean</h3>
+    <p>The ocean is the largest habitat on Earth, and it is home to millions of living things. Scientists divide the ocean into layers based on how much sunlight reaches the water. Near the surface, the water is bright and warm, so tiny plants called phytoplankton can grow there. These plants are the beginning of the food chain. They feed small fish, which are later eaten by larger animals such as tuna and sharks. As you travel deeper, the sunlight fades and the water turns cold and dark. Very few plants can survive this far down. Even so, the deep ocean is far from empty. Strange and surprising creatures have found ways to live where the sun never shines.</p>
+    <p>To survive in the ocean, animals have developed special features called adaptations. In the sunlit waters near the top, many fish use camouflage to stay safe. Their silvery sides reflect light, which makes them hard for predators to see. Other animals, like the octopus, can change the color of their skin in seconds to blend into rocks and coral. In the deep, dark ocean, some animals make their own light through a process called bioluminescence. The anglerfish, for example, dangles a glowing lure in front of its mouth to attract prey in the blackness. Each of these adaptations helps an animal find food, hide from danger, or survive in a world that can be cold, dark, and full of hunters.</p>
+    <div class="watch"><b>Words to watch:</b> habitat, phytoplankton, adaptation, camouflage, bioluminescence, predator, prey, lure.</div>
+  </section>
+
+  <!-- STEP 2: COMPREHEND -->
+  <section class="step">
+    <div class="step-head"><div class="badge">2</div><div><h2>Comprehend</h2><p class="tag">Tap your answer. Green means correct.</p></div></div>
+    <div id="quiz">
+      <div class="q" data-answer="B"><p class="qt">1. What is this passage mostly about?</p>
+        <button class="opt" data-opt="A"><span class="lt">A</span>How to catch fish in the deep ocean</button>
+        <button class="opt" data-opt="B"><span class="lt">B</span>How ocean animals survive in different parts of the ocean</button>
+        <button class="opt" data-opt="C"><span class="lt">C</span>Why sharks are the most dangerous ocean animal</button>
+        <button class="opt" data-opt="D"><span class="lt">D</span>How to become a marine scientist</button>
+        <p class="fb"></p></div>
+      <div class="q" data-answer="C"><p class="qt">2. Why can phytoplankton grow near the surface of the ocean?</p>
+        <button class="opt" data-opt="A"><span class="lt">A</span>Because the water there is cold and dark</button>
+        <button class="opt" data-opt="B"><span class="lt">B</span>Because sharks protect them</button>
+        <button class="opt" data-opt="C"><span class="lt">C</span>Because the water there is bright and warm</button>
+        <button class="opt" data-opt="D"><span class="lt">D</span>Because they make their own light</button>
+        <p class="fb"></p></div>
+      <div class="q" data-answer="B"><p class="qt">3. In this passage, the word <em>adaptations</em> means &mdash;</p>
+        <button class="opt" data-opt="A"><span class="lt">A</span>Dangerous ocean storms</button>
+        <button class="opt" data-opt="B"><span class="lt">B</span>Special features that help an animal survive</button>
+        <button class="opt" data-opt="C"><span class="lt">C</span>The deepest layers of the ocean</button>
+        <button class="opt" data-opt="D"><span class="lt">D</span>Plants that grow in sunlight</button>
+        <p class="fb"></p></div>
+      <div class="q" data-answer="C"><p class="qt">4. Why does the anglerfish use a glowing lure?</p>
+        <button class="opt" data-opt="A"><span class="lt">A</span>To keep itself warm in the cold water</button>
+        <button class="opt" data-opt="B"><span class="lt">B</span>To frighten away sharks</button>
+        <button class="opt" data-opt="C"><span class="lt">C</span>To attract prey where it is too dark to see</button>
+        <button class="opt" data-opt="D"><span class="lt">D</span>To help other fish find their way home</button>
+        <p class="fb"></p></div>
+      <div class="q" data-answer="B"><p class="qt">5. How does camouflage help fish near the surface?</p>
+        <button class="opt" data-opt="A"><span class="lt">A</span>It helps them swim much faster</button>
+        <button class="opt" data-opt="B"><span class="lt">B</span>It makes them hard for predators to see</button>
+        <button class="opt" data-opt="C"><span class="lt">C</span>It lets them make their own light</button>
+        <button class="opt" data-opt="D"><span class="lt">D</span>It keeps them warm in the cold water</button>
+        <p class="fb"></p></div>
+      <div class="q" data-answer="C"><p class="qt">6. Which sentence is TRUE based on the passage?</p>
+        <button class="opt" data-opt="A"><span class="lt">A</span>Nothing can live in the deep, dark ocean</button>
+        <button class="opt" data-opt="B"><span class="lt">B</span>All ocean animals live near the surface</button>
+        <button class="opt" data-opt="C"><span class="lt">C</span>Different ocean animals have different ways of surviving</button>
+        <button class="opt" data-opt="D"><span class="lt">D</span>Plants grow in every part of the ocean</button>
+        <p class="fb"></p></div>
+    </div>
+    <div class="controls"><button class="act ghost" id="q-reset">Start over</button><span class="score" id="q-score"></span></div>
+    <div class="done" id="q-done"></div>
+  </section>
+
+  <!-- STEP 3: MATCH -->
+  <section class="step">
+    <div class="step-head"><div class="badge">3</div><div><h2>Match</h2><p class="tag">Match each word to its meaning. Use the sentence hints if you get stuck.</p></div></div>
+    <div class="panel"><p class="lbl">Definitions</p>
+      <p><b>A.</b> Colors or markings that help an animal blend in and hide<br>
+      <b>B.</b> An animal that hunts and eats other animals<br>
+      <b>C.</b> Tiny ocean plants that float near the surface and begin the food chain<br>
+      <b>D.</b> Something used to attract or tempt prey closer<br>
+      <b>E.</b> A special feature that helps an animal survive<br>
+      <b>F.</b> Light that a living thing makes by itself</p>
+    </div>
+    <div id="match">
+      <div class="row" data-correct="C"><div class="top"><span class="word">phytoplankton</span><select aria-label="definition for phytoplankton" data-letters></select></div><button class="hintbtn">Show the sentence</button><p class="clue">Near the surface, the water is bright and warm, so tiny plants called phytoplankton can grow there.</p><span class="mark"></span></div>
+      <div class="row" data-correct="E"><div class="top"><span class="word">adaptation</span><select aria-label="definition for adaptation" data-letters></select></div><button class="hintbtn">Show the sentence</button><p class="clue">To survive in the ocean, animals have developed special features called adaptations.</p><span class="mark"></span></div>
+      <div class="row" data-correct="A"><div class="top"><span class="word">camouflage</span><select aria-label="definition for camouflage" data-letters></select></div><button class="hintbtn">Show the sentence</button><p class="clue">Many fish use camouflage to stay safe. Their silvery sides reflect light, which makes them hard for predators to see.</p><span class="mark"></span></div>
+      <div class="row" data-correct="F"><div class="top"><span class="word">bioluminescence</span><select aria-label="definition for bioluminescence" data-letters></select></div><button class="hintbtn">Show the sentence</button><p class="clue">In the deep, dark ocean, some animals make their own light through a process called bioluminescence.</p><span class="mark"></span></div>
+      <div class="row" data-correct="B"><div class="top"><span class="word">predator</span><select aria-label="definition for predator" data-letters></select></div><button class="hintbtn">Show the sentence</button><p class="clue">Their silvery sides reflect light, which makes them hard for predators to see.</p><span class="mark"></span></div>
+      <div class="row" data-correct="D"><div class="top"><span class="word">lure</span><select aria-label="definition for lure" data-letters></select></div><button class="hintbtn">Show the sentence</button><p class="clue">The anglerfish dangles a glowing lure in front of its mouth to attract prey in the blackness.</p><span class="mark"></span></div>
+    </div>
+    <div class="controls"><button class="act primary" id="m-check">Check answers</button><button class="act ghost" id="m-reset">Start over</button><span class="score" id="m-score"></span></div>
+    <div class="done" id="m-done"></div>
+  </section>
+
+  <!-- STEP 4: USE -->
+  <section class="step">
+    <div class="step-head"><div class="badge">4</div><div><h2>Use</h2><p class="tag">Choose the word that best completes each new sentence.</p></div></div>
+    <div class="panel"><p class="lbl">Word bank</p>
+      <span class="chip">adaptation</span><span class="chip">bioluminescence</span><span class="chip">camouflage</span><span class="chip">habitat</span><span class="chip">lure</span><span class="chip">phytoplankton</span><span class="chip">predator</span><span class="chip">prey</span>
+    </div>
+    <div id="cloze">
+      <div class="row crow" data-correct="phytoplankton">1. Many sea animals depend on <select aria-label="blank 1" data-words></select>, the tiny plants that drift near the ocean's surface, for their food.<span class="mark"></span></div>
+      <div class="row crow" data-correct="adaptation">2. A polar bear's thick white fur is an <select aria-label="blank 2" data-words></select> that helps it stay warm and hidden in the snow.<span class="mark"></span></div>
+      <div class="row crow" data-correct="camouflage">3. The green lizard used <select aria-label="blank 3" data-words></select> to hide among the leaves so the hawk could not spot it.<span class="mark"></span></div>
+      <div class="row crow" data-correct="bioluminescence">4. Some jellyfish seem to glow in the dark because of <select aria-label="blank 4" data-words></select>, the light their own bodies make.<span class="mark"></span></div>
+      <div class="row crow" data-correct="predator">5. The lion is a powerful <select aria-label="blank 5" data-words></select> that hunts zebras across the African plains.<span class="mark"></span></div>
+      <div class="row crow" data-correct="prey">6. A rabbit is the <select aria-label="blank 6" data-words></select> of foxes and owls, which hunt it for food.<span class="mark"></span></div>
+      <div class="row crow" data-correct="habitat">7. If people cut down the forest, many animals will lose their <select aria-label="blank 7" data-words></select> and have nowhere to live.<span class="mark"></span></div>
+      <div class="row crow" data-correct="lure">8. The fisherman tied a shiny <select aria-label="blank 8" data-words></select> to his line to attract the fish toward the hook.<span class="mark"></span></div>
+    </div>
+    <div class="controls"><button class="act primary" id="c-check">Check answers</button><button class="act ghost" id="c-reset">Start over</button><span class="score" id="c-score"></span></div>
+    <div class="done" id="c-done"></div>
+  </section>
+
+  <!-- GROWN-UP SECTION -->
+  <details class="grown">
+    <summary>For grown-ups: answer key &amp; teaching notes <span class="arr">&#9662;</span></summary>
+    <div class="body">
+      <p style="color:#BFE0E5">(If you are printing this, open this section first so it appears on the page.)</p>
+
+      <h4>Reading level</h4>
+      <p>The passage is written at roughly a grade-5 level: varied sentence length, a clear main-idea-and-details structure, and target vocabulary introduced with context clues so the meaning can be inferred from surrounding words.</p>
+
+      <h4>Step 2 &middot; comprehension answers</h4>
+      <p><span class="key">1-B</span> main idea &nbsp; <span class="key">2-C</span> key detail &nbsp; <span class="key">3-B</span> vocabulary in context &nbsp; <span class="key">4-C</span> inference &nbsp; <span class="key">5-B</span> cause and effect &nbsp; <span class="key">6-C</span> inference / main idea</p>
+      <p>Questions 4 and 6 are the inference questions &mdash; the answers are not stated word-for-word. If she gets the recall questions (2, 5) but misses 4 and 6, she is reading accurately but not yet connecting ideas across sentences, which is the next skill to coach.</p>
+
+      <h4>Step 3 &middot; matching answers</h4>
+      <p><span class="key">phytoplankton &rarr; C</span> &nbsp; <span class="key">adaptation &rarr; E</span> &nbsp; <span class="key">camouflage &rarr; A</span> &nbsp; <span class="key">bioluminescence &rarr; F</span> &nbsp; <span class="key">predator &rarr; B</span> &nbsp; <span class="key">lure &rarr; D</span></p>
+      <p>After she finishes, ask <em>how</em> she figured out a hard one &mdash; "what words in the sentence told you?" Naming the clue ("it said 'make their own light', so bioluminescence must mean making light") turns a lucky guess into a transferable strategy.</p>
+
+      <h4>Step 4 &middot; fill-in-the-blank answers</h4>
+      <p><span class="key">1.</span> phytoplankton &nbsp; <span class="key">2.</span> adaptation &nbsp; <span class="key">3.</span> camouflage &nbsp; <span class="key">4.</span> bioluminescence &nbsp; <span class="key">5.</span> predator &nbsp; <span class="key">6.</span> prey &nbsp; <span class="key">7.</span> habitat &nbsp; <span class="key">8.</span> lure</p>
+      <p>Sentences 5 and 6 (predator / prey) are the pair to watch &mdash; they describe the same hunting relationship from opposite sides. Mixing them up is worth a quick talk about which animal is <em>doing</em> the hunting versus <em>being</em> hunted.</p>
+
+      <h4>Extension activities (project capstone)</h4>
+      <ul>
+        <li>Draw a favorite ocean animal and label one adaptation it uses to survive.</li>
+        <li>Pick one real deep-sea creature, find two facts about it, and write them in her own words.</li>
+        <li>Write her own sentence for two or three of the vocabulary words &mdash; the hardest level, because there is no word bank to lean on.</li>
+        <li>Discuss: "Which adaptation do you think is the most useful, and why?"</li>
+      </ul>
+    </div>
+  </details>
+
+  <footer>Amara's marine life reading project &middot; a four-step reading activity</footer>
+</div>
+
+<script>
+(function(){
+  var TOPIC='marine';
+  function saveScore(activity,score,total){
+    try{var data=JSON.parse(localStorage.getItem('amaraReading')||'{}');var k=TOPIC+':'+activity,p=data[k]||{};data[k]={best:Math.max(p.best||0,score),last:score,total:total,attempts:(p.attempts||0)+1,date:new Date().toISOString()};localStorage.setItem('amaraReading',JSON.stringify(data));}catch(e){}
+    if(window.amaraCloud&&window.amaraCloud.push)window.amaraCloud.push();
+  }
+  // Step 2: comprehension
+  var qs=document.querySelectorAll('#quiz .q'), qAnswered=0, qScore=0;
+  function qUpdate(){
+    document.getElementById('q-score').textContent=qAnswered? (qScore+' / '+qs.length+' correct'):'';
+    if(qAnswered===qs.length){
+      var d=document.getElementById('q-done'); d.style.display='block'; saveScore('comprehend',qScore,qs.length);
+      d.textContent = qScore===qs.length ? "Amazing work, Amara \u2014 you got every question!" :
+        qScore>=4 ? ("Great job, Amara \u2014 "+qScore+" out of "+qs.length+". Look back at the passage for the ones you missed.") :
+        ("Good effort, Amara \u2014 "+qScore+" out of "+qs.length+". Read the passage again, press Start over, and try once more.");
+    }
+  }
+  qs.forEach(function(q){
+    var ans=q.getAttribute('data-answer'), opts=q.querySelectorAll('.opt'), fb=q.querySelector('.fb');
+    opts.forEach(function(o){
+      o.addEventListener('click',function(){
+        if(q.dataset.done) return; q.dataset.done='1'; qAnswered++;
+        opts.forEach(function(x){ x.classList.add('locked'); if(x.getAttribute('data-opt')===ans) x.classList.add('correct'); });
+        if(o.getAttribute('data-opt')===ans){ qScore++; fb.textContent='Correct!'; fb.style.color='var(--ok-tx)'; }
+        else { o.classList.add('wrong'); fb.textContent='Not quite \u2014 the correct answer is in green.'; fb.style.color='var(--no-tx)'; }
+        qUpdate();
+      });
+    });
+  });
+  document.getElementById('q-reset').addEventListener('click',function(){
+    qAnswered=0; qScore=0;
+    qs.forEach(function(q){ delete q.dataset.done; q.querySelector('.fb').textContent='';
+      q.querySelectorAll('.opt').forEach(function(x){ x.classList.remove('correct','wrong','locked'); }); });
+    document.getElementById('q-done').style.display='none'; qUpdate();
+  });
+
+  // Step 3: matching
+  var letters=['A','B','C','D','E','F'];
+  document.querySelectorAll('select[data-letters]').forEach(function(sel){
+    sel.appendChild(new Option('\u2014 choose \u2014',''));
+    letters.forEach(function(l){ sel.appendChild(new Option(l,l)); });
+  });
+  document.querySelectorAll('#match .hintbtn').forEach(function(btn){
+    var clue=btn.nextElementSibling;
+    btn.addEventListener('click',function(){
+      var open=clue.style.display==='block';
+      clue.style.display=open?'none':'block';
+      btn.textContent=open?'Show the sentence':'Hide the sentence';
+    });
+  });
+  function checkRows(sel, total, doneEl, scoreEl, activity, makeMsg){
+    var rows=document.querySelectorAll(sel), score=0, blank=false;
+    rows.forEach(function(r){
+      var s=r.querySelector('select'), mark=r.querySelector('.mark'), correct=r.getAttribute('data-correct');
+      r.classList.remove('correct','wrong');
+      if(s.value===''){ blank=true; mark.textContent=''; return; }
+      if(s.value===correct){ r.classList.add('correct'); mark.textContent='Correct!'; mark.style.color='var(--ok-tx)'; score++; }
+      else { r.classList.add('wrong'); mark.textContent='Try a different choice.'; mark.style.color='var(--no-tx)'; }
+    });
+    var d=document.getElementById(doneEl);
+    if(blank){ document.getElementById(scoreEl).textContent='Answer every one first'; d.style.display='none'; return; }
+    document.getElementById(scoreEl).textContent=score+' / '+total+' correct';
+    d.style.display='block'; d.textContent=makeMsg(score); saveScore(activity,score,total);
+  }
+  document.getElementById('m-check').addEventListener('click',function(){
+    checkRows('#match .row',6,'m-done','m-score','match',function(s){
+      return s===6 ? "Perfect, Amara \u2014 all six! You used the sentences like a real reading detective." :
+        s>=4 ? ("Nice work, Amara \u2014 "+s+" out of 6. For the red ones, tap Show the sentence and look for clues near the word.") :
+        ("Good start, Amara \u2014 "+s+" out of 6. Use the sentence hints, then check again.");
+    });
+  });
+  document.getElementById('m-reset').addEventListener('click',function(){
+    document.querySelectorAll('#match .row').forEach(function(r){
+      r.classList.remove('correct','wrong'); r.querySelector('select').value=''; r.querySelector('.mark').textContent='';
+      var c=r.querySelector('.clue'); c.style.display='none'; r.querySelector('.hintbtn').textContent='Show the sentence';
+    });
+    document.getElementById('m-score').textContent=''; document.getElementById('m-done').style.display='none';
+  });
+
+  // Step 4: cloze
+  var words=['adaptation','bioluminescence','camouflage','habitat','lure','phytoplankton','predator','prey'];
+  document.querySelectorAll('select[data-words]').forEach(function(sel){
+    sel.appendChild(new Option('\u2014 choose \u2014',''));
+    words.forEach(function(w){ sel.appendChild(new Option(w,w)); });
+  });
+  document.getElementById('c-check').addEventListener('click',function(){
+    checkRows('#cloze .row',8,'c-done','c-score','use',function(s){
+      return s===8 ? "Outstanding, Amara \u2014 8 out of 8! You can use these words in brand-new sentences, which means they are really yours." :
+        s>=5 ? ("Well done, Amara \u2014 "+s+" out of 8. Reread the red sentences and ask which word truly fits.") :
+        ("Keep going, Amara \u2014 "+s+" out of 8. Read each sentence with your word to hear if it makes sense, then check again.");
+    });
+  });
+  document.getElementById('c-reset').addEventListener('click',function(){
+    document.querySelectorAll('#cloze .row').forEach(function(r){
+      r.classList.remove('correct','wrong'); r.querySelector('select').value=''; r.querySelector('.mark').textContent='';
+    });
+    document.getElementById('c-score').textContent=''; document.getElementById('c-done').style.display='none';
+  });
+})();
+</script>
+<script type="module" src="./firebase-sync.js"></script>
+</body>
+</html>
