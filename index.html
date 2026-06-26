@@ -32,6 +32,8 @@
   .proj-head{display:flex;align-items:center;gap:12px;margin:0 0 14px}
   .dot{flex:0 0 14px;height:14px;border-radius:50%}
   .dot.marine{background:var(--teal)} .dot.bees{background:var(--gold)}
+  .dot.rainforest{background:#1f8a4c} .dot.ei{background:#4f5bd5}
+  .dot.spaghetti{background:#d6402c} .dot.celebrations{background:#c026a3}
   .proj-head h2{font-size:19px;margin:0;color:var(--navy);font-weight:700;flex:1}
   .open{font-family:inherit;font-size:14px;font-weight:700;text-decoration:none;background:var(--teal);color:#fff;padding:9px 16px;border-radius:10px;white-space:nowrap}
   .open:hover{background:var(--teal-deep)}
@@ -65,7 +67,7 @@
 
   <div class="summary">
     <div class="stat"><div class="n" id="stars">0</div><div class="l">activities at full marks</div></div>
-    <div class="stat"><div class="n" id="completed">0 / 6</div><div class="l">activities tried</div></div>
+    <div class="stat"><div class="n" id="completed">0 / 18</div><div class="l">activities tried</div></div>
     <div class="stat"><div class="n" id="attempts">0</div><div class="l">total tries</div></div>
   </div>
 
@@ -83,6 +85,34 @@
     <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="bees:use" data-total="8"></div></div><span class="act-score" data-s="bees:use"></span></div>
   </div>
 
+  <div class="proj">
+    <div class="proj-head"><span class="dot rainforest"></span><h2>Rainforest animals</h2><a class="open" href="amara-rainforest-reading.html" style="background:#1f8a4c">Open</a></div>
+    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="rainforest:comprehend" data-total="6"></div></div><span class="act-score" data-s="rainforest:comprehend"></span></div>
+    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="rainforest:match" data-total="6"></div></div><span class="act-score" data-s="rainforest:match"></span></div>
+    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="rainforest:use" data-total="8"></div></div><span class="act-score" data-s="rainforest:use"></span></div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><span class="dot ei"></span><h2>Emotional intelligence</h2><a class="open" href="amara-emotional-intelligence-reading.html" style="background:#4f5bd5">Open</a></div>
+    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="ei:comprehend" data-total="6"></div></div><span class="act-score" data-s="ei:comprehend"></span></div>
+    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="ei:match" data-total="6"></div></div><span class="act-score" data-s="ei:match"></span></div>
+    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="ei:use" data-total="8"></div></div><span class="act-score" data-s="ei:use"></span></div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><span class="dot spaghetti"></span><h2>How spaghetti is made</h2><a class="open" href="amara-spaghetti-reading.html" style="background:#d6402c">Open</a></div>
+    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="spaghetti:comprehend" data-total="6"></div></div><span class="act-score" data-s="spaghetti:comprehend"></span></div>
+    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="spaghetti:match" data-total="6"></div></div><span class="act-score" data-s="spaghetti:match"></span></div>
+    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="spaghetti:use" data-total="8"></div></div><span class="act-score" data-s="spaghetti:use"></span></div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><span class="dot celebrations"></span><h2>Celebrations around the world</h2><a class="open" href="amara-celebrations-reading.html" style="background:#c026a3">Open</a></div>
+    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="celebrations:comprehend" data-total="6"></div></div><span class="act-score" data-s="celebrations:comprehend"></span></div>
+    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="celebrations:match" data-total="6"></div></div><span class="act-score" data-s="celebrations:match"></span></div>
+    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="celebrations:use" data-total="8"></div></div><span class="act-score" data-s="celebrations:use"></span></div>
+  </div>
+
   <div class="tools"><button class="reset" id="reset">Reset all progress</button></div>
 
   <div class="note">Scores are saved on this device, in this browser. They will be here next time Amara opens the page on the same device. They will not appear on a different device or browser.</div>
@@ -95,7 +125,7 @@
   function render(){
     var data={};
     try{ data=JSON.parse(localStorage.getItem('amaraReading')||'{}'); }catch(e){ data={}; }
-    var totalActivities=6, fullMarks=0, tried=0, attempts=0;
+    var totalActivities=18, fullMarks=0, tried=0, attempts=0;
     document.querySelectorAll('.bar').forEach(function(bar){
       var k=bar.getAttribute('data-k'), total=parseInt(bar.getAttribute('data-total'),10);
       var rec=data[k], scoreEl=document.querySelector('[data-s="'+k+'"]');

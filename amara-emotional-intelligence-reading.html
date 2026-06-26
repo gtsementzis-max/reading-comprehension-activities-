@@ -187,10 +187,10 @@
 </div>
 
 <script>
-const MODULE = {"activityId": "emotional-intelligence", "title": "What Is Emotional Intelligence?", "questions": [{"type": "Main idea", "q": "What is this passage mostly about?", "opts": ["Why people get angry", "The skill of understanding and handling emotions", "How to make new friends"], "a": 1}, {"type": "Detail", "q": "According to the passage, emotional intelligence starts with —", "opts": ["being self-aware", "counting to ten", "making other people happy"], "a": 0}, {"type": "Vocabulary", "q": "In the passage, \"empathy\" means —", "opts": ["hiding what you feel", "imagining how someone else feels", "winning an argument"], "a": 1}, {"type": "Cause & effect", "q": "Why might someone take a deep breath when frustration builds?", "opts": ["to calm down before speaking", "to ignore the problem forever", "to make others feel bad"], "a": 0}, {"type": "Inference", "q": "The person who \"snapped at a friend\" was really upset because —", "opts": ["the friend was mean to them", "they were tired and hungry", "they wanted to be alone"], "a": 1}, {"type": "Inference", "q": "The passage suggests emotional intelligence means you should —", "opts": ["hide your feelings from everyone", "understand your feelings so they help you", "only think about yourself"], "a": 1}], "match": [{"word": "empathy", "def": "imagining how another person feels and seeing their side", "hint": "\"<b>Empathy</b> means imagining how someone else feels…\""}, {"word": "self-aware", "def": "noticing what you are feeling and why", "hint": "\"being <b>self-aware</b>, which means noticing what you are feeling and why.\""}, {"word": "regulate", "def": "to manage strong feelings instead of being swept away", "hint": "\"learning to <b>regulate</b> your emotions — to manage strong feelings…\""}, {"word": "frustration", "def": "the annoyed feeling when something is hard or blocked", "hint": "\"When <b>frustration</b> builds, an emotionally intelligent person might take a deep breath…\""}, {"word": "react", "def": "to act or respond when something happens", "hint": "\"…choose how they want to <b>react</b> instead of letting the feeling decide.\""}, {"word": "perspective", "def": "the way a person sees or understands a situation", "hint": "\"…seeing a situation from their <b>perspective</b>.\""}], "bank": ["emotion", "empathy", "self-aware", "regulate", "frustration", "react", "calm", "perspective"], "fills": [{"text": "A sudden feeling like joy or anger is called an ___.", "a": "emotion"}, {"text": "Being ___ means you can name what you feel and why.", "a": "self-aware"}, {"text": "She showed ___ by comforting her friend who lost the game.", "a": "empathy"}, {"text": "When you ___ your feelings, you manage them instead of exploding.", "a": "regulate"}, {"text": "He felt ___ when the puzzle would not fit together.", "a": "frustration"}, {"text": "Try to ___ down by breathing slowly before you answer.", "a": "calm"}, {"text": "In a drawing, ___ makes faraway objects look smaller than close ones.", "a": "perspective", "challenge": true}, {"text": "A wise person thinks before they ___ to bad news.", "a": "react"}], "win": "PERFECT, Amara! You really understand feelings! 💛", "cheer": "You read with real understanding! 💛"};
-const ACTIVITY_ID = MODULE.activityId;
-const STORE_KEY   = 'amaraReadingScores';
-const TITLE       = MODULE.title;
+const MODULE = {"activityId": "emotional-intelligence", "projectKey": "ei", "title": "What Is Emotional Intelligence?", "questions": [{"type": "Main idea", "q": "What is this passage mostly about?", "opts": ["Why people get angry", "The skill of understanding and handling emotions", "How to make new friends"], "a": 1}, {"type": "Detail", "q": "According to the passage, emotional intelligence starts with —", "opts": ["being self-aware", "counting to ten", "making other people happy"], "a": 0}, {"type": "Vocabulary", "q": "In the passage, \"empathy\" means —", "opts": ["hiding what you feel", "imagining how someone else feels", "winning an argument"], "a": 1}, {"type": "Cause & effect", "q": "Why might someone take a deep breath when frustration builds?", "opts": ["to calm down before speaking", "to ignore the problem forever", "to make others feel bad"], "a": 0}, {"type": "Inference", "q": "The person who \"snapped at a friend\" was really upset because —", "opts": ["the friend was mean to them", "they were tired and hungry", "they wanted to be alone"], "a": 1}, {"type": "Inference", "q": "The passage suggests emotional intelligence means you should —", "opts": ["hide your feelings from everyone", "understand your feelings so they help you", "only think about yourself"], "a": 1}], "match": [{"word": "empathy", "def": "imagining how another person feels and seeing their side", "hint": "\"<b>Empathy</b> means imagining how someone else feels…\""}, {"word": "self-aware", "def": "noticing what you are feeling and why", "hint": "\"being <b>self-aware</b>, which means noticing what you are feeling and why.\""}, {"word": "regulate", "def": "to manage strong feelings instead of being swept away", "hint": "\"learning to <b>regulate</b> your emotions — to manage strong feelings…\""}, {"word": "frustration", "def": "the annoyed feeling when something is hard or blocked", "hint": "\"When <b>frustration</b> builds, an emotionally intelligent person might take a deep breath…\""}, {"word": "react", "def": "to act or respond when something happens", "hint": "\"…choose how they want to <b>react</b> instead of letting the feeling decide.\""}, {"word": "perspective", "def": "the way a person sees or understands a situation", "hint": "\"…seeing a situation from their <b>perspective</b>.\""}], "bank": ["emotion", "empathy", "self-aware", "regulate", "frustration", "react", "calm", "perspective"], "fills": [{"text": "A sudden feeling like joy or anger is called an ___.", "a": "emotion"}, {"text": "Being ___ means you can name what you feel and why.", "a": "self-aware"}, {"text": "She showed ___ by comforting her friend who lost the game.", "a": "empathy"}, {"text": "When you ___ your feelings, you manage them instead of exploding.", "a": "regulate"}, {"text": "He felt ___ when the puzzle would not fit together.", "a": "frustration"}, {"text": "Try to ___ down by breathing slowly before you answer.", "a": "calm"}, {"text": "In a drawing, ___ makes faraway objects look smaller than close ones.", "a": "perspective", "challenge": true}, {"text": "A wise person thinks before they ___ to bad news.", "a": "react"}], "win": "PERFECT, Amara! You really understand feelings! 💛", "cheer": "You read with real understanding! 💛"};
+const PROJECT = MODULE.projectKey;
+const HUB_KEY = 'amaraReading';
+const TITLE   = MODULE.title;
 const QUESTIONS = MODULE.questions, MATCH = MODULE.match, BANK = MODULE.bank, FILLS = MODULE.fills;
 const TOTAL = QUESTIONS.length + MATCH.length + FILLS.length;
 
@@ -228,7 +228,7 @@ function checkQuiz(){
     if(selected[qi]===correct){s++;opts[correct].classList.add('correct');opts[correct].innerHTML+=' <span class="mark">✓</span>';}
     else{opts[selected[qi]].classList.add('incorrect');opts[selected[qi]].innerHTML+=' <span class="mark">✗</span>';opts[correct].classList.add('correct');opts[correct].innerHTML+=' <span class="mark">✓</span>';}
   });
-  quizScore=s;markDone(1);saveProgress();
+  quizScore=s;markDone(1);recordSub('comprehend',s,QUESTIONS.length);
   flash('quizFb', s===QUESTIONS.length?'good':'try','You got '+s+' of '+QUESTIONS.length+'. '+(s===QUESTIONS.length?'Perfect reading, Amara! 🌟':'Look back at the passage, then tap Next.'));
 }
 
@@ -248,7 +248,7 @@ function checkMatch(){
   if(unanswered){flash('matchFb','try','Match every word first 🧩');return;}
   let s=0;
   rows.forEach(r=>{const mi=+r.dataset.idx;const chosen=+r.querySelector('select').value;r.classList.remove('correct','incorrect');if(chosen===mi){s++;r.classList.add('correct');}else{r.classList.add('incorrect');}});
-  matchScore=s;markDone(2);saveProgress();
+  matchScore=s;markDone(2);recordSub('match',s,MATCH.length);
   flash('matchFb', s===MATCH.length?'good':'try','You matched '+s+' of '+MATCH.length+'. '+(s===MATCH.length?'Word wizard! ⭐':'Use the hints and try the red ones again.'));
 }
 
@@ -270,7 +270,7 @@ function checkFills(){
   if(blank){flash('fillFb','try','Fill in every blank first ✏️');return;}
   let s=0;
   inputs.forEach((inp,i)=>{inp.classList.remove('correct','incorrect');if(norm(inp.value)===norm(FILLS[i].a)){s++;inp.classList.add('correct');}else{inp.classList.add('incorrect');}});
-  fillScore=s;markDone(3);saveProgress();
+  fillScore=s;markDone(3);recordSub('use',s,FILLS.length);
   flash('fillFb', s===FILLS.length?'good':'try', s===FILLS.length?('All '+FILLS.length+' correct! 🎉'):(s+' of '+FILLS.length+' correct. Fix the red words, then check again.'));
   setTimeout(showResults,700);
 }
@@ -289,19 +289,25 @@ function showResults(){
   else{trophy='🌈';msg='Good try, Amara! Tap Try again and explore the passage.';}
   document.getElementById('trophy').textContent=trophy;
   document.getElementById('resultMsg').textContent=msg;
-  saveProgress(true);
+  document.getElementById('savedNote').textContent='Scores saved on this device ✓';
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function saveProgress(finished){
-  const q=quizScore||0,m=matchScore||0,f=fillScore||0,total=q+m+f;
-  let store={};try{store=JSON.parse(localStorage.getItem(STORE_KEY)||'{}');}catch(e){store={};}
-  const prev=store[ACTIVITY_ID]||{best:0,total:TOTAL,attempts:0,title:TITLE};
-  const best=Math.max(prev.best||0,total);
-  store[ACTIVITY_ID]={title:TITLE,best,total:TOTAL,attempts:(prev.attempts||0)+(finished?1:0),stars:best===TOTAL,updated:Date.now()};
-  try{localStorage.setItem(STORE_KEY,JSON.stringify(store));}catch(e){}
-  if(finished && typeof window.amaraSyncScore==='function'){try{window.amaraSyncScore(ACTIVITY_ID,best,TOTAL);}catch(e){}}
-  if(finished){document.getElementById('savedNote').textContent = best===total ? 'Best score saved ✓' : ('Saved. Your best so far is '+best+'/'+TOTAL+'.');}
+function recordSub(sub, best, total){
+  var data={};
+  try{data=JSON.parse(localStorage.getItem(HUB_KEY)||'{}');}catch(e){data={};}
+  var k=PROJECT+':'+sub;
+  var rec=data[k]||{best:0,attempts:0};
+  rec.best=Math.max(rec.best||0,best);
+  rec.attempts=(rec.attempts||0)+1;
+  data[k]=rec;
+  try{localStorage.setItem(HUB_KEY,JSON.stringify(data));}catch(e){}
+  try{window.dispatchEvent(new Event('amara-scores-updated'));}catch(e){}
+  if(window.amaraCloud){try{
+    if(typeof window.amaraCloud.save==='function')window.amaraCloud.save(data);
+    else if(typeof window.amaraCloud.set==='function')window.amaraCloud.set(k,rec);
+    else if(typeof window.amaraCloud.sync==='function')window.amaraCloud.sync(data);
+  }catch(e){}}
 }
 function flash(id,kind,text){const el=document.getElementById(id);el.className='feedback show '+kind;el.textContent=text;}
 function restart(){location.reload();}

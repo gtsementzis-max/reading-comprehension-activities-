@@ -187,10 +187,10 @@
 </div>
 
 <script>
-const MODULE = {"activityId": "spaghetti", "title": "How Spaghetti Is Made", "questions": [{"type": "Main idea", "q": "What is this passage mostly about?", "opts": ["How bread is baked", "The steps that turn wheat into spaghetti", "Why wheat fields are golden"], "a": 1}, {"type": "Detail", "q": "Spaghetti is made from a special wheat called —", "opts": ["semolina", "durum", "dough"], "a": 1}, {"type": "Vocabulary", "q": "In the passage, \"extruding\" means —", "opts": ["cutting pasta into squares", "pushing dough through holes to shape it", "drying the pasta slowly"], "a": 1}, {"type": "Cause & effect", "q": "Why must the pasta be dried slowly?", "opts": ["so it does not crack", "so it tastes sweeter", "so it cooks faster"], "a": 0}, {"type": "Detail", "q": "Pasta dough is different from bread dough because it —", "opts": ["has very few ingredients", "is baked in an oven", "is made from rice"], "a": 0}, {"type": "Inference", "q": "You can tell from the passage that making spaghetti is —", "opts": ["a careful, step-by-step process", "done entirely by hand", "finished in a few minutes"], "a": 0}], "match": [{"word": "durum", "def": "a hard kind of wheat used to make pasta", "hint": "\"a special kind of wheat called <b>durum</b>, which is harder than… bread.\""}, {"word": "semolina", "def": "the coarse, golden flour made from durum wheat", "hint": "\"ground into a coarse, golden flour called <b>semolina</b>.\""}, {"word": "dough", "def": "a stiff mixture of flour and water", "hint": "\"mix it with water to form a stiff <b>dough</b>.\""}, {"word": "knead", "def": "to press and fold dough until it is smooth", "hint": "\"Machines then <b>knead</b> the dough, pressing and folding it…\""}, {"word": "extrude", "def": "to push dough through holes to give it a shape", "hint": "\"pushed through a metal disc… a step called <b>extruding</b>.\""}, {"word": "ingredient", "def": "one of the things used to make a food", "hint": "\"pasta dough has very few <b>ingredients</b> — usually just semolina and water.\""}], "bank": ["durum", "semolina", "dough", "knead", "extrude", "dry", "ingredient", "package"], "fills": [{"text": "Pasta begins as a hard wheat called ___.", "a": "durum"}, {"text": "The durum is ground into a golden flour called ___.", "a": "semolina"}, {"text": "Flour and water are mixed to make a stiff ___.", "a": "dough"}, {"text": "Machines ___ the dough by pressing and folding it.", "a": "knead"}, {"text": "To give spaghetti its shape, machines ___ the dough through tiny holes.", "a": "extrude"}, {"text": "After shaping, the strands must ___ slowly so they do not crack.", "a": "dry"}, {"text": "Sugar is the main ___ in most candy.", "a": "ingredient", "challenge": true}, {"text": "Finally, a machine will ___ the spaghetti into boxes.", "a": "package"}], "win": "PERFECT, Amara! Master of the pasta process! 🍝", "cheer": "The chefs are clapping for you! 🍅"};
-const ACTIVITY_ID = MODULE.activityId;
-const STORE_KEY   = 'amaraReadingScores';
-const TITLE       = MODULE.title;
+const MODULE = {"activityId": "spaghetti", "projectKey": "spaghetti", "title": "How Spaghetti Is Made", "questions": [{"type": "Main idea", "q": "What is this passage mostly about?", "opts": ["How bread is baked", "The steps that turn wheat into spaghetti", "Why wheat fields are golden"], "a": 1}, {"type": "Detail", "q": "Spaghetti is made from a special wheat called —", "opts": ["semolina", "durum", "dough"], "a": 1}, {"type": "Vocabulary", "q": "In the passage, \"extruding\" means —", "opts": ["cutting pasta into squares", "pushing dough through holes to shape it", "drying the pasta slowly"], "a": 1}, {"type": "Cause & effect", "q": "Why must the pasta be dried slowly?", "opts": ["so it does not crack", "so it tastes sweeter", "so it cooks faster"], "a": 0}, {"type": "Detail", "q": "Pasta dough is different from bread dough because it —", "opts": ["has very few ingredients", "is baked in an oven", "is made from rice"], "a": 0}, {"type": "Inference", "q": "You can tell from the passage that making spaghetti is —", "opts": ["a careful, step-by-step process", "done entirely by hand", "finished in a few minutes"], "a": 0}], "match": [{"word": "durum", "def": "a hard kind of wheat used to make pasta", "hint": "\"a special kind of wheat called <b>durum</b>, which is harder than… bread.\""}, {"word": "semolina", "def": "the coarse, golden flour made from durum wheat", "hint": "\"ground into a coarse, golden flour called <b>semolina</b>.\""}, {"word": "dough", "def": "a stiff mixture of flour and water", "hint": "\"mix it with water to form a stiff <b>dough</b>.\""}, {"word": "knead", "def": "to press and fold dough until it is smooth", "hint": "\"Machines then <b>knead</b> the dough, pressing and folding it…\""}, {"word": "extrude", "def": "to push dough through holes to give it a shape", "hint": "\"pushed through a metal disc… a step called <b>extruding</b>.\""}, {"word": "ingredient", "def": "one of the things used to make a food", "hint": "\"pasta dough has very few <b>ingredients</b> — usually just semolina and water.\""}], "bank": ["durum", "semolina", "dough", "knead", "extrude", "dry", "ingredient", "package"], "fills": [{"text": "Pasta begins as a hard wheat called ___.", "a": "durum"}, {"text": "The durum is ground into a golden flour called ___.", "a": "semolina"}, {"text": "Flour and water are mixed to make a stiff ___.", "a": "dough"}, {"text": "Machines ___ the dough by pressing and folding it.", "a": "knead"}, {"text": "To give spaghetti its shape, machines ___ the dough through tiny holes.", "a": "extrude"}, {"text": "After shaping, the strands must ___ slowly so they do not crack.", "a": "dry"}, {"text": "Sugar is the main ___ in most candy.", "a": "ingredient", "challenge": true}, {"text": "Finally, a machine will ___ the spaghetti into boxes.", "a": "package"}], "win": "PERFECT, Amara! Master of the pasta process! 🍝", "cheer": "The chefs are clapping for you! 🍅"};
+const PROJECT = MODULE.projectKey;
+const HUB_KEY = 'amaraReading';
+const TITLE   = MODULE.title;
 const QUESTIONS = MODULE.questions, MATCH = MODULE.match, BANK = MODULE.bank, FILLS = MODULE.fills;
 const TOTAL = QUESTIONS.length + MATCH.length + FILLS.length;
 
@@ -228,7 +228,7 @@ function checkQuiz(){
     if(selected[qi]===correct){s++;opts[correct].classList.add('correct');opts[correct].innerHTML+=' <span class="mark">✓</span>';}
     else{opts[selected[qi]].classList.add('incorrect');opts[selected[qi]].innerHTML+=' <span class="mark">✗</span>';opts[correct].classList.add('correct');opts[correct].innerHTML+=' <span class="mark">✓</span>';}
   });
-  quizScore=s;markDone(1);saveProgress();
+  quizScore=s;markDone(1);recordSub('comprehend',s,QUESTIONS.length);
   flash('quizFb', s===QUESTIONS.length?'good':'try','You got '+s+' of '+QUESTIONS.length+'. '+(s===QUESTIONS.length?'Perfect reading, Amara! 🌟':'Look back at the passage, then tap Next.'));
 }
 
@@ -248,7 +248,7 @@ function checkMatch(){
   if(unanswered){flash('matchFb','try','Match every word first 🧩');return;}
   let s=0;
   rows.forEach(r=>{const mi=+r.dataset.idx;const chosen=+r.querySelector('select').value;r.classList.remove('correct','incorrect');if(chosen===mi){s++;r.classList.add('correct');}else{r.classList.add('incorrect');}});
-  matchScore=s;markDone(2);saveProgress();
+  matchScore=s;markDone(2);recordSub('match',s,MATCH.length);
   flash('matchFb', s===MATCH.length?'good':'try','You matched '+s+' of '+MATCH.length+'. '+(s===MATCH.length?'Word wizard! ⭐':'Use the hints and try the red ones again.'));
 }
 
@@ -270,7 +270,7 @@ function checkFills(){
   if(blank){flash('fillFb','try','Fill in every blank first ✏️');return;}
   let s=0;
   inputs.forEach((inp,i)=>{inp.classList.remove('correct','incorrect');if(norm(inp.value)===norm(FILLS[i].a)){s++;inp.classList.add('correct');}else{inp.classList.add('incorrect');}});
-  fillScore=s;markDone(3);saveProgress();
+  fillScore=s;markDone(3);recordSub('use',s,FILLS.length);
   flash('fillFb', s===FILLS.length?'good':'try', s===FILLS.length?('All '+FILLS.length+' correct! 🎉'):(s+' of '+FILLS.length+' correct. Fix the red words, then check again.'));
   setTimeout(showResults,700);
 }
@@ -289,19 +289,25 @@ function showResults(){
   else{trophy='🌈';msg='Good try, Amara! Tap Try again and explore the passage.';}
   document.getElementById('trophy').textContent=trophy;
   document.getElementById('resultMsg').textContent=msg;
-  saveProgress(true);
+  document.getElementById('savedNote').textContent='Scores saved on this device ✓';
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function saveProgress(finished){
-  const q=quizScore||0,m=matchScore||0,f=fillScore||0,total=q+m+f;
-  let store={};try{store=JSON.parse(localStorage.getItem(STORE_KEY)||'{}');}catch(e){store={};}
-  const prev=store[ACTIVITY_ID]||{best:0,total:TOTAL,attempts:0,title:TITLE};
-  const best=Math.max(prev.best||0,total);
-  store[ACTIVITY_ID]={title:TITLE,best,total:TOTAL,attempts:(prev.attempts||0)+(finished?1:0),stars:best===TOTAL,updated:Date.now()};
-  try{localStorage.setItem(STORE_KEY,JSON.stringify(store));}catch(e){}
-  if(finished && typeof window.amaraSyncScore==='function'){try{window.amaraSyncScore(ACTIVITY_ID,best,TOTAL);}catch(e){}}
-  if(finished){document.getElementById('savedNote').textContent = best===total ? 'Best score saved ✓' : ('Saved. Your best so far is '+best+'/'+TOTAL+'.');}
+function recordSub(sub, best, total){
+  var data={};
+  try{data=JSON.parse(localStorage.getItem(HUB_KEY)||'{}');}catch(e){data={};}
+  var k=PROJECT+':'+sub;
+  var rec=data[k]||{best:0,attempts:0};
+  rec.best=Math.max(rec.best||0,best);
+  rec.attempts=(rec.attempts||0)+1;
+  data[k]=rec;
+  try{localStorage.setItem(HUB_KEY,JSON.stringify(data));}catch(e){}
+  try{window.dispatchEvent(new Event('amara-scores-updated'));}catch(e){}
+  if(window.amaraCloud){try{
+    if(typeof window.amaraCloud.save==='function')window.amaraCloud.save(data);
+    else if(typeof window.amaraCloud.set==='function')window.amaraCloud.set(k,rec);
+    else if(typeof window.amaraCloud.sync==='function')window.amaraCloud.sync(data);
+  }catch(e){}}
 }
 function flash(id,kind,text){const el=document.getElementById(id);el.className='feedback show '+kind;el.textContent=text;}
 function restart(){location.reload();}
