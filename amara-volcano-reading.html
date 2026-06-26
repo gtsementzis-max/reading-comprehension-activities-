@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volcanoes — Reading for Amara</title>
+
+<!--
+  AMARA READING PROJECT module. Format: Read -> Comprehend -> Match -> Use.
+  INTEGRATION: ACTIVITY_ID/STORE_KEY below must match your index.html hub
+  for the tile + score to show on the dashboard. Send index.html and I'll
+  set them exactly. Runs offline; optional window.amaraSyncScore() hook.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --c-primary:#e8590c; --c-dark:#b8460a; --c-deep:#7d2f06;
+    --c-accent:#f4a06a; --c-accent-soft:#fde4d4;
+    --c-cream:#fff7f1; --c-paper:#ffffff;
+    --bg-top:#fdf1e9; --bg-bottom:#f8e6d8;
+    --glow1:#e8590c22; --glow2:#7d2f0618;
+    --right:#1f8a4c; --right-soft:#dff3e2;
+    --wrong:#e06b5a; --wrong-soft:#fbe6e2;
+    --amber:#f6b21b;
+    --ink:#26303a; --ink-soft:#566370;
+    --shadow:0 8px 26px rgba(40,40,60,.16);
+    --radius:20px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;font-family:'Nunito','Trebuchet MS','Segoe UI',system-ui,sans-serif;
+    color:var(--ink);min-height:100vh;line-height:1.55;padding:18px;
+    background:
+      radial-gradient(900px 500px at 12% -8%, var(--glow1), transparent 60%),
+      radial-gradient(800px 600px at 100% 0%, var(--glow2), transparent 55%),
+      linear-gradient(180deg,var(--bg-top) 0%, var(--bg-bottom) 100%);
+  }
+  .wrap{max-width:760px;margin:0 auto}
+  header.hero{
+    background:linear-gradient(135deg,var(--c-dark),var(--c-deep));
+    color:#fff;border-radius:24px;padding:22px 24px;box-shadow:var(--shadow);
+    position:relative;overflow:hidden;
+  }
+  header.hero::after{content:"🌋";position:absolute;right:-6px;bottom:-14px;font-size:120px;opacity:.16;transform:rotate(-12deg)}
+  .backlink{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-weight:700;font-size:.92rem;background:rgba(255,255,255,.16);padding:6px 12px;border-radius:999px;margin-bottom:12px}
+  .backlink:hover{background:rgba(255,255,255,.28)}
+  header.hero h1{font-family:'Fredoka',system-ui,sans-serif;font-weight:700;margin:0;font-size:clamp(1.5rem,5vw,2.1rem);letter-spacing:.3px}
+  header.hero p{margin:4px 0 0;color:#ffffffcc;font-weight:600}
+  .steps{display:flex;gap:8px;margin:16px 0 6px;flex-wrap:wrap}
+  .step-tab{flex:1 1 120px;border:none;cursor:pointer;border-radius:14px;padding:12px 10px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:.95rem;background:var(--c-paper);color:var(--ink-soft);box-shadow:var(--shadow);display:flex;align-items:center;gap:8px;justify-content:center;transition:transform .12s, background .2s, color .2s}
+  .step-tab .num{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--c-accent-soft);color:var(--c-dark);font-weight:800;font-size:.85rem;flex:none}
+  .step-tab.active{background:var(--c-primary);color:#fff}
+  .step-tab.active .num{background:#fff;color:var(--c-dark)}
+  .step-tab.done .num{background:var(--amber);color:#fff}
+  .step-tab:hover{transform:translateY(-1px)}
+  .panel{background:var(--c-paper);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);margin-top:14px;animation:rise .3s ease}
+  @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .panel.hidden{display:none}
+  .panel h2{font-family:'Fredoka',sans-serif;color:var(--c-dark);margin:0 0 4px;font-size:1.3rem;display:flex;align-items:center;gap:10px}
+  .panel .lead{color:var(--ink-soft);margin:0 0 16px;font-weight:600}
+  .passage{background:var(--c-cream);border:2px solid #00000012;border-radius:16px;padding:18px 20px;font-size:1.06rem;line-height:1.7}
+  .passage h3{margin:0 0 10px;font-family:'Fredoka',sans-serif;color:var(--c-deep)}
+  .passage p{margin:0 0 14px}
+  .passage p:last-child{margin-bottom:0}
+  .voc{background:var(--c-accent-soft);border-bottom:2px solid var(--c-accent);border-radius:5px;padding:0 3px;font-weight:700;color:var(--c-deep)}
+  .q{margin-bottom:18px}
+  .q .qtext{font-weight:800;margin-bottom:10px}
+  .q .qtext .badge{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;background:var(--c-accent-soft);color:var(--c-dark);padding:2px 8px;border-radius:999px;margin-right:8px;vertical-align:middle}
+  .opt{display:block;width:100%;text-align:left;border:2px solid #0000001a;background:#fff;border-radius:12px;padding:11px 14px;margin:7px 0;cursor:pointer;font-size:1rem;font-weight:600;color:var(--ink);transition:border-color .15s, background .15s}
+  .opt:hover{border-color:var(--c-accent)}
+  .opt.selected{border-color:var(--c-primary);background:var(--c-accent-soft)}
+  .opt.correct{border-color:var(--right);background:var(--right-soft)}
+  .opt.incorrect{border-color:var(--wrong);background:var(--wrong-soft)}
+  .opt .mark{float:right;font-weight:800}
+  .match-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid #0000001a;border-radius:12px;padding:10px 12px;margin:8px 0}
+  .match-word{font-weight:800;color:var(--c-dark);min-width:120px}
+  .match-row select{flex:1;min-width:150px;font-family:inherit;font-size:.98rem;font-weight:600;padding:9px 10px;border-radius:10px;border:2px solid #0000001f;background:#fbfbfd;color:var(--ink)}
+  .hint-btn{border:none;background:var(--c-accent-soft);color:var(--c-dark);font-weight:800;font-size:.82rem;padding:7px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .hint-btn:hover{filter:brightness(.96)}
+  .hint-text{flex-basis:100%;font-size:.92rem;color:var(--ink-soft);background:var(--c-cream);border-left:3px solid var(--c-accent);border-radius:6px;padding:7px 11px;margin-top:4px;display:none}
+  .hint-text.show{display:block}
+  .match-row.correct{border-color:var(--right);background:var(--right-soft)}
+  .match-row.incorrect{border-color:var(--wrong);background:var(--wrong-soft)}
+  .wordbank{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+  .chip{background:var(--c-accent-soft);color:var(--c-deep);border:2px solid var(--c-accent);border-radius:999px;padding:6px 14px;font-weight:800;cursor:pointer;font-size:.95rem;user-select:none}
+  .chip:hover{background:var(--c-accent);color:#fff}
+  .chip.used{opacity:.35;text-decoration:line-through}
+  .fill{margin:11px 0;font-size:1.04rem;font-weight:600;line-height:1.9}
+  .fill input{border:none;border-bottom:3px dotted var(--c-primary);background:var(--c-cream);font-family:inherit;font-size:1rem;font-weight:800;color:var(--c-dark);width:150px;text-align:center;padding:3px 6px;border-radius:6px 6px 0 0}
+  .fill input:focus{outline:none;background:var(--c-accent-soft)}
+  .fill input.correct{border-bottom-color:var(--right);background:var(--right-soft);color:var(--c-deep)}
+  .fill input.incorrect{border-bottom-color:var(--wrong);background:var(--wrong-soft);color:var(--wrong)}
+  .fill .tag{font-size:.72rem;color:var(--amber);font-weight:800;margin-left:4px}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .btn{border:none;cursor:pointer;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1rem;padding:12px 22px;border-radius:14px;transition:transform .1s, filter .15s}
+  .btn:hover{transform:translateY(-1px);filter:brightness(1.04)}
+  .btn-primary{background:var(--c-primary);color:#fff;box-shadow:var(--shadow)}
+  .btn-ghost{background:#fff;color:var(--c-dark);border:2px solid #0000001f}
+  .feedback{margin-top:14px;border-radius:12px;padding:12px 16px;font-weight:800;display:none}
+  .feedback.show{display:block}
+  .feedback.good{background:var(--right-soft);color:var(--right)}
+  .feedback.try{background:var(--wrong-soft);color:#a83a2c}
+  #results .score-big{font-family:'Fredoka',sans-serif;font-size:3.4rem;color:var(--c-dark);text-align:center;margin:6px 0 0}
+  #results .score-sub{text-align:center;color:var(--ink-soft);font-weight:700;margin:0 0 8px}
+  #results .trophy{font-size:3rem;text-align:center}
+  #results .msg{text-align:center;font-weight:800;font-size:1.1rem;color:var(--c-deep);margin:8px 0 0}
+  .breakdown{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0}
+  .bd{background:var(--c-cream);border-radius:12px;padding:10px 16px;text-align:center;min-width:96px}
+  .bd b{font-family:'Fredoka',sans-serif;color:var(--c-dark);font-size:1.3rem;display:block}
+  .bd span{font-size:.8rem;color:var(--ink-soft);font-weight:700}
+  .saved-note{text-align:center;font-size:.85rem;color:var(--ink-soft);font-weight:700;margin-top:6px}
+  @media (max-width:520px){body{padding:12px}.step-tab{flex:1 1 calc(50% - 8px)}.match-word{min-width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <a class="backlink" href="index.html">← All activities</a>
+    <h1>🌋 Volcanoes</h1>
+    <p>A reading adventure for Amara</p>
+  </header>
+
+  <div class="steps" id="steps">
+    <button class="step-tab active" data-step="0"><span class="num">1</span> Read</button>
+    <button class="step-tab" data-step="1"><span class="num">2</span> Comprehend</button>
+    <button class="step-tab" data-step="2"><span class="num">3</span> Match</button>
+    <button class="step-tab" data-step="3"><span class="num">4</span> Use</button>
+  </div>
+
+  <section class="panel" data-panel="0">
+    <h2>📖 Read the passage</h2>
+    <p class="lead">Read it once for the meaning. Then read it again and look for the <span class="voc">coloured words</span>.</p>
+    <div class="passage">
+      <h3>Volcanoes</h3>
+      <p>Deep beneath the Earth's surface, it is so hot that rock melts into a thick, glowing liquid called <span class="voc">magma</span>. A volcano is an opening in the ground where this melted rock can reach the surface. When pressure builds up, a volcano can <span class="voc">erupt</span>, sending magma, gas, and <span class="voc">ash</span> bursting out. Once the magma flows onto the surface it is called <span class="voc">lava</span>. Lava is <span class="voc">molten</span>, which means melted by heat, and it can be hotter than 1,000 degrees. As the lava cools, it hardens into new rock.</p><p>Most volcanoes have a bowl-shaped opening at the top called a <span class="voc">crater</span>, and the channel that magma travels up is called a <span class="voc">vent</span>. Not all volcanoes erupt often. A volcano that has not erupted for a long time but still could is called <span class="voc">dormant</span>, like a sleeping giant. Volcanoes can be dangerous, but they also build new islands and rich soil. Over millions of years, they have helped shape the surface of our planet.</p>
+    </div>
+    <div class="actions"><button class="btn btn-primary" onclick="go(1)">I'm ready — Comprehend →</button></div>
+  </section>
+
+  <section class="panel hidden" data-panel="1">
+    <h2>🤔 Comprehend</h2>
+    <p class="lead">Pick the best answer for each question, then press <b>Check answers</b>.</p>
+    <div id="quiz"></div>
+    <div class="actions">
+      <button class="btn btn-primary" onclick="checkQuiz()">Check answers</button>
+      <button class="btn btn-ghost" onclick="go(2)">Next: Match →</button>
+    </div>
+    <div class="feedback" id="quizFb"></div>
+  </section>
+
+  <section class="panel hidden" data-panel="2">
+    <h2>🔗 Match the word to its meaning</h2>
+    <p class="lead">Choose the meaning for each word. Stuck? Tap <b>Hint</b> to see the word in the passage.</p>
+    <div id="match"></div>
+    <div class="actions">
+      <button class="btn btn-primary" onclick="checkMatch()">Check matches</button>
+      <button class="btn btn-ghost" onclick="go(3)">Next: Use →</button>
+    </div>
+    <div class="feedback" id="matchFb"></div>
+  </section>
+
+  <section class="panel hidden" data-panel="3">
+    <h2>✏️ Use the words</h2>
+    <p class="lead">Tap a word to drop it in the blank you've selected, or just type it. One sentence is a tricky <span style="color:var(--amber);font-weight:800">★ challenge</span> in a different context!</p>
+    <div class="wordbank" id="bank"></div>
+    <div id="fills"></div>
+    <div class="actions"><button class="btn btn-primary" onclick="checkFills()">Check &amp; finish 🎉</button></div>
+    <div class="feedback" id="fillFb"></div>
+  </section>
+
+  <section class="panel hidden" id="results">
+    <div class="trophy" id="trophy">🌟</div>
+    <div class="score-big" id="scoreBig">0%</div>
+    <p class="score-sub" id="scoreSub">0 out of 20</p>
+    <div class="breakdown" id="breakdown"></div>
+    <p class="msg" id="resultMsg"></p>
+    <p class="saved-note" id="savedNote"></p>
+    <div class="actions" style="justify-content:center">
+      <button class="btn btn-primary" onclick="restart()">Try again 🔁</button>
+      <button class="btn btn-ghost" onclick="location.href='index.html'">Back to all activities</button>
+    </div>
+  </section>
+</div>
+
+<script>
+const MODULE = {"activityId": "volcano", "projectKey": "volcano", "title": "Volcanoes", "questions": [{"type": "Main idea", "q": "What is this passage mostly about?", "opts": ["How to climb a mountain", "How volcanoes work and what they do", "Why rocks are grey"], "a": 1}, {"type": "Detail", "q": "Melted rock below the ground is called —", "opts": ["magma", "lava", "ash"], "a": 0}, {"type": "Vocabulary", "q": "\"Molten\" means —", "opts": ["frozen solid", "melted by heat", "very loud"], "a": 1}, {"type": "Detail", "q": "The bowl-shaped opening at the top is the —", "opts": ["vent", "crater", "island"], "a": 1}, {"type": "Cause & effect", "q": "A volcano erupts when —", "opts": ["it rains", "pressure builds up inside", "the lava cools"], "a": 1}, {"type": "Inference", "q": "A \"dormant\" volcano is best described as —", "opts": ["one that can never erupt", "a sleeping giant that could erupt again", "an underwater cave"], "a": 1}], "match": [{"word": "magma", "def": "melted rock below the ground", "hint": "\"…rock melts into a thick, glowing liquid called <b>magma</b>.\""}, {"word": "lava", "def": "melted rock that has reached the surface", "hint": "\"Once the magma flows onto the surface it is called <b>lava</b>.\""}, {"word": "crater", "def": "the bowl-shaped opening at a volcano's top", "hint": "\"…a bowl-shaped opening at the top called a <b>crater</b>.\""}, {"word": "molten", "def": "melted by great heat", "hint": "\"Lava is <b>molten</b>, which means melted by heat…\""}, {"word": "vent", "def": "the channel magma travels up through", "hint": "\"…the channel that magma travels up is called a <b>vent</b>.\""}, {"word": "dormant", "def": "not erupting now but able to erupt again", "hint": "\"…still could is called <b>dormant</b>, like a sleeping giant.\""}], "bank": ["magma", "lava", "erupt", "crater", "molten", "vent", "dormant", "ash"], "fills": [{"text": "Hot melted rock under the ground is called ___.", "a": "magma"}, {"text": "When a volcano ___s, gas and ash burst out.", "a": "erupt"}, {"text": "Glowing ___ flowed down the mountain and cooled into rock.", "a": "lava"}, {"text": "The metal was so hot it turned ___.", "a": "molten"}, {"text": "Smoke poured from the ___ at the top of the volcano.", "a": "crater"}, {"text": "Magma rises through a ___ to reach the surface.", "a": "vent"}, {"text": "The ___ volcano had been quiet for hundreds of years.", "a": "dormant"}, {"text": "After the campfire, grey ___ was left in the pit.", "a": "ash", "challenge": true}], "win": "PERFECT, Amara! Red hot! 🌋", "cheer": "Your reading is on fire! 🌋", "name": "Amara", "hubKey": "amaraReading"};
+const PROJECT = MODULE.projectKey;
+const HUB_KEY = MODULE.hubKey || 'amaraReading';
+const NAME    = MODULE.name || 'Amara';
+const TITLE   = MODULE.title;
+const QUESTIONS = MODULE.questions, MATCH = MODULE.match, BANK = MODULE.bank, FILLS = MODULE.fills;
+const TOTAL = QUESTIONS.length + MATCH.length + FILLS.length;
+
+let selected = Array(QUESTIONS.length).fill(null);
+let quizScore=null, matchScore=null, fillScore=null, focusedFill=null;
+
+function go(step){
+  document.querySelectorAll('.panel[data-panel]').forEach(p=>p.classList.add('hidden'));
+  document.getElementById('results').classList.add('hidden');
+  document.querySelector('.panel[data-panel="'+step+'"]').classList.remove('hidden');
+  document.querySelectorAll('.step-tab').forEach(t=>t.classList.toggle('active', +t.dataset.step===step));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.step-tab').forEach(t=>t.addEventListener('click',()=>go(+t.dataset.step)));
+function markDone(step){const tab=document.querySelector('.step-tab[data-step="'+step+'"]');if(tab)tab.classList.add('done');}
+
+const quizEl=document.getElementById('quiz');
+QUESTIONS.forEach((item,qi)=>{
+  const div=document.createElement('div');div.className='q';
+  div.innerHTML='<div class="qtext"><span class="badge">'+item.type+'</span>'+(qi+1)+'. '+item.q+'</div>';
+  item.opts.forEach((opt,oi)=>{
+    const b=document.createElement('button');b.className='opt';b.textContent=opt;
+    b.onclick=()=>{selected[qi]=oi;div.querySelectorAll('.opt').forEach(o=>o.classList.remove('selected'));b.classList.add('selected');};
+    div.appendChild(b);
+  });
+  quizEl.appendChild(div);
+});
+function checkQuiz(){
+  if(selected.includes(null)){flash('quizFb','try','Try answering every question first 🙂');return;}
+  let s=0;
+  document.querySelectorAll('#quiz .q').forEach((qd,qi)=>{
+    const opts=qd.querySelectorAll('.opt');
+    opts.forEach(o=>{o.classList.remove('correct','incorrect');const m=o.querySelector('.mark');if(m)m.remove();});
+    const correct=QUESTIONS[qi].a;
+    if(selected[qi]===correct){s++;opts[correct].classList.add('correct');opts[correct].innerHTML+=' <span class="mark">✓</span>';}
+    else{opts[selected[qi]].classList.add('incorrect');opts[selected[qi]].innerHTML+=' <span class="mark">✗</span>';opts[correct].classList.add('correct');opts[correct].innerHTML+=' <span class="mark">✓</span>';}
+  });
+  quizScore=s;markDone(1);recordSub('comprehend',s,QUESTIONS.length);
+  flash('quizFb', s===QUESTIONS.length?'good':'try','You got '+s+' of '+QUESTIONS.length+'. '+(s===QUESTIONS.length?('Perfect reading, '+NAME+'! 🌟'):'Look back at the passage, then tap Next.'));
+}
+
+const matchEl=document.getElementById('match');
+const shuffledDefs = MATCH.map((m,i)=>({def:m.def,i})).sort(()=>Math.random()-0.5);
+MATCH.forEach((m,mi)=>{
+  const row=document.createElement('div');row.className='match-row';row.dataset.idx=mi;
+  let opts='<option value="">— choose a meaning —</option>';
+  shuffledDefs.forEach(d=>opts+='<option value="'+d.i+'">'+d.def+'</option>');
+  row.innerHTML='<span class="match-word">'+m.word+'</span><select>'+opts+'</select><button class="hint-btn" type="button">💡 Hint</button><div class="hint-text">'+m.hint+'</div>';
+  row.querySelector('.hint-btn').onclick=()=>row.querySelector('.hint-text').classList.toggle('show');
+  matchEl.appendChild(row);
+});
+function checkMatch(){
+  const rows=document.querySelectorAll('#match .match-row');
+  let unanswered=false;rows.forEach(r=>{if(!r.querySelector('select').value)unanswered=true;});
+  if(unanswered){flash('matchFb','try','Match every word first 🧩');return;}
+  let s=0;
+  rows.forEach(r=>{const mi=+r.dataset.idx;const chosen=+r.querySelector('select').value;r.classList.remove('correct','incorrect');if(chosen===mi){s++;r.classList.add('correct');}else{r.classList.add('incorrect');}});
+  matchScore=s;markDone(2);recordSub('match',s,MATCH.length);
+  flash('matchFb', s===MATCH.length?'good':'try','You matched '+s+' of '+MATCH.length+'. '+(s===MATCH.length?'Word wizard! ⭐':'Use the hints and try the red ones again.'));
+}
+
+const bankEl=document.getElementById('bank');
+BANK.forEach(w=>{const c=document.createElement('span');c.className='chip';c.textContent=w;c.dataset.word=w;c.onclick=()=>{if(focusedFill){focusedFill.value=w;updateBank();focusedFill.classList.remove('correct','incorrect');}};bankEl.appendChild(c);});
+const fillsEl=document.getElementById('fills');
+FILLS.forEach((f,fi)=>{
+  const div=document.createElement('div');div.className='fill';
+  const parts=f.text.split('___');
+  div.innerHTML=(fi+1)+'. '+parts[0]+'<input type="text" data-i="'+fi+'" autocomplete="off" spellcheck="false">'+(parts[1]||'')+(f.challenge?'<span class="tag">★ challenge</span>':'');
+  fillsEl.appendChild(div);
+});
+fillsEl.querySelectorAll('input').forEach(inp=>{inp.addEventListener('focus',()=>focusedFill=inp);inp.addEventListener('input',()=>{updateBank();inp.classList.remove('correct','incorrect');});});
+function updateBank(){const used=[...fillsEl.querySelectorAll('input')].map(i=>i.value.trim().toLowerCase());bankEl.querySelectorAll('.chip').forEach(c=>{c.classList.toggle('used', used.includes(c.dataset.word.toLowerCase()));});}
+function norm(s){return s.trim().toLowerCase().replace(/[^a-z]/g,'');}
+function checkFills(){
+  const inputs=fillsEl.querySelectorAll('input');
+  let blank=false;inputs.forEach(i=>{if(!i.value.trim())blank=true;});
+  if(blank){flash('fillFb','try','Fill in every blank first ✏️');return;}
+  let s=0;
+  inputs.forEach((inp,i)=>{inp.classList.remove('correct','incorrect');if(norm(inp.value)===norm(FILLS[i].a)){s++;inp.classList.add('correct');}else{inp.classList.add('incorrect');}});
+  fillScore=s;markDone(3);recordSub('use',s,FILLS.length);
+  flash('fillFb', s===FILLS.length?'good':'try', s===FILLS.length?('All '+FILLS.length+' correct! 🎉'):(s+' of '+FILLS.length+' correct. Fix the red words, then check again.'));
+  setTimeout(showResults,700);
+}
+
+function showResults(){
+  const q=quizScore||0,m=matchScore||0,f=fillScore||0,total=q+m+f,pct=Math.round(total/TOTAL*100);
+  document.querySelectorAll('.panel[data-panel]').forEach(p=>p.classList.add('hidden'));
+  document.getElementById('results').classList.remove('hidden');
+  document.getElementById('scoreBig').textContent=pct+'%';
+  document.getElementById('scoreSub').textContent=total+' out of '+TOTAL;
+  document.getElementById('breakdown').innerHTML='<div class="bd"><b>'+q+'/'+QUESTIONS.length+'</b><span>Comprehend</span></div><div class="bd"><b>'+m+'/'+MATCH.length+'</b><span>Match</span></div><div class="bd"><b>'+f+'/'+FILLS.length+'</b><span>Use</span></div>';
+  let trophy,msg;
+  if(pct===100){trophy='🏆';msg=MODULE.win;}
+  else if(pct>=80){trophy='🌟';msg='Brilliant work, '+NAME+'! '+MODULE.cheer;}
+  else if(pct>=60){trophy='💪';msg='Great effort, '+NAME+' — read once more and beat your score!';}
+  else{trophy='🌈';msg='Good try, '+NAME+'! Tap Try again and explore the passage.';}
+  document.getElementById('trophy').textContent=trophy;
+  document.getElementById('resultMsg').textContent=msg;
+  document.getElementById('savedNote').textContent='Scores saved on this device ✓';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function recordSub(sub, best, total){
+  var data={};
+  try{data=JSON.parse(localStorage.getItem(HUB_KEY)||'{}');}catch(e){data={};}
+  var k=PROJECT+':'+sub;
+  var rec=data[k]||{best:0,attempts:0};
+  rec.best=Math.max(rec.best||0,best);
+  rec.attempts=(rec.attempts||0)+1;
+  data[k]=rec;
+  try{localStorage.setItem(HUB_KEY,JSON.stringify(data));}catch(e){}
+  try{window.dispatchEvent(new Event('amara-scores-updated'));}catch(e){}
+  if(window.amaraCloud){try{
+    if(typeof window.amaraCloud.save==='function')window.amaraCloud.save(data);
+    else if(typeof window.amaraCloud.set==='function')window.amaraCloud.set(k,rec);
+    else if(typeof window.amaraCloud.sync==='function')window.amaraCloud.sync(data);
+  }catch(e){}}
+}
+function flash(id,kind,text){const el=document.getElementById(id);el.className='feedback show '+kind;el.textContent=text;}
+function restart(){location.reload();}
+</script>
+</body>
+</html>
