@@ -34,6 +34,8 @@
   .dot.marine{background:var(--teal)} .dot.bees{background:var(--gold)}
   .dot.rainforest{background:#1f8a4c} .dot.ei{background:#4f5bd5}
   .dot.spaghetti{background:#d6402c} .dot.celebrations{background:#c026a3}
+  .dot.dogs{background:#92591f} .dot.boa{background:#7c8a1e}
+  .dot.wheel{background:#3f6f9c} .dot.fashion{background:#7a3b9c}
   .proj-head h2{font-size:19px;margin:0;color:var(--navy);font-weight:700;flex:1}
   .open{font-family:inherit;font-size:14px;font-weight:700;text-decoration:none;background:var(--teal);color:#fff;padding:9px 16px;border-radius:10px;white-space:nowrap}
   .open:hover{background:var(--teal-deep)}
@@ -67,7 +69,7 @@
 
   <div class="summary">
     <div class="stat"><div class="n" id="stars">0</div><div class="l">activities at full marks</div></div>
-    <div class="stat"><div class="n" id="completed">0 / 18</div><div class="l">activities tried</div></div>
+    <div class="stat"><div class="n" id="completed">0 / 30</div><div class="l">activities tried</div></div>
     <div class="stat"><div class="n" id="attempts">0</div><div class="l">total tries</div></div>
   </div>
 
@@ -113,6 +115,34 @@
     <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="celebrations:use" data-total="8"></div></div><span class="act-score" data-s="celebrations:use"></span></div>
   </div>
 
+  <div class="proj">
+    <div class="proj-head"><span class="dot dogs"></span><h2>Dogs</h2><a class="open" href="amara-dogs-reading.html" style="background:#92591f">Open</a></div>
+    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="dogs:comprehend" data-total="6"></div></div><span class="act-score" data-s="dogs:comprehend"></span></div>
+    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="dogs:match" data-total="6"></div></div><span class="act-score" data-s="dogs:match"></span></div>
+    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="dogs:use" data-total="8"></div></div><span class="act-score" data-s="dogs:use"></span></div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><span class="dot boa"></span><h2>Boa constrictors</h2><a class="open" href="amara-boa-constrictors-reading.html" style="background:#7c8a1e">Open</a></div>
+    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="boa:comprehend" data-total="6"></div></div><span class="act-score" data-s="boa:comprehend"></span></div>
+    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="boa:match" data-total="6"></div></div><span class="act-score" data-s="boa:match"></span></div>
+    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="boa:use" data-total="8"></div></div><span class="act-score" data-s="boa:use"></span></div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><span class="dot wheel"></span><h2>The importance of the wheel</h2><a class="open" href="amara-the-wheel-reading.html" style="background:#3f6f9c">Open</a></div>
+    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="wheel:comprehend" data-total="6"></div></div><span class="act-score" data-s="wheel:comprehend"></span></div>
+    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="wheel:match" data-total="6"></div></div><span class="act-score" data-s="wheel:match"></span></div>
+    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="wheel:use" data-total="8"></div></div><span class="act-score" data-s="wheel:use"></span></div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><span class="dot fashion"></span><h2>Fashion history</h2><a class="open" href="amara-fashion-history-reading.html" style="background:#7a3b9c">Open</a></div>
+    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="fashion:comprehend" data-total="6"></div></div><span class="act-score" data-s="fashion:comprehend"></span></div>
+    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="fashion:match" data-total="6"></div></div><span class="act-score" data-s="fashion:match"></span></div>
+    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="fashion:use" data-total="8"></div></div><span class="act-score" data-s="fashion:use"></span></div>
+  </div>
+
   <div class="tools"><button class="reset" id="reset">Reset all progress</button></div>
 
   <div class="note">Scores are saved on this device, in this browser. They will be here next time Amara opens the page on the same device. They will not appear on a different device or browser.</div>
@@ -125,7 +155,7 @@
   function render(){
     var data={};
     try{ data=JSON.parse(localStorage.getItem('amaraReading')||'{}'); }catch(e){ data={}; }
-    var totalActivities=18, fullMarks=0, tried=0, attempts=0;
+    var totalActivities=30, fullMarks=0, tried=0, attempts=0;
     document.querySelectorAll('.bar').forEach(function(bar){
       var k=bar.getAttribute('data-k'), total=parseInt(bar.getAttribute('data-total'),10);
       var rec=data[k], scoreEl=document.querySelector('[data-s="'+k+'"]');
