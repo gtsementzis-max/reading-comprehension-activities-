@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who's reading today?</title>
+<style>
+  :root{
+    --ink:#2c2440; --muted:#6e6080; --bg:#f3eefa; --card:#ffffff;
+    --amara:#0E8C9C; --amara-deep:#0a6470;
+    --dani:#7c3aed; --dani-deep:#5b2a86;
+    --font:'Trebuchet MS','Segoe UI',Verdana,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;font-family:var(--font);color:var(--ink);
+    background:radial-gradient(120% 90% at 50% 0%, #faf6ff 0%, var(--bg) 60%, #ece3f7 100%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    min-height:100vh;padding:32px 18px}
+  .head{text-align:center;margin-bottom:30px}
+  .eyebrow{letter-spacing:.16em;text-transform:uppercase;font-size:13px;color:var(--muted);margin:0 0 8px}
+  h1{font-size:34px;margin:0;font-weight:800;line-height:1.15}
+  .head p{margin:10px 0 0;color:var(--muted);font-size:16px}
+
+  .cards{display:flex;gap:22px;flex-wrap:wrap;justify-content:center;width:100%;max-width:720px}
+  .card{flex:1 1 260px;max-width:330px;text-decoration:none;color:#fff;
+    border-radius:22px;padding:30px 26px 26px;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;align-items:flex-start;
+    box-shadow:0 14px 30px rgba(40,20,60,.18);
+    transform:translateY(0);transition:transform .15s ease, box-shadow .15s ease}
+  .card:hover,.card:focus{transform:translateY(-5px);box-shadow:0 20px 40px rgba(40,20,60,.26);outline:none}
+  .card:active{transform:translateY(-1px)}
+  .card.amara{background:linear-gradient(160deg, var(--amara) 0%, var(--amara-deep) 100%)}
+  .card.dani{background:linear-gradient(160deg, var(--dani) 0%, var(--dani-deep) 100%)}
+  .emoji{font-size:60px;line-height:1;margin-bottom:14px;
+    filter:drop-shadow(0 4px 6px rgba(0,0,0,.18))}
+  .name{font-size:30px;font-weight:800;margin:0}
+  .grade{font-size:15px;opacity:.92;margin:4px 0 20px}
+  .go{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:800;
+    background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.45);
+    padding:11px 20px;border-radius:12px;backdrop-filter:blur(2px)}
+  .card:hover .go{background:rgba(255,255,255,.28)}
+  .watermark{position:absolute;right:-10px;bottom:-18px;font-size:120px;opacity:.13;
+    pointer-events:none;line-height:1}
+  footer{margin-top:34px;color:var(--muted);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+
+  <div class="head">
+    <p class="eyebrow">Reading time</p>
+    <h1>Who's reading today? 📚</h1>
+    <p>Tap your name to open your reading hub.</p>
+  </div>
+
+  <div class="cards">
+    <a class="card amara" href="index.html">
+      <span class="emoji">🐠</span>
+      <p class="name">Amara</p>
+      <p class="grade">Grade 5 &middot; 20 stories</p>
+      <span class="go">Start reading →</span>
+      <span class="watermark">🌊</span>
+    </a>
+
+    <a class="card dani" href="dani.html">
+      <span class="emoji">🌈</span>
+      <p class="name">Dani</p>
+      <p class="grade">Grade 2 &middot; 13 stories</p>
+      <span class="go">Start reading →</span>
+      <span class="watermark">⭐</span>
+    </a>
+  </div>
+
+  <footer>Pick a name to begin &middot; happy reading!</footer>
+
+</body>
+</html>
