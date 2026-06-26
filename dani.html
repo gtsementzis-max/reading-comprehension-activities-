@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dani's Reading Hub</title>
+<style>
+  :root{
+    --navy:#5b2a86; --ink:#3a2750; --muted:#6e6080;
+    --grape:#7c3aed; --grape-deep:#5b2a86; --grape-soft:#ede4fb;
+    --bg:#f4eefb; --card:#FFFFFF; --line:#e4d9f2;
+    --bar-bg:#ece2f7; --bar:#7c3aed;
+    --radius:14px;
+    --font:'Trebuchet MS','Segoe UI',Verdana,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px 60px}
+  header{background:var(--navy);color:#fff;padding:36px 0 26px}
+  header .wrap{padding-bottom:0}
+  .eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:#d8c4f2;margin:0 0 6px}
+  header h1{font-size:30px;margin:0 0 6px;font-weight:700}
+  header p{margin:0;color:#e3d4f6;font-size:15px}
+
+  .summary{display:flex;gap:12px;margin:24px 0 8px;flex-wrap:wrap}
+  .stat{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+  .stat .n{font-size:26px;font-weight:700;color:var(--navy)}
+  .stat .l{font-size:13px;color:var(--muted)}
+
+  .proj{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin:18px 0}
+  .proj-head{display:flex;align-items:center;gap:12px;margin:0 0 14px}
+  .dot{flex:0 0 14px;height:14px;border-radius:50%}
+  .dot.roblox{background:#2f7de1} .dot.poodles{background:#e0577f} .dot.fashionk{background:#f08a24}
+  .proj-head h2{font-size:19px;margin:0;color:var(--navy);font-weight:700;flex:1}
+  .open{font-family:inherit;font-size:14px;font-weight:700;text-decoration:none;color:#fff;padding:9px 16px;border-radius:10px;white-space:nowrap}
+  .open:hover{filter:brightness(.95)}
+  .act-row{display:flex;align-items:center;gap:12px;padding:9px 0;border-top:1px solid var(--line)}
+  .act-name{flex:0 0 130px;font-size:15px;font-weight:700;color:var(--ink)}
+  .barwrap{flex:1;height:10px;background:var(--bar-bg);border-radius:6px;overflow:hidden}
+  .bar{height:100%;background:var(--bar);width:0;transition:width .4s}
+  .act-score{flex:0 0 92px;text-align:right;font-size:14px;font-weight:700;color:var(--navy)}
+  .act-score .att{display:block;font-size:12px;font-weight:400;color:var(--muted)}
+  .star{color:#f0a500}
+  .none{color:var(--muted);font-weight:400}
+
+  .tools{display:flex;align-items:center;gap:10px;margin-top:20px}
+  .reset{font-family:inherit;font-size:14px;font-weight:700;background:#fff;color:var(--navy);border:1px solid var(--line);border-radius:10px;padding:9px 16px;cursor:pointer}
+  .reset:hover{border-color:#D8624A;color:#9C3522}
+  .note{font-size:13px;color:var(--muted);margin-top:18px;background:var(--grape-soft);border-radius:10px;padding:12px 14px}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:26px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Reading hub</p>
+    <h1>Welcome, Dani! 🌟</h1>
+    <p>Pick a story below. Read it, then play the little games and watch your bars grow.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="summary">
+    <div class="stat"><div class="n" id="stars">0</div><div class="l">activities at full marks</div></div>
+    <div class="stat"><div class="n" id="completed">0 / 9</div><div class="l">activities tried</div></div>
+    <div class="stat"><div class="n" id="attempts">0</div><div class="l">total tries</div></div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><span class="dot roblox"></span><h2>Roblox</h2><a class="open" href="dani-roblox-reading.html" style="background:#2f7de1">Open</a></div>
+    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="roblox:comprehend" data-total="5"></div></div><span class="act-score" data-s="roblox:comprehend"></span></div>
+    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="roblox:match" data-total="5"></div></div><span class="act-score" data-s="roblox:match"></span></div>
+    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="roblox:use" data-total="6"></div></div><span class="act-score" data-s="roblox:use"></span></div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><span class="dot poodles"></span><h2>Types of poodles</h2><a class="open" href="dani-poodles-reading.html" style="background:#e0577f">Open</a></div>
+    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="poodles:comprehend" data-total="5"></div></div><span class="act-score" data-s="poodles:comprehend"></span></div>
+    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="poodles:match" data-total="5"></div></div><span class="act-score" data-s="poodles:match"></span></div>
+    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="poodles:use" data-total="6"></div></div><span class="act-score" data-s="poodles:use"></span></div>
+  </div>
+
+  <div class="proj">
+    <div class="proj-head"><span class="dot fashionk"></span><h2>Clothes we wear</h2><a class="open" href="dani-fashion-and-clothing-reading.html" style="background:#f08a24">Open</a></div>
+    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="fashionk:comprehend" data-total="5"></div></div><span class="act-score" data-s="fashionk:comprehend"></span></div>
+    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="fashionk:match" data-total="5"></div></div><span class="act-score" data-s="fashionk:match"></span></div>
+    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="fashionk:use" data-total="6"></div></div><span class="act-score" data-s="fashionk:use"></span></div>
+  </div>
+
+  <div class="tools"><button class="reset" id="reset">Reset all progress</button></div>
+
+  <div class="note">Scores are saved on this device, in this browser. They will be here next time Dani opens the page on the same device. They will not appear on a different device or browser.</div>
+
+  <footer>Dani's reading hub &middot; great job reading!</footer>
+</div>
+
+<script>
+(function(){
+  function render(){
+    var data={};
+    try{ data=JSON.parse(localStorage.getItem('daniReading')||'{}'); }catch(e){ data={}; }
+    var totalActivities=9, fullMarks=0, tried=0, attempts=0;
+    document.querySelectorAll('.bar').forEach(function(bar){
+      var k=bar.getAttribute('data-k'), total=parseInt(bar.getAttribute('data-total'),10);
+      var rec=data[k], scoreEl=document.querySelector('[data-s="'+k+'"]');
+      if(rec && typeof rec.best==='number'){
+        var pct=Math.round((rec.best/total)*100);
+        bar.style.width=pct+'%';
+        var star=(rec.best===total)?' <span class="star">&#9733;</span>':'';
+        scoreEl.innerHTML='best '+rec.best+' / '+total+star+'<span class="att">'+rec.attempts+(rec.attempts===1?' try':' tries')+'</span>';
+        tried++; attempts+=(rec.attempts||0);
+        if(rec.best===total) fullMarks++;
+      } else {
+        bar.style.width='0%';
+        scoreEl.innerHTML='<span class="none">not yet</span>';
+      }
+    });
+    document.getElementById('stars').textContent=fullMarks;
+    document.getElementById('completed').textContent=tried+' / '+totalActivities;
+    document.getElementById('attempts').textContent=attempts;
+  }
+  document.getElementById('reset').addEventListener('click',function(){
+    if(confirm('Reset all of Dani\u2019s saved scores on this device?')){
+      if(window.amaraCloud && window.amaraCloud.reset){ window.amaraCloud.reset(); }
+      else { try{ localStorage.removeItem('daniReading'); }catch(e){} }
+      render();
+    }
+  });
+  window.addEventListener('amara-scores-updated', render);
+  render();
+})();
+</script>
+</body>
+</html>
