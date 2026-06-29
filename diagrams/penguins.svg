@@ -1,0 +1,35 @@
+﻿<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+  <rect width="340" height="200" fill="#e8f3ff"/>
+  <rect x="0" y="140" width="340" height="60" fill="#74b9ff" opacity="0.4"/>
+  <polygon points="220,140 270,80 320,140" fill="white" stroke="#7ab7f0" stroke-width="1.5"/>
+  <ellipse cx="110" cy="110" rx="35" ry="50" fill="black"/>
+  <ellipse cx="110" cy="115" rx="22" ry="35" fill="white"/>
+  <circle cx="110" cy="60" r="26" fill="black"/>
+  <ellipse cx="110" cy="65" rx="16" ry="12" fill="white"/>
+  <polygon points="110,75 102,83 118,83" fill="#f39c12" stroke="#c77b0a" stroke-width="1"/>
+  <circle cx="102" cy="58" r="5" fill="white"/>
+  <circle cx="102" cy="58" r="2.5" fill="#1a237e"/>
+  <ellipse cx="73" cy="105" rx="10" ry="28" fill="#1a3a4a" transform="rotate(-15,73,105)"/>
+  <ellipse cx="147" cy="105" rx="10" ry="28" fill="#1a3a4a" transform="rotate(15,147,105)"/>
+  <ellipse cx="97" cy="158" rx="14" ry="6" fill="#f39c12"/>
+  <ellipse cx="123" cy="158" rx="14" ry="6" fill="#f39c12"/>
+  <ellipse cx="255" cy="120" rx="14" ry="20" fill="black"/>
+  <ellipse cx="255" cy="123" rx="9" ry="14" fill="white"/>
+  <circle cx="255" cy="103" r="10" fill="black"/>
+  <ellipse cx="275" cy="120" rx="12" ry="18" fill="black"/>
+  <ellipse cx="275" cy="123" rx="8" ry="12" fill="white"/>
+  <circle cx="275" cy="105" r="9" fill="black"/>
+  <ellipse cx="237" cy="122" rx="12" ry="18" fill="black"/>
+  <ellipse cx="237" cy="125" rx="8" ry="12" fill="white"/>
+  <circle cx="237" cy="107" r="9" fill="black"/>
+  <text x="256" y="150" text-anchor="middle" font-size="9" fill="#0a3f72" font-weight="bold">HUDDLE</text>
+  <text x="30" y="65" font-size="10" fill="#0a3f72" font-weight="bold">BEAK</text>
+  <line x1="62" y1="66" x2="102" y2="76" stroke="#0a3f72" stroke-width="1"/>
+  <text x="10" y="110" font-size="10" fill="#0a3f72" font-weight="bold">FLIPPER</text>
+  <line x1="60" y1="108" x2="72" y2="105" stroke="#0a3f72" stroke-width="1"/>
+  <text x="145" y="160" font-size="10" fill="#0a3f72" font-weight="bold">FEET</text>
+  <line x1="145" y1="158" x2="132" y2="157" stroke="#0a3f72" stroke-width="1"/>
+  <text x="155" y="75" font-size="10" fill="#0a3f72" font-weight="bold">FEATHERS</text>
+  <line x1="155" y1="73" x2="137" y2="80" stroke="#0a3f72" stroke-width="1"/>
+  <text x="110" y="192" text-anchor="middle" font-size="11" fill="#0a3f72" font-weight="bold">Penguins</text>
+</svg>

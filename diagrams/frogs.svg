@@ -1,0 +1,36 @@
+﻿<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+  <rect width="340" height="200" fill="#e8faf0"/>
+  <ellipse cx="170" cy="160" rx="150" ry="35" fill="#74b9ff" opacity="0.4"/>
+  <circle cx="60" cy="50" r="25" fill="#daeaff" stroke="#2e86de" stroke-width="2"/>
+  <circle cx="50" cy="47" r="5" fill="white" stroke="#2e86de" stroke-width="1"/>
+  <circle cx="62" cy="43" r="5" fill="white" stroke="#2e86de" stroke-width="1"/>
+  <circle cx="70" cy="50" r="5" fill="white" stroke="#2e86de" stroke-width="1"/>
+  <circle cx="56" cy="58" r="5" fill="white" stroke="#2e86de" stroke-width="1"/>
+  <circle cx="67" cy="60" r="5" fill="white" stroke="#2e86de" stroke-width="1"/>
+  <text x="60" y="84" text-anchor="middle" font-size="9" fill="#0d4a88" font-weight="bold">EGGS</text>
+  <line x1="90" y1="50" x2="135" y2="50" stroke="#2ecc71" stroke-width="2" marker-end="url(#frogArr)"/>
+  <ellipse cx="185" cy="50" rx="30" ry="16" fill="#82e0aa" stroke="#27ae60" stroke-width="2"/>
+  <ellipse cx="215" cy="52" rx="10" ry="6" fill="#27ae60"/>
+  <path d="M155,54 Q140,70 148,80" fill="none" stroke="#27ae60" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="185" cy="46" r="4" fill="#145a32"/>
+  <text x="185" y="76" text-anchor="middle" font-size="9" fill="#145a32" font-weight="bold">TADPOLE</text>
+  <line x1="215" y1="70" x2="270" y2="110" stroke="#2ecc71" stroke-width="2" marker-end="url(#frogArr)"/>
+  <ellipse cx="280" cy="140" rx="32" ry="20" fill="#2ecc71" stroke="#117a40" stroke-width="2"/>
+  <circle cx="267" cy="122" r="14" fill="#2ecc71" stroke="#117a40" stroke-width="2"/>
+  <circle cx="262" cy="117" r="5" fill="white" stroke="#117a40" stroke-width="1"/>
+  <circle cx="275" cy="117" r="5" fill="white" stroke="#117a40" stroke-width="1"/>
+  <circle cx="262" cy="117" r="2.5" fill="#145a32"/>
+  <circle cx="275" cy="117" r="2.5" fill="#145a32"/>
+  <line x1="260" y1="158" x2="240" y2="180" stroke="#117a40" stroke-width="3" stroke-linecap="round"/>
+  <line x1="300" y1="158" x2="318" y2="178" stroke="#117a40" stroke-width="3" stroke-linecap="round"/>
+  <line x1="256" y1="150" x2="238" y2="162" stroke="#117a40" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="304" y1="150" x2="320" y2="162" stroke="#117a40" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="280" y="190" text-anchor="middle" font-size="9" fill="#117a40" font-weight="bold">ADULT FROG</text>
+  <line x1="255" y1="155" x2="85" y2="65" stroke="#2ecc71" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#frogArr)"/>
+  <text x="100" y="140" font-size="10" fill="#117a40" font-weight="bold">Frog Life Cycle</text>
+  <defs>
+    <marker id="frogArr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#2ecc71"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,35 @@
+﻿<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+  <rect width="340" height="200" fill="#e0f5f0"/>
+  <rect width="340" height="200" fill="#00897b" opacity="0.12"/>
+  <circle cx="30" cy="30" r="6" fill="none" stroke="#4db6ac" stroke-width="1.5" opacity="0.7"/>
+  <circle cx="50" cy="15" r="4" fill="none" stroke="#4db6ac" stroke-width="1.5" opacity="0.7"/>
+  <circle cx="300" cy="50" r="5" fill="none" stroke="#4db6ac" stroke-width="1.5" opacity="0.7"/>
+  <ellipse cx="185" cy="105" rx="90" ry="45" fill="#4db6ac" stroke="#00695c" stroke-width="2.5"/>
+  <polygon points="95,105 55,75 55,135" fill="#00897b" stroke="#00695c" stroke-width="2"/>
+  <polygon points="165,60 185,35 210,60" fill="#00695c" stroke="#004d40" stroke-width="1.5"/>
+  <ellipse cx="170" cy="120" rx="30" ry="12" fill="#00695c" stroke="#004d40" stroke-width="1.5" transform="rotate(-20,170,120)"/>
+  <polygon points="175,148 190,168 210,148" fill="#00695c" stroke="#004d40" stroke-width="1.5"/>
+  <circle cx="250" cy="95" r="12" fill="white" stroke="#004d40" stroke-width="2"/>
+  <circle cx="252" cy="93" r="6" fill="#004d40"/>
+  <circle cx="254" cy="91" r="2.5" fill="white"/>
+  <path d="M268,108 Q278,112 268,118" fill="none" stroke="#004d40" stroke-width="2" stroke-linecap="round"/>
+  <path d="M235,68 Q240,90 235,115 Q230,130 228,135" fill="none" stroke="#00695c" stroke-width="3" stroke-linecap="round"/>
+  <path d="M180,80 A12,8 0 0,1 200,80" fill="none" stroke="#00695c" stroke-width="1.5"/>
+  <path d="M195,88 A12,8 0 0,1 215,88" fill="none" stroke="#00695c" stroke-width="1.5"/>
+  <path d="M170,95 A12,8 0 0,1 190,95" fill="none" stroke="#00695c" stroke-width="1.5"/>
+  <path d="M190,103 A12,8 0 0,1 210,103" fill="none" stroke="#00695c" stroke-width="1.5"/>
+  <text x="185" y="27" text-anchor="middle" font-size="10" fill="#004d40" font-weight="bold">DORSAL FIN</text>
+  <line x1="190" y1="32" x2="190" y2="48" stroke="#004d40" stroke-width="1"/>
+  <text x="290" y="85" font-size="10" fill="#004d40" font-weight="bold">EYE</text>
+  <text x="290" y="118" font-size="10" fill="#004d40" font-weight="bold">MOUTH</text>
+  <line x1="289" y1="115" x2="274" y2="113" stroke="#004d40" stroke-width="1"/>
+  <text x="222" y="60" font-size="10" fill="#004d40" font-weight="bold">GILL</text>
+  <line x1="232" y1="63" x2="235" y2="75" stroke="#004d40" stroke-width="1"/>
+  <text x="110" y="145" font-size="10" fill="#004d40" font-weight="bold">PECTORAL FIN</text>
+  <line x1="150" y1="143" x2="163" y2="128" stroke="#004d40" stroke-width="1"/>
+  <text x="40" y="105" font-size="10" fill="#004d40" font-weight="bold">TAIL</text>
+  <line x1="62" y1="105" x2="75" y2="105" stroke="#004d40" stroke-width="1"/>
+  <text x="105" y="70" font-size="10" fill="#004d40" font-weight="bold">SCALE</text>
+  <line x1="138" y1="74" x2="180" y2="90" stroke="#004d40" stroke-width="1"/>
+  <text x="170" y="192" text-anchor="middle" font-size="11" fill="#004d40" font-weight="bold">Parts of a Fish</text>
+</svg>

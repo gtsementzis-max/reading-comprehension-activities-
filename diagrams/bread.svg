@@ -1,0 +1,45 @@
+﻿<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+  <rect width="340" height="200" fill="#fff8f0"/>
+  <rect x="8" y="30" width="72" height="130" rx="10" fill="#fdebd0" stroke="#e67e22" stroke-width="2"/>
+  <text x="44" y="50" text-anchor="middle" font-size="8" fill="#884707" font-weight="bold">FLOUR +</text>
+  <text x="44" y="63" text-anchor="middle" font-size="8" fill="#884707" font-weight="bold">WATER +</text>
+  <text x="44" y="76" text-anchor="middle" font-size="8" fill="#884707" font-weight="bold">YEAST</text>
+  <rect x="22" y="82" width="22" height="28" fill="white" stroke="#e67e22" stroke-width="1.5" rx="3"/>
+  <text x="33" y="100" text-anchor="middle" font-size="7" fill="#e67e22">flour</text>
+  <path d="M58 90 Q66 100 58 112 Q50 100 58 90" fill="#74b9ff" stroke="#2e86de" stroke-width="1"/>
+  <rect x="22" y="117" width="40" height="16" fill="#f0e060" stroke="#c77b0a" stroke-width="1" rx="3"/>
+  <text x="42" y="128" text-anchor="middle" font-size="7" fill="#884707">yeast</text>
+  <text x="44" y="152" text-anchor="middle" font-size="8" fill="#884707" font-weight="bold">STEP 1</text>
+  <polygon points="82,95 95,88 95,102" fill="#e67e22"/>
+  <rect x="97" y="30" width="72" height="130" rx="10" fill="#fdebd0" stroke="#e67e22" stroke-width="2"/>
+  <text x="133" y="50" text-anchor="middle" font-size="8" fill="#884707" font-weight="bold">MIX INTO</text>
+  <text x="133" y="62" text-anchor="middle" font-size="8" fill="#884707" font-weight="bold">DOUGH</text>
+  <ellipse cx="133" cy="105" rx="28" ry="20" fill="#f5cba7" stroke="#e67e22" stroke-width="2"/>
+  <path d="M115,100 Q125,93 133,100" fill="none" stroke="#c77b0a" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M125,112 Q133,105 141,112" fill="none" stroke="#c77b0a" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="133" y="152" text-anchor="middle" font-size="8" fill="#884707" font-weight="bold">STEP 2</text>
+  <polygon points="171,95 184,88 184,102" fill="#e67e22"/>
+  <rect x="186" y="30" width="72" height="130" rx="10" fill="#fdebd0" stroke="#e67e22" stroke-width="2"/>
+  <text x="222" y="50" text-anchor="middle" font-size="8" fill="#884707" font-weight="bold">DOUGH</text>
+  <text x="222" y="62" text-anchor="middle" font-size="8" fill="#884707" font-weight="bold">RISES!</text>
+  <ellipse cx="222" cy="110" rx="32" ry="26" fill="#f5cba7" stroke="#e67e22" stroke-width="2"/>
+  <line x1="216" y1="73" x2="216" y2="63" stroke="#e67e22" stroke-width="2" marker-end="url(#riseArr)"/>
+  <line x1="222" y1="73" x2="222" y2="60" stroke="#e67e22" stroke-width="2" marker-end="url(#riseArr)"/>
+  <line x1="228" y1="73" x2="228" y2="63" stroke="#e67e22" stroke-width="2" marker-end="url(#riseArr)"/>
+  <text x="222" y="152" text-anchor="middle" font-size="8" fill="#884707" font-weight="bold">STEP 3</text>
+  <polygon points="260,95 273,88 273,102" fill="#e67e22"/>
+  <rect x="275" y="30" width="57" height="130" rx="10" fill="#fdebd0" stroke="#e67e22" stroke-width="2"/>
+  <text x="303" y="50" text-anchor="middle" font-size="8" fill="#884707" font-weight="bold">BAKE!</text>
+  <rect x="283" y="58" width="40" height="45" fill="#7f8c8d" rx="4"/>
+  <rect x="286" y="61" width="34" height="35" fill="#e67e22" rx="2" opacity="0.7"/>
+  <ellipse cx="303" cy="82" rx="14" ry="10" fill="#c8a830"/>
+  <line x1="303" y1="105" x2="303" y2="110" stroke="#c77b0a" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="303" cy="128" rx="16" ry="11" fill="#c8a830" stroke="#8a5607" stroke-width="1.5"/>
+  <text x="303" y="152" text-anchor="middle" font-size="8" fill="#884707" font-weight="bold">STEP 4</text>
+  <text x="170" y="193" text-anchor="middle" font-size="11" fill="#884707" font-weight="bold">How to Bake Bread</text>
+  <defs>
+    <marker id="riseArr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <polygon points="0 6, 3 0, 6 6" fill="#e67e22"/>
+    </marker>
+  </defs>
+</svg>
