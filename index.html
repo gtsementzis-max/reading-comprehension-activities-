@@ -11,12 +11,13 @@
     --gold:#DB9B22;
     --bg:#EFF7F9; --card:#FFFFFF; --line:#D5E4E8;
     --bar-bg:#E3EEF1; --bar:#0E8C9C;
+    --green:#22c55e; --green-soft:#dcfce7;
     --radius:14px;
     --font:'Trebuchet MS','Segoe UI',Verdana,sans-serif;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.6;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:760px;margin:0 auto;padding:0 18px 60px}
+  .wrap{max-width:960px;margin:0 auto;padding:0 18px 60px}
   header{background:var(--navy);color:#fff;padding:36px 0 26px}
   header .wrap{padding-bottom:0}
   .eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:#8FD0D9;margin:0 0 6px}
@@ -24,31 +25,98 @@
   header p{margin:0;color:#BFE0E5;font-size:15px}
 
   .summary{display:flex;gap:12px;margin:24px 0 8px;flex-wrap:wrap}
-  .stat{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+  .stat{flex:1;min-width:140px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
   .stat .n{font-size:26px;font-weight:700;color:var(--navy)}
   .stat .l{font-size:13px;color:var(--muted)}
 
-  .proj{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin:18px 0}
-  .proj-head{display:flex;align-items:center;gap:12px;margin:0 0 14px}
-  .dot{flex:0 0 14px;height:14px;border-radius:50%}
+  /* ── GRID ── */
+  .hub-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin:20px 0 0;
+  }
+  @media(max-width:740px){.hub-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:420px){.hub-grid{grid-template-columns:1fr}}
+
+  /* ── CARD ── */
+  .proj{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:14px 14px 12px;
+    display:flex;
+    flex-direction:column;
+    transition:border-color .2s;
+  }
+  .proj--done{
+    border-color:var(--green);
+    background:linear-gradient(160deg,#fff 80%,#f0fdf4 100%);
+  }
+
+  /* ── CARD HEADER ── */
+  .proj-head{display:flex;align-items:center;gap:8px;margin:0 0 10px;flex-wrap:wrap}
+  .dot{flex:0 0 12px;height:12px;border-radius:50%}
   .dot.marine{background:var(--teal)} .dot.bees{background:var(--gold)}
   .dot.rainforest{background:#1f8a4c} .dot.ei{background:#4f5bd5}
   .dot.spaghetti{background:#d6402c} .dot.celebrations{background:#c026a3}
   .dot.dogs{background:#92591f} .dot.boa{background:#7c8a1e}
   .dot.wheel{background:#3f6f9c} .dot.fashion{background:#7a3b9c}
-  .proj-head h2{font-size:19px;margin:0;color:var(--navy);font-weight:700;flex:1}
-  .open{font-family:inherit;font-size:14px;font-weight:700;text-decoration:none;background:var(--teal);color:#fff;padding:9px 16px;border-radius:10px;white-space:nowrap}
+  .proj-head h2{font-size:13px;margin:0;color:var(--navy);font-weight:700;flex:1;min-width:0;line-height:1.3}
+  .open{
+    flex-basis:100%;
+    text-align:center;
+    font-family:inherit;font-size:13px;font-weight:700;
+    text-decoration:none;
+    background:var(--teal);color:#fff;
+    padding:8px;border-radius:8px;
+    display:block;margin-top:2px;
+  }
   .open:hover{background:var(--teal-deep)}
-  .act-row{display:flex;align-items:center;gap:12px;padding:9px 0;border-top:1px solid var(--line)}
-  .act-name{flex:0 0 130px;font-size:15px;font-weight:700;color:var(--ink)}
-  .barwrap{flex:1;height:10px;background:var(--bar-bg);border-radius:6px;overflow:hidden}
-  .bar{height:100%;background:var(--bar);width:0;transition:width .4s}
-  .act-score{flex:0 0 92px;text-align:right;font-size:14px;font-weight:700;color:var(--navy)}
-  .act-score .att{display:block;font-size:12px;font-weight:400;color:var(--muted)}
-  .star{color:var(--gold)}
-  .none{color:var(--muted);font-weight:400}
 
-  .tools{display:flex;align-items:center;gap:10px;margin-top:20px}
+  /* ── ACTIVITY ROWS (compact 2-line grid) ── */
+  .act-row{
+    display:grid;
+    grid-template-columns:1fr auto;
+    grid-template-rows:auto auto;
+    column-gap:6px;
+    row-gap:3px;
+    padding:7px 0;
+    border-top:1px solid var(--line);
+    align-items:center;
+  }
+  .act-name{grid-column:1;grid-row:1;font-size:11px;font-weight:700;color:var(--ink)}
+  .act-score{grid-column:2;grid-row:1;font-size:11px;font-weight:700;color:var(--navy);text-align:right;white-space:nowrap}
+  .act-score .att{display:block;font-size:10px;font-weight:400;color:var(--muted)}
+  .barwrap{grid-column:1 / -1;grid-row:2;height:6px;background:var(--bar-bg);border-radius:6px;overflow:hidden}
+  .bar{height:100%;background:var(--bar);width:0;transition:width .4s}
+  .star{color:var(--gold)}
+  .none{color:var(--muted);font-weight:400;font-size:11px}
+
+  /* done badge on card */
+  .done-chip{
+    display:inline-flex;align-items:center;gap:4px;
+    background:var(--green-soft);color:#15803d;
+    font-size:10px;font-weight:700;letter-spacing:.04em;
+    border-radius:20px;padding:2px 8px;margin-bottom:6px;
+    align-self:flex-start;
+  }
+
+  /* ── FINISHED SECTION ── */
+  .finished-section{margin-top:36px}
+  .finished-heading{
+    display:flex;align-items:center;gap:10px;
+    padding:14px 18px;
+    background:var(--green-soft);
+    border:1px solid #bbf7d0;
+    border-radius:var(--radius);
+    margin-bottom:4px;
+  }
+  .finished-heading h2{font-size:20px;font-weight:700;color:#14532d;margin:0}
+  .finished-heading p{font-size:13px;color:#166534;margin:0}
+  .trophy{font-size:28px;line-height:1}
+
+  .tools{display:flex;align-items:center;gap:10px;margin-top:24px}
   .reset{font-family:inherit;font-size:14px;font-weight:700;background:#fff;color:var(--navy);border:1px solid var(--line);border-radius:10px;padding:9px 16px;cursor:pointer}
   .reset:hover{border-color:#D8624A;color:#9C3522}
   .note{font-size:13px;color:var(--muted);margin-top:18px;background:var(--teal-soft);border-radius:10px;padding:12px 14px}
@@ -73,145 +141,162 @@
     <div class="stat"><div class="n" id="attempts">0</div><div class="l">total tries</div></div>
   </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot marine"></span><h2>Marine life</h2><a class="open" href="amara-marine-life-reading.html">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="marine:comprehend" data-total="6"></div></div><span class="act-score" data-s="marine:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="marine:match" data-total="6"></div></div><span class="act-score" data-s="marine:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="marine:use" data-total="8"></div></div><span class="act-score" data-s="marine:use"></span></div>
-  </div>
+  <!-- Active projects grid -->
+  <div class="hub-grid" id="active-grid">
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot bees"></span><h2>Bees</h2><a class="open" href="amara-bees-reading.html" style="background:var(--gold)">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="bees:comprehend" data-total="6"></div></div><span class="act-score" data-s="bees:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="bees:match" data-total="6"></div></div><span class="act-score" data-s="bees:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="bees:use" data-total="8"></div></div><span class="act-score" data-s="bees:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot marine"></span><h2>Marine life</h2><a class="open" href="amara-marine-life-reading.html">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="marine:comprehend"></span><div class="barwrap"><div class="bar" data-k="marine:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="marine:match"></span><div class="barwrap"><div class="bar" data-k="marine:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="marine:use"></span><div class="barwrap"><div class="bar" data-k="marine:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot rainforest"></span><h2>Rainforest animals</h2><a class="open" href="amara-rainforest-reading.html" style="background:#1f8a4c">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="rainforest:comprehend" data-total="6"></div></div><span class="act-score" data-s="rainforest:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="rainforest:match" data-total="6"></div></div><span class="act-score" data-s="rainforest:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="rainforest:use" data-total="8"></div></div><span class="act-score" data-s="rainforest:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot bees"></span><h2>Bees</h2><a class="open" href="amara-bees-reading.html" style="background:var(--gold)">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="bees:comprehend"></span><div class="barwrap"><div class="bar" data-k="bees:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="bees:match"></span><div class="barwrap"><div class="bar" data-k="bees:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="bees:use"></span><div class="barwrap"><div class="bar" data-k="bees:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot ei"></span><h2>Emotional intelligence</h2><a class="open" href="amara-emotional-intelligence-reading.html" style="background:#4f5bd5">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="ei:comprehend" data-total="6"></div></div><span class="act-score" data-s="ei:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="ei:match" data-total="6"></div></div><span class="act-score" data-s="ei:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="ei:use" data-total="8"></div></div><span class="act-score" data-s="ei:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot rainforest"></span><h2>Rainforest animals</h2><a class="open" href="amara-rainforest-reading.html" style="background:#1f8a4c">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="rainforest:comprehend"></span><div class="barwrap"><div class="bar" data-k="rainforest:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="rainforest:match"></span><div class="barwrap"><div class="bar" data-k="rainforest:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="rainforest:use"></span><div class="barwrap"><div class="bar" data-k="rainforest:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot spaghetti"></span><h2>How spaghetti is made</h2><a class="open" href="amara-spaghetti-reading.html" style="background:#d6402c">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="spaghetti:comprehend" data-total="6"></div></div><span class="act-score" data-s="spaghetti:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="spaghetti:match" data-total="6"></div></div><span class="act-score" data-s="spaghetti:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="spaghetti:use" data-total="8"></div></div><span class="act-score" data-s="spaghetti:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot ei"></span><h2>Emotional intelligence</h2><a class="open" href="amara-emotional-intelligence-reading.html" style="background:#4f5bd5">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="ei:comprehend"></span><div class="barwrap"><div class="bar" data-k="ei:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="ei:match"></span><div class="barwrap"><div class="bar" data-k="ei:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="ei:use"></span><div class="barwrap"><div class="bar" data-k="ei:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot celebrations"></span><h2>Celebrations around the world</h2><a class="open" href="amara-celebrations-reading.html" style="background:#c026a3">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="celebrations:comprehend" data-total="6"></div></div><span class="act-score" data-s="celebrations:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="celebrations:match" data-total="6"></div></div><span class="act-score" data-s="celebrations:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="celebrations:use" data-total="8"></div></div><span class="act-score" data-s="celebrations:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot spaghetti"></span><h2>How spaghetti is made</h2><a class="open" href="amara-spaghetti-reading.html" style="background:#d6402c">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="spaghetti:comprehend"></span><div class="barwrap"><div class="bar" data-k="spaghetti:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="spaghetti:match"></span><div class="barwrap"><div class="bar" data-k="spaghetti:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="spaghetti:use"></span><div class="barwrap"><div class="bar" data-k="spaghetti:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot dogs"></span><h2>Dogs</h2><a class="open" href="amara-dogs-reading.html" style="background:#92591f">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="dogs:comprehend" data-total="6"></div></div><span class="act-score" data-s="dogs:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="dogs:match" data-total="6"></div></div><span class="act-score" data-s="dogs:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="dogs:use" data-total="8"></div></div><span class="act-score" data-s="dogs:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot celebrations"></span><h2>Celebrations around the world</h2><a class="open" href="amara-celebrations-reading.html" style="background:#c026a3">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="celebrations:comprehend"></span><div class="barwrap"><div class="bar" data-k="celebrations:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="celebrations:match"></span><div class="barwrap"><div class="bar" data-k="celebrations:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="celebrations:use"></span><div class="barwrap"><div class="bar" data-k="celebrations:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot boa"></span><h2>Boa constrictors</h2><a class="open" href="amara-boa-constrictors-reading.html" style="background:#7c8a1e">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="boa:comprehend" data-total="6"></div></div><span class="act-score" data-s="boa:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="boa:match" data-total="6"></div></div><span class="act-score" data-s="boa:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="boa:use" data-total="8"></div></div><span class="act-score" data-s="boa:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot dogs"></span><h2>Dogs</h2><a class="open" href="amara-dogs-reading.html" style="background:#92591f">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="dogs:comprehend"></span><div class="barwrap"><div class="bar" data-k="dogs:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="dogs:match"></span><div class="barwrap"><div class="bar" data-k="dogs:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="dogs:use"></span><div class="barwrap"><div class="bar" data-k="dogs:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot wheel"></span><h2>The importance of the wheel</h2><a class="open" href="amara-the-wheel-reading.html" style="background:#3f6f9c">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="wheel:comprehend" data-total="6"></div></div><span class="act-score" data-s="wheel:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="wheel:match" data-total="6"></div></div><span class="act-score" data-s="wheel:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="wheel:use" data-total="8"></div></div><span class="act-score" data-s="wheel:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot boa"></span><h2>Boa constrictors</h2><a class="open" href="amara-boa-constrictors-reading.html" style="background:#7c8a1e">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="boa:comprehend"></span><div class="barwrap"><div class="bar" data-k="boa:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="boa:match"></span><div class="barwrap"><div class="bar" data-k="boa:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="boa:use"></span><div class="barwrap"><div class="bar" data-k="boa:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot fashion"></span><h2>Fashion history</h2><a class="open" href="amara-fashion-history-reading.html" style="background:#7a3b9c">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="fashion:comprehend" data-total="6"></div></div><span class="act-score" data-s="fashion:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="fashion:match" data-total="6"></div></div><span class="act-score" data-s="fashion:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="fashion:use" data-total="8"></div></div><span class="act-score" data-s="fashion:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot wheel"></span><h2>The importance of the wheel</h2><a class="open" href="amara-the-wheel-reading.html" style="background:#3f6f9c">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="wheel:comprehend"></span><div class="barwrap"><div class="bar" data-k="wheel:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="wheel:match"></span><div class="barwrap"><div class="bar" data-k="wheel:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="wheel:use"></span><div class="barwrap"><div class="bar" data-k="wheel:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot" style="background:#e8590c"></span><h2>Volcanoes</h2><a class="open" href="amara-volcano-reading.html" style="background:#e8590c">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="volcano:comprehend" data-total="6"></div></div><span class="act-score" data-s="volcano:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="volcano:match" data-total="6"></div></div><span class="act-score" data-s="volcano:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="volcano:use" data-total="8"></div></div><span class="act-score" data-s="volcano:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot fashion"></span><h2>Fashion history</h2><a class="open" href="amara-fashion-history-reading.html" style="background:#7a3b9c">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="fashion:comprehend"></span><div class="barwrap"><div class="bar" data-k="fashion:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="fashion:match"></span><div class="barwrap"><div class="bar" data-k="fashion:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="fashion:use"></span><div class="barwrap"><div class="bar" data-k="fashion:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot" style="background:#c79a2b"></span><h2>Ancient Egypt</h2><a class="open" href="amara-egypt-reading.html" style="background:#c79a2b">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="egypt:comprehend" data-total="6"></div></div><span class="act-score" data-s="egypt:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="egypt:match" data-total="6"></div></div><span class="act-score" data-s="egypt:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="egypt:use" data-total="8"></div></div><span class="act-score" data-s="egypt:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot" style="background:#e8590c"></span><h2>Volcanoes</h2><a class="open" href="amara-volcano-reading.html" style="background:#e8590c">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="volcano:comprehend"></span><div class="barwrap"><div class="bar" data-k="volcano:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="volcano:match"></span><div class="barwrap"><div class="bar" data-k="volcano:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="volcano:use"></span><div class="barwrap"><div class="bar" data-k="volcano:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot" style="background:#2563eb"></span><h2>The water cycle</h2><a class="open" href="amara-watercycle-reading.html" style="background:#2563eb">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="watercycle:comprehend" data-total="6"></div></div><span class="act-score" data-s="watercycle:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="watercycle:match" data-total="6"></div></div><span class="act-score" data-s="watercycle:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="watercycle:use" data-total="8"></div></div><span class="act-score" data-s="watercycle:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot" style="background:#c79a2b"></span><h2>Ancient Egypt</h2><a class="open" href="amara-egypt-reading.html" style="background:#c79a2b">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="egypt:comprehend"></span><div class="barwrap"><div class="bar" data-k="egypt:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="egypt:match"></span><div class="barwrap"><div class="bar" data-k="egypt:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="egypt:use"></span><div class="barwrap"><div class="bar" data-k="egypt:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot" style="background:#312e81"></span><h2>The solar system</h2><a class="open" href="amara-solar-reading.html" style="background:#312e81">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="solar:comprehend" data-total="6"></div></div><span class="act-score" data-s="solar:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="solar:match" data-total="6"></div></div><span class="act-score" data-s="solar:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="solar:use" data-total="8"></div></div><span class="act-score" data-s="solar:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot" style="background:#2563eb"></span><h2>The water cycle</h2><a class="open" href="amara-watercycle-reading.html" style="background:#2563eb">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="watercycle:comprehend"></span><div class="barwrap"><div class="bar" data-k="watercycle:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="watercycle:match"></span><div class="barwrap"><div class="bar" data-k="watercycle:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="watercycle:use"></span><div class="barwrap"><div class="bar" data-k="watercycle:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot" style="background:#d6336c"></span><h2>The human heart</h2><a class="open" href="amara-heart-reading.html" style="background:#d6336c">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="heart:comprehend" data-total="6"></div></div><span class="act-score" data-s="heart:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="heart:match" data-total="6"></div></div><span class="act-score" data-s="heart:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="heart:use" data-total="8"></div></div><span class="act-score" data-s="heart:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot" style="background:#312e81"></span><h2>The solar system</h2><a class="open" href="amara-solar-reading.html" style="background:#312e81">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="solar:comprehend"></span><div class="barwrap"><div class="bar" data-k="solar:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="solar:match"></span><div class="barwrap"><div class="bar" data-k="solar:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="solar:use"></span><div class="barwrap"><div class="bar" data-k="solar:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot" style="background:#51688a"></span><h2>Sharks</h2><a class="open" href="amara-sharks-reading.html" style="background:#51688a">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="sharks:comprehend" data-total="6"></div></div><span class="act-score" data-s="sharks:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="sharks:match" data-total="6"></div></div><span class="act-score" data-s="sharks:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="sharks:use" data-total="8"></div></div><span class="act-score" data-s="sharks:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot" style="background:#d6336c"></span><h2>The human heart</h2><a class="open" href="amara-heart-reading.html" style="background:#d6336c">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="heart:comprehend"></span><div class="barwrap"><div class="bar" data-k="heart:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="heart:match"></span><div class="barwrap"><div class="bar" data-k="heart:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="heart:use"></span><div class="barwrap"><div class="bar" data-k="heart:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot" style="background:#c92a2a"></span><h2>The Olympic Games</h2><a class="open" href="amara-olympics-reading.html" style="background:#c92a2a">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="olympics:comprehend" data-total="6"></div></div><span class="act-score" data-s="olympics:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="olympics:match" data-total="6"></div></div><span class="act-score" data-s="olympics:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="olympics:use" data-total="8"></div></div><span class="act-score" data-s="olympics:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot" style="background:#51688a"></span><h2>Sharks</h2><a class="open" href="amara-sharks-reading.html" style="background:#51688a">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="sharks:comprehend"></span><div class="barwrap"><div class="bar" data-k="sharks:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="sharks:match"></span><div class="barwrap"><div class="bar" data-k="sharks:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="sharks:use"></span><div class="barwrap"><div class="bar" data-k="sharks:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot" style="background:#2f9e44"></span><h2>How money works</h2><a class="open" href="amara-money-reading.html" style="background:#2f9e44">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="money:comprehend" data-total="6"></div></div><span class="act-score" data-s="money:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="money:match" data-total="6"></div></div><span class="act-score" data-s="money:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="money:use" data-total="8"></div></div><span class="act-score" data-s="money:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot" style="background:#c92a2a"></span><h2>The Olympic Games</h2><a class="open" href="amara-olympics-reading.html" style="background:#c92a2a">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="olympics:comprehend"></span><div class="barwrap"><div class="bar" data-k="olympics:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="olympics:match"></span><div class="barwrap"><div class="bar" data-k="olympics:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="olympics:use"></span><div class="barwrap"><div class="bar" data-k="olympics:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot" style="background:#364fc7"></span><h2>Thunderstorms</h2><a class="open" href="amara-storms-reading.html" style="background:#364fc7">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="storms:comprehend" data-total="6"></div></div><span class="act-score" data-s="storms:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="storms:match" data-total="6"></div></div><span class="act-score" data-s="storms:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="storms:use" data-total="8"></div></div><span class="act-score" data-s="storms:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot" style="background:#2f9e44"></span><h2>How money works</h2><a class="open" href="amara-money-reading.html" style="background:#2f9e44">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="money:comprehend"></span><div class="barwrap"><div class="bar" data-k="money:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="money:match"></span><div class="barwrap"><div class="bar" data-k="money:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="money:use"></span><div class="barwrap"><div class="bar" data-k="money:use" data-total="8"></div></div></div>
+    </div>
 
-  <div class="proj">
-    <div class="proj-head"><span class="dot" style="background:#6c757d"></span><h2>Castles and knights</h2><a class="open" href="amara-castles-reading.html" style="background:#6c757d">Open</a></div>
-    <div class="act-row"><span class="act-name">Comprehend</span><div class="barwrap"><div class="bar" data-k="castles:comprehend" data-total="6"></div></div><span class="act-score" data-s="castles:comprehend"></span></div>
-    <div class="act-row"><span class="act-name">Match</span><div class="barwrap"><div class="bar" data-k="castles:match" data-total="6"></div></div><span class="act-score" data-s="castles:match"></span></div>
-    <div class="act-row"><span class="act-name">Use</span><div class="barwrap"><div class="bar" data-k="castles:use" data-total="8"></div></div><span class="act-score" data-s="castles:use"></span></div>
-  </div>
+    <div class="proj">
+      <div class="proj-head"><span class="dot" style="background:#364fc7"></span><h2>Thunderstorms</h2><a class="open" href="amara-storms-reading.html" style="background:#364fc7">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="storms:comprehend"></span><div class="barwrap"><div class="bar" data-k="storms:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="storms:match"></span><div class="barwrap"><div class="bar" data-k="storms:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="storms:use"></span><div class="barwrap"><div class="bar" data-k="storms:use" data-total="8"></div></div></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head"><span class="dot" style="background:#6c757d"></span><h2>Castles and knights</h2><a class="open" href="amara-castles-reading.html" style="background:#6c757d">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="castles:comprehend"></span><div class="barwrap"><div class="bar" data-k="castles:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="castles:match"></span><div class="barwrap"><div class="bar" data-k="castles:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="castles:use"></span><div class="barwrap"><div class="bar" data-k="castles:use" data-total="8"></div></div></div>
+    </div>
+
+  </div><!-- /#active-grid -->
+
+  <!-- Finished section — hidden until at least one project is complete -->
+  <section class="finished-section" id="finished-section" style="display:none">
+    <div class="finished-heading">
+      <span class="trophy">🏆</span>
+      <div>
+        <h2>Finished</h2>
+        <p>Every activity completed with full marks.</p>
+      </div>
+    </div>
+    <div class="hub-grid" id="finished-grid"></div>
+  </section>
 
   <div class="tools"><button class="reset" id="reset">Reset all progress</button></div>
 
@@ -233,7 +318,7 @@
         var pct=Math.round((rec.best/total)*100);
         bar.style.width=pct+'%';
         var star=(rec.best===total)?' <span class="star">&#9733;</span>':'';
-        scoreEl.innerHTML='best '+rec.best+' / '+total+star+'<span class="att">'+rec.attempts+(rec.attempts===1?' try':' tries')+'</span>';
+        scoreEl.innerHTML='best '+rec.best+'/'+total+star+'<span class="att">'+rec.attempts+(rec.attempts===1?' try':' tries')+'</span>';
         tried++; attempts+=(rec.attempts||0);
         if(rec.best===total) fullMarks++;
       } else {
@@ -244,9 +329,49 @@
     document.getElementById('stars').textContent=fullMarks;
     document.getElementById('completed').textContent=tried+' / '+totalActivities;
     document.getElementById('attempts').textContent=attempts;
+    sortCards(data);
   }
+
+  function sortCards(data){
+    var activeGrid=document.getElementById('active-grid');
+    var finishedGrid=document.getElementById('finished-grid');
+    var finishedSection=document.getElementById('finished-section');
+
+    /* gather all cards from both containers so re-renders re-sort correctly */
+    var allCards=Array.from(document.querySelectorAll('.proj'));
+
+    allCards.forEach(function(card){
+      var bars=card.querySelectorAll('.bar');
+      var allDone=bars.length===3;
+      bars.forEach(function(bar){
+        var k=bar.getAttribute('data-k');
+        var total=parseInt(bar.getAttribute('data-total'),10);
+        var rec=data[k];
+        if(!rec||rec.best!==total) allDone=false;
+      });
+
+      /* remove any old done-chip so we don't duplicate */
+      var oldChip=card.querySelector('.done-chip');
+      if(oldChip) oldChip.remove();
+
+      if(allDone){
+        card.classList.add('proj--done');
+        var chip=document.createElement('div');
+        chip.className='done-chip';
+        chip.innerHTML='&#10003; Complete';
+        card.insertBefore(chip, card.firstChild);
+        finishedGrid.appendChild(card);
+      } else {
+        card.classList.remove('proj--done');
+        activeGrid.appendChild(card);
+      }
+    });
+
+    finishedSection.style.display=finishedGrid.children.length>0?'block':'none';
+  }
+
   document.getElementById('reset').addEventListener('click',function(){
-    if(confirm('Reset all of Amara\u2019s saved scores on every device? This cannot be undone.')){
+    if(confirm('Reset all of Amara’s saved scores on every device? This cannot be undone.')){
       if(window.amaraCloud && window.amaraCloud.reset){ window.amaraCloud.reset(); }
       else { try{ localStorage.removeItem('amaraReading'); }catch(e){} }
       render();
