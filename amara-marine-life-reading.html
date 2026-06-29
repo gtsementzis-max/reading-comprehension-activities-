@@ -115,6 +115,19 @@
     details.grown summary,.grown h4,.grown .body{color:#000}
     details > *{display:block !important}
   }
+
+  /* KWL chart */
+  .kwl-box{background:#e8f4f8;border:2px solid #4ab3c4;border-radius:16px;padding:16px 18px;margin-bottom:16px}
+  .kwl-title{font-family:inherit;font-weight:700;color:#1a3a4a;font-size:1rem;margin:0 0 12px}
+  .kwl-row{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start}
+  .kwl-row:last-child{margin-bottom:0}
+  .kwl-letter{flex:0 0 30px;height:30px;border-radius:8px;background:#4ab3c4;color:#fff;font-weight:700;font-size:1rem;display:flex;align-items:center;justify-content:center}
+  .kwl-letter.l-letter{background:#3ab57b}
+  .kwl-col{flex:1;min-width:0}
+  .kwl-label{font-size:.82rem;font-weight:800;color:#1a3a4a;margin-bottom:4px}
+  .kwl-input{width:100%;font-family:inherit;font-size:.95rem;font-weight:600;padding:7px 11px;border:2px solid #0000001a;border-radius:10px;background:#fff;color:#222;box-sizing:border-box}
+  .kwl-input:focus{outline:none;border-color:#4ab3c4}
+  .kwl-recap{font-size:.9rem;color:#555;background:rgba(0,0,0,.05);border-radius:8px;padding:6px 10px;font-weight:600;font-style:italic}
 </style>
 </head>
 <body>
@@ -133,6 +146,23 @@
   <!-- STEP 1: READ -->
   <section class="step passage">
     <div class="step-head"><div class="badge">1</div><div><h2>Read</h2><p class="tag">Read the passage carefully — you can read it twice.</p></div></div>
+    <div class="kwl-box">
+      <div class="kwl-title">&#128203; Before you read &mdash; KWL</div>
+      <div class="kwl-row">
+        <div class="kwl-letter">K</div>
+        <div class="kwl-col">
+          <div class="kwl-label">What do you already KNOW about this topic?</div>
+          <input class="kwl-input" id="kwl-k" type="text" placeholder="One word or sentence is enough&hellip;" maxlength="200" autocomplete="off">
+        </div>
+      </div>
+      <div class="kwl-row">
+        <div class="kwl-letter">W</div>
+        <div class="kwl-col">
+          <div class="kwl-label">What do you WANT to find out?</div>
+          <input class="kwl-input" id="kwl-w" type="text" placeholder="One word or sentence is enough&hellip;" maxlength="200" autocomplete="off">
+        </div>
+      </div>
+    </div>
     <div class="passage-wrap">
       <div class="topic-img">
         <span class="topic-emoji">🐠</span>
@@ -233,6 +263,30 @@
     </div>
     <div class="controls"><button class="act primary" id="c-check">Check answers</button><button class="act ghost" id="c-reset">Start over</button><span class="score" id="c-score"></span></div>
     <div class="done" id="c-done"></div>
+    <div class="kwl-box" style="text-align:left;margin-top:18px">
+      <div class="kwl-title">&#128203; Your KWL chart</div>
+      <div class="kwl-row">
+        <div class="kwl-letter">K</div>
+        <div class="kwl-col">
+          <div class="kwl-label">What you KNEW</div>
+          <div class="kwl-recap" id="kwl-k-show">&mdash;</div>
+        </div>
+      </div>
+      <div class="kwl-row">
+        <div class="kwl-letter">W</div>
+        <div class="kwl-col">
+          <div class="kwl-label">What you WANTED to find out</div>
+          <div class="kwl-recap" id="kwl-w-show">&mdash;</div>
+        </div>
+      </div>
+      <div class="kwl-row">
+        <div class="kwl-letter l-letter">L</div>
+        <div class="kwl-col">
+          <div class="kwl-label">What did you LEARN?</div>
+          <input class="kwl-input" id="kwl-l" type="text" placeholder="One word or sentence is enough&hellip;" maxlength="200" autocomplete="off">
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- GROWN-UP SECTION -->
@@ -361,6 +415,7 @@
         s>=5 ? ("Well done, Amara \u2014 "+s+" out of 8. Reread the red sentences and ask which word truly fits.") :
         ("Keep going, Amara \u2014 "+s+" out of 8. Read each sentence with your word to hear if it makes sense, then check again.");
     });
+    kwlShowL();
   });
   document.getElementById('c-reset').addEventListener('click',function(){
     document.querySelectorAll('#cloze .row').forEach(function(r){
@@ -369,6 +424,24 @@
     document.getElementById('c-score').textContent=''; document.getElementById('c-done').style.display='none';
   });
 })();
+
+  var KWL_KEY='kwl-'+TOPIC;
+  function kwlGet(){try{return JSON.parse(localStorage.getItem(KWL_KEY)||'{}');}catch(e){return{};}}
+  function kwlSet(key,val){var d=kwlGet();d[key]=val;try{localStorage.setItem(KWL_KEY,JSON.stringify(d));}catch(e){}}
+  (function(){
+    var k=document.getElementById('kwl-k'),w=document.getElementById('kwl-w');
+    var d=kwlGet();
+    if(k){k.value=d.k||'';k.addEventListener('input',function(){kwlSet('k',k.value);});}
+    if(w){w.value=d.w||'';w.addEventListener('input',function(){kwlSet('w',w.value);});}
+  })();
+  function kwlShowL(){
+    var d=kwlGet();
+    var ks=document.getElementById('kwl-k-show'),ws=document.getElementById('kwl-w-show'),l=document.getElementById('kwl-l');
+    if(ks)ks.textContent=d.k||'(nothing written)';
+    if(ws)ws.textContent=d.w||'(nothing written)';
+    if(l&&!l._kwlBound){l._kwlBound=true;l.value=d.l||'';l.addEventListener('input',function(){kwlSet('l',l.value);});}
+  }
+
 </script>
 <script type="module" src="./firebase-sync.js"></script>
 </body>

@@ -119,6 +119,17 @@
   .bd b{font-family:'Fredoka',sans-serif;color:var(--c-dark);font-size:1.3rem;display:block}
   .bd span{font-size:.8rem;color:var(--ink-soft);font-weight:700}
   .saved-note{text-align:center;font-size:.85rem;color:var(--ink-soft);font-weight:700;margin-top:6px}
+  .kwl-box{background:var(--c-accent-soft);border:2px solid var(--c-accent);border-radius:16px;padding:16px 18px;margin-bottom:16px}
+  .kwl-title{font-family:'Fredoka',sans-serif;font-weight:700;color:var(--c-dark);font-size:1rem;margin:0 0 12px}
+  .kwl-row{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start}
+  .kwl-row:last-child{margin-bottom:0}
+  .kwl-letter{flex:0 0 30px;height:30px;border-radius:8px;background:var(--c-primary);color:#fff;font-family:'Fredoka',sans-serif;font-weight:700;font-size:1rem;display:flex;align-items:center;justify-content:center}
+  .kwl-letter.l-letter{background:var(--right)}
+  .kwl-col{flex:1;min-width:0}
+  .kwl-label{font-size:.82rem;font-weight:800;color:var(--c-deep);margin-bottom:4px}
+  .kwl-input{width:100%;font-family:inherit;font-size:.95rem;font-weight:600;padding:7px 11px;border:2px solid #0000001a;border-radius:10px;background:#fff;color:var(--ink)}
+  .kwl-input:focus{outline:none;border-color:var(--c-primary)}
+  .kwl-recap{font-size:.9rem;color:var(--ink-soft);background:rgba(0,0,0,.05);border-radius:8px;padding:6px 10px;font-weight:600;font-style:italic}
   @media (max-width:520px){body{padding:12px}.step-tab{flex:1 1 calc(50% - 8px)}.match-word{min-width:100%}}
 </style>
 </head>
@@ -140,6 +151,23 @@
   <section class="panel" data-panel="0">
     <h2>📖 Read the passage</h2>
     <p class="lead">Read it once for the meaning. Then read it again and look for the <span class="voc">coloured words</span>.</p>
+    <div class="kwl-box">
+      <div class="kwl-title">📋 Before you read — KWL</div>
+      <div class="kwl-row">
+        <div class="kwl-letter">K</div>
+        <div class="kwl-col">
+          <div class="kwl-label">What do you already KNOW about this topic?</div>
+          <input class="kwl-input" id="kwl-k" type="text" placeholder="One word or sentence is enough…" maxlength="200" autocomplete="off">
+        </div>
+      </div>
+      <div class="kwl-row">
+        <div class="kwl-letter">W</div>
+        <div class="kwl-col">
+          <div class="kwl-label">What do you WANT to find out?</div>
+          <input class="kwl-input" id="kwl-w" type="text" placeholder="One word or sentence is enough…" maxlength="200" autocomplete="off">
+        </div>
+      </div>
+    </div>
     <div class="passage">
       <div class="passage-wrap">
         <div class="topic-img">
@@ -193,6 +221,30 @@
     <div class="breakdown" id="breakdown"></div>
     <p class="msg" id="resultMsg"></p>
     <p class="saved-note" id="savedNote"></p>
+    <div class="kwl-box" id="kwl-results" style="text-align:left;margin:20px 0 6px">
+      <div class="kwl-title">📋 Your KWL chart</div>
+      <div class="kwl-row">
+        <div class="kwl-letter">K</div>
+        <div class="kwl-col">
+          <div class="kwl-label">What you KNEW</div>
+          <div class="kwl-recap" id="kwl-k-show">—</div>
+        </div>
+      </div>
+      <div class="kwl-row">
+        <div class="kwl-letter">W</div>
+        <div class="kwl-col">
+          <div class="kwl-label">What you WANTED to find out</div>
+          <div class="kwl-recap" id="kwl-w-show">—</div>
+        </div>
+      </div>
+      <div class="kwl-row">
+        <div class="kwl-letter l-letter">L</div>
+        <div class="kwl-col">
+          <div class="kwl-label">What did you LEARN?</div>
+          <input class="kwl-input" id="kwl-l" type="text" placeholder="One word or sentence is enough…" maxlength="200" autocomplete="off">
+        </div>
+      </div>
+    </div>
     <div class="actions" style="justify-content:center">
       <button class="btn btn-primary" onclick="restart()">Try again 🔁</button>
       <button class="btn btn-ghost" onclick="location.href='dani.html'">Back to all activities</button>
@@ -305,6 +357,7 @@ function showResults(){
   document.getElementById('trophy').textContent=trophy;
   document.getElementById('resultMsg').textContent=msg;
   document.getElementById('savedNote').textContent='Scores saved on this device ✓';
+  kwlShowResults();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -323,6 +376,22 @@ function recordSub(sub, best, total){
     else if(typeof window.amaraCloud.set==='function')window.amaraCloud.set(k,rec);
     else if(typeof window.amaraCloud.sync==='function')window.amaraCloud.sync(data);
   }catch(e){}}
+}
+const KWL_KEY='kwl-'+PROJECT;
+function kwlGet(){try{return JSON.parse(localStorage.getItem(KWL_KEY)||'{}');}catch(e){return{};}}
+function kwlSet(key,val){var d=kwlGet();d[key]=val;try{localStorage.setItem(KWL_KEY,JSON.stringify(d));}catch(e){}}
+(function(){
+  var k=document.getElementById('kwl-k'),w=document.getElementById('kwl-w');
+  var d=kwlGet();
+  if(k){k.value=d.k||'';k.addEventListener('input',function(){kwlSet('k',k.value);});}
+  if(w){w.value=d.w||'';w.addEventListener('input',function(){kwlSet('w',w.value);});}
+})();
+function kwlShowResults(){
+  var d=kwlGet();
+  var ks=document.getElementById('kwl-k-show'),ws=document.getElementById('kwl-w-show'),l=document.getElementById('kwl-l');
+  if(ks)ks.textContent=d.k||'(nothing written)';
+  if(ws)ws.textContent=d.w||'(nothing written)';
+  if(l){l.value=d.l||'';l.addEventListener('input',function(){kwlSet('l',l.value);});}
 }
 function flash(id,kind,text){const el=document.getElementById(id);el.className='feedback show '+kind;el.textContent=text;}
 function restart(){location.reload();}

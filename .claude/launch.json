@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "reading-hub",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8900", "--directory", "C:\\Users\\gtsem\\OneDrive\\Desktop\\reading comprehension"],
+      "port": 8900
+    }
+  ]
+}
