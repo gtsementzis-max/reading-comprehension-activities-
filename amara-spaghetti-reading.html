@@ -63,9 +63,15 @@
   .panel h2{font-family:'Fredoka',sans-serif;color:var(--c-dark);margin:0 0 4px;font-size:1.3rem;display:flex;align-items:center;gap:10px}
   .panel .lead{color:var(--ink-soft);margin:0 0 16px;font-weight:600}
   .passage{background:var(--c-cream);border:2px solid #00000012;border-radius:16px;padding:18px 20px;font-size:1.06rem;line-height:1.7}
+  .passage-wrap{display:flex;gap:18px;align-items:flex-start}
+  .topic-img{flex:0 0 110px;background:var(--c-accent-soft);border:2px solid #00000010;border-radius:16px;padding:18px 10px 14px;text-align:center}
+  .topic-emoji{font-size:54px;line-height:1;display:block;margin-bottom:8px}
+  .topic-label{font-size:10px;font-weight:800;color:var(--c-deep);text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
+  .passage-text{flex:1;min-width:0}
   .passage h3{margin:0 0 10px;font-family:'Fredoka',sans-serif;color:var(--c-deep)}
   .passage p{margin:0 0 14px}
   .passage p:last-child{margin-bottom:0}
+  @media(max-width:560px){.passage-wrap{flex-direction:column}.topic-img{display:flex;align-items:center;gap:14px;width:100%;flex:none;padding:12px 16px}.topic-emoji{font-size:42px;margin:0}.topic-label{font-size:11px;text-align:left}}
   .voc{background:var(--c-accent-soft);border-bottom:2px solid var(--c-accent);border-radius:5px;padding:0 3px;font-weight:700;color:var(--c-deep)}
   .q{margin-bottom:18px}
   .q .qtext{font-weight:800;margin-bottom:10px}
@@ -135,8 +141,16 @@
     <h2>📖 Read the passage</h2>
     <p class="lead">Read it once for the meaning. Then read it again and look for the <span class="voc">coloured words</span>.</p>
     <div class="passage">
-      <h3>How Spaghetti Is Made</h3>
-      <p>Have you ever wondered how a hard, dry strand of spaghetti begins? It starts in a wheat field. Spaghetti is made from a special kind of wheat called <span class="voc">durum</span>, which is harder than the wheat used for bread. At the mill, the durum grains are ground into a coarse, golden flour called <span class="voc">semolina</span>. To turn semolina into pasta, workers mix it with water to form a stiff <span class="voc">dough</span>. Machines then <span class="voc">knead</span> the dough, pressing and folding it over and over until it becomes smooth and even. Unlike bread dough, pasta dough has very few <span class="voc">ingredient</span>s — usually just semolina and water — so the wheat's flavour really stands out.</p><p>Next comes the part that gives spaghetti its shape. The dough is pushed through a metal disc full of tiny round holes, a step called <span class="voc">extrud</span>ing. As the dough is forced through the holes, it comes out as long, thin strings. The strings are cut to length and laid out to <span class="voc">dry</span>. Drying is the slowest step; the pasta must lose its moisture slowly, sometimes over many hours, or it will crack. Once it is fully dry and firm, the spaghetti is weighed and sent to a machine that will <span class="voc">package</span> it into boxes or bags. From a field of golden wheat to the box on a shelf, every strand follows the same careful process.</p>
+      <div class="passage-wrap">
+        <div class="topic-img">
+          <span class="topic-emoji">🍝</span>
+          <div class="topic-label">How Spaghetti Is Made</div>
+        </div>
+        <div class="passage-text">
+          <h3>How Spaghetti Is Made</h3>
+          <p>Have you ever wondered how a hard, dry strand of spaghetti begins? It starts in a wheat field. Spaghetti is made from a special kind of wheat called <span class="voc">durum</span>, which is harder than the wheat used for bread. At the mill, the durum grains are ground into a coarse, golden flour called <span class="voc">semolina</span>. To turn semolina into pasta, workers mix it with water to form a stiff <span class="voc">dough</span>. Machines then <span class="voc">knead</span> the dough, pressing and folding it over and over until it becomes smooth and even. Unlike bread dough, pasta dough has very few <span class="voc">ingredient</span>s — usually just semolina and water — so the wheat's flavour really stands out.</p><p>Next comes the part that gives spaghetti its shape. The dough is pushed through a metal disc full of tiny round holes, a step called <span class="voc">extrud</span>ing. As the dough is forced through the holes, it comes out as long, thin strings. The strings are cut to length and laid out to <span class="voc">dry</span>. Drying is the slowest step; the pasta must lose its moisture slowly, sometimes over many hours, or it will crack. Once it is fully dry and firm, the spaghetti is weighed and sent to a machine that will <span class="voc">package</span> it into boxes or bags. From a field of golden wheat to the box on a shelf, every strand follows the same careful process.</p>
+        </div>
+      </div>
     </div>
     <div class="actions"><button class="btn btn-primary" onclick="go(1)">I'm ready — Comprehend →</button></div>
   </section>
@@ -187,9 +201,10 @@
 </div>
 
 <script>
-const MODULE = {"activityId": "spaghetti", "projectKey": "spaghetti", "title": "How Spaghetti Is Made", "questions": [{"type": "Main idea", "q": "What is this passage mostly about?", "opts": ["How bread is baked", "The steps that turn wheat into spaghetti", "Why wheat fields are golden"], "a": 1}, {"type": "Detail", "q": "Spaghetti is made from a special wheat called —", "opts": ["semolina", "durum", "dough"], "a": 1}, {"type": "Vocabulary", "q": "In the passage, \"extruding\" means —", "opts": ["cutting pasta into squares", "pushing dough through holes to shape it", "drying the pasta slowly"], "a": 1}, {"type": "Cause & effect", "q": "Why must the pasta be dried slowly?", "opts": ["so it does not crack", "so it tastes sweeter", "so it cooks faster"], "a": 0}, {"type": "Detail", "q": "Pasta dough is different from bread dough because it —", "opts": ["has very few ingredients", "is baked in an oven", "is made from rice"], "a": 0}, {"type": "Inference", "q": "You can tell from the passage that making spaghetti is —", "opts": ["a careful, step-by-step process", "done entirely by hand", "finished in a few minutes"], "a": 0}], "match": [{"word": "durum", "def": "a hard kind of wheat used to make pasta", "hint": "\"a special kind of wheat called <b>durum</b>, which is harder than… bread.\""}, {"word": "semolina", "def": "the coarse, golden flour made from durum wheat", "hint": "\"ground into a coarse, golden flour called <b>semolina</b>.\""}, {"word": "dough", "def": "a stiff mixture of flour and water", "hint": "\"mix it with water to form a stiff <b>dough</b>.\""}, {"word": "knead", "def": "to press and fold dough until it is smooth", "hint": "\"Machines then <b>knead</b> the dough, pressing and folding it…\""}, {"word": "extrude", "def": "to push dough through holes to give it a shape", "hint": "\"pushed through a metal disc… a step called <b>extruding</b>.\""}, {"word": "ingredient", "def": "one of the things used to make a food", "hint": "\"pasta dough has very few <b>ingredients</b> — usually just semolina and water.\""}], "bank": ["durum", "semolina", "dough", "knead", "extrude", "dry", "ingredient", "package"], "fills": [{"text": "Pasta begins as a hard wheat called ___.", "a": "durum"}, {"text": "The durum is ground into a golden flour called ___.", "a": "semolina"}, {"text": "Flour and water are mixed to make a stiff ___.", "a": "dough"}, {"text": "Machines ___ the dough by pressing and folding it.", "a": "knead"}, {"text": "To give spaghetti its shape, machines ___ the dough through tiny holes.", "a": "extrude"}, {"text": "After shaping, the strands must ___ slowly so they do not crack.", "a": "dry"}, {"text": "Sugar is the main ___ in most candy.", "a": "ingredient", "challenge": true}, {"text": "Finally, a machine will ___ the spaghetti into boxes.", "a": "package"}], "win": "PERFECT, Amara! Master of the pasta process! 🍝", "cheer": "The chefs are clapping for you! 🍅"};
+const MODULE = {"activityId": "spaghetti", "projectKey": "spaghetti", "title": "How Spaghetti Is Made", "questions": [{"type": "Main idea", "q": "What is this passage mostly about?", "opts": ["How bread is baked", "The steps that turn wheat into spaghetti", "Why wheat fields are golden"], "a": 1}, {"type": "Detail", "q": "Spaghetti is made from a special wheat called —", "opts": ["semolina", "durum", "dough"], "a": 1}, {"type": "Vocabulary", "q": "In the passage, \"extruding\" means —", "opts": ["cutting pasta into squares", "pushing dough through holes to shape it", "drying the pasta slowly"], "a": 1}, {"type": "Cause & effect", "q": "Why must the pasta be dried slowly?", "opts": ["so it does not crack", "so it tastes sweeter", "so it cooks faster"], "a": 0}, {"type": "Detail", "q": "Pasta dough is different from bread dough because it —", "opts": ["has very few ingredients", "is baked in an oven", "is made from rice"], "a": 0}, {"type": "Inference", "q": "You can tell from the passage that making spaghetti is —", "opts": ["a careful, step-by-step process", "done entirely by hand", "finished in a few minutes"], "a": 0}], "match": [{"word": "durum", "def": "a hard kind of wheat used to make pasta", "hint": "\"a special kind of wheat called <b>durum</b>, which is harder than… bread.\""}, {"word": "semolina", "def": "the coarse, golden flour made from durum wheat", "hint": "\"ground into a coarse, golden flour called <b>semolina</b>.\""}, {"word": "dough", "def": "a stiff mixture of flour and water", "hint": "\"mix it with water to form a stiff <b>dough</b>.\""}, {"word": "knead", "def": "to press and fold dough until it is smooth", "hint": "\"Machines then <b>knead</b> the dough, pressing and folding it…\""}, {"word": "extrude", "def": "to push dough through holes to give it a shape", "hint": "\"pushed through a metal disc… a step called <b>extruding</b>.\""}, {"word": "ingredient", "def": "one of the things used to make a food", "hint": "\"pasta dough has very few <b>ingredients</b> — usually just semolina and water.\""}], "bank": ["durum", "semolina", "dough", "knead", "extrude", "dry", "ingredient", "package"], "fills": [{"text": "Pasta begins as a hard wheat called ___.", "a": "durum"}, {"text": "The durum is ground into a golden flour called ___.", "a": "semolina"}, {"text": "Flour and water are mixed to make a stiff ___.", "a": "dough"}, {"text": "Machines ___ the dough by pressing and folding it.", "a": "knead"}, {"text": "To give spaghetti its shape, machines ___ the dough through tiny holes.", "a": "extrude"}, {"text": "After shaping, the strands must ___ slowly so they do not crack.", "a": "dry"}, {"text": "Sugar is the main ___ in most candy.", "a": "ingredient", "challenge": true}, {"text": "Finally, a machine will ___ the spaghetti into boxes.", "a": "package"}], "win": "PERFECT, Amara! Master of the pasta process! 🍝", "cheer": "The chefs are clapping for you! 🍅", "name": "Amara", "hubKey": "amaraReading"};
 const PROJECT = MODULE.projectKey;
-const HUB_KEY = 'amaraReading';
+const HUB_KEY = MODULE.hubKey || 'amaraReading';
+const NAME    = MODULE.name || 'Amara';
 const TITLE   = MODULE.title;
 const QUESTIONS = MODULE.questions, MATCH = MODULE.match, BANK = MODULE.bank, FILLS = MODULE.fills;
 const TOTAL = QUESTIONS.length + MATCH.length + FILLS.length;
@@ -229,7 +244,7 @@ function checkQuiz(){
     else{opts[selected[qi]].classList.add('incorrect');opts[selected[qi]].innerHTML+=' <span class="mark">✗</span>';opts[correct].classList.add('correct');opts[correct].innerHTML+=' <span class="mark">✓</span>';}
   });
   quizScore=s;markDone(1);recordSub('comprehend',s,QUESTIONS.length);
-  flash('quizFb', s===QUESTIONS.length?'good':'try','You got '+s+' of '+QUESTIONS.length+'. '+(s===QUESTIONS.length?'Perfect reading, Amara! 🌟':'Look back at the passage, then tap Next.'));
+  flash('quizFb', s===QUESTIONS.length?'good':'try','You got '+s+' of '+QUESTIONS.length+'. '+(s===QUESTIONS.length?('Perfect reading, '+NAME+'! 🌟'):'Look back at the passage, then tap Next.'));
 }
 
 const matchEl=document.getElementById('match');
@@ -284,9 +299,9 @@ function showResults(){
   document.getElementById('breakdown').innerHTML='<div class="bd"><b>'+q+'/'+QUESTIONS.length+'</b><span>Comprehend</span></div><div class="bd"><b>'+m+'/'+MATCH.length+'</b><span>Match</span></div><div class="bd"><b>'+f+'/'+FILLS.length+'</b><span>Use</span></div>';
   let trophy,msg;
   if(pct===100){trophy='🏆';msg=MODULE.win;}
-  else if(pct>=80){trophy='🌟';msg='Brilliant work, Amara! '+MODULE.cheer;}
-  else if(pct>=60){trophy='💪';msg='Great effort, Amara — read once more and beat your score!';}
-  else{trophy='🌈';msg='Good try, Amara! Tap Try again and explore the passage.';}
+  else if(pct>=80){trophy='🌟';msg='Brilliant work, '+NAME+'! '+MODULE.cheer;}
+  else if(pct>=60){trophy='💪';msg='Great effort, '+NAME+' — read once more and beat your score!';}
+  else{trophy='🌈';msg='Good try, '+NAME+'! Tap Try again and explore the passage.';}
   document.getElementById('trophy').textContent=trophy;
   document.getElementById('resultMsg').textContent=msg;
   document.getElementById('savedNote').textContent='Scores saved on this device ✓';

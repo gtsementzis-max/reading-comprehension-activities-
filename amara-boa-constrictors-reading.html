@@ -63,9 +63,15 @@
   .panel h2{font-family:'Fredoka',sans-serif;color:var(--c-dark);margin:0 0 4px;font-size:1.3rem;display:flex;align-items:center;gap:10px}
   .panel .lead{color:var(--ink-soft);margin:0 0 16px;font-weight:600}
   .passage{background:var(--c-cream);border:2px solid #00000012;border-radius:16px;padding:18px 20px;font-size:1.06rem;line-height:1.7}
+  .passage-wrap{display:flex;gap:18px;align-items:flex-start}
+  .topic-img{flex:0 0 110px;background:var(--c-accent-soft);border:2px solid #00000010;border-radius:16px;padding:18px 10px 14px;text-align:center}
+  .topic-emoji{font-size:54px;line-height:1;display:block;margin-bottom:8px}
+  .topic-label{font-size:10px;font-weight:800;color:var(--c-deep);text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
+  .passage-text{flex:1;min-width:0}
   .passage h3{margin:0 0 10px;font-family:'Fredoka',sans-serif;color:var(--c-deep)}
   .passage p{margin:0 0 14px}
   .passage p:last-child{margin-bottom:0}
+  @media(max-width:560px){.passage-wrap{flex-direction:column}.topic-img{display:flex;align-items:center;gap:14px;width:100%;flex:none;padding:12px 16px}.topic-emoji{font-size:42px;margin:0}.topic-label{font-size:11px;text-align:left}}
   .voc{background:var(--c-accent-soft);border-bottom:2px solid var(--c-accent);border-radius:5px;padding:0 3px;font-weight:700;color:var(--c-deep)}
   .q{margin-bottom:18px}
   .q .qtext{font-weight:800;margin-bottom:10px}
@@ -135,8 +141,16 @@
     <h2>📖 Read the passage</h2>
     <p class="lead">Read it once for the meaning. Then read it again and look for the <span class="voc">coloured words</span>.</p>
     <div class="passage">
-      <h3>The Boa Constrictor</h3>
-      <p>The boa constrictor is a large snake found in the warm forests of Central and South America. Unlike some snakes, a boa is not venomous — it has no poison. Instead, it gets its name from the way it catches food. A boa will <span class="voc">ambush</span> its <span class="voc">prey</span>, waiting quietly and hidden before striking suddenly. Once it grabs an animal, the boa wraps its strong body around it and begins to <span class="voc">constrict</span>, or squeeze. Each time the animal breathes out, the snake tightens its coils a little more, until the prey can no longer breathe and <span class="voc">suffocate</span>s. The whole hunt can be over in minutes.</p><p>A boa's body is built for this life. Its skin is covered in smooth, overlapping <span class="voc">scale</span>s, patterned in browns and tans that act as <span class="voc">camouflage</span> against the forest floor. Like all reptiles, the boa is <span class="voc">cold-blooded</span>, which means its body temperature changes with the air around it, so it suns itself to warm up and rests in the shade to cool down. After a big meal, a boa can go for weeks without eating again, because it takes a long time for its body to <span class="voc">digest</span>, or break down, such a large amount of food. A boa constrictor is a patient and powerful hunter.</p>
+      <div class="passage-wrap">
+        <div class="topic-img">
+          <span class="topic-emoji">🐍</span>
+          <div class="topic-label">The Boa Constrictor</div>
+        </div>
+        <div class="passage-text">
+          <h3>The Boa Constrictor</h3>
+          <p>The boa constrictor is a large snake found in the warm forests of Central and South America. Unlike some snakes, a boa is not venomous — it has no poison. Instead, it gets its name from the way it catches food. A boa will <span class="voc">ambush</span> its <span class="voc">prey</span>, waiting quietly and hidden before striking suddenly. Once it grabs an animal, the boa wraps its strong body around it and begins to <span class="voc">constrict</span>, or squeeze. Each time the animal breathes out, the snake tightens its coils a little more, until the prey can no longer breathe and <span class="voc">suffocate</span>s. The whole hunt can be over in minutes.</p><p>A boa's body is built for this life. Its skin is covered in smooth, overlapping <span class="voc">scale</span>s, patterned in browns and tans that act as <span class="voc">camouflage</span> against the forest floor. Like all reptiles, the boa is <span class="voc">cold-blooded</span>, which means its body temperature changes with the air around it, so it suns itself to warm up and rests in the shade to cool down. After a big meal, a boa can go for weeks without eating again, because it takes a long time for its body to <span class="voc">digest</span>, or break down, such a large amount of food. A boa constrictor is a patient and powerful hunter.</p>
+        </div>
+      </div>
     </div>
     <div class="actions"><button class="btn btn-primary" onclick="go(1)">I'm ready — Comprehend →</button></div>
   </section>
@@ -187,9 +201,10 @@
 </div>
 
 <script>
-const MODULE = {"activityId": "boa-constrictors", "projectKey": "boa", "title": "The Boa Constrictor", "questions": [{"type": "Main idea", "q": "This passage is mostly about —", "opts": ["how boas build nests", "how a boa constrictor hunts and lives", "why boas are venomous"], "a": 1}, {"type": "Detail", "q": "A boa constrictor catches food by —", "opts": ["injecting venom", "squeezing its prey", "chasing prey for hours"], "a": 1}, {"type": "Vocabulary", "q": "In the passage, \"camouflage\" means —", "opts": ["colours and patterns that help it hide", "the snake's sharp teeth", "a warm, sunny spot"], "a": 0}, {"type": "Cause & effect", "q": "A boa suns itself because it is —", "opts": ["cold-blooded and needs warmth", "hungry for plants", "trying to scare predators"], "a": 0}, {"type": "Detail", "q": "After a big meal, a boa can —", "opts": ["go for weeks without eating", "eat again right away", "stop breathing"], "a": 0}, {"type": "Inference", "q": "Because a boa ambushes its prey, it must be good at —", "opts": ["running very fast", "staying still and hidden", "climbing the tallest trees"], "a": 1}], "match": [{"word": "constrict", "def": "to squeeze tightly", "hint": "\"…wraps its strong body around it and begins to <b>constrict</b>, or squeeze.\""}, {"word": "suffocate", "def": "to be unable to breathe", "hint": "\"…the prey can no longer breathe and <b>suffocate</b>s.\""}, {"word": "cold-blooded", "def": "having a body temperature that changes with the surroundings", "hint": "\"…the boa is <b>cold-blooded</b>, which means its body temperature changes with the air…\""}, {"word": "camouflage", "def": "colours or patterns that help an animal hide", "hint": "\"…patterned in browns and tans that act as <b>camouflage</b>…\""}, {"word": "ambush", "def": "to hide and attack by surprise", "hint": "\"A boa will <b>ambush</b> its prey, waiting quietly and hidden…\""}, {"word": "digest", "def": "to break down food inside the body", "hint": "\"…it takes a long time for its body to <b>digest</b>, or break down… food.\""}], "bank": ["constrict", "prey", "suffocate", "camouflage", "cold-blooded", "scales", "digest", "ambush"], "fills": [{"text": "The snake began to ___ the mouse by squeezing it.", "a": "constrict"}, {"text": "A lion hunts a zebra, so the zebra is its ___.", "a": "prey"}, {"text": "Without any air, a creature will ___.", "a": "suffocate"}, {"text": "The moth's grey wings are perfect ___ against tree bark.", "a": "camouflage"}, {"text": "Snakes and lizards are ___ animals that warm up in the sun.", "a": "cold-blooded"}, {"text": "A snake's body is covered in smooth ___.", "a": "scales"}, {"text": "It takes hours for your stomach to ___ a big lunch.", "a": "digest", "challenge": true}, {"text": "The cat liked to ___ its toy from behind the couch.", "a": "ambush"}], "win": "PERFECT, Amara! A powerful effort! 🐍", "cheer": "You squeezed every answer right! 🐍"};
+const MODULE = {"activityId": "boa-constrictors", "projectKey": "boa", "title": "The Boa Constrictor", "questions": [{"type": "Main idea", "q": "This passage is mostly about —", "opts": ["how boas build nests", "how a boa constrictor hunts and lives", "why boas are venomous"], "a": 1}, {"type": "Detail", "q": "A boa constrictor catches food by —", "opts": ["injecting venom", "squeezing its prey", "chasing prey for hours"], "a": 1}, {"type": "Vocabulary", "q": "In the passage, \"camouflage\" means —", "opts": ["colours and patterns that help it hide", "the snake's sharp teeth", "a warm, sunny spot"], "a": 0}, {"type": "Cause & effect", "q": "A boa suns itself because it is —", "opts": ["cold-blooded and needs warmth", "hungry for plants", "trying to scare predators"], "a": 0}, {"type": "Detail", "q": "After a big meal, a boa can —", "opts": ["go for weeks without eating", "eat again right away", "stop breathing"], "a": 0}, {"type": "Inference", "q": "Because a boa ambushes its prey, it must be good at —", "opts": ["running very fast", "staying still and hidden", "climbing the tallest trees"], "a": 1}], "match": [{"word": "constrict", "def": "to squeeze tightly", "hint": "\"…wraps its strong body around it and begins to <b>constrict</b>, or squeeze.\""}, {"word": "suffocate", "def": "to be unable to breathe", "hint": "\"…the prey can no longer breathe and <b>suffocate</b>s.\""}, {"word": "cold-blooded", "def": "having a body temperature that changes with the surroundings", "hint": "\"…the boa is <b>cold-blooded</b>, which means its body temperature changes with the air…\""}, {"word": "camouflage", "def": "colours or patterns that help an animal hide", "hint": "\"…patterned in browns and tans that act as <b>camouflage</b>…\""}, {"word": "ambush", "def": "to hide and attack by surprise", "hint": "\"A boa will <b>ambush</b> its prey, waiting quietly and hidden…\""}, {"word": "digest", "def": "to break down food inside the body", "hint": "\"…it takes a long time for its body to <b>digest</b>, or break down… food.\""}], "bank": ["constrict", "prey", "suffocate", "camouflage", "cold-blooded", "scales", "digest", "ambush"], "fills": [{"text": "The snake began to ___ the mouse by squeezing it.", "a": "constrict"}, {"text": "A lion hunts a zebra, so the zebra is its ___.", "a": "prey"}, {"text": "Without any air, a creature will ___.", "a": "suffocate"}, {"text": "The moth's grey wings are perfect ___ against tree bark.", "a": "camouflage"}, {"text": "Snakes and lizards are ___ animals that warm up in the sun.", "a": "cold-blooded"}, {"text": "A snake's body is covered in smooth ___.", "a": "scales"}, {"text": "It takes hours for your stomach to ___ a big lunch.", "a": "digest", "challenge": true}, {"text": "The cat liked to ___ its toy from behind the couch.", "a": "ambush"}], "win": "PERFECT, Amara! A powerful effort! 🐍", "cheer": "You squeezed every answer right! 🐍", "name": "Amara", "hubKey": "amaraReading"};
 const PROJECT = MODULE.projectKey;
-const HUB_KEY = 'amaraReading';
+const HUB_KEY = MODULE.hubKey || 'amaraReading';
+const NAME    = MODULE.name || 'Amara';
 const TITLE   = MODULE.title;
 const QUESTIONS = MODULE.questions, MATCH = MODULE.match, BANK = MODULE.bank, FILLS = MODULE.fills;
 const TOTAL = QUESTIONS.length + MATCH.length + FILLS.length;
@@ -229,7 +244,7 @@ function checkQuiz(){
     else{opts[selected[qi]].classList.add('incorrect');opts[selected[qi]].innerHTML+=' <span class="mark">✗</span>';opts[correct].classList.add('correct');opts[correct].innerHTML+=' <span class="mark">✓</span>';}
   });
   quizScore=s;markDone(1);recordSub('comprehend',s,QUESTIONS.length);
-  flash('quizFb', s===QUESTIONS.length?'good':'try','You got '+s+' of '+QUESTIONS.length+'. '+(s===QUESTIONS.length?'Perfect reading, Amara! 🌟':'Look back at the passage, then tap Next.'));
+  flash('quizFb', s===QUESTIONS.length?'good':'try','You got '+s+' of '+QUESTIONS.length+'. '+(s===QUESTIONS.length?('Perfect reading, '+NAME+'! 🌟'):'Look back at the passage, then tap Next.'));
 }
 
 const matchEl=document.getElementById('match');
@@ -284,9 +299,9 @@ function showResults(){
   document.getElementById('breakdown').innerHTML='<div class="bd"><b>'+q+'/'+QUESTIONS.length+'</b><span>Comprehend</span></div><div class="bd"><b>'+m+'/'+MATCH.length+'</b><span>Match</span></div><div class="bd"><b>'+f+'/'+FILLS.length+'</b><span>Use</span></div>';
   let trophy,msg;
   if(pct===100){trophy='🏆';msg=MODULE.win;}
-  else if(pct>=80){trophy='🌟';msg='Brilliant work, Amara! '+MODULE.cheer;}
-  else if(pct>=60){trophy='💪';msg='Great effort, Amara — read once more and beat your score!';}
-  else{trophy='🌈';msg='Good try, Amara! Tap Try again and explore the passage.';}
+  else if(pct>=80){trophy='🌟';msg='Brilliant work, '+NAME+'! '+MODULE.cheer;}
+  else if(pct>=60){trophy='💪';msg='Great effort, '+NAME+' — read once more and beat your score!';}
+  else{trophy='🌈';msg='Good try, '+NAME+'! Tap Try again and explore the passage.';}
   document.getElementById('trophy').textContent=trophy;
   document.getElementById('resultMsg').textContent=msg;
   document.getElementById('savedNote').textContent='Scores saved on this device ✓';

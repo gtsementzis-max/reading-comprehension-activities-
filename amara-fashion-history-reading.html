@@ -63,9 +63,15 @@
   .panel h2{font-family:'Fredoka',sans-serif;color:var(--c-dark);margin:0 0 4px;font-size:1.3rem;display:flex;align-items:center;gap:10px}
   .panel .lead{color:var(--ink-soft);margin:0 0 16px;font-weight:600}
   .passage{background:var(--c-cream);border:2px solid #00000012;border-radius:16px;padding:18px 20px;font-size:1.06rem;line-height:1.7}
+  .passage-wrap{display:flex;gap:18px;align-items:flex-start}
+  .topic-img{flex:0 0 110px;background:var(--c-accent-soft);border:2px solid #00000010;border-radius:16px;padding:18px 10px 14px;text-align:center}
+  .topic-emoji{font-size:54px;line-height:1;display:block;margin-bottom:8px}
+  .topic-label{font-size:10px;font-weight:800;color:var(--c-deep);text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
+  .passage-text{flex:1;min-width:0}
   .passage h3{margin:0 0 10px;font-family:'Fredoka',sans-serif;color:var(--c-deep)}
   .passage p{margin:0 0 14px}
   .passage p:last-child{margin-bottom:0}
+  @media(max-width:560px){.passage-wrap{flex-direction:column}.topic-img{display:flex;align-items:center;gap:14px;width:100%;flex:none;padding:12px 16px}.topic-emoji{font-size:42px;margin:0}.topic-label{font-size:11px;text-align:left}}
   .voc{background:var(--c-accent-soft);border-bottom:2px solid var(--c-accent);border-radius:5px;padding:0 3px;font-weight:700;color:var(--c-deep)}
   .q{margin-bottom:18px}
   .q .qtext{font-weight:800;margin-bottom:10px}
@@ -135,8 +141,16 @@
     <h2>📖 Read the passage</h2>
     <p class="lead">Read it once for the meaning. Then read it again and look for the <span class="voc">coloured words</span>.</p>
     <div class="passage">
-      <h3>A Short History of Fashion</h3>
-      <p><span class="voc">Fashion</span> — the styles of clothing people choose to wear — has changed in every <span class="voc">era</span> of history. Long ago, people made <span class="voc">garment</span>s by hand from whatever materials they could find, such as animal skins, wool, and plant fibres. They learned to <span class="voc">weave</span> threads together to create <span class="voc">fabric</span>, and over time these woven <span class="voc">textile</span>s became softer, stronger, and more colourful. In ancient Egypt, light linen kept people cool, while heavy furs warmed people in colder lands. What someone wore often showed where they lived, what work they did, and even how rich they were.</p><p>For most of history, clothes were sewn one at a time by a <span class="voc">tailor</span>, a person skilled at cutting and stitching fabric to fit a body. Because each garment took so long to make, styles changed slowly. That changed when machines began making cloth and clothing quickly in factories. Suddenly new styles, or <span class="voc">trend</span>s, could spread to many people at once. Today a popular trend can travel around the world in days through pictures and the internet. Yet fashion still does what it always has: it lets people show who they are, and it connects us to the time and place we live in.</p>
+      <div class="passage-wrap">
+        <div class="topic-img">
+          <span class="topic-emoji">👗</span>
+          <div class="topic-label">A Short History of Fashion</div>
+        </div>
+        <div class="passage-text">
+          <h3>A Short History of Fashion</h3>
+          <p><span class="voc">Fashion</span> — the styles of clothing people choose to wear — has changed in every <span class="voc">era</span> of history. Long ago, people made <span class="voc">garment</span>s by hand from whatever materials they could find, such as animal skins, wool, and plant fibres. They learned to <span class="voc">weave</span> threads together to create <span class="voc">fabric</span>, and over time these woven <span class="voc">textile</span>s became softer, stronger, and more colourful. In ancient Egypt, light linen kept people cool, while heavy furs warmed people in colder lands. What someone wore often showed where they lived, what work they did, and even how rich they were.</p><p>For most of history, clothes were sewn one at a time by a <span class="voc">tailor</span>, a person skilled at cutting and stitching fabric to fit a body. Because each garment took so long to make, styles changed slowly. That changed when machines began making cloth and clothing quickly in factories. Suddenly new styles, or <span class="voc">trend</span>s, could spread to many people at once. Today a popular trend can travel around the world in days through pictures and the internet. Yet fashion still does what it always has: it lets people show who they are, and it connects us to the time and place we live in.</p>
+        </div>
+      </div>
     </div>
     <div class="actions"><button class="btn btn-primary" onclick="go(1)">I'm ready — Comprehend →</button></div>
   </section>
@@ -187,9 +201,10 @@
 </div>
 
 <script>
-const MODULE = {"activityId": "fashion-history", "projectKey": "fashion", "title": "A Short History of Fashion", "questions": [{"type": "Main idea", "q": "This passage is mostly about —", "opts": ["how to sew a dress", "how fashion and clothing have changed through history", "why linen is the best fabric"], "a": 1}, {"type": "Vocabulary", "q": "In the passage, \"garment\" means —", "opts": ["a piece of clothing", "a sewing machine", "a kind of factory"], "a": 0}, {"type": "Detail", "q": "People made early fabric by —", "opts": ["printing it on paper", "weaving threads together", "buying it in stores"], "a": 1}, {"type": "Detail", "q": "In ancient Egypt, people wore light linen because it —", "opts": ["kept them cool", "was very heavy", "showed they were poor"], "a": 0}, {"type": "Cause & effect", "q": "Styles used to change slowly because each garment was —", "opts": ["made quickly in factories", "sewn one at a time by a tailor", "worn only by the rich"], "a": 1}, {"type": "Inference", "q": "The passage suggests that today trends spread quickly because of —", "opts": ["pictures and the internet", "slower hand-sewing", "fewer kinds of clothing"], "a": 0}], "match": [{"word": "textile", "def": "a woven cloth or fabric", "hint": "\"…these woven <b>textile</b>s became softer, stronger…\""}, {"word": "trend", "def": "a style that becomes popular for a while", "hint": "\"…new styles, or <b>trend</b>s, could spread to many people…\""}, {"word": "garment", "def": "a piece of clothing", "hint": "\"…people made <b>garment</b>s by hand…\""}, {"word": "weave", "def": "to cross threads over and under to make cloth", "hint": "\"They learned to <b>weave</b> threads together to create fabric.\""}, {"word": "tailor", "def": "a person who makes clothes to fit a body", "hint": "\"…sewn one at a time by a <b>tailor</b>…\""}, {"word": "era", "def": "a period of time in history", "hint": "\"…has changed in every <b>era</b> of history.\""}], "bank": ["fashion", "fabric", "textile", "trend", "garment", "weave", "tailor", "era"], "fills": [{"text": "The clothes and styles people like to wear are called ___.", "a": "fashion"}, {"text": "This shirt is made from a soft cotton ___.", "a": "fabric"}, {"text": "A spider can ___ a web out of silky threads.", "a": "weave", "challenge": true}, {"text": "Bright colours are a popular ___ this year.", "a": "trend"}, {"text": "A coat is a warm ___ for winter.", "a": "garment"}, {"text": "Factories turn cotton into ___ used for clothes and sheets.", "a": "textile"}, {"text": "The ___ measured him carefully before making the suit.", "a": "tailor"}, {"text": "The Stone Age was an ___ long before cities were built.", "a": "era"}], "win": "PERFECT, Amara! Effortlessly stylish! 👗", "cheer": "You're a fashion historian now! 🧵"};
+const MODULE = {"activityId": "fashion-history", "projectKey": "fashion", "title": "A Short History of Fashion", "questions": [{"type": "Main idea", "q": "This passage is mostly about —", "opts": ["how to sew a dress", "how fashion and clothing have changed through history", "why linen is the best fabric"], "a": 1}, {"type": "Vocabulary", "q": "In the passage, \"garment\" means —", "opts": ["a piece of clothing", "a sewing machine", "a kind of factory"], "a": 0}, {"type": "Detail", "q": "People made early fabric by —", "opts": ["printing it on paper", "weaving threads together", "buying it in stores"], "a": 1}, {"type": "Detail", "q": "In ancient Egypt, people wore light linen because it —", "opts": ["kept them cool", "was very heavy", "showed they were poor"], "a": 0}, {"type": "Cause & effect", "q": "Styles used to change slowly because each garment was —", "opts": ["made quickly in factories", "sewn one at a time by a tailor", "worn only by the rich"], "a": 1}, {"type": "Inference", "q": "The passage suggests that today trends spread quickly because of —", "opts": ["pictures and the internet", "slower hand-sewing", "fewer kinds of clothing"], "a": 0}], "match": [{"word": "textile", "def": "a woven cloth or fabric", "hint": "\"…these woven <b>textile</b>s became softer, stronger…\""}, {"word": "trend", "def": "a style that becomes popular for a while", "hint": "\"…new styles, or <b>trend</b>s, could spread to many people…\""}, {"word": "garment", "def": "a piece of clothing", "hint": "\"…people made <b>garment</b>s by hand…\""}, {"word": "weave", "def": "to cross threads over and under to make cloth", "hint": "\"They learned to <b>weave</b> threads together to create fabric.\""}, {"word": "tailor", "def": "a person who makes clothes to fit a body", "hint": "\"…sewn one at a time by a <b>tailor</b>…\""}, {"word": "era", "def": "a period of time in history", "hint": "\"…has changed in every <b>era</b> of history.\""}], "bank": ["fashion", "fabric", "textile", "trend", "garment", "weave", "tailor", "era"], "fills": [{"text": "The clothes and styles people like to wear are called ___.", "a": "fashion"}, {"text": "This shirt is made from a soft cotton ___.", "a": "fabric"}, {"text": "A spider can ___ a web out of silky threads.", "a": "weave", "challenge": true}, {"text": "Bright colours are a popular ___ this year.", "a": "trend"}, {"text": "A coat is a warm ___ for winter.", "a": "garment"}, {"text": "Factories turn cotton into ___ used for clothes and sheets.", "a": "textile"}, {"text": "The ___ measured him carefully before making the suit.", "a": "tailor"}, {"text": "The Stone Age was an ___ long before cities were built.", "a": "era"}], "win": "PERFECT, Amara! Effortlessly stylish! 👗", "cheer": "You're a fashion historian now! 🧵", "name": "Amara", "hubKey": "amaraReading"};
 const PROJECT = MODULE.projectKey;
-const HUB_KEY = 'amaraReading';
+const HUB_KEY = MODULE.hubKey || 'amaraReading';
+const NAME    = MODULE.name || 'Amara';
 const TITLE   = MODULE.title;
 const QUESTIONS = MODULE.questions, MATCH = MODULE.match, BANK = MODULE.bank, FILLS = MODULE.fills;
 const TOTAL = QUESTIONS.length + MATCH.length + FILLS.length;
@@ -229,7 +244,7 @@ function checkQuiz(){
     else{opts[selected[qi]].classList.add('incorrect');opts[selected[qi]].innerHTML+=' <span class="mark">✗</span>';opts[correct].classList.add('correct');opts[correct].innerHTML+=' <span class="mark">✓</span>';}
   });
   quizScore=s;markDone(1);recordSub('comprehend',s,QUESTIONS.length);
-  flash('quizFb', s===QUESTIONS.length?'good':'try','You got '+s+' of '+QUESTIONS.length+'. '+(s===QUESTIONS.length?'Perfect reading, Amara! 🌟':'Look back at the passage, then tap Next.'));
+  flash('quizFb', s===QUESTIONS.length?'good':'try','You got '+s+' of '+QUESTIONS.length+'. '+(s===QUESTIONS.length?('Perfect reading, '+NAME+'! 🌟'):'Look back at the passage, then tap Next.'));
 }
 
 const matchEl=document.getElementById('match');
@@ -284,9 +299,9 @@ function showResults(){
   document.getElementById('breakdown').innerHTML='<div class="bd"><b>'+q+'/'+QUESTIONS.length+'</b><span>Comprehend</span></div><div class="bd"><b>'+m+'/'+MATCH.length+'</b><span>Match</span></div><div class="bd"><b>'+f+'/'+FILLS.length+'</b><span>Use</span></div>';
   let trophy,msg;
   if(pct===100){trophy='🏆';msg=MODULE.win;}
-  else if(pct>=80){trophy='🌟';msg='Brilliant work, Amara! '+MODULE.cheer;}
-  else if(pct>=60){trophy='💪';msg='Great effort, Amara — read once more and beat your score!';}
-  else{trophy='🌈';msg='Good try, Amara! Tap Try again and explore the passage.';}
+  else if(pct>=80){trophy='🌟';msg='Brilliant work, '+NAME+'! '+MODULE.cheer;}
+  else if(pct>=60){trophy='💪';msg='Great effort, '+NAME+' — read once more and beat your score!';}
+  else{trophy='🌈';msg='Good try, '+NAME+'! Tap Try again and explore the passage.';}
   document.getElementById('trophy').textContent=trophy;
   document.getElementById('resultMsg').textContent=msg;
   document.getElementById('savedNote').textContent='Scores saved on this device ✓';

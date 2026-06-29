@@ -31,6 +31,12 @@
   .step-head h2{font-size:20px;margin:0;color:var(--dark);font-weight:700}
   .step-head .tag{margin:2px 0 0;font-size:13px;color:var(--muted)}
 
+  .passage-wrap{display:flex;gap:18px;align-items:flex-start}
+  .topic-img{flex:0 0 110px;background:var(--gold-soft);border:2px solid #00000010;border-radius:16px;padding:18px 10px 14px;text-align:center}
+  .topic-emoji{font-size:54px;line-height:1;display:block;margin-bottom:8px}
+  .topic-label{font-size:10px;font-weight:800;color:var(--gold-deep);text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
+  .passage-text{flex:1;min-width:0}
+  @media(max-width:560px){.passage-wrap{flex-direction:column}.topic-img{display:flex;align-items:center;gap:14px;width:100%;flex:none;padding:12px 16px}.topic-emoji{font-size:42px;margin:0}.topic-label{font-size:11px;text-align:left}}
   .passage h3{font-size:17px;color:var(--dark);margin:0 0 8px}
   .passage p{font-size:16.5px;margin:0 0 12px}
   .watch{background:var(--gold-soft);border-radius:10px;padding:10px 14px;font-size:14px;color:var(--gold-deep);margin-top:6px}
@@ -118,9 +124,17 @@
   <!-- STEP 1: READ -->
   <section class="step passage">
     <div class="step-head"><div class="badge">1</div><div><h2>Read</h2><p class="tag">Read the passage carefully — you can read it twice.</p></div></div>
-    <h3>The busy world of bees</h3>
-    <p>Bees are small insects that play a giant role in nature. Most bees live together in groups called colonies, and a single honeybee colony can hold tens of thousands of bees. Inside the colony, every bee has a job to do. The queen lays all the eggs, the male drones help her, and thousands of female worker bees do almost everything else. Workers clean the hive, guard the entrance, care for the young, and fly out to find food. As a bee travels from flower to flower, it collects a sweet liquid called nectar and a fine yellow powder called pollen. Back at the hive, the bees turn the nectar into honey, which they store as food for the cold winter months when flowers no longer bloom.</p>
-    <p>Bees do far more than make honey. When a bee lands on a flower, grains of pollen stick to its fuzzy body. The bee then carries that pollen to the next flower, a process called pollination. Pollination allows plants to make seeds and grow fruit, so without bees, many of the foods people eat would slowly disappear. Bees have also developed amazing ways to share information. When a worker discovers a good patch of flowers, it returns to the hive and performs a special movement known as the waggle dance. The pattern of the dance tells the other bees exactly which direction to fly and how far to travel. Sadly, bees today face serious threats from disease, loss of habitat, and harmful chemicals called pesticides. Protecting bees is one important way to protect the food we all depend on.</p>
+    <div class="passage-wrap">
+      <div class="topic-img">
+        <span class="topic-emoji">🐝</span>
+        <div class="topic-label">The busy world of bees</div>
+      </div>
+      <div class="passage-text">
+        <h3>The busy world of bees</h3>
+        <p>Bees are small insects that play a giant role in nature. Most bees live together in groups called colonies, and a single honeybee colony can hold tens of thousands of bees. Inside the colony, every bee has a job to do. The queen lays all the eggs, the male drones help her, and thousands of female worker bees do almost everything else. Workers clean the hive, guard the entrance, care for the young, and fly out to find food. As a bee travels from flower to flower, it collects a sweet liquid called nectar and a fine yellow powder called pollen. Back at the hive, the bees turn the nectar into honey, which they store as food for the cold winter months when flowers no longer bloom.</p>
+        <p>Bees do far more than make honey. When a bee lands on a flower, grains of pollen stick to its fuzzy body. The bee then carries that pollen to the next flower, a process called pollination. Pollination allows plants to make seeds and grow fruit, so without bees, many of the foods people eat would slowly disappear. Bees have also developed amazing ways to share information. When a worker discovers a good patch of flowers, it returns to the hive and performs a special movement known as the waggle dance. The pattern of the dance tells the other bees exactly which direction to fly and how far to travel. Sadly, bees today face serious threats from disease, loss of habitat, and harmful chemicals called pesticides. Protecting bees is one important way to protect the food we all depend on.</p>
+      </div>
+    </div>
     <div class="watch"><b>Words to watch:</b> colony, drone, nectar, pollen, hive, honey, pollination, pesticide.</div>
   </section>
 

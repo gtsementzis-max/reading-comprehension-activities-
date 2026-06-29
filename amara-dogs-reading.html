@@ -63,9 +63,15 @@
   .panel h2{font-family:'Fredoka',sans-serif;color:var(--c-dark);margin:0 0 4px;font-size:1.3rem;display:flex;align-items:center;gap:10px}
   .panel .lead{color:var(--ink-soft);margin:0 0 16px;font-weight:600}
   .passage{background:var(--c-cream);border:2px solid #00000012;border-radius:16px;padding:18px 20px;font-size:1.06rem;line-height:1.7}
+  .passage-wrap{display:flex;gap:18px;align-items:flex-start}
+  .topic-img{flex:0 0 110px;background:var(--c-accent-soft);border:2px solid #00000010;border-radius:16px;padding:18px 10px 14px;text-align:center}
+  .topic-emoji{font-size:54px;line-height:1;display:block;margin-bottom:8px}
+  .topic-label{font-size:10px;font-weight:800;color:var(--c-deep);text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
+  .passage-text{flex:1;min-width:0}
   .passage h3{margin:0 0 10px;font-family:'Fredoka',sans-serif;color:var(--c-deep)}
   .passage p{margin:0 0 14px}
   .passage p:last-child{margin-bottom:0}
+  @media(max-width:560px){.passage-wrap{flex-direction:column}.topic-img{display:flex;align-items:center;gap:14px;width:100%;flex:none;padding:12px 16px}.topic-emoji{font-size:42px;margin:0}.topic-label{font-size:11px;text-align:left}}
   .voc{background:var(--c-accent-soft);border-bottom:2px solid var(--c-accent);border-radius:5px;padding:0 3px;font-weight:700;color:var(--c-deep)}
   .q{margin-bottom:18px}
   .q .qtext{font-weight:800;margin-bottom:10px}
@@ -135,8 +141,16 @@
     <h2>📖 Read the passage</h2>
     <p class="lead">Read it once for the meaning. Then read it again and look for the <span class="voc">coloured words</span>.</p>
     <div class="passage">
-      <h3>All About Dogs</h3>
-      <p>Dogs are often called our best friends, and they have lived alongside people for a very long time. Scientists believe all dogs <span class="voc">descend</span> from wolves that began living near humans thousands of years ago. Over many generations, people kept the friendliest wolves, and slowly these animals became tame, or <span class="voc">domesticate</span>d. A domesticated animal is one that has been changed over time to live safely with humans. Today there are hundreds of different kinds, or <span class="voc">breed</span>s, of dog, from tiny Chihuahuas to giant Great Danes. Even though they look so different, every breed shares the same wolf ancestors.</p><p>Although dogs are gentle <span class="voc">companion</span>s, many of their behaviours come from <span class="voc">instinct</span> — a way of acting an animal is born knowing, without being taught. A puppy that circles before lying down or buries a toy is following an instinct from its wild past. Dogs also have powerful <span class="voc">sense</span>s: their hearing and especially their sense of smell are far sharper than ours. Because they are <span class="voc">loyal</span> and eager to please, dogs can be <span class="voc">train</span>ed to do important jobs — guiding people who cannot see, sniffing out danger, or herding sheep. It is this mix of friendship and ability that has kept dogs and humans together for so long.</p>
+      <div class="passage-wrap">
+        <div class="topic-img">
+          <span class="topic-emoji">🐕</span>
+          <div class="topic-label">All About Dogs</div>
+        </div>
+        <div class="passage-text">
+          <h3>All About Dogs</h3>
+          <p>Dogs are often called our best friends, and they have lived alongside people for a very long time. Scientists believe all dogs <span class="voc">descend</span> from wolves that began living near humans thousands of years ago. Over many generations, people kept the friendliest wolves, and slowly these animals became tame, or <span class="voc">domesticate</span>d. A domesticated animal is one that has been changed over time to live safely with humans. Today there are hundreds of different kinds, or <span class="voc">breed</span>s, of dog, from tiny Chihuahuas to giant Great Danes. Even though they look so different, every breed shares the same wolf ancestors.</p><p>Although dogs are gentle <span class="voc">companion</span>s, many of their behaviours come from <span class="voc">instinct</span> — a way of acting an animal is born knowing, without being taught. A puppy that circles before lying down or buries a toy is following an instinct from its wild past. Dogs also have powerful <span class="voc">sense</span>s: their hearing and especially their sense of smell are far sharper than ours. Because they are <span class="voc">loyal</span> and eager to please, dogs can be <span class="voc">train</span>ed to do important jobs — guiding people who cannot see, sniffing out danger, or herding sheep. It is this mix of friendship and ability that has kept dogs and humans together for so long.</p>
+        </div>
+      </div>
     </div>
     <div class="actions"><button class="btn btn-primary" onclick="go(1)">I'm ready — Comprehend →</button></div>
   </section>
@@ -187,9 +201,10 @@
 </div>
 
 <script>
-const MODULE = {"activityId": "dogs", "projectKey": "dogs", "title": "All About Dogs", "questions": [{"type": "Main idea", "q": "What is the passage mostly about?", "opts": ["How to train a Great Dane", "Where dogs came from and what makes them special", "Why wolves are dangerous"], "a": 1}, {"type": "Detail", "q": "Scientists believe dogs descend from —", "opts": ["foxes", "wolves", "wild cats"], "a": 1}, {"type": "Vocabulary", "q": "In the passage, \"instinct\" means —", "opts": ["a trick a dog is taught at school", "a way of acting an animal is born knowing", "a kind of dog breed"], "a": 1}, {"type": "Cause & effect", "q": "Dogs can be trained to do important jobs because they are —", "opts": ["loyal and eager to please", "bigger than wolves", "unable to smell"], "a": 0}, {"type": "Detail", "q": "Which sense is described as especially sharp in dogs?", "opts": ["taste", "smell", "sight"], "a": 1}, {"type": "Inference", "q": "A puppy that buries a toy is —", "opts": ["following an instinct from its wild past", "trying to plant a tree", "copying a cat"], "a": 0}], "match": [{"word": "domesticate", "def": "to change an animal over time so it can live with humans", "hint": "\"…became tame, or <b>domesticate</b>d.\""}, {"word": "breed", "def": "one particular kind of dog", "hint": "\"…hundreds of different kinds, or <b>breed</b>s, of dog…\""}, {"word": "instinct", "def": "a way of acting an animal is born knowing", "hint": "\"…<b>instinct</b> — a way of acting an animal is born knowing…\""}, {"word": "descend", "def": "to come from an earlier kind of animal", "hint": "\"…all dogs <b>descend</b> from wolves…\""}, {"word": "companion", "def": "a friend who keeps you company", "hint": "\"…dogs are gentle <b>companion</b>s…\""}, {"word": "loyal", "def": "faithful and sticking by someone", "hint": "\"…they are <b>loyal</b> and eager to please…\""}], "bank": ["domesticate", "breed", "loyal", "instinct", "descend", "companion", "sense", "train"], "fills": [{"text": "Cows and chickens are animals that humans ___d long ago to live with them.", "a": "domesticate"}, {"text": "A poodle is one ___ of dog, and a bulldog is another.", "a": "breed"}, {"text": "A good dog is ___ and stays by your side.", "a": "loyal"}, {"text": "Birds build nests by ___, without ever being taught.", "a": "instinct"}, {"text": "All dogs ___ from ancient wolves.", "a": "descend"}, {"text": "My dog is my favourite ___ on long walks.", "a": "companion"}, {"text": "A dog's ___ of smell is much stronger than a human's.", "a": "sense"}, {"text": "With patience, you can ___ a parrot to say words.", "a": "train", "challenge": true}], "win": "PERFECT, Amara! Top dog! 🐶", "cheer": "The puppies are wagging their tails for you! 🐾"};
+const MODULE = {"activityId": "dogs", "projectKey": "dogs", "title": "All About Dogs", "questions": [{"type": "Main idea", "q": "What is the passage mostly about?", "opts": ["How to train a Great Dane", "Where dogs came from and what makes them special", "Why wolves are dangerous"], "a": 1}, {"type": "Detail", "q": "Scientists believe dogs descend from —", "opts": ["foxes", "wolves", "wild cats"], "a": 1}, {"type": "Vocabulary", "q": "In the passage, \"instinct\" means —", "opts": ["a trick a dog is taught at school", "a way of acting an animal is born knowing", "a kind of dog breed"], "a": 1}, {"type": "Cause & effect", "q": "Dogs can be trained to do important jobs because they are —", "opts": ["loyal and eager to please", "bigger than wolves", "unable to smell"], "a": 0}, {"type": "Detail", "q": "Which sense is described as especially sharp in dogs?", "opts": ["taste", "smell", "sight"], "a": 1}, {"type": "Inference", "q": "A puppy that buries a toy is —", "opts": ["following an instinct from its wild past", "trying to plant a tree", "copying a cat"], "a": 0}], "match": [{"word": "domesticate", "def": "to change an animal over time so it can live with humans", "hint": "\"…became tame, or <b>domesticate</b>d.\""}, {"word": "breed", "def": "one particular kind of dog", "hint": "\"…hundreds of different kinds, or <b>breed</b>s, of dog…\""}, {"word": "instinct", "def": "a way of acting an animal is born knowing", "hint": "\"…<b>instinct</b> — a way of acting an animal is born knowing…\""}, {"word": "descend", "def": "to come from an earlier kind of animal", "hint": "\"…all dogs <b>descend</b> from wolves…\""}, {"word": "companion", "def": "a friend who keeps you company", "hint": "\"…dogs are gentle <b>companion</b>s…\""}, {"word": "loyal", "def": "faithful and sticking by someone", "hint": "\"…they are <b>loyal</b> and eager to please…\""}], "bank": ["domesticate", "breed", "loyal", "instinct", "descend", "companion", "sense", "train"], "fills": [{"text": "Cows and chickens are animals that humans ___d long ago to live with them.", "a": "domesticate"}, {"text": "A poodle is one ___ of dog, and a bulldog is another.", "a": "breed"}, {"text": "A good dog is ___ and stays by your side.", "a": "loyal"}, {"text": "Birds build nests by ___, without ever being taught.", "a": "instinct"}, {"text": "All dogs ___ from ancient wolves.", "a": "descend"}, {"text": "My dog is my favourite ___ on long walks.", "a": "companion"}, {"text": "A dog's ___ of smell is much stronger than a human's.", "a": "sense"}, {"text": "With patience, you can ___ a parrot to say words.", "a": "train", "challenge": true}], "win": "PERFECT, Amara! Top dog! 🐶", "cheer": "The puppies are wagging their tails for you! 🐾", "name": "Amara", "hubKey": "amaraReading"};
 const PROJECT = MODULE.projectKey;
-const HUB_KEY = 'amaraReading';
+const HUB_KEY = MODULE.hubKey || 'amaraReading';
+const NAME    = MODULE.name || 'Amara';
 const TITLE   = MODULE.title;
 const QUESTIONS = MODULE.questions, MATCH = MODULE.match, BANK = MODULE.bank, FILLS = MODULE.fills;
 const TOTAL = QUESTIONS.length + MATCH.length + FILLS.length;
@@ -229,7 +244,7 @@ function checkQuiz(){
     else{opts[selected[qi]].classList.add('incorrect');opts[selected[qi]].innerHTML+=' <span class="mark">✗</span>';opts[correct].classList.add('correct');opts[correct].innerHTML+=' <span class="mark">✓</span>';}
   });
   quizScore=s;markDone(1);recordSub('comprehend',s,QUESTIONS.length);
-  flash('quizFb', s===QUESTIONS.length?'good':'try','You got '+s+' of '+QUESTIONS.length+'. '+(s===QUESTIONS.length?'Perfect reading, Amara! 🌟':'Look back at the passage, then tap Next.'));
+  flash('quizFb', s===QUESTIONS.length?'good':'try','You got '+s+' of '+QUESTIONS.length+'. '+(s===QUESTIONS.length?('Perfect reading, '+NAME+'! 🌟'):'Look back at the passage, then tap Next.'));
 }
 
 const matchEl=document.getElementById('match');
@@ -284,9 +299,9 @@ function showResults(){
   document.getElementById('breakdown').innerHTML='<div class="bd"><b>'+q+'/'+QUESTIONS.length+'</b><span>Comprehend</span></div><div class="bd"><b>'+m+'/'+MATCH.length+'</b><span>Match</span></div><div class="bd"><b>'+f+'/'+FILLS.length+'</b><span>Use</span></div>';
   let trophy,msg;
   if(pct===100){trophy='🏆';msg=MODULE.win;}
-  else if(pct>=80){trophy='🌟';msg='Brilliant work, Amara! '+MODULE.cheer;}
-  else if(pct>=60){trophy='💪';msg='Great effort, Amara — read once more and beat your score!';}
-  else{trophy='🌈';msg='Good try, Amara! Tap Try again and explore the passage.';}
+  else if(pct>=80){trophy='🌟';msg='Brilliant work, '+NAME+'! '+MODULE.cheer;}
+  else if(pct>=60){trophy='💪';msg='Great effort, '+NAME+' — read once more and beat your score!';}
+  else{trophy='🌈';msg='Good try, '+NAME+'! Tap Try again and explore the passage.';}
   document.getElementById('trophy').textContent=trophy;
   document.getElementById('resultMsg').textContent=msg;
   document.getElementById('savedNote').textContent='Scores saved on this device ✓';

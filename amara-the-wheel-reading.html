@@ -63,9 +63,15 @@
   .panel h2{font-family:'Fredoka',sans-serif;color:var(--c-dark);margin:0 0 4px;font-size:1.3rem;display:flex;align-items:center;gap:10px}
   .panel .lead{color:var(--ink-soft);margin:0 0 16px;font-weight:600}
   .passage{background:var(--c-cream);border:2px solid #00000012;border-radius:16px;padding:18px 20px;font-size:1.06rem;line-height:1.7}
+  .passage-wrap{display:flex;gap:18px;align-items:flex-start}
+  .topic-img{flex:0 0 110px;background:var(--c-accent-soft);border:2px solid #00000010;border-radius:16px;padding:18px 10px 14px;text-align:center}
+  .topic-emoji{font-size:54px;line-height:1;display:block;margin-bottom:8px}
+  .topic-label{font-size:10px;font-weight:800;color:var(--c-deep);text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
+  .passage-text{flex:1;min-width:0}
   .passage h3{margin:0 0 10px;font-family:'Fredoka',sans-serif;color:var(--c-deep)}
   .passage p{margin:0 0 14px}
   .passage p:last-child{margin-bottom:0}
+  @media(max-width:560px){.passage-wrap{flex-direction:column}.topic-img{display:flex;align-items:center;gap:14px;width:100%;flex:none;padding:12px 16px}.topic-emoji{font-size:42px;margin:0}.topic-label{font-size:11px;text-align:left}}
   .voc{background:var(--c-accent-soft);border-bottom:2px solid var(--c-accent);border-radius:5px;padding:0 3px;font-weight:700;color:var(--c-deep)}
   .q{margin-bottom:18px}
   .q .qtext{font-weight:800;margin-bottom:10px}
@@ -135,8 +141,16 @@
     <h2>📖 Read the passage</h2>
     <p class="lead">Read it once for the meaning. Then read it again and look for the <span class="voc">coloured words</span>.</p>
     <div class="passage">
-      <h3>Why the Wheel Changed the World</h3>
-      <p>Some <span class="voc">invention</span>s are so useful that it is hard to imagine life without them, and the wheel is one of the greatest of all. People made the first wheels more than 5,000 years ago, but a wheel by itself does not do much. The real breakthrough came when someone joined a wheel to a rod called an <span class="voc">axle</span>, which lets the wheel <span class="voc">rotate</span>, or spin, freely while holding it in place. Interestingly, early wheels were not used for travel at all — they were laid flat and used to shape clay pots. Only later did people stand them up and use them to move things.</p><p>Once wheels and axles were placed under carts, everything changed. Suddenly people could <span class="voc">transport</span> heavy loads and <span class="voc">goods</span> over long distances far more <span class="voc">efficient</span>ly than carrying them by hand. Farmers could bring crops to market, traders could travel between towns, and builders could haul stone for huge structures. The wheel became part of almost every <span class="voc">machine</span> humans built, from water mills to clocks to cars. Many historians believe the wheel helped early <span class="voc">civilization</span>s — large, organized groups of people living together — to grow, trade, and share ideas. A simple round shape truly helped build the modern world.</p>
+      <div class="passage-wrap">
+        <div class="topic-img">
+          <span class="topic-emoji">🛞</span>
+          <div class="topic-label">Why the Wheel Changed the World</div>
+        </div>
+        <div class="passage-text">
+          <h3>Why the Wheel Changed the World</h3>
+          <p>Some <span class="voc">invention</span>s are so useful that it is hard to imagine life without them, and the wheel is one of the greatest of all. People made the first wheels more than 5,000 years ago, but a wheel by itself does not do much. The real breakthrough came when someone joined a wheel to a rod called an <span class="voc">axle</span>, which lets the wheel <span class="voc">rotate</span>, or spin, freely while holding it in place. Interestingly, early wheels were not used for travel at all — they were laid flat and used to shape clay pots. Only later did people stand them up and use them to move things.</p><p>Once wheels and axles were placed under carts, everything changed. Suddenly people could <span class="voc">transport</span> heavy loads and <span class="voc">goods</span> over long distances far more <span class="voc">efficient</span>ly than carrying them by hand. Farmers could bring crops to market, traders could travel between towns, and builders could haul stone for huge structures. The wheel became part of almost every <span class="voc">machine</span> humans built, from water mills to clocks to cars. Many historians believe the wheel helped early <span class="voc">civilization</span>s — large, organized groups of people living together — to grow, trade, and share ideas. A simple round shape truly helped build the modern world.</p>
+        </div>
+      </div>
     </div>
     <div class="actions"><button class="btn btn-primary" onclick="go(1)">I'm ready — Comprehend →</button></div>
   </section>
@@ -187,9 +201,10 @@
 </div>
 
 <script>
-const MODULE = {"activityId": "the-wheel", "projectKey": "wheel", "title": "Why the Wheel Changed the World", "questions": [{"type": "Main idea", "q": "The passage is mostly about —", "opts": ["how to make a clay pot", "why the wheel was such an important invention", "who invented the first car"], "a": 1}, {"type": "Detail", "q": "A wheel can spin freely when it is joined to a —", "opts": ["clay pot", "rod called an axle", "market stall"], "a": 1}, {"type": "Vocabulary", "q": "In the passage, \"transport\" means —", "opts": ["to shape clay", "to move things from place to place", "to spin in a circle"], "a": 1}, {"type": "Detail", "q": "The first wheels were used to —", "opts": ["shape clay pots", "race chariots", "power clocks"], "a": 0}, {"type": "Cause & effect", "q": "After wheels were put under carts, people could —", "opts": ["carry less than before", "move heavy goods more efficiently", "stop trading with other towns"], "a": 1}, {"type": "Inference", "q": "The passage suggests the wheel helped civilizations by —", "opts": ["making it easier to trade and share ideas", "keeping people from travelling", "replacing all farmers"], "a": 0}], "match": [{"word": "invention", "def": "something new that someone creates for the first time", "hint": "\"Some <b>invention</b>s are so useful…\""}, {"word": "axle", "def": "a rod that a wheel turns on", "hint": "\"…a rod called an <b>axle</b>, which lets the wheel rotate…\""}, {"word": "transport", "def": "to move things from one place to another", "hint": "\"…people could <b>transport</b> heavy loads…\""}, {"word": "civilization", "def": "a large, organized group of people living together", "hint": "\"…<b>civilization</b>s — large, organized groups of people living together…\""}, {"word": "efficient", "def": "done quickly and without wasted effort", "hint": "\"…far more <b>efficient</b>ly than carrying them by hand.\""}, {"word": "rotate", "def": "to turn or spin around", "hint": "\"…lets the wheel <b>rotate</b>, or spin, freely…\""}], "bank": ["invention", "axle", "transport", "goods", "civilization", "efficient", "rotate", "machine"], "fills": [{"text": "The telephone was a famous ___ that changed how people talk.", "a": "invention"}, {"text": "The wheel spins around a metal ___.", "a": "axle"}, {"text": "Trucks and trains ___ food across the country.", "a": "transport"}, {"text": "Shops sell all kinds of ___, like clothes and toys.", "a": "goods"}, {"text": "Ancient Egypt was an early ___ along the Nile River.", "a": "civilization"}, {"text": "Using a wheelbarrow is a more ___ way to move bricks.", "a": "efficient"}, {"text": "The Earth ___s once every day, giving us day and night.", "a": "rotate", "challenge": true}, {"text": "A bicycle is a simple ___ that uses two wheels.", "a": "machine"}], "win": "PERFECT, Amara! You're really rolling! 🛞", "cheer": "Your thinking is in full motion! ⚙️"};
+const MODULE = {"activityId": "the-wheel", "projectKey": "wheel", "title": "Why the Wheel Changed the World", "questions": [{"type": "Main idea", "q": "The passage is mostly about —", "opts": ["how to make a clay pot", "why the wheel was such an important invention", "who invented the first car"], "a": 1}, {"type": "Detail", "q": "A wheel can spin freely when it is joined to a —", "opts": ["clay pot", "rod called an axle", "market stall"], "a": 1}, {"type": "Vocabulary", "q": "In the passage, \"transport\" means —", "opts": ["to shape clay", "to move things from place to place", "to spin in a circle"], "a": 1}, {"type": "Detail", "q": "The first wheels were used to —", "opts": ["shape clay pots", "race chariots", "power clocks"], "a": 0}, {"type": "Cause & effect", "q": "After wheels were put under carts, people could —", "opts": ["carry less than before", "move heavy goods more efficiently", "stop trading with other towns"], "a": 1}, {"type": "Inference", "q": "The passage suggests the wheel helped civilizations by —", "opts": ["making it easier to trade and share ideas", "keeping people from travelling", "replacing all farmers"], "a": 0}], "match": [{"word": "invention", "def": "something new that someone creates for the first time", "hint": "\"Some <b>invention</b>s are so useful…\""}, {"word": "axle", "def": "a rod that a wheel turns on", "hint": "\"…a rod called an <b>axle</b>, which lets the wheel rotate…\""}, {"word": "transport", "def": "to move things from one place to another", "hint": "\"…people could <b>transport</b> heavy loads…\""}, {"word": "civilization", "def": "a large, organized group of people living together", "hint": "\"…<b>civilization</b>s — large, organized groups of people living together…\""}, {"word": "efficient", "def": "done quickly and without wasted effort", "hint": "\"…far more <b>efficient</b>ly than carrying them by hand.\""}, {"word": "rotate", "def": "to turn or spin around", "hint": "\"…lets the wheel <b>rotate</b>, or spin, freely…\""}], "bank": ["invention", "axle", "transport", "goods", "civilization", "efficient", "rotate", "machine"], "fills": [{"text": "The telephone was a famous ___ that changed how people talk.", "a": "invention"}, {"text": "The wheel spins around a metal ___.", "a": "axle"}, {"text": "Trucks and trains ___ food across the country.", "a": "transport"}, {"text": "Shops sell all kinds of ___, like clothes and toys.", "a": "goods"}, {"text": "Ancient Egypt was an early ___ along the Nile River.", "a": "civilization"}, {"text": "Using a wheelbarrow is a more ___ way to move bricks.", "a": "efficient"}, {"text": "The Earth ___s once every day, giving us day and night.", "a": "rotate", "challenge": true}, {"text": "A bicycle is a simple ___ that uses two wheels.", "a": "machine"}], "win": "PERFECT, Amara! You're really rolling! 🛞", "cheer": "Your thinking is in full motion! ⚙️", "name": "Amara", "hubKey": "amaraReading"};
 const PROJECT = MODULE.projectKey;
-const HUB_KEY = 'amaraReading';
+const HUB_KEY = MODULE.hubKey || 'amaraReading';
+const NAME    = MODULE.name || 'Amara';
 const TITLE   = MODULE.title;
 const QUESTIONS = MODULE.questions, MATCH = MODULE.match, BANK = MODULE.bank, FILLS = MODULE.fills;
 const TOTAL = QUESTIONS.length + MATCH.length + FILLS.length;
@@ -229,7 +244,7 @@ function checkQuiz(){
     else{opts[selected[qi]].classList.add('incorrect');opts[selected[qi]].innerHTML+=' <span class="mark">✗</span>';opts[correct].classList.add('correct');opts[correct].innerHTML+=' <span class="mark">✓</span>';}
   });
   quizScore=s;markDone(1);recordSub('comprehend',s,QUESTIONS.length);
-  flash('quizFb', s===QUESTIONS.length?'good':'try','You got '+s+' of '+QUESTIONS.length+'. '+(s===QUESTIONS.length?'Perfect reading, Amara! 🌟':'Look back at the passage, then tap Next.'));
+  flash('quizFb', s===QUESTIONS.length?'good':'try','You got '+s+' of '+QUESTIONS.length+'. '+(s===QUESTIONS.length?('Perfect reading, '+NAME+'! 🌟'):'Look back at the passage, then tap Next.'));
 }
 
 const matchEl=document.getElementById('match');
@@ -284,9 +299,9 @@ function showResults(){
   document.getElementById('breakdown').innerHTML='<div class="bd"><b>'+q+'/'+QUESTIONS.length+'</b><span>Comprehend</span></div><div class="bd"><b>'+m+'/'+MATCH.length+'</b><span>Match</span></div><div class="bd"><b>'+f+'/'+FILLS.length+'</b><span>Use</span></div>';
   let trophy,msg;
   if(pct===100){trophy='🏆';msg=MODULE.win;}
-  else if(pct>=80){trophy='🌟';msg='Brilliant work, Amara! '+MODULE.cheer;}
-  else if(pct>=60){trophy='💪';msg='Great effort, Amara — read once more and beat your score!';}
-  else{trophy='🌈';msg='Good try, Amara! Tap Try again and explore the passage.';}
+  else if(pct>=80){trophy='🌟';msg='Brilliant work, '+NAME+'! '+MODULE.cheer;}
+  else if(pct>=60){trophy='💪';msg='Great effort, '+NAME+' — read once more and beat your score!';}
+  else{trophy='🌈';msg='Good try, '+NAME+'! Tap Try again and explore the passage.';}
   document.getElementById('trophy').textContent=trophy;
   document.getElementById('resultMsg').textContent=msg;
   document.getElementById('savedNote').textContent='Scores saved on this device ✓';

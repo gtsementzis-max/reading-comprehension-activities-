@@ -63,9 +63,15 @@
   .panel h2{font-family:'Fredoka',sans-serif;color:var(--c-dark);margin:0 0 4px;font-size:1.3rem;display:flex;align-items:center;gap:10px}
   .panel .lead{color:var(--ink-soft);margin:0 0 16px;font-weight:600}
   .passage{background:var(--c-cream);border:2px solid #00000012;border-radius:16px;padding:18px 20px;font-size:1.06rem;line-height:1.7}
+  .passage-wrap{display:flex;gap:18px;align-items:flex-start}
+  .topic-img{flex:0 0 110px;background:var(--c-accent-soft);border:2px solid #00000010;border-radius:16px;padding:18px 10px 14px;text-align:center}
+  .topic-emoji{font-size:54px;line-height:1;display:block;margin-bottom:8px}
+  .topic-label{font-size:10px;font-weight:800;color:var(--c-deep);text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
+  .passage-text{flex:1;min-width:0}
   .passage h3{margin:0 0 10px;font-family:'Fredoka',sans-serif;color:var(--c-deep)}
   .passage p{margin:0 0 14px}
   .passage p:last-child{margin-bottom:0}
+  @media(max-width:560px){.passage-wrap{flex-direction:column}.topic-img{display:flex;align-items:center;gap:14px;width:100%;flex:none;padding:12px 16px}.topic-emoji{font-size:42px;margin:0}.topic-label{font-size:11px;text-align:left}}
   .voc{background:var(--c-accent-soft);border-bottom:2px solid var(--c-accent);border-radius:5px;padding:0 3px;font-weight:700;color:var(--c-deep)}
   .q{margin-bottom:18px}
   .q .qtext{font-weight:800;margin-bottom:10px}
@@ -135,8 +141,16 @@
     <h2>📖 Read the passage</h2>
     <p class="lead">Read it once for the meaning. Then read it again and look for the <span class="voc">coloured words</span>.</p>
     <div class="passage">
-      <h3>How Money Works</h3>
-      <p>Long ago, before money existed, people got what they needed by <span class="voc">barter</span>, which means trading one thing directly for another. A farmer might <span class="voc">trade</span> a basket of eggs for a pair of shoes. But bartering was tricky — what if the shoemaker did not want eggs? To make trading easier, people invented money, a special kind of <span class="voc">currency</span> that everyone agrees has <span class="voc">value</span>.</p><p>Today, people <span class="voc">earn</span> money by working, and they spend it to buy <span class="voc">goods</span> and services they need. Because money is limited, it is smart to make a <span class="voc">budget</span>, a plan for how much to spend and how much to <span class="voc">save</span>. Saving money now means you can buy something bigger later, or be ready if an emergency comes. Understanding money helps people make good choices.</p>
+      <div class="passage-wrap">
+        <div class="topic-img">
+          <span class="topic-emoji">💰</span>
+          <div class="topic-label">How Money Works</div>
+        </div>
+        <div class="passage-text">
+          <h3>How Money Works</h3>
+          <p>Long ago, before money existed, people got what they needed by <span class="voc">barter</span>, which means trading one thing directly for another. A farmer might <span class="voc">trade</span> a basket of eggs for a pair of shoes. But bartering was tricky — what if the shoemaker did not want eggs? To make trading easier, people invented money, a special kind of <span class="voc">currency</span> that everyone agrees has <span class="voc">value</span>.</p><p>Today, people <span class="voc">earn</span> money by working, and they spend it to buy <span class="voc">goods</span> and services they need. Because money is limited, it is smart to make a <span class="voc">budget</span>, a plan for how much to spend and how much to <span class="voc">save</span>. Saving money now means you can buy something bigger later, or be ready if an emergency comes. Understanding money helps people make good choices.</p>
+        </div>
+      </div>
     </div>
     <div class="actions"><button class="btn btn-primary" onclick="go(1)">I'm ready — Comprehend →</button></div>
   </section>
