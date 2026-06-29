@@ -1,0 +1,38 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="340" height="200" fill="#ffe8ec"/>
+  <text x="170" y="15" text-anchor="middle" font-size="12" font-weight="bold" fill="#7b1a2e">THE HUMAN HEART</text>
+  <!-- Heart outline -->
+  <path d="M170,165 C130,145 60,120 60,80 C60,55 80,38 105,42 C125,45 145,60 170,85 C195,60 215,45 235,42 C260,38 280,55 280,80 C280,120 210,145 170,165Z" fill="#e57373" stroke="#c0392b" stroke-width="2"/>
+  <!-- Chamber dividers -->
+  <line x1="170" y1="50" x2="170" y2="155" stroke="#7b1a2e" stroke-width="2"/>
+  <line x1="95" y1="100" x2="245" y2="100" stroke="#7b1a2e" stroke-width="2"/>
+  <!-- Right Atrium -->
+  <text x="130" y="80" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#fff">RIGHT</text>
+  <text x="130" y="92" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#fff">ATRIUM</text>
+  <!-- Left Atrium -->
+  <rect x="172" y="52" width="74" height="44" fill="#b71c1c" rx="2" opacity="0.6"/>
+  <text x="209" y="78" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#fff">LEFT</text>
+  <text x="209" y="90" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#fff">ATRIUM</text>
+  <!-- Right Ventricle -->
+  <text x="130" y="122" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#fff">RIGHT</text>
+  <text x="130" y="134" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#fff">VENTRICLE</text>
+  <!-- Left Ventricle -->
+  <rect x="172" y="102" width="74" height="44" fill="#b71c1c" rx="2" opacity="0.6"/>
+  <text x="209" y="122" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#fff">LEFT</text>
+  <text x="209" y="134" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#fff">VENTRICLE</text>
+  <!-- Flow arrows -->
+  <path d="M155,75 L145,75" stroke="white" stroke-width="1.5" marker-end="url(#wa)"/>
+  <path d="M185,75 L195,75" stroke="white" stroke-width="1.5" marker-end="url(#wa)"/>
+  <path d="M155,115 L145,115" stroke="white" stroke-width="1.5" marker-end="url(#wa)"/>
+  <path d="M185,115 L195,115" stroke="white" stroke-width="1.5" marker-end="url(#wa)"/>
+  <defs>
+    <marker id="wa" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <polygon points="0,0 6,3 0,6" fill="white"/>
+    </marker>
+  </defs>
+  <!-- Labels outside -->
+  <text x="38" y="78" text-anchor="end" font-size="9" fill="#7b1a2e" font-weight="bold">Deoxygenated</text>
+  <text x="38" y="89" text-anchor="end" font-size="9" fill="#7b1a2e" font-weight="bold">blood IN</text>
+  <text x="302" y="78" font-size="9" fill="#7b1a2e" font-weight="bold">Oxygenated</text>
+  <text x="302" y="89" font-size="9" fill="#7b1a2e" font-weight="bold">blood OUT</text>
+</svg>

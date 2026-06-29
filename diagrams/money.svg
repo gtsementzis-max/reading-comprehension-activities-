@@ -1,0 +1,58 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="340" height="200" fill="#fdf8ee"/>
+  <text x="170" y="14" text-anchor="middle" font-size="12" font-weight="bold" fill="#4a2800">BARTER VS MONEY</text>
+  <!-- Dividing line -->
+  <line x1="170" y1="22" x2="170" y2="190" stroke="#bbb" stroke-width="2"/>
+  <!-- LEFT: Barter System -->
+  <text x="85" y="34" text-anchor="middle" font-size="10" font-weight="bold" fill="#2e7d32">BARTER SYSTEM</text>
+  <!-- Left figure with apple -->
+  <circle cx="35" cy="70" r="10" fill="#f5deb3" stroke="#795548" stroke-width="1.5"/>
+  <line x1="35" y1="80" x2="35" y2="110" stroke="#795548" stroke-width="2"/>
+  <line x1="35" y1="90" x2="22" y2="102" stroke="#795548" stroke-width="2"/>
+  <line x1="35" y1="90" x2="48" y2="102" stroke="#795548" stroke-width="2"/>
+  <line x1="35" y1="110" x2="26" y2="125" stroke="#795548" stroke-width="2"/>
+  <line x1="35" y1="110" x2="44" y2="125" stroke="#795548" stroke-width="2"/>
+  <!-- Apple in hand -->
+  <circle cx="52" cy="100" r="8" fill="#e53935"/>
+  <line x1="52" y1="92" x2="52" y2="87" stroke="#4caf50" stroke-width="1.5"/>
+  <text x="35" y="140" text-anchor="middle" font-size="8" fill="#555">Person A</text>
+  <!-- Double arrow -->
+  <line x1="62" y1="100" x2="108" y2="100" stroke="#555" stroke-width="2"/>
+  <polygon points="62,96 50,100 62,104" fill="#555"/>
+  <polygon points="108,96 120,100 108,104" fill="#555"/>
+  <text x="85" y="95" text-anchor="middle" font-size="8" font-weight="bold" fill="#555">TRADE</text>
+  <!-- Right figure with fish -->
+  <circle cx="135" cy="70" r="10" fill="#f5deb3" stroke="#795548" stroke-width="1.5"/>
+  <line x1="135" y1="80" x2="135" y2="110" stroke="#795548" stroke-width="2"/>
+  <line x1="135" y1="90" x2="122" y2="102" stroke="#795548" stroke-width="2"/>
+  <line x1="135" y1="90" x2="148" y2="102" stroke="#795548" stroke-width="2"/>
+  <line x1="135" y1="110" x2="126" y2="125" stroke="#795548" stroke-width="2"/>
+  <line x1="135" y1="110" x2="144" y2="125" stroke="#795548" stroke-width="2"/>
+  <!-- Fish -->
+  <ellipse cx="118" cy="100" rx="10" ry="5" fill="#42a5f5"/>
+  <polygon points="108,100 100,95 100,105" fill="#42a5f5"/>
+  <text x="135" y="140" text-anchor="middle" font-size="8" fill="#555">Person B</text>
+  <text x="85" y="165" text-anchor="middle" font-size="8" fill="#2e7d32">No money needed!</text>
+  <text x="85" y="178" text-anchor="middle" font-size="8" fill="#555">Direct exchange</text>
+  <!-- RIGHT: Money System -->
+  <text x="255" y="34" text-anchor="middle" font-size="10" font-weight="bold" fill="#1565c0">MONEY SYSTEM</text>
+  <!-- Coin -->
+  <circle cx="205" cy="80" r="18" fill="#FFD700" stroke="#e6b800" stroke-width="2"/>
+  <text x="205" y="84" text-anchor="middle" font-size="12" font-weight="bold" fill="#b8860b">$</text>
+  <!-- Arrow -->
+  <line x1="225" y1="80" x2="248" y2="80" stroke="#1565c0" stroke-width="2"/>
+  <polygon points="248,76 260,80 248,84" fill="#1565c0"/>
+  <!-- Items -->
+  <!-- Apple -->
+  <circle cx="272" cy="60" r="9" fill="#e53935"/>
+  <line x1="272" y1="51" x2="272" y2="46" stroke="#4caf50" stroke-width="1.5"/>
+  <!-- Fish -->
+  <ellipse cx="295" cy="80" rx="11" ry="6" fill="#42a5f5"/>
+  <polygon points="284,80 276,75 276,85" fill="#42a5f5"/>
+  <!-- Bread -->
+  <ellipse cx="272" cy="105" rx="12" ry="7" fill="#d4a950"/>
+  <path d="M262,105 Q272,98 282,105" stroke="#b8860b" stroke-width="1.5" fill="none"/>
+  <text x="255" y="130" text-anchor="middle" font-size="8" fill="#1565c0">Buy anything!</text>
+  <text x="255" y="143" text-anchor="middle" font-size="8" fill="#555">Standardised value</text>
+  <text x="205" y="105" text-anchor="middle" font-size="8" font-weight="bold" fill="#b8860b">COIN</text>
+</svg>

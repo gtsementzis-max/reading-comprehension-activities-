@@ -1,0 +1,40 @@
+﻿<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="340" height="200" fill="#fff5e0" rx="8"/>
+  <text x="170" y="16" font-family="sans-serif" font-size="12" font-weight="bold" fill="#5a1a00" text-anchor="middle">PIZZA LAYERS</text>
+  <!-- Cross section slice (left side) -->
+  <!-- Crust bottom -->
+  <path d="M 30,170 L 160,170 L 145,145 L 45,145 Z" fill="#c8843a" stroke="#8a5010" stroke-width="1.5"/>
+  <!-- Sauce layer -->
+  <path d="M 45,145 L 145,145 L 132,122 L 58,122 Z" fill="#cc3322" stroke="#881100" stroke-width="1.5"/>
+  <!-- Cheese layer -->
+  <path d="M 58,122 L 132,122 L 120,100 L 70,100 Z" fill="#f5e09a" stroke="#c0a030" stroke-width="1.5"/>
+  <!-- Toppings layer -->
+  <path d="M 70,100 L 120,100 L 110,80 L 80,80 Z" fill="#f0a850" stroke="#c07020" stroke-width="1.5"/>
+  <!-- Topping circles (pepperoni) -->
+  <circle cx="88" cy="90" r="5" fill="#cc3322"/>
+  <circle cx="103" cy="88" r="5" fill="#cc3322"/>
+  <!-- Labels with arrows -->
+  <line x1="42" y1="158" x2="15" y2="158" stroke="#aaa" stroke-width="1"/>
+  <text x="13" y="161" font-family="sans-serif" font-size="9" font-weight="bold" fill="#5a1a00" text-anchor="end">CRUST</text>
+  <line x1="55" y1="134" x2="15" y2="134" stroke="#aaa" stroke-width="1"/>
+  <text x="13" y="137" font-family="sans-serif" font-size="9" font-weight="bold" fill="#5a1a00" text-anchor="end">TOMATO SAUCE</text>
+  <line x1="64" y1="112" x2="15" y2="112" stroke="#aaa" stroke-width="1"/>
+  <text x="13" y="115" font-family="sans-serif" font-size="9" font-weight="bold" fill="#5a1a00" text-anchor="end">MOZZARELLA</text>
+  <line x1="78" y1="90" x2="15" y2="90" stroke="#aaa" stroke-width="1"/>
+  <text x="13" y="93" font-family="sans-serif" font-size="9" font-weight="bold" fill="#5a1a00" text-anchor="end">TOPPINGS</text>
+  <!-- Full pizza circle (top-right reference) -->
+  <circle cx="260" cy="105" r="68" fill="#c8843a" stroke="#8a5010" stroke-width="2"/>
+  <circle cx="260" cy="105" r="58" fill="#cc3322" stroke="#881100" stroke-width="1"/>
+  <circle cx="260" cy="105" r="48" fill="#f5e09a" stroke="#c0a030" stroke-width="1"/>
+  <!-- Pepperoni toppings on full pizza -->
+  <circle cx="260" cy="80" r="8" fill="#cc3322" stroke="#882200" stroke-width="1"/>
+  <circle cx="238" cy="95" r="8" fill="#cc3322" stroke="#882200" stroke-width="1"/>
+  <circle cx="282" cy="98" r="8" fill="#cc3322" stroke="#882200" stroke-width="1"/>
+  <circle cx="252" cy="118" r="8" fill="#cc3322" stroke="#882200" stroke-width="1"/>
+  <circle cx="275" cy="115" r="8" fill="#cc3322" stroke="#882200" stroke-width="1"/>
+  <!-- Slice lines -->
+  <line x1="260" y1="37" x2="260" y2="173" stroke="#8a5010" stroke-width="1.5"/>
+  <line x1="201" y1="65" x2="319" y2="145" stroke="#8a5010" stroke-width="1.5"/>
+  <line x1="319" y1="65" x2="201" y2="145" stroke="#8a5010" stroke-width="1.5"/>
+  <text x="260" y="192" font-family="sans-serif" font-size="9" font-weight="bold" fill="#5a1a00" text-anchor="middle">FULL PIZZA (top view)</text>
+</svg>

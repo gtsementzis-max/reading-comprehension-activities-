@@ -1,0 +1,69 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="340" height="200" fill="white"/>
+  <text x="170" y="13" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a237e">CLOTHING FOR EVERY SEASON</text>
+  <!-- Grid lines -->
+  <line x1="170" y1="20" x2="170" y2="195" stroke="#e0e0e0" stroke-width="1.5"/>
+  <line x1="10" y1="108" x2="330" y2="108" stroke="#e0e0e0" stroke-width="1.5"/>
+  <!-- TOP-LEFT: RAINCOAT -->
+  <rect x="10" y="20" width="155" height="85" rx="5" fill="#e3f2fd"/>
+  <text x="92" y="34" text-anchor="middle" font-size="9" font-weight="bold" fill="#1565c0">RAINCOAT</text>
+  <!-- Raincoat shape -->
+  <path d="M72,42 L62,50 L55,48 L55,90 L130,90 L130,48 L123,50 L113,42Z" fill="#1565c0" stroke="#0d47a1" stroke-width="1.5"/>
+  <!-- Hood -->
+  <path d="M72,42 Q92,28 113,42 Q102,38 92,40 Q82,38 72,42Z" fill="#0d47a1" stroke="#0d47a1" stroke-width="1"/>
+  <!-- Collar -->
+  <path d="M78,42 Q92,52 106,42" stroke="#1976d2" stroke-width="2" fill="none"/>
+  <!-- Buttons -->
+  <circle cx="92" cy="60" r="3" fill="#64b5f6"/>
+  <circle cx="92" cy="72" r="3" fill="#64b5f6"/>
+  <circle cx="92" cy="84" r="3" fill="#64b5f6"/>
+  <!-- Rain drops -->
+  <ellipse cx="32" cy="55" rx="2.5" ry="5" fill="#90caf9"/>
+  <ellipse cx="42" cy="68" rx="2.5" ry="5" fill="#90caf9"/>
+  <ellipse cx="148" cy="50" rx="2.5" ry="5" fill="#90caf9"/>
+  <ellipse cx="138" cy="66" rx="2.5" ry="5" fill="#90caf9"/>
+  <text x="92" y="102" text-anchor="middle" font-size="8" fill="#1565c0">🌧 RAINY SEASON</text>
+  <!-- TOP-RIGHT: WINTER JUMPER -->
+  <rect x="175" y="20" width="155" height="85" rx="5" fill="#fce4ec"/>
+  <text x="252" y="34" text-anchor="middle" font-size="9" font-weight="bold" fill="#880e4f">WINTER JUMPER</text>
+  <!-- Jumper/sweater shape -->
+  <path d="M222,42 L208,52 L200,50 L200,90 L302,90 L302,50 L294,52 L280,42Z" fill="#880e4f" stroke="#6a0036" stroke-width="1.5"/>
+  <!-- Ribbed collar -->
+  <rect x="232" y="38" width="36" height="8" rx="3" fill="#6a0036"/>
+  <!-- Cable pattern -->
+  <path d="M220,58 Q225,63 220,68 Q225,73 220,78" stroke="#ad1457" stroke-width="2" fill="none"/>
+  <path d="M230,58 Q235,63 230,68 Q235,73 230,78" stroke="#ad1457" stroke-width="2" fill="none"/>
+  <path d="M260,58 Q265,63 260,68 Q265,73 260,78" stroke="#ad1457" stroke-width="2" fill="none"/>
+  <path d="M270,58 Q275,63 270,68 Q275,73 270,78" stroke="#ad1457" stroke-width="2" fill="none"/>
+  <!-- Snowflake -->
+  <text x="252" y="74" text-anchor="middle" font-size="16" fill="#e91e63">❄</text>
+  <text x="252" y="102" text-anchor="middle" font-size="8" fill="#880e4f">❄ COLD WINTER</text>
+  <!-- BOTTOM-LEFT: SUMMER -->
+  <rect x="10" y="112" width="155" height="83" rx="5" fill="#fff9c4"/>
+  <text x="92" y="126" text-anchor="middle" font-size="9" font-weight="bold" fill="#f57f17">SUMMER OUTFIT</text>
+  <!-- T-shirt -->
+  <path d="M72,134 L60,142 L55,140 L55,162 L92,162 L92,134Z" fill="#ffca28" stroke="#f9a825" stroke-width="1.5"/>
+  <path d="M92,134 L104,142 L109,140 L109,162 L92,162 L92,134Z" fill="#ffca28" stroke="#f9a825" stroke-width="1.5"/>
+  <rect x="55" y="162" width="22" height="26" rx="3" fill="#ff9800" stroke="#e65100" stroke-width="1.5"/>
+  <rect x="77" y="162" width="22" height="26" rx="3" fill="#ff9800" stroke="#e65100" stroke-width="1.5"/>
+  <!-- Sun -->
+  <circle cx="145" cy="145" r="12" fill="#FFD700"/>
+  <line x1="145" y1="127" x2="145" y2="122" stroke="#FFD700" stroke-width="2"/>
+  <line x1="145" y1="163" x2="145" y2="168" stroke="#FFD700" stroke-width="2"/>
+  <line x1="127" y1="145" x2="122" y2="145" stroke="#FFD700" stroke-width="2"/>
+  <line x1="163" y1="145" x2="168" y2="145" stroke="#FFD700" stroke-width="2"/>
+  <text x="92" y="195" text-anchor="middle" font-size="8" fill="#f57f17">☀ HOT SUMMER</text>
+  <!-- BOTTOM-RIGHT: SCHOOL UNIFORM -->
+  <rect x="175" y="112" width="155" height="83" rx="5" fill="#e8eaf6"/>
+  <text x="252" y="126" text-anchor="middle" font-size="9" font-weight="bold" fill="#1a237e">SCHOOL UNIFORM</text>
+  <!-- Shirt -->
+  <path d="M232,134 L220,142 L215,140 L215,165 L252,165 L252,134Z" fill="white" stroke="#283593" stroke-width="1.5"/>
+  <path d="M252,134 L264,142 L269,140 L269,165 L252,165 L252,134Z" fill="white" stroke="#283593" stroke-width="1.5"/>
+  <!-- Tie -->
+  <polygon points="252,134 248,158 252,163 256,158" fill="#c62828"/>
+  <!-- Skirt/trousers -->
+  <rect x="215" y="165" width="54" height="26" rx="3" fill="#1a237e" stroke="#0d1659" stroke-width="1.5"/>
+  <!-- Badge -->
+  <circle cx="232" cy="148" r="6" fill="#ffd600" stroke="#f9a825" stroke-width="1"/>
+  <text x="252" y="195" text-anchor="middle" font-size="8" fill="#1a237e">📚 SCHOOL DAYS</text>
+</svg>

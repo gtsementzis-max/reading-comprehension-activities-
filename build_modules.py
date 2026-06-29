@@ -62,15 +62,11 @@ TEMPLATE = r"""<!DOCTYPE html>
   .panel h2{font-family:'Fredoka',sans-serif;color:var(--c-dark);margin:0 0 4px;font-size:1.3rem;display:flex;align-items:center;gap:10px}
   .panel .lead{color:var(--ink-soft);margin:0 0 16px;font-weight:600}
   .passage{background:var(--c-cream);border:2px solid #00000012;border-radius:16px;padding:18px 20px;font-size:1.06rem;line-height:1.7}
-  .passage-wrap{display:flex;gap:18px;align-items:flex-start}
-  .topic-img{flex:0 0 110px;background:var(--c-accent-soft);border:2px solid #00000010;border-radius:16px;padding:18px 10px 14px;text-align:center}
-  .topic-emoji{font-size:54px;line-height:1;display:block;margin-bottom:8px}
-  .topic-label{font-size:10px;font-weight:800;color:var(--c-deep);text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
-  .passage-text{flex:1;min-width:0}
+  .topic-diagram{margin:0 0 16px;text-align:center}
+  .topic-diagram img{max-width:100%;height:auto;border-radius:12px;border:2px solid #00000012;display:block;margin:0 auto}
   .passage h3{margin:0 0 10px;font-family:'Fredoka',sans-serif;color:var(--c-deep)}
   .passage p{margin:0 0 14px}
   .passage p:last-child{margin-bottom:0}
-  @media(max-width:560px){.passage-wrap{flex-direction:column}.topic-img{display:flex;align-items:center;gap:14px;width:100%;flex:none;padding:12px 16px}.topic-emoji{font-size:42px;margin:0}.topic-label{font-size:11px;text-align:left}}
   .voc{background:var(--c-accent-soft);border-bottom:2px solid var(--c-accent);border-radius:5px;padding:0 3px;font-weight:700;color:var(--c-deep)}
   .q{margin-bottom:18px}
   .q .qtext{font-weight:800;margin-bottom:10px}
@@ -168,16 +164,11 @@ TEMPLATE = r"""<!DOCTYPE html>
       </div>
     </div>
     <div class="passage">
-      <div class="passage-wrap">
-        <div class="topic-img">
-          <span class="topic-emoji">%%HERO_EMOJI%%</span>
-          <div class="topic-label">%%PASSAGE_TITLE%%</div>
-        </div>
-        <div class="passage-text">
-          <h3>%%PASSAGE_TITLE%%</h3>
-          %%PASSAGE_HTML%%
-        </div>
+      <div class="topic-diagram">
+        <img src="%%DIAGRAM_FILE%%" alt="%%PASSAGE_TITLE%% diagram">
       </div>
+      <h3>%%PASSAGE_TITLE%%</h3>
+      %%PASSAGE_HTML%%
     </div>
     <div class="actions"><button class="btn btn-primary" onclick="go(1)">I'm ready — Comprehend →</button></div>
   </section>
@@ -413,7 +404,7 @@ MODULES = [
  "activityId":"rainforest",
  "projectKey":"rainforest",
  "title":"Animals of the Rainforest",
- "heroEmoji":"🐆","watermark":"🌿","pageTitle":"Animals of the Rainforest",
+ "heroEmoji":"🐆","watermark":"🌿","pageTitle":"Animals of the Rainforest","diagramFile":"diagrams/rainforest.svg",
  "win":"PERFECT, Amara! Queen of the rainforest! 🌴",
  "cheer":"The toucans are cheering for you! 🦜",
  "palette":{"primary":"#1f8a4c","dark":"#176b3d","deep":"#0a3d27","accent":"#7cc242","accentSoft":"#e7f6d8","cream":"#fdfbf4","bgTop":"#f1faf1","bgBottom":"#e7f4ea","glow1":"#2fa55f22","glow2":"#176b3d18"},
@@ -453,7 +444,7 @@ MODULES = [
  "activityId":"emotional-intelligence",
  "projectKey":"ei",
  "title":"What Is Emotional Intelligence?",
- "heroEmoji":"🧠","watermark":"💭","pageTitle":"Emotional Intelligence",
+ "heroEmoji":"🧠","watermark":"💭","pageTitle":"Emotional Intelligence","diagramFile":"diagrams/emotional-intelligence.svg",
  "win":"PERFECT, Amara! You really understand feelings! 💛",
  "cheer":"You read with real understanding! 💛",
  "palette":{"primary":"#4f5bd5","dark":"#343fb0","deep":"#262d86","accent":"#7c86ee","accentSoft":"#e8eafe","cream":"#f8f8ff","bgTop":"#f1f1fb","bgBottom":"#e8e9f7","glow1":"#4f5bd522","glow2":"#262d8618"},
@@ -493,7 +484,7 @@ MODULES = [
  "activityId":"spaghetti",
  "projectKey":"spaghetti",
  "title":"How Spaghetti Is Made",
- "heroEmoji":"🍝","watermark":"🍅","pageTitle":"How Spaghetti Is Made",
+ "heroEmoji":"🍝","watermark":"🍅","pageTitle":"How Spaghetti Is Made","diagramFile":"diagrams/spaghetti.svg",
  "win":"PERFECT, Amara! Master of the pasta process! 🍝",
  "cheer":"The chefs are clapping for you! 🍅",
  "palette":{"primary":"#d6402c","dark":"#a82a1a","deep":"#7e1d10","accent":"#ef7a52","accentSoft":"#fde3da","cream":"#fff7f1","bgTop":"#fdf1ec","bgBottom":"#fae7df","glow1":"#d6402c22","glow2":"#7e1d1018"},
@@ -533,7 +524,7 @@ MODULES = [
  "activityId":"celebrations",
  "projectKey":"celebrations",
  "title":"Celebrations Around the World",
- "heroEmoji":"🎉","watermark":"🎊","pageTitle":"Celebrations Around the World",
+ "heroEmoji":"🎉","watermark":"🎊","pageTitle":"Celebrations Around the World","diagramFile":"diagrams/celebrations.svg",
  "win":"PERFECT, Amara! A true world explorer! 🎉",
  "cheer":"The whole world is cheering for you! 🎊",
  "palette":{"primary":"#c026a3","dark":"#9a127f","deep":"#6e0c5c","accent":"#f4b400","accentSoft":"#fbe5f5","cream":"#fff7fc","bgTop":"#fbeef8","bgBottom":"#f6e3f3","glow1":"#c026a322","glow2":"#f4b40022"},
@@ -573,7 +564,7 @@ MODULES = [
  "activityId":"dogs",
  "projectKey":"dogs",
  "title":"All About Dogs",
- "heroEmoji":"🐕","watermark":"🐾","pageTitle":"All About Dogs",
+ "heroEmoji":"🐕","watermark":"🐾","pageTitle":"All About Dogs","diagramFile":"diagrams/dogs.svg",
  "win":"PERFECT, Amara! Top dog! 🐶",
  "cheer":"The puppies are wagging their tails for you! 🐾",
  "palette":{"primary":"#92591f","dark":"#6f4416","deep":"#432a0d","accent":"#cf9a55","accentSoft":"#f3e6d4","cream":"#fdfaf4","bgTop":"#f7f1e8","bgBottom":"#efe6d8","glow1":"#92591f22","glow2":"#6f441618"},
@@ -613,7 +604,7 @@ MODULES = [
  "activityId":"boa-constrictors",
  "projectKey":"boa",
  "title":"The Boa Constrictor",
- "heroEmoji":"🐍","watermark":"🐍","pageTitle":"Boa Constrictors",
+ "heroEmoji":"🐍","watermark":"🐍","pageTitle":"Boa Constrictors","diagramFile":"diagrams/boa-constrictors.svg",
  "win":"PERFECT, Amara! A powerful effort! 🐍",
  "cheer":"You squeezed every answer right! 🐍",
  "palette":{"primary":"#7c8a1e","dark":"#5e6916","deep":"#353c0a","accent":"#b3bf57","accentSoft":"#eef2d6","cream":"#fbfbf2","bgTop":"#f4f6e6","bgBottom":"#ebeed7","glow1":"#7c8a1e22","glow2":"#5e691618"},
@@ -653,7 +644,7 @@ MODULES = [
  "activityId":"the-wheel",
  "projectKey":"wheel",
  "title":"Why the Wheel Changed the World",
- "heroEmoji":"🛞","watermark":"⚙️","pageTitle":"The Importance of the Wheel",
+ "heroEmoji":"🛞","watermark":"⚙️","pageTitle":"The Importance of the Wheel","diagramFile":"diagrams/the-wheel.svg",
  "win":"PERFECT, Amara! You're really rolling! 🛞",
  "cheer":"Your thinking is in full motion! ⚙️",
  "palette":{"primary":"#3f6f9c","dark":"#2f567a","deep":"#1e3850","accent":"#7aa3c6","accentSoft":"#e2edf6","cream":"#f6f9fc","bgTop":"#eef4fa","bgBottom":"#e3edf5","glow1":"#3f6f9c22","glow2":"#1e385018"},
@@ -693,7 +684,7 @@ MODULES = [
  "activityId":"fashion-history",
  "projectKey":"fashion",
  "title":"A Short History of Fashion",
- "heroEmoji":"👗","watermark":"🧵","pageTitle":"Fashion History",
+ "heroEmoji":"👗","watermark":"🧵","pageTitle":"Fashion History","diagramFile":"diagrams/fashion-history.svg",
  "win":"PERFECT, Amara! Effortlessly stylish! 👗",
  "cheer":"You're a fashion historian now! 🧵",
  "palette":{"primary":"#7a3b9c","dark":"#5e2c7a","deep":"#3c1a52","accent":"#b985d6","accentSoft":"#f0e4f8","cream":"#fcf8fe","bgTop":"#f4ecf9","bgBottom":"#ece0f3","glow1":"#7a3b9c22","glow2":"#3c1a5218"},
@@ -735,7 +726,7 @@ MODULES = [
  "name":"Dani","hubKey":"daniReading","hubFile":"dani.html",
  "useLead":"Tap a word to fill the blank, or type it. You can do it!",
  "title":"What Is Roblox?",
- "heroEmoji":"🎮","watermark":"🕹️","pageTitle":"Roblox",
+ "heroEmoji":"🎮","watermark":"🕹️","pageTitle":"Roblox","diagramFile":"diagrams/roblox.svg",
  "win":"PERFECT, Dani! You're a star! 🌟",
  "cheer":"Great reading, Dani! 🎮",
  "palette":{"primary":"#2f7de1","dark":"#235fab","deep":"#173f73","accent":"#7fb0ee","accentSoft":"#e1edfb","cream":"#f5f9fe","bgTop":"#eef4fc","bgBottom":"#e3edf8","glow1":"#2f7de122","glow2":"#173f7318"},
@@ -773,7 +764,7 @@ MODULES = [
  "name":"Dani","hubKey":"daniReading","hubFile":"dani.html",
  "useLead":"Tap a word to fill the blank, or type it. You can do it!",
  "title":"Types of Poodles",
- "heroEmoji":"🐩","watermark":"🐩","pageTitle":"Types of Poodles",
+ "heroEmoji":"🐩","watermark":"🐩","pageTitle":"Types of Poodles","diagramFile":"diagrams/poodles.svg",
  "win":"PERFECT, Dani! Top dog! 🐩",
  "cheer":"The poodles are proud of you, Dani! 🐩",
  "palette":{"primary":"#e0577f","dark":"#b53e62","deep":"#7e2742","accent":"#f0a0ba","accentSoft":"#fbe4ec","cream":"#fef6f9","bgTop":"#fceef3","bgBottom":"#f7e2ea","glow1":"#e0577f22","glow2":"#7e274218"},
@@ -811,7 +802,7 @@ MODULES = [
  "name":"Dani","hubKey":"daniReading","hubFile":"dani.html",
  "useLead":"Tap a word to fill the blank, or type it. You can do it!",
  "title":"Clothes We Wear",
- "heroEmoji":"👗","watermark":"🧥","pageTitle":"Fashion and Clothing",
+ "heroEmoji":"👗","watermark":"🧥","pageTitle":"Fashion and Clothing","diagramFile":"diagrams/fashion-and-clothing.svg",
  "win":"PERFECT, Dani! So stylish! 👗",
  "cheer":"You dressed up every answer, Dani! 👗",
  "palette":{"primary":"#f08a24","dark":"#c66c11","deep":"#8a4806","accent":"#f7b777","accentSoft":"#fdecd8","cream":"#fff9f2","bgTop":"#fdf2e6","bgBottom":"#f8e8d6","glow1":"#f08a2422","glow2":"#8a480618"},
@@ -844,7 +835,7 @@ MODULES = [
  ]
 },
 
-{"activityId":"volcano","projectKey":"volcano","title":"Volcanoes","heroEmoji":"🌋","watermark":"🌋","pageTitle":"Volcanoes",
+{"activityId":"volcano","projectKey":"volcano","title":"Volcanoes","heroEmoji":"🌋","watermark":"🌋","pageTitle":"Volcanoes","diagramFile":"diagrams/volcano.svg",
  "win":"PERFECT, Amara! Red hot! 🌋","cheer":"Your reading is on fire! 🌋",
  "palette":{"primary":"#e8590c","dark":"#b8460a","deep":"#7d2f06","accent":"#f4a06a","accentSoft":"#fde4d4","cream":"#fff7f1","bgTop":"#fdf1e9","bgBottom":"#f8e6d8","glow1":"#e8590c22","glow2":"#7d2f0618"},
  "passageTitle":"Volcanoes",
@@ -854,7 +845,7 @@ MODULES = [
  "bank":["magma","lava","erupt","crater","molten","vent","dormant","ash"],
  "fills":[{"text":"Hot melted rock under the ground is called ___.","a":"magma"},{"text":"When a volcano ___s, gas and ash burst out.","a":"erupt"},{"text":"Glowing ___ flowed down the mountain and cooled into rock.","a":"lava"},{"text":"The metal was so hot it turned ___.","a":"molten"},{"text":"Smoke poured from the ___ at the top of the volcano.","a":"crater"},{"text":"Magma rises through a ___ to reach the surface.","a":"vent"},{"text":"The ___ volcano had been quiet for hundreds of years.","a":"dormant"},{"text":"After the campfire, grey ___ was left in the pit.","a":"ash","challenge":True}]},
 
-{"activityId":"egypt","projectKey":"egypt","title":"Ancient Egypt","heroEmoji":"🏺","watermark":"🔺","pageTitle":"Ancient Egypt",
+{"activityId":"egypt","projectKey":"egypt","title":"Ancient Egypt","heroEmoji":"🏺","watermark":"🔺","pageTitle":"Ancient Egypt","diagramFile":"diagrams/egypt.svg",
  "win":"PERFECT, Amara! Like a pharaoh! 👑","cheer":"A true explorer of the past! 🏺",
  "palette":{"primary":"#c79a2b","dark":"#9c7820","deep":"#6b5012","accent":"#e0c069","accentSoft":"#f7eecf","cream":"#fffbf0","bgTop":"#faf3e0","bgBottom":"#f3ead2","glow1":"#c79a2b22","glow2":"#6b501218"},
  "passageTitle":"Life in Ancient Egypt",
@@ -864,7 +855,7 @@ MODULES = [
  "bank":["pharaoh","pyramid","hieroglyph","mummy","Nile","tomb","papyrus","afterlife"],
  "fills":[{"text":"The ___ ruled Egypt like a living god.","a":"pharaoh"},{"text":"The huge ___ was built from millions of stone blocks.","a":"pyramid"},{"text":"Each tiny ___ stood for a sound or an idea.","a":"hieroglyph"},{"text":"The dry desert helped turn the body into a ___.","a":"mummy"},{"text":"Egypt grew crops along the ___ River.","a":"Nile"},{"text":"The king was buried in a hidden ___.","a":"tomb"},{"text":"They wrote letters on smooth sheets of ___.","a":"papyrus"},{"text":"Many cultures tell stories about an ___ after we die.","a":"afterlife","challenge":True}]},
 
-{"activityId":"watercycle","projectKey":"watercycle","title":"The Water Cycle","heroEmoji":"💧","watermark":"🌧️","pageTitle":"The Water Cycle",
+{"activityId":"watercycle","projectKey":"watercycle","title":"The Water Cycle","heroEmoji":"💧","watermark":"🌧️","pageTitle":"The Water Cycle","diagramFile":"diagrams/watercycle.svg",
  "win":"PERFECT, Amara! You're flowing! 💧","cheer":"Brilliant, rain or shine! 🌧️",
  "palette":{"primary":"#2563eb","dark":"#1d4fc0","deep":"#143285","accent":"#7aa0f0","accentSoft":"#e1e9fc","cream":"#f5f8ff","bgTop":"#eef3fd","bgBottom":"#e3ecf8","glow1":"#2563eb22","glow2":"#14328518"},
  "passageTitle":"The Water Cycle",
@@ -874,7 +865,7 @@ MODULES = [
  "bank":["evaporate","vapor","condense","cloud","precipitation","collect","cycle","droplet"],
  "fills":[{"text":"The sun makes puddles ___ into the air.","a":"evaporate"},{"text":"Warm water turns into invisible water ___.","a":"vapor"},{"text":"In the cold sky, vapor will ___ into drops.","a":"condense"},{"text":"A white fluffy ___ floated across the sky.","a":"cloud"},{"text":"Rain and snow are types of ___.","a":"precipitation"},{"text":"A bucket can ___ rain that falls from the roof.","a":"collect"},{"text":"Tiny ___s of water clung to the cold glass.","a":"droplet"},{"text":"The seasons follow a ___ that repeats every year.","a":"cycle","challenge":True}]},
 
-{"activityId":"solar","projectKey":"solar","title":"The Solar System","heroEmoji":"🪐","watermark":"⭐","pageTitle":"The Solar System",
+{"activityId":"solar","projectKey":"solar","title":"The Solar System","heroEmoji":"🪐","watermark":"⭐","pageTitle":"The Solar System","diagramFile":"diagrams/solar.svg",
  "win":"PERFECT, Amara! Out of this world! 🪐","cheer":"You're a star, Amara! ⭐",
  "palette":{"primary":"#312e81","dark":"#26235f","deep":"#161440","accent":"#7c79c8","accentSoft":"#e4e3f4","cream":"#f6f6fc","bgTop":"#eeedf8","bgBottom":"#e3e2f2","glow1":"#312e8122","glow2":"#16144018"},
  "passageTitle":"Our Solar System",
@@ -884,7 +875,7 @@ MODULES = [
  "bank":["orbit","planet","gravity","star","asteroid","axis","galaxy","telescope"],
  "fills":[{"text":"Earth follows its ___ around the Sun.","a":"orbit"},{"text":"Mars is a rocky ___ near Earth.","a":"planet"},{"text":"When you jump up, ___ always pulls you back down.","a":"gravity","challenge":True},{"text":"The Sun is the closest ___ to Earth.","a":"star"},{"text":"A small ___ zoomed past, made of rock and metal.","a":"asteroid"},{"text":"The Earth spins on its ___ once a day.","a":"axis"},{"text":"Our Sun is one of billions of stars in the ___.","a":"galaxy"},{"text":"She looked through the ___ to see Saturn's rings.","a":"telescope"}]},
 
-{"activityId":"heart","projectKey":"heart","title":"The Human Heart","heroEmoji":"❤️","watermark":"🫀","pageTitle":"The Human Heart",
+{"activityId":"heart","projectKey":"heart","title":"The Human Heart","heroEmoji":"❤️","watermark":"🫀","pageTitle":"The Human Heart","diagramFile":"diagrams/heart.svg",
  "win":"PERFECT, Amara! You've got heart! ❤️","cheer":"That answer was a heartbeat away from perfect! ❤️",
  "palette":{"primary":"#d6336c","dark":"#ab2856","deep":"#741a3a","accent":"#ec8ab0","accentSoft":"#fbe2ec","cream":"#fff6f9","bgTop":"#fceef3","bgBottom":"#f7e2ea","glow1":"#d6336c22","glow2":"#741a3a18"},
  "passageTitle":"Your Amazing Heart",
@@ -894,7 +885,7 @@ MODULES = [
  "bank":["pump","blood","vessel","oxygen","pulse","circulate","muscle","valve"],
  "fills":[{"text":"The heart works to ___ blood all day.","a":"pump"},{"text":"Red ___ flows through your whole body.","a":"blood"},{"text":"Blood moves through tubes called ___s.","a":"vessel"},{"text":"We breathe in ___ from the air.","a":"oxygen"},{"text":"Warm air and water ___ around the Earth, too.","a":"circulate","challenge":True},{"text":"You use a ___ to bend your arm.","a":"muscle"},{"text":"A ___ keeps the blood from flowing backward.","a":"valve"},{"text":"I felt my ___ speed up after running.","a":"pulse"}]},
 
-{"activityId":"sharks","projectKey":"sharks","title":"Sharks","heroEmoji":"🦈","watermark":"🦈","pageTitle":"Sharks",
+{"activityId":"sharks","projectKey":"sharks","title":"Sharks","heroEmoji":"🦈","watermark":"🦈","pageTitle":"Sharks","diagramFile":"diagrams/sharks.svg",
  "win":"PERFECT, Amara! Jaw-some! 🦈","cheer":"You swam through that, Amara! 🌊",
  "palette":{"primary":"#51688a","dark":"#3e5170","deep":"#28354b","accent":"#8fa1bd","accentSoft":"#e4e9f0","cream":"#f5f8fb","bgTop":"#eef3f8","bgBottom":"#e3ebf2","glow1":"#51688a22","glow2":"#28354b18"},
  "passageTitle":"All About Sharks",
@@ -904,7 +895,7 @@ MODULES = [
  "bank":["predator","gill","cartilage","fin","prey","sense","species","jaw"],
  "fills":[{"text":"A lion is a ___ that hunts other animals.","a":"predator"},{"text":"Fish breathe through their ___s.","a":"gill"},{"text":"Your nose is made of bendy ___.","a":"cartilage"},{"text":"A shark steers with its ___s.","a":"fin"},{"text":"The deer was the ___ that the wolf chased.","a":"prey"},{"text":"A sharp ___ of hearing helps an owl hunt at night.","a":"sense"},{"text":"There are many ___ of dog, like poodles and pugs.","a":"species","challenge":True},{"text":"The shark opened its huge ___.","a":"jaw"}]},
 
-{"activityId":"olympics","projectKey":"olympics","title":"The Olympic Games","heroEmoji":"🏅","watermark":"🔥","pageTitle":"The Olympic Games",
+{"activityId":"olympics","projectKey":"olympics","title":"The Olympic Games","heroEmoji":"🏅","watermark":"🔥","pageTitle":"The Olympic Games","diagramFile":"diagrams/olympics.svg",
  "win":"PERFECT, Amara! Gold medal! 🥇","cheer":"A champion reader! 🏅",
  "palette":{"primary":"#c92a2a","dark":"#a01f1f","deep":"#6e1414","accent":"#e87f7f","accentSoft":"#fbe1e1","cream":"#fff6f6","bgTop":"#fceeee","bgBottom":"#f7e2e2","glow1":"#c92a2a22","glow2":"#6e141418"},
  "passageTitle":"The Olympic Games",
@@ -914,7 +905,7 @@ MODULES = [
  "bank":["athlete","compete","ancient","medal","ceremony","host","torch","champion"],
  "fills":[{"text":"The fast runner was a famous ___.","a":"athlete"},{"text":"Teams ___ to see who is fastest.","a":"compete"},{"text":"The pyramids are part of ___ history.","a":"ancient"},{"text":"The winner proudly wore a gold ___.","a":"medal"},{"text":"Our town will ___ a big music festival next year.","a":"host","challenge":True},{"text":"The runner carried the flaming ___.","a":"torch"},{"text":"The opening ___ had music and flags.","a":"ceremony"},{"text":"She became the world ___ in swimming.","a":"champion"}]},
 
-{"activityId":"money","projectKey":"money","title":"How Money Works","heroEmoji":"💰","watermark":"🪙","pageTitle":"How Money Works",
+{"activityId":"money","projectKey":"money","title":"How Money Works","heroEmoji":"💰","watermark":"🪙","pageTitle":"How Money Works","diagramFile":"diagrams/money.svg",
  "win":"PERFECT, Amara! Money smart! 💰","cheer":"You earned every point! 🪙",
  "palette":{"primary":"#2f9e44","dark":"#247a35","deep":"#175223","accent":"#74c686","accentSoft":"#dcf2e1","cream":"#f4fbf6","bgTop":"#ebf7ee","bgBottom":"#e0f0e4","glow1":"#2f9e4422","glow2":"#17522318"},
  "passageTitle":"How Money Works",
@@ -924,7 +915,7 @@ MODULES = [
  "bank":["trade","currency","barter","value","earn","budget","save","goods"],
  "fills":[{"text":"The dollar is the ___ used in the United States.","a":"currency"},{"text":"People with no money would ___ chickens for corn.","a":"barter"},{"text":"You ___ money by doing a job.","a":"earn"},{"text":"A wise family makes a ___ each month.","a":"budget"},{"text":"I will ___ my coins to buy a new bike.","a":"save"},{"text":"Stores sell ___ like food and clothes.","a":"goods"},{"text":"Two kids might ___ stickers at school.","a":"trade"},{"text":"A rare card can have a high ___ to collectors.","a":"value","challenge":True}]},
 
-{"activityId":"storms","projectKey":"storms","title":"Thunderstorms","heroEmoji":"⛈️","watermark":"⚡","pageTitle":"Thunderstorms",
+{"activityId":"storms","projectKey":"storms","title":"Thunderstorms","heroEmoji":"⛈️","watermark":"⚡","pageTitle":"Thunderstorms","diagramFile":"diagrams/storms.svg",
  "win":"PERFECT, Amara! Electric! ⚡","cheer":"You brightened the sky! ⛈️",
  "palette":{"primary":"#364fc7","dark":"#2a3e9c","deep":"#1a2766","accent":"#7c8de0","accentSoft":"#e2e6f8","cream":"#f5f6fd","bgTop":"#eef0fb","bgBottom":"#e3e7f6","glow1":"#364fc722","glow2":"#1a276618"},
  "passageTitle":"Thunderstorms",
@@ -934,7 +925,7 @@ MODULES = [
  "bank":["thunder","lightning","atmosphere","electricity","humid","gust","forecast","shelter"],
  "fills":[{"text":"A bright bolt of ___ lit up the sky.","a":"lightning"},{"text":"We heard a loud crack of ___.","a":"thunder"},{"text":"The air felt sticky and ___ before the rain.","a":"humid"},{"text":"A strong ___ of wind blew my hat away.","a":"gust"},{"text":"The weather ___ said it would rain at noon.","a":"forecast"},{"text":"We ran inside to take ___ from the storm.","a":"shelter"},{"text":"A lamp and a TV both run on ___.","a":"electricity","challenge":True},{"text":"Birds fly high up in the ___.","a":"atmosphere"}]},
 
-{"activityId":"castles","projectKey":"castles","title":"Castles and Knights","heroEmoji":"🏰","watermark":"⚔️","pageTitle":"Castles and Knights",
+{"activityId":"castles","projectKey":"castles","title":"Castles and Knights","heroEmoji":"🏰","watermark":"⚔️","pageTitle":"Castles and Knights","diagramFile":"diagrams/castles.svg",
  "win":"PERFECT, Amara! A noble win! 🏰","cheer":"You defended every answer! ⚔️",
  "palette":{"primary":"#6c757d","dark":"#545b61","deep":"#373b40","accent":"#a3abb2","accentSoft":"#e6e9eb","cream":"#f7f8f9","bgTop":"#eff1f2","bgBottom":"#e5e8ea","glow1":"#6c757d22","glow2":"#373b4018"},
  "passageTitle":"Castles and Knights",
@@ -944,7 +935,7 @@ MODULES = [
  "bank":["fortress","moat","drawbridge","knight","armor","siege","noble","defend"],
  "fills":[{"text":"The castle was a stone ___ on a hill.","a":"fortress"},{"text":"Water filled the ___ around the walls.","a":"moat"},{"text":"They lowered the ___ to let the cart cross.","a":"drawbridge"},{"text":"The brave ___ rode a horse into battle.","a":"knight"},{"text":"His shiny ___ protected him from swords.","a":"armor"},{"text":"The army began a ___ around the city.","a":"siege"},{"text":"A wealthy ___ owned the land and the farms.","a":"noble"},{"text":"Our soccer team must ___ its goal in the game.","a":"defend","challenge":True}]},
 
-{"activityId":"cats","projectKey":"cats","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"All About Cats","heroEmoji":"🐱","watermark":"🐾","pageTitle":"Cats",
+{"activityId":"cats","projectKey":"cats","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"All About Cats","heroEmoji":"🐱","watermark":"🐾","pageTitle":"Cats","diagramFile":"diagrams/cats.svg",
  "win":"PERFECT, Dani! Purr-fect! 🐱","cheer":"The kittens love you, Dani! 🐾",
  "palette":{"primary":"#9b6cd6","dark":"#7a52ad","deep":"#523372","accent":"#c2a0e6","accentSoft":"#efe6f8","cream":"#fbf8fe","bgTop":"#f4ecfb","bgBottom":"#ece0f5","glow1":"#9b6cd622","glow2":"#52337218"},
  "passageTitle":"All About Cats",
@@ -954,7 +945,7 @@ MODULES = [
  "bank":["whiskers","purr","paws","claws","kitten","pounce"],
  "fills":[{"text":"A cat has long ___ on its face.","a":"whiskers"},{"text":"My cat will ___ when it is happy.","a":"purr"},{"text":"The cat walks on soft ___.","a":"paws"},{"text":"Sharp ___ help a cat climb.","a":"claws"},{"text":"A baby cat is a ___.","a":"kitten"},{"text":"The cat likes to ___ on its toy.","a":"pounce"}]},
 
-{"activityId":"rainbows","projectKey":"rainbows","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"Rainbows","heroEmoji":"🌈","watermark":"🌈","pageTitle":"Rainbows",
+{"activityId":"rainbows","projectKey":"rainbows","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"Rainbows","heroEmoji":"🌈","watermark":"🌈","pageTitle":"Rainbows","diagramFile":"diagrams/rainbows.svg",
  "win":"PERFECT, Dani! Bright and colorful! 🌈","cheer":"You made the sky smile, Dani! 🌈",
  "palette":{"primary":"#14b8a6","dark":"#0f9384","deep":"#0a6358","accent":"#6dd5c8","accentSoft":"#d6f4ef","cream":"#f2fcfa","bgTop":"#e8f8f5","bgBottom":"#ddf1ed","glow1":"#14b8a622","glow2":"#0a635818"},
  "passageTitle":"Rainbows",
@@ -964,7 +955,7 @@ MODULES = [
  "bank":["rainbow","color","arch","sky","sunlight","raindrop"],
  "fills":[{"text":"A ___ has many colors.","a":"rainbow"},{"text":"Red is my favorite ___.","a":"color"},{"text":"The rainbow makes a big ___.","a":"arch"},{"text":"Clouds float in the ___.","a":"sky"},{"text":"Plants need ___ to grow.","a":"sunlight"},{"text":"One ___ landed on my nose.","a":"raindrop"}]},
 
-{"activityId":"dinos","projectKey":"dinos","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"Dinosaurs","heroEmoji":"🦕","watermark":"🦖","pageTitle":"Dinosaurs",
+{"activityId":"dinos","projectKey":"dinos","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"Dinosaurs","heroEmoji":"🦕","watermark":"🦖","pageTitle":"Dinosaurs","diagramFile":"diagrams/dinos.svg",
  "win":"PERFECT, Dani! Dino-mite! 🦕","cheer":"Roar! Great job, Dani! 🦖",
  "palette":{"primary":"#43a047","dark":"#347a37","deep":"#225224","accent":"#85c888","accentSoft":"#dcf1dd","cream":"#f4fbf4","bgTop":"#ebf7ec","bgBottom":"#e0f0e1","glow1":"#43a04722","glow2":"#22522418"},
  "passageTitle":"Dinosaurs",
@@ -974,7 +965,7 @@ MODULES = [
  "bank":["dinosaur","fossil","extinct","scales","huge","roar"],
  "fills":[{"text":"A ___ lived millions of years ago.","a":"dinosaur"},{"text":"We found a ___ in the rock.","a":"fossil"},{"text":"Dinosaurs are ___ now.","a":"extinct"},{"text":"Its skin had bumpy ___.","a":"scales"},{"text":"The dinosaur was very ___ and tall.","a":"huge"},{"text":"The big dinosaur let out a ___.","a":"roar"}]},
 
-{"activityId":"beach","projectKey":"beach","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"A Day at the Beach","heroEmoji":"🏖️","watermark":"🐚","pageTitle":"The Beach",
+{"activityId":"beach","projectKey":"beach","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"A Day at the Beach","heroEmoji":"🏖️","watermark":"🐚","pageTitle":"The Beach","diagramFile":"diagrams/beach.svg",
  "win":"PERFECT, Dani! Beach star! 🏖️","cheer":"You made waves, Dani! 🌊",
  "palette":{"primary":"#2bb3d4","dark":"#208ca7","deep":"#155e70","accent":"#7ad3e6","accentSoft":"#d6f1f8","cream":"#f2fbfd","bgTop":"#e8f6fa","bgBottom":"#ddeff4","glow1":"#2bb3d422","glow2":"#155e7018"},
  "passageTitle":"A Day at the Beach",
@@ -984,7 +975,7 @@ MODULES = [
  "bank":["beach","sand","wave","shell","ocean","tide"],
  "fills":[{"text":"We played all day at the ___.","a":"beach"},{"text":"I built a castle in the ___.","a":"sand"},{"text":"A big ___ splashed my feet.","a":"wave"},{"text":"I found a pink ___ on the shore.","a":"shell"},{"text":"Fish live in the ___.","a":"ocean"},{"text":"The ___ went out and left wet sand.","a":"tide"}]},
 
-{"activityId":"farm","projectKey":"farm","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"On the Farm","heroEmoji":"🐄","watermark":"🚜","pageTitle":"Farm Animals",
+{"activityId":"farm","projectKey":"farm","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"On the Farm","heroEmoji":"🐄","watermark":"🚜","pageTitle":"Farm Animals","diagramFile":"diagrams/farm.svg",
  "win":"PERFECT, Dani! Farm star! 🐄","cheer":"The animals are cheering, Dani! 🐔",
  "palette":{"primary":"#a1662f","dark":"#7e4f24","deep":"#523114","accent":"#cc9a6c","accentSoft":"#f0e3d4","cream":"#fdf9f3","bgTop":"#f7f0e7","bgBottom":"#efe5d7","glow1":"#a1662f22","glow2":"#52311418"},
  "passageTitle":"On the Farm",
@@ -994,7 +985,7 @@ MODULES = [
  "bank":["farm","barn","cow","hen","wool","hay"],
  "fills":[{"text":"We saw many animals at the ___.","a":"farm"},{"text":"The ___ gave us fresh milk.","a":"cow"},{"text":"A ___ laid three eggs.","a":"hen"},{"text":"My sweater is made of warm ___.","a":"wool"},{"text":"The horses sleep in the ___.","a":"barn"},{"text":"The cows eat dry ___.","a":"hay"}]},
 
-{"activityId":"pizza","projectKey":"pizza","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"How We Make Pizza","heroEmoji":"🍕","watermark":"🍕","pageTitle":"Pizza",
+{"activityId":"pizza","projectKey":"pizza","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"How We Make Pizza","heroEmoji":"🍕","watermark":"🍕","pageTitle":"Pizza","diagramFile":"diagrams/pizza.svg",
  "win":"PERFECT, Dani! Tasty work! 🍕","cheer":"Yum! Great reading, Dani! 🍕",
  "palette":{"primary":"#e2452f","dark":"#b53624","deep":"#7c2314","accent":"#ef8675","accentSoft":"#fbe1dc","cream":"#fff6f4","bgTop":"#fceee9","bgBottom":"#f7e2dc","glow1":"#e2452f22","glow2":"#7c231418"},
  "passageTitle":"How We Make Pizza",
@@ -1004,7 +995,7 @@ MODULES = [
  "bank":["pizza","dough","sauce","cheese","topping","oven"],
  "fills":[{"text":"We ordered a big ___ for dinner.","a":"pizza"},{"text":"Roll the ___ into a circle.","a":"dough"},{"text":"Spread red ___ on top.","a":"sauce"},{"text":"Add lots of melty ___.","a":"cheese"},{"text":"My favorite ___ is mushrooms.","a":"topping"},{"text":"Bake the pizza in the ___.","a":"oven"}]},
 
-{"activityId":"bugs","projectKey":"bugs","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"Bugs and Insects","heroEmoji":"🐞","watermark":"🐛","pageTitle":"Bugs",
+{"activityId":"bugs","projectKey":"bugs","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"Bugs and Insects","heroEmoji":"🐞","watermark":"🐛","pageTitle":"Bugs","diagramFile":"diagrams/bugs.svg",
  "win":"PERFECT, Dani! Bug expert! 🐞","cheer":"The ladybugs are proud, Dani! 🐞",
  "palette":{"primary":"#84a516","dark":"#677f11","deep":"#445409","accent":"#b8cf6a","accentSoft":"#eaf2d4","cream":"#f9fbf0","bgTop":"#f1f6e2","bgBottom":"#e7efd2","glow1":"#84a51622","glow2":"#44540918"},
  "passageTitle":"Bugs and Insects",
@@ -1014,7 +1005,7 @@ MODULES = [
  "bank":["insect","antenna","wing","crawl","beetle","tiny"],
  "fills":[{"text":"An ant is a small ___.","a":"insect"},{"text":"A bug feels with its ___s.","a":"antenna"},{"text":"A bee uses its ___s to fly.","a":"wing"},{"text":"The caterpillar will ___ on the leaf.","a":"crawl"},{"text":"A red ___ walked up the stem.","a":"beetle"},{"text":"Ants are very ___.","a":"tiny"}]},
 
-{"activityId":"trucks","projectKey":"trucks","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"Big Trucks","heroEmoji":"🚚","watermark":"🚛","pageTitle":"Trucks",
+{"activityId":"trucks","projectKey":"trucks","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"Big Trucks","heroEmoji":"🚚","watermark":"🚛","pageTitle":"Trucks","diagramFile":"diagrams/trucks.svg",
  "win":"PERFECT, Dani! Full speed! 🚚","cheer":"You delivered every answer, Dani! 🚛",
  "palette":{"primary":"#5872a8","dark":"#445882","deep":"#2c3a56","accent":"#92a5cb","accentSoft":"#e4e9f2","cream":"#f6f8fb","bgTop":"#eef2f8","bgBottom":"#e4eaf3","glow1":"#5872a822","glow2":"#2c3a5618"},
  "passageTitle":"Big Trucks",
@@ -1024,7 +1015,7 @@ MODULES = [
  "bank":["truck","engine","wheel","cargo","driver","deliver"],
  "fills":[{"text":"The big ___ carried bricks.","a":"truck"},{"text":"The ___ roared as the truck started.","a":"engine"},{"text":"Each ___ is made of rubber.","a":"wheel"},{"text":"The truck was full of ___.","a":"cargo"},{"text":"The ___ honked the horn.","a":"driver"},{"text":"Trucks ___ food to the store.","a":"deliver"}]},
 
-{"activityId":"teeth","projectKey":"teeth","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"Brushing Your Teeth","heroEmoji":"🦷","watermark":"🪥","pageTitle":"Brushing Your Teeth",
+{"activityId":"teeth","projectKey":"teeth","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"Brushing Your Teeth","heroEmoji":"🦷","watermark":"🪥","pageTitle":"Brushing Your Teeth","diagramFile":"diagrams/teeth.svg",
  "win":"PERFECT, Dani! Bright smile! 🦷","cheer":"Sparkling work, Dani! ✨",
  "palette":{"primary":"#1697b5","dark":"#11778f","deep":"#0a4f60","accent":"#69c4d8","accentSoft":"#d4f0f6","cream":"#f2fbfc","bgTop":"#e8f6f9","bgBottom":"#ddeff3","glow1":"#1697b522","glow2":"#0a4f6018"},
  "passageTitle":"Brushing Your Teeth",
@@ -1034,7 +1025,7 @@ MODULES = [
  "bank":["teeth","brush","toothpaste","healthy","cavity","dentist"],
  "fills":[{"text":"I clean my ___ every morning.","a":"teeth"},{"text":"I ___ my teeth before bed.","a":"brush"},{"text":"Put mint ___ on the brush.","a":"toothpaste"},{"text":"Brushing keeps me ___.","a":"healthy"},{"text":"Too much candy can cause a ___.","a":"cavity"},{"text":"The ___ counted all my teeth.","a":"dentist"}]},
 
-{"activityId":"seasons","projectKey":"seasons","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"The Four Seasons","heroEmoji":"🍂","watermark":"❄️","pageTitle":"The Seasons",
+{"activityId":"seasons","projectKey":"seasons","name":"Dani","hubKey":"daniReading","hubFile":"dani.html","useLead":"Tap a word to fill the blank, or type it. You can do it!","title":"The Four Seasons","heroEmoji":"🍂","watermark":"❄️","pageTitle":"The Seasons","diagramFile":"diagrams/seasons.svg",
  "win":"PERFECT, Dani! All four seasons! 🍂","cheer":"You bloomed, Dani! 🌸",
  "palette":{"primary":"#8e57b8","dark":"#6f4392","deep":"#492c60","accent":"#bb93d8","accentSoft":"#ece1f4","cream":"#fbf8fd","bgTop":"#f3ecf9","bgBottom":"#eae0f2","glow1":"#8e57b822","glow2":"#492c6018"},
  "passageTitle":"The Four Seasons",
@@ -1061,6 +1052,7 @@ for m in MODULES:
       .replace("%%CSSVARS%%",cssvars(m["palette"]))
       .replace("%%WATERMARK%%",m["watermark"])
       .replace("%%HERO_EMOJI%%",m["heroEmoji"])
+      .replace("%%DIAGRAM_FILE%%",m.get("diagramFile","diagrams/watercycle.svg"))
       .replace("%%HERO_TITLE%%",m["title"])
       .replace("%%SUBJECT_NAME%%",m.get("name","Amara"))
       .replace("%%HUB_FILE%%",m.get("hubFile","index.html"))

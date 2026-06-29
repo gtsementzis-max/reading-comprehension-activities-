@@ -1,0 +1,54 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="340" height="200" fill="#fdfaf5"/>
+  <text x="170" y="14" text-anchor="middle" font-size="12" font-weight="bold" fill="#4a3000">FASHION THROUGH THE AGES</text>
+  <!-- Panel dividers -->
+  <line x1="85" y1="20" x2="85" y2="175" stroke="#ccc" stroke-width="1"/>
+  <line x1="170" y1="20" x2="170" y2="175" stroke="#ccc" stroke-width="1"/>
+  <line x1="255" y1="20" x2="255" y2="175" stroke="#ccc" stroke-width="1"/>
+  <!-- ANCIENT panel -->
+  <text x="42" y="32" text-anchor="middle" font-size="9" font-weight="bold" fill="#8b4513">ANCIENT</text>
+  <!-- Stick figure with toga -->
+  <circle cx="42" cy="55" r="9" fill="#f5deb3" stroke="#8b4513" stroke-width="1.5"/>
+  <line x1="42" y1="64" x2="42" y2="110" stroke="#8b4513" stroke-width="1.5"/>
+  <!-- Toga draped -->
+  <path d="M30,70 Q20,90 28,130 Q42,135 56,130 Q64,90 54,70 Q42,75 30,70Z" fill="#e8dcc8" stroke="#8b4513" stroke-width="1"/>
+  <line x1="42" y1="110" x2="30" y2="145" stroke="#8b4513" stroke-width="1.5"/>
+  <line x1="42" y1="110" x2="54" y2="145" stroke="#8b4513" stroke-width="1.5"/>
+  <!-- MEDIEVAL panel -->
+  <text x="127" y="32" text-anchor="middle" font-size="9" font-weight="bold" fill="#4a3000">MEDIEVAL</text>
+  <circle cx="127" cy="55" r="9" fill="#f5deb3" stroke="#4a3000" stroke-width="1.5"/>
+  <!-- Long dress -->
+  <path d="M118,64 L114,145 Q127,150 140,145 L136,64Z" fill="#9c6b2e" stroke="#4a3000" stroke-width="1"/>
+  <!-- Sleeves -->
+  <line x1="118" y1="75" x2="105" y2="100" stroke="#9c6b2e" stroke-width="6" stroke-linecap="round"/>
+  <line x1="136" y1="75" x2="149" y2="100" stroke="#9c6b2e" stroke-width="6" stroke-linecap="round"/>
+  <!-- Belt -->
+  <rect x="114" y="94" width="26" height="5" fill="#5d3a00"/>
+  <!-- VICTORIAN panel -->
+  <text x="212" y="32" text-anchor="middle" font-size="9" font-weight="bold" fill="#2c3e50">VICTORIAN</text>
+  <circle cx="212" cy="55" r="9" fill="#f5deb3" stroke="#2c3e50" stroke-width="1.5"/>
+  <!-- Top hat -->
+  <rect x="204" y="38" width="16" height="12" fill="#2c3e50" stroke="#1a252f" stroke-width="1"/>
+  <rect x="200" y="48" width="24" height="4" fill="#2c3e50"/>
+  <!-- Body + dress -->
+  <rect x="205" y="64" width="14" height="30" fill="#34495e"/>
+  <path d="M203,94 Q195,130 200,145 Q212,150 224,145 Q229,130 221,94Z" fill="#7f8c8d" stroke="#2c3e50" stroke-width="1"/>
+  <line x1="205" y1="75" x2="192" y2="100" stroke="#34495e" stroke-width="5" stroke-linecap="round"/>
+  <line x1="219" y1="75" x2="232" y2="100" stroke="#34495e" stroke-width="5" stroke-linecap="round"/>
+  <!-- MODERN panel -->
+  <text x="297" y="32" text-anchor="middle" font-size="9" font-weight="bold" fill="#1565c0">MODERN</text>
+  <circle cx="297" cy="55" r="9" fill="#f5deb3" stroke="#1565c0" stroke-width="1.5"/>
+  <!-- T-shirt -->
+  <rect x="287" y="64" width="20" height="28" fill="#42a5f5" stroke="#1565c0" stroke-width="1"/>
+  <line x1="287" y1="72" x2="274" y2="78" stroke="#42a5f5" stroke-width="6" stroke-linecap="round"/>
+  <line x1="307" y1="72" x2="320" y2="78" stroke="#42a5f5" stroke-width="6" stroke-linecap="round"/>
+  <!-- Jeans -->
+  <rect x="287" y="92" width="8" height="48" rx="3" fill="#1565c0"/>
+  <rect x="299" y="92" width="8" height="48" rx="3" fill="#1565c0"/>
+  <!-- Timeline arrow -->
+  <line x1="10" y1="180" x2="330" y2="180" stroke="#8b4513" stroke-width="2"/>
+  <polygon points="330,180 320,175 320,185" fill="#8b4513"/>
+  <text x="12" y="178" font-size="8" fill="#8b4513" font-weight="bold">ANCIENT</text>
+  <text x="320" y="194" text-anchor="end" font-size="8" fill="#1565c0" font-weight="bold">TODAY</text>
+  <text x="170" y="194" text-anchor="middle" font-size="8" fill="#555">TIME</text>
+</svg>

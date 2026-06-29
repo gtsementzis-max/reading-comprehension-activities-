@@ -63,15 +63,11 @@
   .panel h2{font-family:'Fredoka',sans-serif;color:var(--c-dark);margin:0 0 4px;font-size:1.3rem;display:flex;align-items:center;gap:10px}
   .panel .lead{color:var(--ink-soft);margin:0 0 16px;font-weight:600}
   .passage{background:var(--c-cream);border:2px solid #00000012;border-radius:16px;padding:18px 20px;font-size:1.06rem;line-height:1.7}
-  .passage-wrap{display:flex;gap:18px;align-items:flex-start}
-  .topic-img{flex:0 0 110px;background:var(--c-accent-soft);border:2px solid #00000010;border-radius:16px;padding:18px 10px 14px;text-align:center}
-  .topic-emoji{font-size:54px;line-height:1;display:block;margin-bottom:8px}
-  .topic-label{font-size:10px;font-weight:800;color:var(--c-deep);text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
-  .passage-text{flex:1;min-width:0}
+  .topic-diagram{margin:0 0 16px;text-align:center}
+  .topic-diagram img{max-width:100%;height:auto;border-radius:12px;border:2px solid #00000012;display:block;margin:0 auto}
   .passage h3{margin:0 0 10px;font-family:'Fredoka',sans-serif;color:var(--c-deep)}
   .passage p{margin:0 0 14px}
   .passage p:last-child{margin-bottom:0}
-  @media(max-width:560px){.passage-wrap{flex-direction:column}.topic-img{display:flex;align-items:center;gap:14px;width:100%;flex:none;padding:12px 16px}.topic-emoji{font-size:42px;margin:0}.topic-label{font-size:11px;text-align:left}}
   .voc{background:var(--c-accent-soft);border-bottom:2px solid var(--c-accent);border-radius:5px;padding:0 3px;font-weight:700;color:var(--c-deep)}
   .q{margin-bottom:18px}
   .q .qtext{font-weight:800;margin-bottom:10px}
@@ -169,16 +165,11 @@
       </div>
     </div>
     <div class="passage">
-      <div class="passage-wrap">
-        <div class="topic-img">
-          <span class="topic-emoji">🌋</span>
-          <div class="topic-label">Volcanoes</div>
-        </div>
-        <div class="passage-text">
-          <h3>Volcanoes</h3>
-          <p>Deep beneath the Earth's surface, it is so hot that rock melts into a thick, glowing liquid called <span class="voc">magma</span>. A volcano is an opening in the ground where this melted rock can reach the surface. When pressure builds up, a volcano can <span class="voc">erupt</span>, sending magma, gas, and <span class="voc">ash</span> bursting out. Once the magma flows onto the surface it is called <span class="voc">lava</span>. Lava is <span class="voc">molten</span>, which means melted by heat, and it can be hotter than 1,000 degrees. As the lava cools, it hardens into new rock.</p><p>Most volcanoes have a bowl-shaped opening at the top called a <span class="voc">crater</span>, and the channel that magma travels up is called a <span class="voc">vent</span>. Not all volcanoes erupt often. A volcano that has not erupted for a long time but still could is called <span class="voc">dormant</span>, like a sleeping giant. Volcanoes can be dangerous, but they also build new islands and rich soil. Over millions of years, they have helped shape the surface of our planet.</p>
-        </div>
+      <div class="topic-diagram">
+        <img src="diagrams/volcano.svg" alt="Volcanoes diagram">
       </div>
+      <h3>Volcanoes</h3>
+      <p>Deep beneath the Earth's surface, it is so hot that rock melts into a thick, glowing liquid called <span class="voc">magma</span>. A volcano is an opening in the ground where this melted rock can reach the surface. When pressure builds up, a volcano can <span class="voc">erupt</span>, sending magma, gas, and <span class="voc">ash</span> bursting out. Once the magma flows onto the surface it is called <span class="voc">lava</span>. Lava is <span class="voc">molten</span>, which means melted by heat, and it can be hotter than 1,000 degrees. As the lava cools, it hardens into new rock.</p><p>Most volcanoes have a bowl-shaped opening at the top called a <span class="voc">crater</span>, and the channel that magma travels up is called a <span class="voc">vent</span>. Not all volcanoes erupt often. A volcano that has not erupted for a long time but still could is called <span class="voc">dormant</span>, like a sleeping giant. Volcanoes can be dangerous, but they also build new islands and rich soil. Over millions of years, they have helped shape the surface of our planet.</p>
     </div>
     <div class="actions"><button class="btn btn-primary" onclick="go(1)">I'm ready — Comprehend →</button></div>
   </section>

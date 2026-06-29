@@ -63,15 +63,11 @@
   .panel h2{font-family:'Fredoka',sans-serif;color:var(--c-dark);margin:0 0 4px;font-size:1.3rem;display:flex;align-items:center;gap:10px}
   .panel .lead{color:var(--ink-soft);margin:0 0 16px;font-weight:600}
   .passage{background:var(--c-cream);border:2px solid #00000012;border-radius:16px;padding:18px 20px;font-size:1.06rem;line-height:1.7}
-  .passage-wrap{display:flex;gap:18px;align-items:flex-start}
-  .topic-img{flex:0 0 110px;background:var(--c-accent-soft);border:2px solid #00000010;border-radius:16px;padding:18px 10px 14px;text-align:center}
-  .topic-emoji{font-size:54px;line-height:1;display:block;margin-bottom:8px}
-  .topic-label{font-size:10px;font-weight:800;color:var(--c-deep);text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
-  .passage-text{flex:1;min-width:0}
+  .topic-diagram{margin:0 0 16px;text-align:center}
+  .topic-diagram img{max-width:100%;height:auto;border-radius:12px;border:2px solid #00000012;display:block;margin:0 auto}
   .passage h3{margin:0 0 10px;font-family:'Fredoka',sans-serif;color:var(--c-deep)}
   .passage p{margin:0 0 14px}
   .passage p:last-child{margin-bottom:0}
-  @media(max-width:560px){.passage-wrap{flex-direction:column}.topic-img{display:flex;align-items:center;gap:14px;width:100%;flex:none;padding:12px 16px}.topic-emoji{font-size:42px;margin:0}.topic-label{font-size:11px;text-align:left}}
   .voc{background:var(--c-accent-soft);border-bottom:2px solid var(--c-accent);border-radius:5px;padding:0 3px;font-weight:700;color:var(--c-deep)}
   .q{margin-bottom:18px}
   .q .qtext{font-weight:800;margin-bottom:10px}
@@ -169,16 +165,11 @@
       </div>
     </div>
     <div class="passage">
-      <div class="passage-wrap">
-        <div class="topic-img">
-          <span class="topic-emoji">🍝</span>
-          <div class="topic-label">How Spaghetti Is Made</div>
-        </div>
-        <div class="passage-text">
-          <h3>How Spaghetti Is Made</h3>
-          <p>Have you ever wondered how a hard, dry strand of spaghetti begins? It starts in a wheat field. Spaghetti is made from a special kind of wheat called <span class="voc">durum</span>, which is harder than the wheat used for bread. At the mill, the durum grains are ground into a coarse, golden flour called <span class="voc">semolina</span>. To turn semolina into pasta, workers mix it with water to form a stiff <span class="voc">dough</span>. Machines then <span class="voc">knead</span> the dough, pressing and folding it over and over until it becomes smooth and even. Unlike bread dough, pasta dough has very few <span class="voc">ingredient</span>s — usually just semolina and water — so the wheat's flavour really stands out.</p><p>Next comes the part that gives spaghetti its shape. The dough is pushed through a metal disc full of tiny round holes, a step called <span class="voc">extrud</span>ing. As the dough is forced through the holes, it comes out as long, thin strings. The strings are cut to length and laid out to <span class="voc">dry</span>. Drying is the slowest step; the pasta must lose its moisture slowly, sometimes over many hours, or it will crack. Once it is fully dry and firm, the spaghetti is weighed and sent to a machine that will <span class="voc">package</span> it into boxes or bags. From a field of golden wheat to the box on a shelf, every strand follows the same careful process.</p>
-        </div>
+      <div class="topic-diagram">
+        <img src="diagrams/spaghetti.svg" alt="How Spaghetti Is Made diagram">
       </div>
+      <h3>How Spaghetti Is Made</h3>
+      <p>Have you ever wondered how a hard, dry strand of spaghetti begins? It starts in a wheat field. Spaghetti is made from a special kind of wheat called <span class="voc">durum</span>, which is harder than the wheat used for bread. At the mill, the durum grains are ground into a coarse, golden flour called <span class="voc">semolina</span>. To turn semolina into pasta, workers mix it with water to form a stiff <span class="voc">dough</span>. Machines then <span class="voc">knead</span> the dough, pressing and folding it over and over until it becomes smooth and even. Unlike bread dough, pasta dough has very few <span class="voc">ingredient</span>s — usually just semolina and water — so the wheat's flavour really stands out.</p><p>Next comes the part that gives spaghetti its shape. The dough is pushed through a metal disc full of tiny round holes, a step called <span class="voc">extrud</span>ing. As the dough is forced through the holes, it comes out as long, thin strings. The strings are cut to length and laid out to <span class="voc">dry</span>. Drying is the slowest step; the pasta must lose its moisture slowly, sometimes over many hours, or it will crack. Once it is fully dry and firm, the spaghetti is weighed and sent to a machine that will <span class="voc">package</span> it into boxes or bags. From a field of golden wheat to the box on a shelf, every strand follows the same careful process.</p>
     </div>
     <div class="actions"><button class="btn btn-primary" onclick="go(1)">I'm ready — Comprehend →</button></div>
   </section>

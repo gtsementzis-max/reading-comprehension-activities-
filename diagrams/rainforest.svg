@@ -1,0 +1,63 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="340" height="200" fill="#c8e6c9"/>
+  <text x="170" y="13" text-anchor="middle" font-size="12" font-weight="bold" fill="#1b5e20">RAINFOREST LAYERS</text>
+  <!-- Emergent Layer -->
+  <rect x="0" y="18" width="260" height="40" fill="#a5d6a7" rx="2"/>
+  <text x="5" y="33" font-size="9" font-weight="bold" fill="#1b5e20">EMERGENT LAYER</text>
+  <!-- Tall trees -->
+  <rect x="30" y="20" width="6" height="35" fill="#4e342e"/>
+  <ellipse cx="33" cy="22" rx="14" ry="10" fill="#388e3c"/>
+  <rect x="80" y="22" width="6" height="33" fill="#4e342e"/>
+  <ellipse cx="83" cy="24" rx="12" ry="9" fill="#2e7d32"/>
+  <rect x="130" y="19" width="7" height="36" fill="#4e342e"/>
+  <ellipse cx="133" cy="21" rx="15" ry="11" fill="#388e3c"/>
+  <!-- Bird silhouette -->
+  <path d="M190,26 Q196,22 202,26 Q196,28 190,26Z" fill="#1a1a1a"/>
+  <circle cx="196" cy="26" r="3" fill="#1a1a1a"/>
+  <!-- Canopy -->
+  <rect x="0" y="58" width="260" height="40" fill="#66bb6a" rx="2"/>
+  <text x="5" y="73" font-size="9" font-weight="bold" fill="#1b5e20">CANOPY</text>
+  <ellipse cx="50" cy="72" rx="22" ry="14" fill="#43a047" opacity="0.8"/>
+  <ellipse cx="100" cy="70" rx="20" ry="13" fill="#388e3c" opacity="0.8"/>
+  <ellipse cx="150" cy="73" rx="22" ry="14" fill="#43a047" opacity="0.8"/>
+  <!-- Monkey -->
+  <circle cx="200" cy="70" r="6" fill="#795548"/>
+  <circle cx="200" cy="62" r="4" fill="#795548"/>
+  <line x1="194" y1="70" x2="188" y2="76" stroke="#795548" stroke-width="2"/>
+  <line x1="206" y1="70" x2="212" y2="76" stroke="#795548" stroke-width="2"/>
+  <!-- Understory -->
+  <rect x="0" y="98" width="260" height="40" fill="#388e3c" rx="2"/>
+  <text x="5" y="113" font-size="9" font-weight="bold" fill="#e8f5e9">UNDERSTORY</text>
+  <ellipse cx="60" cy="112" rx="18" ry="11" fill="#2e7d32" opacity="0.7"/>
+  <ellipse cx="110" cy="115" rx="15" ry="9" fill="#1b5e20" opacity="0.7"/>
+  <ellipse cx="160" cy="110" rx="16" ry="10" fill="#2e7d32" opacity="0.7"/>
+  <!-- Frog -->
+  <ellipse cx="210" cy="112" rx="7" ry="5" fill="#76ff03"/>
+  <circle cx="207" cy="109" r="3" fill="#76ff03"/>
+  <circle cx="213" cy="109" r="3" fill="#76ff03"/>
+  <!-- Forest Floor -->
+  <rect x="0" y="138" width="260" height="45" fill="#3e2723" rx="2"/>
+  <text x="5" y="153" font-size="9" font-weight="bold" fill="#a5d6a7">FOREST FLOOR</text>
+  <path d="M20,183 Q30,155 40,183" stroke="#5d4037" stroke-width="2" fill="none"/>
+  <path d="M50,183 Q60,158 70,183" stroke="#5d4037" stroke-width="2" fill="none"/>
+  <!-- Jaguar -->
+  <ellipse cx="180" cy="162" rx="18" ry="9" fill="#FF8F00"/>
+  <circle cx="162" cy="158" r="7" fill="#FF8F00"/>
+  <circle cx="170" cy="169" r="4" fill="#FF8F00"/>
+  <circle cx="190" cy="169" r="4" fill="#FF8F00"/>
+  <circle cx="162" cy="157" r="2" fill="#333"/>
+  <!-- Right side labels -->
+  <rect x="265" y="18" width="70" height="40" fill="#f1f8e9" rx="3" stroke="#388e3c" stroke-width="1"/>
+  <text x="300" y="35" text-anchor="middle" font-size="8" font-weight="bold" fill="#1b5e20">EMERGENT</text>
+  <text x="300" y="46" text-anchor="middle" font-size="8" fill="#1b5e20">Tallest trees</text>
+  <rect x="265" y="58" width="70" height="40" fill="#f1f8e9" rx="3" stroke="#388e3c" stroke-width="1"/>
+  <text x="300" y="75" text-anchor="middle" font-size="8" font-weight="bold" fill="#1b5e20">CANOPY</text>
+  <text x="300" y="86" text-anchor="middle" font-size="8" fill="#1b5e20">Dense leaves</text>
+  <rect x="265" y="98" width="70" height="40" fill="#f1f8e9" rx="3" stroke="#388e3c" stroke-width="1"/>
+  <text x="300" y="115" text-anchor="middle" font-size="8" font-weight="bold" fill="#1b5e20">UNDERSTORY</text>
+  <text x="300" y="126" text-anchor="middle" font-size="8" fill="#1b5e20">Shade plants</text>
+  <rect x="265" y="138" width="70" height="45" fill="#f1f8e9" rx="3" stroke="#388e3c" stroke-width="1"/>
+  <text x="300" y="157" text-anchor="middle" font-size="8" font-weight="bold" fill="#1b5e20">FOREST</text>
+  <text x="300" y="168" text-anchor="middle" font-size="8" font-weight="bold" fill="#1b5e20">FLOOR</text>
+  <text x="300" y="179" text-anchor="middle" font-size="8" fill="#1b5e20">Roots &amp; soil</text>
+</svg>

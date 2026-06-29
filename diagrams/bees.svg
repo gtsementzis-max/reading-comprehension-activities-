@@ -1,0 +1,50 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="340" height="200" fill="#fff8e0"/>
+  <text x="170" y="14" text-anchor="middle" font-size="12" font-weight="bold" fill="#5d4000">BEE ANATOMY</text>
+  <!-- Bee body (abdomen) -->
+  <ellipse cx="130" cy="115" rx="45" ry="22" fill="#FFD700" stroke="#e6ac00" stroke-width="1.5"/>
+  <!-- Stripes -->
+  <rect x="93" y="100" width="8" height="30" fill="#333" rx="2" opacity="0.7"/>
+  <rect x="107" y="96" width="8" height="38" fill="#333" rx="2" opacity="0.7"/>
+  <rect x="121" y="94" width="8" height="42" fill="#333" rx="2" opacity="0.7"/>
+  <rect x="135" y="95" width="8" height="40" fill="#333" rx="2" opacity="0.7"/>
+  <rect x="149" y="99" width="8" height="32" fill="#333" rx="2" opacity="0.7"/>
+  <!-- Thorax -->
+  <ellipse cx="83" cy="110" rx="18" ry="15" fill="#e6ac00" stroke="#c49000" stroke-width="1.5"/>
+  <!-- Head -->
+  <circle cx="60" cy="108" r="15" fill="#FFD700" stroke="#e6ac00" stroke-width="1.5"/>
+  <!-- Eye -->
+  <ellipse cx="54" cy="104" rx="5" ry="6" fill="#333"/>
+  <circle cx="52" cy="102" r="1.5" fill="white"/>
+  <!-- Antennae -->
+  <path d="M58,94 Q52,80 44,72" stroke="#333" stroke-width="2" fill="none"/>
+  <circle cx="44" cy="72" r="3" fill="#333"/>
+  <path d="M64,93 Q64,78 58,68" stroke="#333" stroke-width="2" fill="none"/>
+  <circle cx="58" cy="68" r="3" fill="#333"/>
+  <!-- Wings -->
+  <ellipse cx="90" cy="88" rx="35" ry="14" fill="#b3e5fc" stroke="#90caf9" stroke-width="1" opacity="0.8"/>
+  <ellipse cx="90" cy="82" rx="28" ry="10" fill="#e1f5fe" stroke="#90caf9" stroke-width="1" opacity="0.7"/>
+  <!-- Stinger -->
+  <polygon points="173,115 185,110 185,120" fill="#e6ac00" stroke="#c49000" stroke-width="1"/>
+  <!-- Labels -->
+  <line x1="90" y1="78" x2="90" y2="58" stroke="#555" stroke-width="1"/>
+  <text x="90" y="54" text-anchor="middle" font-size="9" font-weight="bold" fill="#333">WING</text>
+  <line x1="54" y1="102" x2="30" y2="90" stroke="#555" stroke-width="1"/>
+  <text x="18" y="88" text-anchor="middle" font-size="9" font-weight="bold" fill="#333">EYE</text>
+  <line x1="52" y1="76" x2="40" y2="62" stroke="#555" stroke-width="1"/>
+  <text x="32" y="57" text-anchor="middle" font-size="9" font-weight="bold" fill="#333">ANTENNAE</text>
+  <line x1="183" y1="115" x2="205" y2="108" stroke="#555" stroke-width="1"/>
+  <text x="215" y="106" font-size="9" font-weight="bold" fill="#333">STINGER</text>
+  <line x1="130" y1="137" x2="130" y2="155" stroke="#555" stroke-width="1"/>
+  <text x="130" y="165" text-anchor="middle" font-size="9" font-weight="bold" fill="#333">BODY</text>
+  <!-- Honeycomb -->
+  <text x="270" y="50" text-anchor="middle" font-size="9" font-weight="bold" fill="#5d4000">HONEYCOMB</text>
+  <!-- Hexagons 2x3 grid -->
+  <polygon points="250,60 258,55 266,60 266,70 258,75 250,70" fill="#FFD700" stroke="#e6ac00" stroke-width="1.5"/>
+  <polygon points="266,60 274,55 282,60 282,70 274,75 266,70" fill="#FFA000" stroke="#e6ac00" stroke-width="1.5"/>
+  <polygon points="258,75 266,70 274,75 274,85 266,90 258,85" fill="#FFD700" stroke="#e6ac00" stroke-width="1.5"/>
+  <polygon points="250,90 258,85 266,90 266,100 258,105 250,100" fill="#FFA000" stroke="#e6ac00" stroke-width="1.5"/>
+  <polygon points="266,90 274,85 282,90 282,100 274,105 266,100" fill="#FFD700" stroke="#e6ac00" stroke-width="1.5"/>
+  <polygon points="258,105 266,100 274,105 274,115 266,120 258,115" fill="#FFA000" stroke="#e6ac00" stroke-width="1.5"/>
+  <text x="270" y="135" text-anchor="middle" font-size="8" fill="#5d4000" font-weight="bold">HEX CELL / HONEY</text>
+</svg>

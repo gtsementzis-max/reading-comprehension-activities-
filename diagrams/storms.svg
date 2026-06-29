@@ -1,0 +1,33 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="340" height="200" fill="#1a2a3a"/>
+  <text x="170" y="14" text-anchor="middle" font-size="12" font-weight="bold" fill="white">THUNDERSTORM</text>
+  <!-- Cumulonimbus cloud -->
+  <ellipse cx="170" cy="68" rx="95" ry="42" fill="#8090a0" stroke="#aab0c0" stroke-width="1.5"/>
+  <ellipse cx="130" cy="55" rx="55" ry="32" fill="#9aa0b0"/>
+  <ellipse cx="210" cy="52" rx="50" ry="30" fill="#9aa0b0"/>
+  <ellipse cx="170" cy="42" rx="42" ry="24" fill="#b0b8c8"/>
+  <!-- Ice crystals label top -->
+  <text x="170" y="24" text-anchor="middle" font-size="9" font-weight="bold" fill="#ddeeff">ICE CRYSTALS</text>
+  <line x1="170" y1="26" x2="170" y2="34" stroke="#ddeeff" stroke-width="1"/>
+  <!-- Lightning bolt -->
+  <polygon points="178,68 164,95 174,95 160,122 184,88 172,88" fill="#FFD700" stroke="#FFA000" stroke-width="1"/>
+  <!-- Updraft arrow left -->
+  <line x1="65" y1="180" x2="65" y2="118" stroke="#ef5350" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="60,120 65,108 70,120" fill="#ef5350"/>
+  <text x="65" y="192" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#ef5350">UPDRAFT</text>
+  <text x="65" y="200" text-anchor="middle" font-size="7" fill="#ef9090">(warm moist air)</text>
+  <!-- Downdraft arrow right -->
+  <line x1="275" y1="118" x2="275" y2="180" stroke="#64b5f6" stroke-width="2"/>
+  <polygon points="270,178 275,190 280,178" fill="#64b5f6"/>
+  <text x="275" y="192" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#64b5f6">DOWNDRAFT</text>
+  <text x="275" y="200" text-anchor="middle" font-size="7" fill="#90caf9">(cold air + rain)</text>
+  <!-- Rain lines below cloud -->
+  <line x1="115" y1="115" x2="108" y2="135" stroke="#64b5f6" stroke-width="1.5"/>
+  <line x1="130" y1="115" x2="123" y2="135" stroke="#64b5f6" stroke-width="1.5"/>
+  <line x1="145" y1="115" x2="138" y2="135" stroke="#64b5f6" stroke-width="1.5"/>
+  <line x1="195" y1="115" x2="188" y2="135" stroke="#64b5f6" stroke-width="1.5"/>
+  <line x1="210" y1="115" x2="203" y2="135" stroke="#64b5f6" stroke-width="1.5"/>
+  <line x1="225" y1="115" x2="218" y2="135" stroke="#64b5f6" stroke-width="1.5"/>
+  <!-- Warm moist air label bottom -->
+  <text x="170" y="176" text-anchor="middle" font-size="9" font-weight="bold" fill="#ef5350">WARM MOIST AIR</text>
+</svg>

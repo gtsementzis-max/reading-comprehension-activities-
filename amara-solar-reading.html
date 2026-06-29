@@ -63,15 +63,11 @@
   .panel h2{font-family:'Fredoka',sans-serif;color:var(--c-dark);margin:0 0 4px;font-size:1.3rem;display:flex;align-items:center;gap:10px}
   .panel .lead{color:var(--ink-soft);margin:0 0 16px;font-weight:600}
   .passage{background:var(--c-cream);border:2px solid #00000012;border-radius:16px;padding:18px 20px;font-size:1.06rem;line-height:1.7}
-  .passage-wrap{display:flex;gap:18px;align-items:flex-start}
-  .topic-img{flex:0 0 110px;background:var(--c-accent-soft);border:2px solid #00000010;border-radius:16px;padding:18px 10px 14px;text-align:center}
-  .topic-emoji{font-size:54px;line-height:1;display:block;margin-bottom:8px}
-  .topic-label{font-size:10px;font-weight:800;color:var(--c-deep);text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
-  .passage-text{flex:1;min-width:0}
+  .topic-diagram{margin:0 0 16px;text-align:center}
+  .topic-diagram img{max-width:100%;height:auto;border-radius:12px;border:2px solid #00000012;display:block;margin:0 auto}
   .passage h3{margin:0 0 10px;font-family:'Fredoka',sans-serif;color:var(--c-deep)}
   .passage p{margin:0 0 14px}
   .passage p:last-child{margin-bottom:0}
-  @media(max-width:560px){.passage-wrap{flex-direction:column}.topic-img{display:flex;align-items:center;gap:14px;width:100%;flex:none;padding:12px 16px}.topic-emoji{font-size:42px;margin:0}.topic-label{font-size:11px;text-align:left}}
   .voc{background:var(--c-accent-soft);border-bottom:2px solid var(--c-accent);border-radius:5px;padding:0 3px;font-weight:700;color:var(--c-deep)}
   .q{margin-bottom:18px}
   .q .qtext{font-weight:800;margin-bottom:10px}
@@ -169,16 +165,11 @@
       </div>
     </div>
     <div class="passage">
-      <div class="passage-wrap">
-        <div class="topic-img">
-          <span class="topic-emoji">🪐</span>
-          <div class="topic-label">Our Solar System</div>
-        </div>
-        <div class="passage-text">
-          <h3>Our Solar System</h3>
-          <p>Our solar system is made up of the Sun and everything that travels around it. The Sun is a giant <span class="voc">star</span>, a huge ball of burning gas. Eight <span class="voc">planet</span>s move around the Sun, each following a curved path called an <span class="voc">orbit</span>. What keeps the planets from flying off into space is <span class="voc">gravity</span>, an invisible force that pulls objects toward one another. The Sun's strong gravity holds the whole solar system together.</p><p>Between the planets float chunks of rock called <span class="voc">asteroid</span>s, and far beyond our solar system lie billions of other stars that make up our <span class="voc">galaxy</span>, the Milky Way. As each planet orbits the Sun, it also spins around an imaginary line through its middle called an <span class="voc">axis</span>; this spinning is what gives us day and night. Scientists study all of this using a <span class="voc">telescope</span>, a tool that makes faraway objects look closer.</p>
-        </div>
+      <div class="topic-diagram">
+        <img src="diagrams/solar.svg" alt="Our Solar System diagram">
       </div>
+      <h3>Our Solar System</h3>
+      <p>Our solar system is made up of the Sun and everything that travels around it. The Sun is a giant <span class="voc">star</span>, a huge ball of burning gas. Eight <span class="voc">planet</span>s move around the Sun, each following a curved path called an <span class="voc">orbit</span>. What keeps the planets from flying off into space is <span class="voc">gravity</span>, an invisible force that pulls objects toward one another. The Sun's strong gravity holds the whole solar system together.</p><p>Between the planets float chunks of rock called <span class="voc">asteroid</span>s, and far beyond our solar system lie billions of other stars that make up our <span class="voc">galaxy</span>, the Milky Way. As each planet orbits the Sun, it also spins around an imaginary line through its middle called an <span class="voc">axis</span>; this spinning is what gives us day and night. Scientists study all of this using a <span class="voc">telescope</span>, a tool that makes faraway objects look closer.</p>
     </div>
     <div class="actions"><button class="btn btn-primary" onclick="go(1)">I'm ready — Comprehend →</button></div>
   </section>

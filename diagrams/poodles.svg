@@ -1,0 +1,62 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="340" height="200" fill="#fafafa"/>
+  <text x="170" y="14" text-anchor="middle" font-size="12" font-weight="bold" fill="#4e342e">POODLE BREEDS</text>
+  <!-- LEFT: Poodle anatomy -->
+  <!-- Topknot -->
+  <circle cx="80" cy="38" r="18" fill="#e0c8a0" stroke="#a0845c" stroke-width="1.5"/>
+  <text x="20" y="33" text-anchor="middle" font-size="8" font-weight="bold" fill="#4e342e">TOPKNOT</text>
+  <line x1="62" y1="38" x2="32" y2="35" stroke="#555" stroke-width="1"/>
+  <!-- Head -->
+  <circle cx="80" cy="60" r="20" fill="#e8d5b0" stroke="#a0845c" stroke-width="2"/>
+  <!-- Eye -->
+  <circle cx="73" cy="57" r="3.5" fill="#333"/>
+  <!-- Snout -->
+  <ellipse cx="67" cy="66" rx="8" ry="5" fill="#d4b896"/>
+  <circle cx="64" cy="64" r="2" fill="#555"/>
+  <!-- Body (fluffy circle) -->
+  <circle cx="80" cy="110" r="32" fill="#e8d5b0" stroke="#a0845c" stroke-width="2"/>
+  <!-- Leg details -->
+  <line x1="60" y1="140" x2="55" y2="168" stroke="#a0845c" stroke-width="5" stroke-linecap="round"/>
+  <line x1="72" y1="142" x2="68" y2="168" stroke="#a0845c" stroke-width="5" stroke-linecap="round"/>
+  <line x1="90" y1="142" x2="92" y2="168" stroke="#a0845c" stroke-width="5" stroke-linecap="round"/>
+  <line x1="100" y1="140" x2="105" y2="168" stroke="#a0845c" stroke-width="5" stroke-linecap="round"/>
+  <!-- Paws (pompoms) -->
+  <circle cx="55" cy="170" r="5" fill="#e8d5b0" stroke="#a0845c" stroke-width="1.5"/>
+  <circle cx="68" cy="170" r="5" fill="#e8d5b0" stroke="#a0845c" stroke-width="1.5"/>
+  <circle cx="92" cy="170" r="5" fill="#e8d5b0" stroke="#a0845c" stroke-width="1.5"/>
+  <circle cx="105" cy="170" r="5" fill="#e8d5b0" stroke="#a0845c" stroke-width="1.5"/>
+  <!-- Tail pompom -->
+  <line x1="112" y1="100" x2="126" y2="85" stroke="#a0845c" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="130" cy="82" r="7" fill="#e8d5b0" stroke="#a0845c" stroke-width="1.5"/>
+  <!-- Labels -->
+  <text x="148" y="82" font-size="8" font-weight="bold" fill="#4e342e">POMPOM</text>
+  <line x1="130" y1="82" x2="146" y2="82" stroke="#555" stroke-width="1"/>
+  <text x="148" y="112" font-size="8" font-weight="bold" fill="#4e342e">CURLY COAT</text>
+  <line x1="112" y1="110" x2="146" y2="110" stroke="#555" stroke-width="1"/>
+  <text x="148" y="172" font-size="8" font-weight="bold" fill="#4e342e">PAW</text>
+  <line x1="92" y1="172" x2="146" y2="172" stroke="#555" stroke-width="1"/>
+  <!-- RIGHT: 3 sizes -->
+  <line x1="175" y1="22" x2="175" y2="195" stroke="#ccc" stroke-width="1.5"/>
+  <text x="258" y="28" text-anchor="middle" font-size="9" font-weight="bold" fill="#4e342e">POODLE SIZES</text>
+  <!-- Standard (largest) -->
+  <circle cx="200" cy="90" r="26" fill="#e8d5b0" stroke="#a0845c" stroke-width="2"/>
+  <circle cx="200" cy="58" r="16" fill="#e8d5b0" stroke="#a0845c" stroke-width="1.5"/>
+  <circle cx="200" cy="40" r="10" fill="#e8d5b0" stroke="#a0845c" stroke-width="1.5"/>
+  <line x1="186" y1="116" x2="184" y2="140" stroke="#a0845c" stroke-width="4" stroke-linecap="round"/>
+  <line x1="214" y1="116" x2="216" y2="140" stroke="#a0845c" stroke-width="4" stroke-linecap="round"/>
+  <text x="200" y="155" text-anchor="middle" font-size="8" font-weight="bold" fill="#4e342e">STANDARD</text>
+  <!-- Miniature (medium) -->
+  <circle cx="258" cy="106" r="18" fill="#e8d5b0" stroke="#a0845c" stroke-width="2"/>
+  <circle cx="258" cy="82" r="11" fill="#e8d5b0" stroke="#a0845c" stroke-width="1.5"/>
+  <circle cx="258" cy="68" r="7" fill="#e8d5b0" stroke="#a0845c" stroke-width="1.5"/>
+  <line x1="248" y1="123" x2="246" y2="140" stroke="#a0845c" stroke-width="3" stroke-linecap="round"/>
+  <line x1="268" y1="123" x2="270" y2="140" stroke="#a0845c" stroke-width="3" stroke-linecap="round"/>
+  <text x="258" y="155" text-anchor="middle" font-size="8" font-weight="bold" fill="#4e342e">MINIATURE</text>
+  <!-- Toy (smallest) -->
+  <circle cx="310" cy="120" r="12" fill="#e8d5b0" stroke="#a0845c" stroke-width="1.5"/>
+  <circle cx="310" cy="103" r="8" fill="#e8d5b0" stroke="#a0845c" stroke-width="1.5"/>
+  <circle cx="310" cy="92" r="5" fill="#e8d5b0" stroke="#a0845c" stroke-width="1.5"/>
+  <line x1="304" y1="130" x2="303" y2="142" stroke="#a0845c" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="316" y1="130" x2="317" y2="142" stroke="#a0845c" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="310" y="155" text-anchor="middle" font-size="8" font-weight="bold" fill="#4e342e">TOY</text>
+</svg>

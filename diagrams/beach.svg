@@ -1,0 +1,30 @@
+﻿<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="340" height="200" fill="#b0d8f0" rx="8"/>
+  <text x="170" y="16" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1a3a5a" text-anchor="middle">BEACH CROSS-SECTION</text>
+  <!-- Sky -->
+  <rect x="0" y="0" width="340" height="90" fill="#b0d8f0" rx="8"/>
+  <!-- Sun -->
+  <circle cx="290" cy="35" r="18" fill="#ffd700" stroke="#e8b800" stroke-width="1.5"/>
+  <!-- Ocean waves (left section) -->
+  <rect x="0" y="88" width="100" height="112" fill="#3a9bd5" rx="0"/>
+  <path d="M0,90 Q12,82 25,90 Q37,98 50,90 Q62,82 75,90 Q87,98 100,90" fill="none" stroke="#fff" stroke-width="2.5"/>
+  <path d="M0,104 Q12,96 25,104 Q37,112 50,104 Q62,96 75,104 Q87,112 100,104" fill="none" stroke="#5be5ff" stroke-width="1.5" opacity="0.6"/>
+  <text x="50" y="130" font-family="sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">OCEAN</text>
+  <text x="50" y="144" font-family="sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">WAVES</text>
+  <!-- Shoreline (wet sand) -->
+  <rect x="100" y="88" width="36" height="112" fill="#c8b070"/>
+  <text x="118" y="155" font-family="sans-serif" font-size="8" font-weight="bold" fill="#5a3a00" text-anchor="middle" transform="rotate(-90,118,155)">SHORELINE</text>
+  <!-- Beach (dry sand) -->
+  <rect x="136" y="88" width="100" height="112" fill="#f0d080"/>
+  <text x="186" y="145" font-family="sans-serif" font-size="12" font-weight="bold" fill="#7a5010" text-anchor="middle">BEACH</text>
+  <!-- Sand dunes -->
+  <ellipse cx="270" cy="88" rx="36" ry="22" fill="#e8c060"/>
+  <ellipse cx="310" cy="92" rx="30" ry="18" fill="#e0b840"/>
+  <text x="285" y="140" font-family="sans-serif" font-size="10" font-weight="bold" fill="#7a5010" text-anchor="middle">SAND DUNES</text>
+  <!-- High tide line -->
+  <line x1="100" y1="100" x2="240" y2="100" stroke="#e07030" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="244" y="99" font-family="sans-serif" font-size="9" font-weight="bold" fill="#e07030">HIGH TIDE LINE</text>
+  <!-- Low tide line -->
+  <line x1="68" y1="115" x2="175" y2="115" stroke="#2266bb" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="178" y="114" font-family="sans-serif" font-size="9" font-weight="bold" fill="#2266bb">LOW TIDE LINE</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="340" height="200" fill="#fdf3d0"/>
+  <text x="170" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#7a4a00">ANCIENT EGYPTIAN PYRAMID</text>
+  <!-- Sand ground -->
+  <rect x="0" y="168" width="340" height="32" fill="#d4a950"/>
+  <!-- Pyramid outer -->
+  <polygon points="80,168 200,30 320,168" fill="#e8c870" stroke="#b8860b" stroke-width="2"/>
+  <!-- Interior fill -->
+  <polygon points="90,168 200,42 310,168" fill="#f5deb3"/>
+  <!-- Entrance -->
+  <rect x="88" y="148" width="16" height="20" rx="2" fill="#8b6914" stroke="#7a4a00" stroke-width="1"/>
+  <text x="70" y="160" text-anchor="end" font-size="8" font-weight="bold" fill="#7a4a00">ENTRANCE</text>
+  <line x1="88" y1="158" x2="78" y2="158" stroke="#7a4a00" stroke-width="1"/>
+  <!-- Corridor diagonal -->
+  <line x1="104" y1="148" x2="170" y2="110" stroke="#8b6914" stroke-width="3"/>
+  <text x="120" y="138" font-size="8" font-weight="bold" fill="#7a4a00" transform="rotate(-28,120,138)">CORRIDOR</text>
+  <!-- King's Chamber -->
+  <rect x="158" y="100" width="44" height="28" rx="2" fill="#c8a060" stroke="#7a4a00" stroke-width="1.5"/>
+  <text x="180" y="112" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#4a2800">KING'S</text>
+  <text x="180" y="122" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#4a2800">CHAMBER</text>
+  <!-- Air shafts -->
+  <line x1="162" y1="100" x2="130" y2="60" stroke="#8b6914" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <line x1="200" y1="100" x2="232" y2="60" stroke="#8b6914" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="108" y="55" font-size="7.5" font-weight="bold" fill="#7a4a00">AIR SHAFT</text>
+  <text x="234" y="55" font-size="7.5" font-weight="bold" fill="#7a4a00">AIR SHAFT</text>
+  <!-- Sphinx (lion body + human head) beside pyramid -->
+  <!-- Body -->
+  <ellipse cx="42" cy="162" rx="30" ry="12" fill="#d4a950" stroke="#b8860b" stroke-width="1.5"/>
+  <!-- Paws -->
+  <rect x="14" y="162" width="12" height="8" rx="3" fill="#c8973a" stroke="#b8860b" stroke-width="1"/>
+  <rect x="28" y="162" width="12" height="8" rx="3" fill="#c8973a" stroke="#b8860b" stroke-width="1"/>
+  <!-- Head -->
+  <circle cx="18" cy="152" r="10" fill="#e8c870" stroke="#b8860b" stroke-width="1.5"/>
+  <!-- Headdress -->
+  <rect x="10" y="143" width="16" height="6" rx="1" fill="#d4a950" stroke="#b8860b" stroke-width="1"/>
+  <line x1="10" y1="149" x2="8" y2="162" stroke="#b8860b" stroke-width="2"/>
+  <line x1="26" y1="149" x2="28" y2="162" stroke="#b8860b" stroke-width="2"/>
+  <circle cx="16" cy="152" r="1.5" fill="#7a4a00"/>
+  <text x="42" y="183" text-anchor="middle" font-size="8" font-weight="bold" fill="#7a4a00">SPHINX</text>
+</svg>

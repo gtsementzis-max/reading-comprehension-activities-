@@ -63,15 +63,11 @@
   .panel h2{font-family:'Fredoka',sans-serif;color:var(--c-dark);margin:0 0 4px;font-size:1.3rem;display:flex;align-items:center;gap:10px}
   .panel .lead{color:var(--ink-soft);margin:0 0 16px;font-weight:600}
   .passage{background:var(--c-cream);border:2px solid #00000012;border-radius:16px;padding:18px 20px;font-size:1.06rem;line-height:1.7}
-  .passage-wrap{display:flex;gap:18px;align-items:flex-start}
-  .topic-img{flex:0 0 110px;background:var(--c-accent-soft);border:2px solid #00000010;border-radius:16px;padding:18px 10px 14px;text-align:center}
-  .topic-emoji{font-size:54px;line-height:1;display:block;margin-bottom:8px}
-  .topic-label{font-size:10px;font-weight:800;color:var(--c-deep);text-transform:uppercase;letter-spacing:.06em;line-height:1.3}
-  .passage-text{flex:1;min-width:0}
+  .topic-diagram{margin:0 0 16px;text-align:center}
+  .topic-diagram img{max-width:100%;height:auto;border-radius:12px;border:2px solid #00000012;display:block;margin:0 auto}
   .passage h3{margin:0 0 10px;font-family:'Fredoka',sans-serif;color:var(--c-deep)}
   .passage p{margin:0 0 14px}
   .passage p:last-child{margin-bottom:0}
-  @media(max-width:560px){.passage-wrap{flex-direction:column}.topic-img{display:flex;align-items:center;gap:14px;width:100%;flex:none;padding:12px 16px}.topic-emoji{font-size:42px;margin:0}.topic-label{font-size:11px;text-align:left}}
   .voc{background:var(--c-accent-soft);border-bottom:2px solid var(--c-accent);border-radius:5px;padding:0 3px;font-weight:700;color:var(--c-deep)}
   .q{margin-bottom:18px}
   .q .qtext{font-weight:800;margin-bottom:10px}
@@ -169,16 +165,11 @@
       </div>
     </div>
     <div class="passage">
-      <div class="passage-wrap">
-        <div class="topic-img">
-          <span class="topic-emoji">🐆</span>
-          <div class="topic-label">Animals of the Rainforest</div>
-        </div>
-        <div class="passage-text">
-          <h3>Animals of the Rainforest</h3>
-          <p>The rainforest is one of the busiest places on Earth. It is split into layers, and different animals live in each one. High above, the leafy <span class="voc">canopy</span> forms a green roof where monkeys swing and colorful birds like toucans search for fruit. Below that, the shady <span class="voc">understory</span> is home to frogs, snakes, and insects that climb the trunks and vines. Down on the dark forest floor, larger animals such as jaguars move quietly between the trees. Because the rainforest is warm and wet all year, an enormous number of plants and animals can live there. Scientists call this huge variety of living things <span class="voc">biodiversity</span>, and no other habitat on land has more of it.</p><p>Living in such a crowded place is not easy, so rainforest animals have special ways to survive. Many use <span class="voc">camouflage</span>, blending into leaves or bark so that <span class="voc">predator</span>s cannot spot them. The sloth even grows tiny green algae on its fur to help it hide. Camouflage works for hunters too: a jaguar's spotted coat lets it creep up on its <span class="voc">prey</span> without being seen. Some animals are <span class="voc">nocturnal</span>, meaning they sleep during the day and come out at night, when it is cooler and safer. Others protect themselves with bright warning colors instead of hiding — the skin of a poison dart frog tells a hungry predator that it would make a dangerous meal. Over millions of years, each animal has slowly <span class="voc">adapt</span>ed to fit its part of the forest, and that is one reason the rainforest holds so much life.</p>
-        </div>
+      <div class="topic-diagram">
+        <img src="diagrams/rainforest.svg" alt="Animals of the Rainforest diagram">
       </div>
+      <h3>Animals of the Rainforest</h3>
+      <p>The rainforest is one of the busiest places on Earth. It is split into layers, and different animals live in each one. High above, the leafy <span class="voc">canopy</span> forms a green roof where monkeys swing and colorful birds like toucans search for fruit. Below that, the shady <span class="voc">understory</span> is home to frogs, snakes, and insects that climb the trunks and vines. Down on the dark forest floor, larger animals such as jaguars move quietly between the trees. Because the rainforest is warm and wet all year, an enormous number of plants and animals can live there. Scientists call this huge variety of living things <span class="voc">biodiversity</span>, and no other habitat on land has more of it.</p><p>Living in such a crowded place is not easy, so rainforest animals have special ways to survive. Many use <span class="voc">camouflage</span>, blending into leaves or bark so that <span class="voc">predator</span>s cannot spot them. The sloth even grows tiny green algae on its fur to help it hide. Camouflage works for hunters too: a jaguar's spotted coat lets it creep up on its <span class="voc">prey</span> without being seen. Some animals are <span class="voc">nocturnal</span>, meaning they sleep during the day and come out at night, when it is cooler and safer. Others protect themselves with bright warning colors instead of hiding — the skin of a poison dart frog tells a hungry predator that it would make a dangerous meal. Over millions of years, each animal has slowly <span class="voc">adapt</span>ed to fit its part of the forest, and that is one reason the rainforest holds so much life.</p>
     </div>
     <div class="actions"><button class="btn btn-primary" onclick="go(1)">I'm ready — Comprehend →</button></div>
   </section>

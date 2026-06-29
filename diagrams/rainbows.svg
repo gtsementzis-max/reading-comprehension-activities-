@@ -1,0 +1,36 @@
+﻿<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="340" height="200" fill="#f8fbff" rx="8"/>
+  <text x="170" y="16" font-family="sans-serif" font-size="11" font-weight="bold" fill="#334" text-anchor="middle">HOW A RAINBOW FORMS</text>
+  <!-- Sun rays on left -->
+  <circle cx="28" cy="80" r="16" fill="#ffd700" stroke="#e8b800" stroke-width="1.5"/>
+  <line x1="10" y1="60" x2="4" y2="50" stroke="#ffd700" stroke-width="2"/>
+  <line x1="28" y1="55" x2="28" y2="44" stroke="#ffd700" stroke-width="2"/>
+  <line x1="46" y1="60" x2="52" y2="50" stroke="#ffd700" stroke-width="2"/>
+  <line x1="52" y1="80" x2="63" y2="78" stroke="#ffd700" stroke-width="2"/>
+  <text x="28" y="110" font-family="sans-serif" font-size="9" font-weight="bold" fill="#b8860b" text-anchor="middle">SUNLIGHT</text>
+  <!-- Light ray entering raindrop -->
+  <line x1="44" y1="80" x2="150" y2="95" stroke="#ffd700" stroke-width="2.5" stroke-dasharray="5,3"/>
+  <!-- Raindrop (large circle) -->
+  <circle cx="185" cy="105" r="38" fill="#d0e8ff" stroke="#7ab0e0" stroke-width="2"/>
+  <text x="185" y="153" font-family="sans-serif" font-size="9" font-weight="bold" fill="#446688" text-anchor="middle">RAINDROP</text>
+  <!-- Refraction inside - bent ray -->
+  <line x1="150" y1="95" x2="185" y2="105" stroke="#ffd700" stroke-width="2"/>
+  <line x1="185" y1="105" x2="220" y2="110" stroke="#fff" stroke-width="1"/>
+  <!-- Spectrum exiting right side -->
+  <line x1="222" y1="85" x2="330" y2="60" stroke="#ff2200" stroke-width="3"/>
+  <text x="332" y="58" font-family="sans-serif" font-size="9" font-weight="bold" fill="#cc0000">RED</text>
+  <line x1="222" y1="90" x2="330" y2="72" stroke="#ff8800" stroke-width="3"/>
+  <text x="332" y="70" font-family="sans-serif" font-size="9" font-weight="bold" fill="#cc6600">ORANGE</text>
+  <line x1="223" y1="96" x2="330" y2="84" stroke="#eeee00" stroke-width="3"/>
+  <text x="332" y="82" font-family="sans-serif" font-size="9" font-weight="bold" fill="#888800">YELLOW</text>
+  <line x1="223" y1="102" x2="330" y2="96" stroke="#22aa22" stroke-width="3"/>
+  <text x="332" y="94" font-family="sans-serif" font-size="9" font-weight="bold" fill="#116611">GREEN</text>
+  <line x1="223" y1="108" x2="330" y2="108" stroke="#2266ff" stroke-width="3"/>
+  <text x="332" y="106" font-family="sans-serif" font-size="9" font-weight="bold" fill="#0033bb">BLUE</text>
+  <line x1="222" y1="114" x2="330" y2="120" stroke="#4400cc" stroke-width="3"/>
+  <text x="332" y="118" font-family="sans-serif" font-size="9" font-weight="bold" fill="#330099">INDIGO</text>
+  <line x1="221" y1="120" x2="330" y2="132" stroke="#8800aa" stroke-width="3"/>
+  <text x="332" y="130" font-family="sans-serif" font-size="9" font-weight="bold" fill="#660088">VIOLET</text>
+  <!-- Refraction label -->
+  <text x="185" y="100" font-family="sans-serif" font-size="8" font-weight="bold" fill="#336699" text-anchor="middle">REFRACTION</text>
+</svg>

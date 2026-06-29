@@ -1,0 +1,49 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="340" height="200" fill="#e8f4fc"/>
+  <text x="170" y="16" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a5276">THE WATER CYCLE</text>
+  <!-- Sun -->
+  <circle cx="30" cy="35" r="18" fill="#f9e300" stroke="#e6b800" stroke-width="1.5"/>
+  <line x1="30" y1="10" x2="30" y2="4" stroke="#e6b800" stroke-width="2"/>
+  <line x1="30" y1="60" x2="30" y2="66" stroke="#e6b800" stroke-width="2"/>
+  <line x1="5" y1="35" x2="0" y2="35" stroke="#e6b800" stroke-width="2"/>
+  <line x1="55" y1="35" x2="61" y2="35" stroke="#e6b800" stroke-width="2"/>
+  <line x1="13" y1="18" x2="9" y2="14" stroke="#e6b800" stroke-width="2"/>
+  <line x1="47" y1="52" x2="51" y2="56" stroke="#e6b800" stroke-width="2"/>
+  <line x1="47" y1="18" x2="51" y2="14" stroke="#e6b800" stroke-width="2"/>
+  <line x1="13" y1="52" x2="9" y2="56" stroke="#e6b800" stroke-width="2"/>
+  <!-- Cloud -->
+  <ellipse cx="185" cy="48" rx="38" ry="18" fill="white" stroke="#aaa" stroke-width="1.5"/>
+  <ellipse cx="160" cy="54" rx="22" ry="14" fill="white" stroke="#aaa" stroke-width="1.5"/>
+  <ellipse cx="210" cy="54" rx="22" ry="14" fill="white" stroke="#aaa" stroke-width="1.5"/>
+  <!-- Ocean -->
+  <rect x="0" y="158" width="340" height="42" fill="#3498db" rx="2"/>
+  <text x="170" y="178" text-anchor="middle" font-size="11" font-weight="bold" fill="white">OCEAN</text>
+  <!-- Mountain -->
+  <polygon points="265,158 310,80 355,158" fill="#5d8a5e" stroke="#3a6e3c" stroke-width="1.5"/>
+  <polygon points="305,158 330,108 355,158" fill="#7aab7d"/>
+  <!-- Evaporation arrows -->
+  <line x1="90" y1="155" x2="90" y2="80" stroke="#1a6fa0" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="85,82 90,68 95,82" fill="#1a6fa0"/>
+  <line x1="120" y1="155" x2="120" y2="80" stroke="#1a6fa0" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="115,82 120,68 125,82" fill="#1a6fa0"/>
+  <line x1="150" y1="155" x2="150" y2="80" stroke="#1a6fa0" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="145,82 150,68 155,82" fill="#1a6fa0"/>
+  <text x="120" y="122" text-anchor="middle" font-size="9" font-weight="bold" fill="#1a5276">EVAPORATION</text>
+  <!-- Rain -->
+  <line x1="168" y1="72" x2="155" y2="105" stroke="#2980b9" stroke-width="1.5"/>
+  <line x1="185" y1="72" x2="172" y2="105" stroke="#2980b9" stroke-width="1.5"/>
+  <line x1="202" y1="72" x2="189" y2="105" stroke="#2980b9" stroke-width="1.5"/>
+  <polygon points="150,103 155,115 160,103" fill="#2980b9"/>
+  <polygon points="167,103 172,115 177,103" fill="#2980b9"/>
+  <polygon points="184,103 189,115 194,103" fill="#2980b9"/>
+  <text x="208" y="100" font-size="9" font-weight="bold" fill="#1a5276">PRECIPI-</text>
+  <text x="208" y="112" font-size="9" font-weight="bold" fill="#1a5276">TATION</text>
+  <!-- Runoff -->
+  <path d="M260 158 Q220 158 80 158" stroke="#1a6fa0" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <polygon points="0,0 8,4 0,8" fill="#1a6fa0"/>
+    </marker>
+  </defs>
+  <text x="170" y="148" text-anchor="middle" font-size="9" font-weight="bold" fill="#1a5276">RUNOFF</text>
+</svg>

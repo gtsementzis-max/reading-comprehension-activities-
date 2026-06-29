@@ -1,0 +1,56 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="340" height="200" fill="white"/>
+  <text x="170" y="13" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a237e">EARTH'S FOUR SEASONS</text>
+  <!-- SUN (center) -->
+  <circle cx="170" cy="100" r="22" fill="#FFD700" stroke="#e6b800" stroke-width="2"/>
+  <text x="170" y="104" text-anchor="middle" font-size="9" font-weight="bold" fill="#7a4a00">SUN</text>
+  <!-- Sun rays -->
+  <line x1="170" y1="72" x2="170" y2="64" stroke="#e6b800" stroke-width="2"/>
+  <line x1="170" y1="128" x2="170" y2="136" stroke="#e6b800" stroke-width="2"/>
+  <line x1="142" y1="100" x2="134" y2="100" stroke="#e6b800" stroke-width="2"/>
+  <line x1="198" y1="100" x2="206" y2="100" stroke="#e6b800" stroke-width="2"/>
+  <line x1="151" y1="81" x2="145" y2="75" stroke="#e6b800" stroke-width="2"/>
+  <line x1="189" y1="119" x2="195" y2="125" stroke="#e6b800" stroke-width="2"/>
+  <line x1="189" y1="81" x2="195" y2="75" stroke="#e6b800" stroke-width="2"/>
+  <line x1="151" y1="119" x2="145" y2="125" stroke="#e6b800" stroke-width="2"/>
+  <!-- Dashed orbit circle -->
+  <circle cx="170" cy="100" r="78" fill="none" stroke="#90caf9" stroke-width="1.5" stroke-dasharray="8,5"/>
+  <!-- Orbit direction arrow -->
+  <path d="M170,22 Q248,22 248,100" stroke="#90caf9" stroke-width="1.5" fill="none"/>
+  <polygon points="248,95 243,107 253,107" fill="#90caf9"/>
+  <!-- SPRING (top) -->
+  <circle cx="170" cy="22" r="14" fill="#81c784" stroke="#388e3c" stroke-width="1.5"/>
+  <!-- Green tree -->
+  <line x1="170" y1="28" x2="170" y2="35" stroke="#4e342e" stroke-width="1.5"/>
+  <ellipse cx="170" cy="15" rx="8" ry="7" fill="#66bb6a" stroke="#388e3c" stroke-width="1"/>
+  <!-- Flower dot -->
+  <circle cx="165" cy="24" r="2" fill="#f06292"/>
+  <circle cx="175" cy="22" r="2" fill="#f06292"/>
+  <text x="170" y="52" text-anchor="middle" font-size="10" font-weight="bold" fill="#2e7d32">SPRING</text>
+  <!-- SUMMER (right) -->
+  <circle cx="248" cy="100" r="14" fill="#fff176" stroke="#f57f17" stroke-width="1.5"/>
+  <!-- Sun rays around Earth -->
+  <line x1="258" y1="90" x2="263" y2="85" stroke="#FFD700" stroke-width="2"/>
+  <line x1="262" y1="100" x2="268" y2="100" stroke="#FFD700" stroke-width="2"/>
+  <line x1="258" y1="110" x2="263" y2="115" stroke="#FFD700" stroke-width="2"/>
+  <line x1="248" y1="86" x2="248" y2="80" stroke="#FFD700" stroke-width="2"/>
+  <text x="248" y="130" text-anchor="middle" font-size="10" font-weight="bold" fill="#e65100">SUMMER</text>
+  <!-- Blue land/water on Earth -->
+  <ellipse cx="248" cy="100" rx="8" ry="6" fill="#42a5f5" opacity="0.6"/>
+  <!-- AUTUMN (bottom) -->
+  <circle cx="170" cy="178" r="14" fill="#ff8a65" stroke="#e64a19" stroke-width="1.5"/>
+  <!-- Orange leaf -->
+  <path d="M170,172 Q178,165 176,178 Q172,182 166,178 Q162,172 170,172Z" fill="#ff7043" stroke="#e64a19" stroke-width="1"/>
+  <line x1="170" y1="178" x2="170" y2="185" stroke="#795548" stroke-width="1.5"/>
+  <text x="170" y="154" text-anchor="middle" font-size="10" font-weight="bold" fill="#bf360c">AUTUMN</text>
+  <!-- WINTER (left) -->
+  <circle cx="92" cy="100" r="14" fill="#b3e5fc" stroke="#0277bd" stroke-width="1.5"/>
+  <!-- Snowflake -->
+  <line x1="92" y1="88" x2="92" y2="112" stroke="#0277bd" stroke-width="2"/>
+  <line x1="80" y1="100" x2="104" y2="100" stroke="#0277bd" stroke-width="2"/>
+  <line x1="83" y1="91" x2="101" y2="109" stroke="#0277bd" stroke-width="1.5"/>
+  <line x1="101" y1="91" x2="83" y2="109" stroke="#0277bd" stroke-width="1.5"/>
+  <text x="92" y="130" text-anchor="middle" font-size="10" font-weight="bold" fill="#01579b">WINTER</text>
+  <!-- Earth label hints -->
+  <text x="170" y="38" text-anchor="middle" font-size="7" fill="#555">Earth (orbit)</text>
+</svg>
