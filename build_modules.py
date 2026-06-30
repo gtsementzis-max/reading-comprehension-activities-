@@ -1134,6 +1134,428 @@ MODULES = [
  "match":[{"word":"gill","def":"the part a fish uses to breathe underwater","hint":"\"…breathe through parts called <b>gill</b>s.\""},{"word":"fin","def":"a flat part that helps a fish steer in water","hint":"\"Fish have <b>fin</b>s to help them steer.\""},{"word":"scale","def":"a tiny flat piece that covers a fish's body","hint":"\"…covered in tiny <b>scale</b>s.\""},{"word":"underwater","def":"below the surface of the water","hint":"\"Fish live <b>underwater</b>.\""},{"word":"ocean","def":"a huge body of salty water","hint":"\"Some fish live in the <b>ocean</b>.\""}],
  "bank":["gill","fin","scale","underwater","ocean","swim"],
  "fills":[{"text":"Fish breathe through their ___s.","a":"gill"},{"text":"The ___ helps the fish turn left and right.","a":"fin"},{"text":"Each tiny ___ protects the fish's body.","a":"scale"},{"text":"Crabs live ___ on the sea floor.","a":"underwater"},{"text":"Sharks live in the deep ___.","a":"ocean"},{"text":"Fish ___ by moving their tails.","a":"swim"}]}
+,
+{
+ "activityId":"earthquakes",
+ "projectKey":"earthquakes",
+ "name":"Amara","hubKey":"amaraReading","hubFile":"index.html",
+ "useLead":"Choose the right word for each blank. Challenge question marked ★.",
+ "title":"Earthquakes",
+ "heroEmoji":"\U0001f30d","watermark":"\U0001f4a5","pageTitle":"Earthquakes","diagramFile":"diagrams/earthquakes.svg",
+ "win":"PERFECT, Amara! You shook it! \U0001f30d",
+ "cheer":"Rock-solid reading, Amara! \U0001faa8",
+ "palette":{"primary":"#8b4513","dark":"#6a340e","deep":"#3e1f08","accent":"#c8935a","accentSoft":"#f5e0cc","cream":"#fdf6ee","bgTop":"#faf0e4","bgBottom":"#f5e4d4","glow1":"#8b451322","glow2":"#3e1f0818"},
+ "passageTitle":"Earthquakes",
+ "passageHtml":
+"<p>Deep inside the Earth, enormous slabs of rock called <span class=\"voc\">tectonic</span> plates are constantly moving. Where two plates meet, a crack in the crust forms, known as a <span class=\"voc\">fault</span>. Pressure builds up along the fault over hundreds of years. When the pressure finally releases all at once, the ground begins to <span class=\"voc\">vibrate</span>, sending energy racing outward in all directions.</p>"
+"<p>The energy travels as <span class=\"voc\">seismic</span> waves, which shake everything in their path. The point on the ground directly above where the earthquake starts underground is called the <span class=\"voc\">epicenter</span>. Scientists measure how powerful an earthquake is using the Richter scale. The number given to describe the earthquake's power is its <span class=\"voc\">magnitude</span>. Larger numbers mean stronger, more destructive shaking.</p>",
+ "questions":[
+   {"type":"Main idea","q":"This passage is mostly about —","opts":["how buildings are made to survive earthquakes","what causes earthquakes and how they are measured","why tectonic plates were discovered"],"a":1},
+   {"type":"Detail","q":"What builds up along a fault before an earthquake?","opts":["Seismic waves","Heat from the mantle","Pressure"],"a":2},
+   {"type":"Vocabulary","q":"\"Seismic\" relates to —","opts":["the movement of tectonic plates","the energy waves produced by an earthquake","the measure of an earthquake's strength"],"a":1},
+   {"type":"Detail","q":"What is the epicenter?","opts":["The underground point where the earthquake begins","The point on the surface directly above where the earthquake starts","The scale used to measure earthquake strength"],"a":1},
+   {"type":"Vocabulary","q":"\"Magnitude\" describes —","opts":["how deep underground an earthquake starts","how long an earthquake lasts","how powerful an earthquake is"],"a":2},
+   {"type":"Cause & effect","q":"When pressure along a fault finally releases, —","opts":["the tectonic plates stop moving","the ground vibrates and sends out seismic waves","a new fault is created underground"],"a":1}
+ ],
+ "match":[
+   {"word":"tectonic","def":"relating to the large moving slabs of rock that make up Earth's crust","hint":"\"enormous slabs of rock called <b>tectonic</b> plates are constantly moving.\""},
+   {"word":"fault","def":"a crack in Earth's crust where two plates meet","hint":"\"a crack in the crust forms, known as a <b>fault</b>.\""},
+   {"word":"vibrate","def":"to shake rapidly back and forth","hint":"\"the ground begins to <b>vibrate</b>, sending energy racing outward.\""},
+   {"word":"seismic","def":"relating to the energy waves produced by an earthquake","hint":"\"The energy travels as <b>seismic</b> waves.\""},
+   {"word":"epicenter","def":"the point on the surface directly above where an earthquake begins","hint":"\"directly above where the earthquake starts underground is called the <b>epicenter</b>.\""},
+   {"word":"magnitude","def":"the number that describes how powerful an earthquake is","hint":"\"The number given to describe the earthquake's power is its <b>magnitude</b>.\""}
+ ],
+ "bank":["tectonic","fault","vibrate","seismic","epicenter","magnitude","tremor","rupture"],
+ "fills":[
+   {"text":"The ___ plates that make up the crust are always moving.","a":"tectonic"},
+   {"text":"A ___ is a crack in the Earth's crust where two plates meet.","a":"fault"},
+   {"text":"Earthquakes cause the ground to ___ and shake.","a":"vibrate"},
+   {"text":"___ waves carry earthquake energy through the ground.","a":"seismic"},
+   {"text":"The ___ is the point on the surface above the earthquake's source.","a":"epicenter"},
+   {"text":"A 7.0 ___ earthquake is much more powerful than a 4.0.","a":"magnitude"},
+   {"text":"A small earthquake is sometimes called a ___.","a":"tremor"},
+   {"text":"When a fault ___, stored energy is released all at once as an earthquake.","a":"rupture","challenge":True}
+ ]
+},
+{
+ "activityId":"rocks",
+ "projectKey":"rocks",
+ "name":"Amara","hubKey":"amaraReading","hubFile":"index.html",
+ "useLead":"Choose the right word for each blank. Challenge question marked ★.",
+ "title":"The Rock Cycle",
+ "heroEmoji":"\U0001faa8","watermark":"\U0001f30b","pageTitle":"The Rock Cycle","diagramFile":"diagrams/rocks.svg",
+ "win":"PERFECT, Amara! Solid as a rock! \U0001faa8",
+ "cheer":"Rock on, Amara! \U0001f30b",
+ "palette":{"primary":"#6d4c41","dark":"#4e342e","deep":"#3e2723","accent":"#a1887f","accentSoft":"#efebe9","cream":"#fdf6f2","bgTop":"#f8f0ed","bgBottom":"#f2e8e4","glow1":"#6d4c4122","glow2":"#3e272318"},
+ "passageTitle":"The Rock Cycle",
+ "passageHtml":
+"<p>Rocks are not permanent — they are constantly changing. Deep underground, heat melts rock into a liquid called <span class=\"voc\">magma</span>. When magma rises and cools — either underground or after erupting as lava — it hardens into <span class=\"voc\">igneous</span> rock. This is how granite and basalt are formed. <span class=\"voc\">Erosion</span> then slowly breaks igneous rock into tiny pieces called sediment.</p>"
+"<p>Over millions of years, layers of sediment pile up and are squeezed together to form <span class=\"voc\">sedimentary</span> rock, such as sandstone or limestone. If any rock is buried deep enough, the intense heat and pressure transforms it into <span class=\"voc\">metamorphic</span> rock. Marble and slate are examples. Eventually, metamorphic rock can melt back into magma, completing the cycle. Every rock contains tiny crystals called <span class=\"voc\">minerals</span>.</p>",
+ "questions":[
+   {"type":"Main idea","q":"This passage is mainly about —","opts":["how to identify different rocks","the continuous cycle of rock formation and change","why volcanoes produce different kinds of lava"],"a":1},
+   {"type":"Detail","q":"What is magma?","opts":["Liquid rock found deep underground","Rock formed when sediment is compressed","Rock changed by heat and pressure"],"a":0},
+   {"type":"Vocabulary","q":"\"Igneous\" rock is rock that —","opts":["forms from compressed layers of sediment","forms when magma cools and hardens","forms when buried rock is squeezed by pressure"],"a":1},
+   {"type":"Detail","q":"How does sedimentary rock form?","opts":["When magma cools on the Earth's surface","When layers of sediment are squeezed together over millions of years","When igneous rock is heated and squeezed"],"a":1},
+   {"type":"Vocabulary","q":"\"Metamorphic\" rock has been changed by —","opts":["cooling from liquid magma","layers of sediment building up","intense heat and pressure deep underground"],"a":2},
+   {"type":"Sequence","q":"Which is the correct order in the rock cycle?","opts":["Magma → igneous → sediment → sedimentary → metamorphic → magma","Sedimentary → igneous → metamorphic → magma","Metamorphic → sedimentary → igneous → magma"],"a":0}
+ ],
+ "match":[
+   {"word":"magma","def":"molten liquid rock found deep beneath the Earth's surface","hint":"\"heat melts rock into a liquid called <b>magma</b>.\""},
+   {"word":"igneous","def":"rock formed when magma or lava cools and hardens","hint":"\"it hardens into <b>igneous</b> rock.\""},
+   {"word":"erosion","def":"the process of wearing away rock into smaller pieces","hint":"\"<b>Erosion</b> then slowly breaks igneous rock into tiny pieces.\""},
+   {"word":"sedimentary","def":"rock formed when layers of sediment are compressed together","hint":"\"layers of sediment pile up and are squeezed together to form <b>sedimentary</b> rock.\""},
+   {"word":"metamorphic","def":"rock that has been changed by intense heat and pressure","hint":"\"heat and pressure transforms it into <b>metamorphic</b> rock.\""},
+   {"word":"minerals","def":"natural crystals that make up all rocks","hint":"\"Every rock contains tiny crystals called <b>minerals</b>.\""}
+ ],
+ "bank":["magma","igneous","erosion","sedimentary","metamorphic","minerals","lava","compaction"],
+ "fills":[
+   {"text":"Hot liquid rock underground is called ___.","a":"magma"},
+   {"text":"Granite is an ___ rock formed from cooled magma.","a":"igneous"},
+   {"text":"Wind and rain cause ___ that slowly wears rock away.","a":"erosion"},
+   {"text":"Sandstone is a ___ rock made from pressed-together sand.","a":"sedimentary"},
+   {"text":"Marble is a ___ rock created by heat and pressure.","a":"metamorphic"},
+   {"text":"Rocks are made up of natural crystals called ___.","a":"minerals"},
+   {"text":"When magma reaches the surface and flows out of a volcano, it is called ___.","a":"lava"},
+   {"text":"The slow squeezing of sediment layers into solid rock is called ___.","a":"compaction","challenge":True}
+ ]
+},
+{
+ "activityId":"glaciers",
+ "projectKey":"glaciers",
+ "name":"Amara","hubKey":"amaraReading","hubFile":"index.html",
+ "useLead":"Choose the right word for each blank. Challenge question marked ★.",
+ "title":"Glaciers",
+ "heroEmoji":"\U0001f9ca","watermark":"❄️","pageTitle":"Glaciers","diagramFile":"diagrams/glaciers.svg",
+ "win":"PERFECT, Amara! Cool as a glacier! \U0001f9ca",
+ "cheer":"Ice-cold brilliance, Amara! ❄️",
+ "palette":{"primary":"#0277bd","dark":"#01579b","deep":"#003c6b","accent":"#4fc3f7","accentSoft":"#e1f5fe","cream":"#f2faff","bgTop":"#e8f5fe","bgBottom":"#daeefe","glow1":"#0277bd22","glow2":"#003c6b18"},
+ "passageTitle":"Glaciers",
+ "passageHtml":
+"<p>A <span class=\"voc\">glacier</span> is a massive river of ice that moves very slowly across the land. Glaciers form in cold mountain regions or near the poles, where more snow falls each year than melts. Over time, the snow compresses into thick ice. Snow and ice continue to <span class=\"voc\">accumulate</span> in the upper zone of the glacier, making it heavier and causing it to inch forward under its own enormous weight.</p>"
+"<p>As a glacier moves, it carves the landscape beneath it. The slow grinding action <span class=\"voc\">erodes</span> valleys into a distinctive U-shape. Rocks and soil picked up by the glacier are deposited at its edges as ridges called <span class=\"voc\">moraines</span>. Where the glacier melts fastest, in the lower <span class=\"voc\">ablation</span> zone, meltwater streams flow away. Deep cracks that form in the surface of the moving ice are called <span class=\"voc\">crevasses</span>.</p>",
+ "questions":[
+   {"type":"Main idea","q":"What is this passage mainly about?","opts":["how glaciers form and shape the land","why snow turns into ice in cold places","how to measure the speed of a glacier"],"a":0},
+   {"type":"Detail","q":"Where do glaciers form?","opts":["In warm tropical rainforests","In cold regions where snow builds up faster than it melts","Along flat river banks near the ocean"],"a":1},
+   {"type":"Vocabulary","q":"To \"accumulate\" means to —","opts":["melt and flow away","build up gradually over time","carve a valley into the rock"],"a":1},
+   {"type":"Detail","q":"What shape does a glacier carve into a valley?","opts":["V-shaped","Flat","U-shaped"],"a":2},
+   {"type":"Vocabulary","q":"A \"moraine\" is —","opts":["a deep crack in the ice","a ridge of rocks and soil deposited by a glacier","the lower melting zone of a glacier"],"a":1},
+   {"type":"Cause & effect","q":"As the glacier moves and grinds along, it —","opts":["smooths the rock into a flat plain","erodes the land into a U-shaped valley","creates warm springs below the ice"],"a":1}
+ ],
+ "match":[
+   {"word":"glacier","def":"a massive slow-moving river of ice","hint":"\"A <b>glacier</b> is a massive river of ice that moves very slowly across the land.\""},
+   {"word":"accumulate","def":"to build up gradually over time","hint":"\"Snow and ice continue to <b>accumulate</b> in the upper zone.\""},
+   {"word":"erodes","def":"wears away rock and soil by grinding","hint":"\"The slow grinding action <b>erodes</b> valleys into a distinctive U-shape.\""},
+   {"word":"moraines","def":"ridges of rocks and soil deposited along the edges of a glacier","hint":"\"Rocks and soil picked up by the glacier are deposited at its edges as ridges called <b>moraines</b>.\""},
+   {"word":"ablation","def":"the zone of a glacier where ice melts and is lost","hint":"\"in the lower <b>ablation</b> zone, meltwater streams flow away.\""},
+   {"word":"crevasses","def":"deep cracks in the surface of a glacier","hint":"\"Deep cracks that form in the surface of the moving ice are called <b>crevasses</b>.\""}
+ ],
+ "bank":["glacier","accumulate","erodes","moraines","ablation","crevasses","fjord","iceberg"],
+ "fills":[
+   {"text":"A ___ is a huge slow-moving mass of ice.","a":"glacier"},
+   {"text":"Snow and ice ___ in the upper part of the glacier.","a":"accumulate"},
+   {"text":"The moving glacier ___ the valley below it into a U-shape.","a":"erodes"},
+   {"text":"A ridge of rocks left at the edge of a glacier is called a ___.","a":"moraines"},
+   {"text":"The lower melting zone of a glacier is called the ___ zone.","a":"ablation"},
+   {"text":"Deep cracks in the glacier's surface are called ___.","a":"crevasses"},
+   {"text":"When a glacier reaches the sea, large chunks break off as ___.","a":"iceberg"},
+   {"text":"A long narrow sea inlet carved by a glacier is called a ___.","a":"fjord","challenge":True}
+ ]
+},
+{
+ "activityId":"erosion",
+ "projectKey":"erosion",
+ "name":"Amara","hubKey":"amaraReading","hubFile":"index.html",
+ "useLead":"Choose the right word for each blank. Challenge question marked ★.",
+ "title":"Weathering and Erosion",
+ "heroEmoji":"\U0001f3d4️","watermark":"\U0001f30a","pageTitle":"Weathering and Erosion","diagramFile":"diagrams/erosion.svg",
+ "win":"PERFECT, Amara! Solid geology! \U0001f3d4️",
+ "cheer":"You wore that quiz away, Amara! \U0001f30a",
+ "palette":{"primary":"#8d6e63","dark":"#6d4c41","deep":"#4e342e","accent":"#bcaaa4","accentSoft":"#efebe9","cream":"#fdf8f6","bgTop":"#f8f0ed","bgBottom":"#f2e8e4","glow1":"#8d6e6322","glow2":"#4e342e18"},
+ "passageTitle":"Weathering and Erosion",
+ "passageHtml":
+"<p><span class=\"voc\">Weathering</span> is the process that breaks rocks into smaller pieces over time. Rain, frost, heat, and plant roots all act as agents that crack and crumble rock. The tiny broken pieces are called <span class=\"voc\">sediment</span>. Once the rock is broken down, <span class=\"voc\">erosion</span> takes over — it is the process of carrying that sediment away. Water, wind, and ice are the main agents of erosion, and they move sediment from one place to another.</p>"
+"<p>Over millions of years, erosion can create dramatic landforms. The Colorado River carved the Grand <span class=\"voc\">Canyon</span> by slowly cutting through layers of rock. When moving water slows down, it can no longer carry its load and the sediment <span class=\"voc\">deposits</span> on the riverbed or shoreline. This creates landforms such as beaches and river deltas. The scratch marks left on rock surfaces by moving particles are evidence of a process called <span class=\"voc\">abrasion</span>.</p>",
+ "questions":[
+   {"type":"Main idea","q":"This passage is mainly about —","opts":["how the Grand Canyon was formed","how rocks break down and are carried away","why rivers always flow toward the sea"],"a":1},
+   {"type":"Vocabulary","q":"\"Weathering\" is —","opts":["the movement of broken rock from one place to another","the process that breaks rock into smaller pieces","the layer of rock found just below the soil"],"a":1},
+   {"type":"Vocabulary","q":"\"Erosion\" is —","opts":["breaking rock into small pieces","the carried-away deposit of sediment","the process of moving broken rock from place to place"],"a":2},
+   {"type":"Detail","q":"What are the three main agents of erosion?","opts":["Rain, frost, and plant roots","Water, wind, and ice","Heat, cold, and acid rain"],"a":1},
+   {"type":"Cause & effect","q":"When moving water slows down, it —","opts":["picks up more sediment from the riverbed","deposits the sediment it was carrying","cuts deeper into the rock below it"],"a":1},
+   {"type":"Vocabulary","q":"\"Abrasion\" refers to —","opts":["the building up of sediment layers","the depositing of sand on a beach","the scratching of rock surfaces by moving particles"],"a":2}
+ ],
+ "match":[
+   {"word":"weathering","def":"the breaking down of rock into smaller pieces by natural forces","hint":"\"<b>Weathering</b> is the process that breaks rocks into smaller pieces over time.\""},
+   {"word":"sediment","def":"tiny pieces of broken-down rock","hint":"\"The tiny broken pieces are called <b>sediment</b>.\""},
+   {"word":"erosion","def":"the process of carrying sediment away from where it formed","hint":"\"<b>erosion</b> takes over — it is the process of carrying that sediment away.\""},
+   {"word":"canyon","def":"a deep valley with steep sides carved by a river","hint":"\"The Colorado River carved the Grand <b>Canyon</b>.\""},
+   {"word":"deposits","def":"drops and leaves behind sediment in a new place","hint":"\"the sediment <b>deposits</b> on the riverbed or shoreline.\""},
+   {"word":"abrasion","def":"the scratching and wearing of rock by moving particles","hint":"\"scratch marks left on rock surfaces by moving particles are evidence of a process called <b>abrasion</b>.\""}
+ ],
+ "bank":["weathering","sediment","erosion","canyon","deposits","abrasion","delta","agent"],
+ "fills":[
+   {"text":"Rain and frost cause ___ that slowly breaks rock apart.","a":"weathering"},
+   {"text":"Broken pieces of rock are called ___.","a":"sediment"},
+   {"text":"Water and wind carry sediment away in a process called ___.","a":"erosion"},
+   {"text":"The Grand ___ was carved by the Colorado River over millions of years.","a":"canyon"},
+   {"text":"When a river slows, it ___ its sediment on the riverbed.","a":"deposits"},
+   {"text":"Wind, water, and ice are the main ___ of erosion.","a":"agent"},
+   {"text":"A fan-shaped landform at the mouth of a river is called a ___.","a":"delta"},
+   {"text":"The scratching of rock surfaces by moving sand is called ___.","a":"abrasion","challenge":True}
+ ]
+},
+{
+ "activityId":"atmosphere",
+ "projectKey":"atmosphere",
+ "name":"Amara","hubKey":"amaraReading","hubFile":"index.html",
+ "useLead":"Choose the right word for each blank. Challenge question marked ★.",
+ "title":"Layers of the Atmosphere",
+ "heroEmoji":"\U0001f30f","watermark":"☁️","pageTitle":"Layers of the Atmosphere","diagramFile":"diagrams/atmosphere.svg",
+ "win":"PERFECT, Amara! Sky-high score! \U0001f30f",
+ "cheer":"You rose above every question! ☁️",
+ "palette":{"primary":"#1e88e5","dark":"#1565c0","deep":"#0d47a1","accent":"#64b5f6","accentSoft":"#e3f2fd","cream":"#f0f8ff","bgTop":"#e8f4ff","bgBottom":"#daeaff","glow1":"#1e88e522","glow2":"#0d47a118"},
+ "passageTitle":"Layers of the Atmosphere",
+ "passageHtml":
+"<p>Earth is surrounded by a blanket of air called the <span class=\"voc\">atmosphere</span>. It is divided into distinct layers. The lowest layer, the <span class=\"voc\">troposphere</span>, extends from the ground to about 12 kilometres high. This is where all weather — rain, wind, snow, and clouds — takes place, and where we breathe. Above it is the <span class=\"voc\">stratosphere</span>, which contains the all-important <span class=\"voc\">ozone</span> layer. Ozone absorbs most of the Sun's harmful ultraviolet rays, protecting all life on Earth.</p>"
+"<p>Higher still is the mesosphere, where most <span class=\"voc\">meteors</span> from space burn up before reaching the ground. Above that is the thermosphere, an extremely hot but very thin layer. Beautiful light shows called <span class=\"voc\">auroras</span> — shimmering green and pink curtains of light — occur in the thermosphere near the poles. The outermost layer, the exosphere, blends gradually into the emptiness of outer space. Without the atmosphere, life on Earth would be impossible.</p>",
+ "questions":[
+   {"type":"Main idea","q":"What is the passage mostly about?","opts":["why the sky looks blue from the ground","the different layers of Earth's atmosphere and what happens in each","how scientists measure the height of the atmosphere"],"a":1},
+   {"type":"Detail","q":"In which layer does all weather take place?","opts":["Stratosphere","Troposphere","Mesosphere"],"a":1},
+   {"type":"Vocabulary","q":"The \"ozone\" layer is important because it —","opts":["is where weather forms","absorbs the Sun's harmful ultraviolet rays","is where meteors burn up"],"a":1},
+   {"type":"Detail","q":"What happens to most meteors in the mesosphere?","opts":["They orbit the Earth","They burn up before reaching the ground","They cool down and float back into space"],"a":1},
+   {"type":"Vocabulary","q":"\"Auroras\" are —","opts":["dangerous ultraviolet rays that reach Earth","beautiful coloured light shows in the thermosphere near the poles","clouds of ice crystals high in the stratosphere"],"a":1},
+   {"type":"Inference","q":"Why would life on Earth be impossible without the atmosphere?","opts":["There would be no gravity to keep us on the ground","There would be no rain, no breathable air, and no protection from UV rays","The oceans would not have any water in them"],"a":1}
+ ],
+ "match":[
+   {"word":"atmosphere","def":"the blanket of air surrounding the Earth","hint":"\"Earth is surrounded by a blanket of air called the <b>atmosphere</b>.\""},
+   {"word":"troposphere","def":"the lowest layer of the atmosphere, where weather happens","hint":"\"The lowest layer, the <b>troposphere</b>, extends from the ground to about 12 kilometres high.\""},
+   {"word":"stratosphere","def":"the layer above the troposphere that contains the ozone layer","hint":"\"Above it is the <b>stratosphere</b>, which contains the all-important ozone layer.\""},
+   {"word":"ozone","def":"a gas in the stratosphere that absorbs harmful UV rays","hint":"\"the all-important <b>ozone</b> layer. Ozone absorbs most of the Sun's harmful ultraviolet rays.\""},
+   {"word":"meteors","def":"pieces of rock from space that burn up as they enter the atmosphere","hint":"\"where most <b>meteors</b> from space burn up before reaching the ground.\""},
+   {"word":"auroras","def":"colourful light displays in the thermosphere near the poles","hint":"\"Beautiful light shows called <b>auroras</b> — shimmering green and pink curtains of light.\""}
+ ],
+ "bank":["atmosphere","troposphere","stratosphere","ozone","meteors","auroras","exosphere","mesosphere"],
+ "fills":[
+   {"text":"The blanket of air around our planet is called the ___.","a":"atmosphere"},
+   {"text":"Rain, clouds, and wind all occur in the ___.","a":"troposphere"},
+   {"text":"The ___ sits above the troposphere and protects us from UV rays.","a":"stratosphere"},
+   {"text":"The ___ layer absorbs most of the Sun's harmful radiation.","a":"ozone"},
+   {"text":"Most ___ burn up in the mesosphere before hitting the ground.","a":"meteors"},
+   {"text":"Beautiful coloured lights called ___ can be seen near the poles.","a":"auroras"},
+   {"text":"Most ___ burn up before reaching Earth because of atmospheric friction.","a":"meteors"},
+   {"text":"The outermost layer of the atmosphere is the ___.","a":"exosphere","challenge":True}
+ ]
+},
+{
+ "activityId":"whales",
+ "projectKey":"whales",
+ "name":"Amara","hubKey":"amaraReading","hubFile":"index.html",
+ "useLead":"Choose the right word for each blank. Challenge question marked ★.",
+ "title":"Whales",
+ "heroEmoji":"\U0001f40b","watermark":"\U0001f30a","pageTitle":"Whales","diagramFile":"diagrams/whales.svg",
+ "win":"PERFECT, Amara! Whale of a score! \U0001f40b",
+ "cheer":"Deep-dive brilliance, Amara! \U0001f30a",
+ "palette":{"primary":"#1565c0","dark":"#0d47a1","deep":"#072f7a","accent":"#64b5f6","accentSoft":"#e3f2fd","cream":"#f0f8ff","bgTop":"#e3f2fd","bgBottom":"#d0e8fc","glow1":"#1565c022","glow2":"#072f7a18"},
+ "passageTitle":"Whales",
+ "passageHtml":
+"<p>Whales are the largest animals on Earth, yet they are not fish — they are <span class=\"voc\">mammals</span>. Like all mammals, whales are warm-blooded and breathe air. They breathe through a <span class=\"voc\">blowhole</span>, a nostril on top of their head, and must surface regularly. There are two main groups of whales. Toothed whales, such as the sperm whale, have teeth. Baleen whales, such as the blue whale, have rows of <span class=\"voc\">baleen</span> plates instead — these act like giant sieves, filtering tiny shrimp-like creatures called krill from the water.</p>"
+"<p>Many toothed whales use a remarkable navigation skill called <span class=\"voc\">echolocation</span>. They send out clicks of sound that bounce off objects, telling the whale exactly where prey is hidden. Each year many whale species make enormous journeys between warm breeding waters and cold feeding waters — a seasonal movement called <span class=\"voc\">migration</span>. Whales often travel and hunt together in family groups called <span class=\"voc\">pods</span>. They communicate with each other using complex songs that can travel hundreds of kilometres through the ocean.</p>",
+ "questions":[
+   {"type":"Main idea","q":"What is this passage mostly about?","opts":["how whales are different from all other sea creatures","the biology and behaviour of whales","why blue whales are the largest animals on Earth"],"a":1},
+   {"type":"Detail","q":"What makes whales mammals rather than fish?","opts":["They are very large and live in the ocean","They are warm-blooded, breathe air, and nurse their young","They have a blowhole instead of gills"],"a":1},
+   {"type":"Vocabulary","q":"\"Baleen\" plates help a whale —","opts":["find prey using sound echoes","filter krill and small creatures out of the water","breathe air when it surfaces"],"a":1},
+   {"type":"Vocabulary","q":"\"Echolocation\" is —","opts":["a type of underwater navigation using sound bouncing off objects","the seasonal journey whales make between warm and cold waters","the way whales breathe through their blowhole"],"a":0},
+   {"type":"Detail","q":"What is a \"pod\"?","opts":["A whale's annual migration route","A family group of whales that travel together","The sound clicks a whale uses to find prey"],"a":1},
+   {"type":"Cause & effect","q":"Baleen whales have baleen plates instead of teeth because —","opts":["their mouths are too small to catch fish","baleen plates allow them to filter huge amounts of tiny krill from the water","they lost their teeth through evolution and grew baleen instead"],"a":1}
+ ],
+ "match":[
+   {"word":"mammals","def":"warm-blooded animals that breathe air and nurse their young with milk","hint":"\"they are not fish — they are <b>mammals</b>.\""},
+   {"word":"blowhole","def":"the nostril on top of a whale's head used for breathing","hint":"\"They breathe through a <b>blowhole</b>, a nostril on top of their head.\""},
+   {"word":"baleen","def":"comb-like plates in a whale's mouth used to filter food","hint":"\"have rows of <b>baleen</b> plates instead — these act like giant sieves.\""},
+   {"word":"echolocation","def":"a navigation method using sound clicks that bounce off objects","hint":"\"a remarkable navigation skill called <b>echolocation</b>.\""},
+   {"word":"migration","def":"the seasonal long-distance journey between feeding and breeding waters","hint":"\"a seasonal movement called <b>migration</b>.\""},
+   {"word":"pods","def":"family groups of whales that travel and hunt together","hint":"\"Whales often travel and hunt together in family groups called <b>pods</b>.\""}
+ ],
+ "bank":["mammals","blowhole","baleen","echolocation","migration","pods","flukes","cetaceans"],
+ "fills":[
+   {"text":"Whales are ___, not fish — they breathe air and nurse their young.","a":"mammals"},
+   {"text":"A whale surfaces to breathe through its ___.","a":"blowhole"},
+   {"text":"Blue whales use ___ plates to filter krill from the ocean.","a":"baleen"},
+   {"text":"Dolphins use ___ to find fish by sending out click sounds.","a":"echolocation"},
+   {"text":"Whales make a long seasonal ___ between warm and cold waters.","a":"migration"},
+   {"text":"Whales live and travel in family groups called ___.","a":"pods"},
+   {"text":"A whale drives itself through water using its powerful tail ___.","a":"flukes"},
+   {"text":"Whales, dolphins, and porpoises all belong to a group of mammals called ___.","a":"cetaceans","challenge":True}
+ ]
+},
+{
+ "activityId":"octopus",
+ "projectKey":"octopus",
+ "name":"Amara","hubKey":"amaraReading","hubFile":"index.html",
+ "useLead":"Choose the right word for each blank. Challenge question marked ★.",
+ "title":"Octopuses",
+ "heroEmoji":"\U0001f419","watermark":"\U0001f30a","pageTitle":"Octopuses","diagramFile":"diagrams/octopus.svg",
+ "win":"PERFECT, Amara! Eight out of eight! \U0001f419",
+ "cheer":"Ink-redible reading, Amara! \U0001f419",
+ "palette":{"primary":"#7b1fa2","dark":"#6a1b9a","deep":"#4a148c","accent":"#ce93d8","accentSoft":"#f3e5f5","cream":"#fcf4ff","bgTop":"#f8eeff","bgBottom":"#f0e0ff","glow1":"#7b1fa222","glow2":"#4a148c18"},
+ "passageTitle":"Octopuses",
+ "passageHtml":
+"<p>The octopus is one of the most intelligent invertebrates on Earth. Its round bag-like body is called the <span class=\"voc\">mantle</span>, and from it extend eight flexible arms covered in <span class=\"voc\">suckers</span>. These suckers can grip, taste, and smell at the same time. Octopuses are masters of <span class=\"voc\">camouflage</span> — they can change both the colour and texture of their skin in less than a second to blend perfectly with rocks, coral, or sandy seabeds.</p>"
+"<p>Octopuses have three hearts and blue blood. When threatened, they can squirt a cloud of dark <span class=\"voc\">ink</span> to confuse a <span class=\"voc\">predator</span> and escape. Some species also produce mild <span class=\"voc\">venom</span> in their saliva to subdue prey. Despite having no bones, octopuses can squeeze through incredibly small gaps. They are highly intelligent animals that can solve puzzles, open jars, and even recognise individual human faces.</p>",
+ "questions":[
+   {"type":"Main idea","q":"This passage is mostly about —","opts":["how to find an octopus on a coral reef","the body, abilities, and behaviour of octopuses","why octopuses have eight arms instead of six"],"a":1},
+   {"type":"Detail","q":"What are the suckers on an octopus arm used for?","opts":["Only gripping prey","Gripping, tasting, and smelling simultaneously","Producing the ink cloud that escapes predators"],"a":1},
+   {"type":"Vocabulary","q":"\"Camouflage\" means —","opts":["the ability to change colour and texture to blend into surroundings","the dark ink squirted to confuse predators","the bag-like body that holds the octopus's organs"],"a":0},
+   {"type":"Detail","q":"How does an octopus escape from a predator?","opts":["By biting with sharp teeth","By squirting a cloud of dark ink","By changing colour so the predator cannot see it"],"a":1},
+   {"type":"Vocabulary","q":"\"Venom\" is —","opts":["the ink an octopus squirts","a poisonous substance in the octopus's saliva","the rubbery skin that helps the octopus grip"],"a":1},
+   {"type":"Inference","q":"Octopuses can \"squeeze through incredibly small gaps\" because —","opts":["their soft rubbery skin stretches out very thinly","they have no bones and their bodies are very flexible","they have suckers that help them pull themselves through openings"],"a":1}
+ ],
+ "match":[
+   {"word":"mantle","def":"the round bag-like body of an octopus that holds its organs","hint":"\"Its round bag-like body is called the <b>mantle</b>.\""},
+   {"word":"suckers","def":"the cup-shaped grips on an octopus arm used to grip, taste, and smell","hint":"\"eight flexible arms covered in <b>suckers</b>.\""},
+   {"word":"camouflage","def":"the ability to change colour and texture to blend into surroundings","hint":"\"Octopuses are masters of <b>camouflage</b> — they can change both the colour and texture of their skin.\""},
+   {"word":"ink","def":"the dark fluid an octopus squirts to confuse predators","hint":"\"they can squirt a cloud of dark <b>ink</b> to confuse a predator.\""},
+   {"word":"predator","def":"an animal that hunts and eats other animals","hint":"\"squirt a cloud of dark ink to confuse a <b>predator</b> and escape.\""},
+   {"word":"venom","def":"a mild poisonous substance some octopuses produce in their saliva","hint":"\"Some species also produce mild <b>venom</b> in their saliva.\""}
+ ],
+ "bank":["mantle","suckers","camouflage","ink","predator","venom","chromatophores","invertebrate"],
+ "fills":[
+   {"text":"The bag-like body of an octopus is called its ___.","a":"mantle"},
+   {"text":"Each arm is covered in ___ that grip, taste, and smell.","a":"suckers"},
+   {"text":"An octopus uses ___ to blend into the rocks and coral.","a":"camouflage"},
+   {"text":"The octopus squirted a cloud of ___ to confuse the shark.","a":"ink"},
+   {"text":"A shark is a ___ that might hunt an octopus.","a":"predator"},
+   {"text":"Some octopuses have mild ___ in their saliva to subdue prey.","a":"venom"},
+   {"text":"An octopus is an ___, meaning it has no backbone.","a":"invertebrate"},
+   {"text":"The colour-changing skin cells of an octopus are called ___.","a":"chromatophores","challenge":True}
+ ]
+},
+{
+ "activityId":"coral",
+ "projectKey":"coral",
+ "name":"Amara","hubKey":"amaraReading","hubFile":"index.html",
+ "useLead":"Choose the right word for each blank. Challenge question marked ★.",
+ "title":"Coral Reefs",
+ "heroEmoji":"\U0001fab8","watermark":"\U0001f41f","pageTitle":"Coral Reefs","diagramFile":"diagrams/coral.svg",
+ "win":"PERFECT, Amara! Reef champion! \U0001fab8",
+ "cheer":"You dove deep and aced it! \U0001f41f",
+ "palette":{"primary":"#e64a19","dark":"#bf360c","deep":"#870000","accent":"#ff8a65","accentSoft":"#fbe9e7","cream":"#fff9f8","bgTop":"#fff3f0","bgBottom":"#ffe8e2","glow1":"#e64a1922","glow2":"#87000018"},
+ "passageTitle":"Coral Reefs",
+ "passageHtml":
+"<p>Coral reefs are sometimes called the rainforests of the sea because they are home to an enormous variety of life. A reef is built by tiny animals called <span class=\"voc\">polyps</span>. Each polyp creates a hard cup of calcium carbonate around itself. When polyps die, their hard skeletons remain, and new polyps grow on top. Over thousands of years, these skeletons build up into a massive <span class=\"voc\">reef</span> structure. Coral polyps have a special relationship with microscopic algae called zooxanthellae that live inside them — this is an example of <span class=\"voc\">symbiosis</span>, where two organisms live together and both benefit.</p>"
+"<p>Coral reefs are one of the richest <span class=\"voc\">ecosystems</span> on Earth, providing food and shelter for a quarter of all ocean species. Sadly, rising ocean temperatures cause coral to expel the algae living inside them, turning the coral white in a process called <span class=\"voc\">bleaching</span>. Without the algae, the coral loses its food supply and can die. Pollution and overfishing put additional pressure on reefs. Scientists are working urgently to protect these fragile and vital <span class=\"voc\">habitats</span>.</p>",
+ "questions":[
+   {"type":"Main idea","q":"What is this passage mostly about?","opts":["how coral polyps produce their skeletons","what coral reefs are, how they form, and why they are under threat","why coral reefs are found only in warm tropical seas"],"a":1},
+   {"type":"Detail","q":"What builds a coral reef?","opts":["Microscopic algae called zooxanthellae","Tiny animals called polyps that produce hard skeletons","Layers of sand and sediment on the ocean floor"],"a":1},
+   {"type":"Vocabulary","q":"\"Symbiosis\" describes —","opts":["a relationship where two organisms live together and both benefit","the process of coral turning white due to rising temperatures","the hard calcium carbonate skeleton of a coral polyp"],"a":0},
+   {"type":"Detail","q":"What fraction of all ocean species do coral reefs support?","opts":["Almost none — only coral lives there","About one half","About a quarter"],"a":2},
+   {"type":"Vocabulary","q":"\"Bleaching\" happens when —","opts":["coral expels its algae due to warm water, turning white","a reef is damaged by fishing boats and turns pale","polyps produce extra calcium carbonate in cold water"],"a":0},
+   {"type":"Inference","q":"Why is the loss of zooxanthellae algae fatal for coral?","opts":["The algae produce the hard skeleton the coral needs","The algae are the coral's food source, so losing them starves the coral","The algae keep the water temperature cool enough for coral"],"a":1}
+ ],
+ "match":[
+   {"word":"polyps","def":"tiny animals whose skeletons build up to form a coral reef","hint":"\"A reef is built by tiny animals called <b>polyps</b>.\""},
+   {"word":"reef","def":"the massive underwater structure built by generations of coral polyps","hint":"\"these skeletons build up into a massive <b>reef</b> structure.\""},
+   {"word":"symbiosis","def":"a relationship where two different organisms live together and both benefit","hint":"\"this is an example of <b>symbiosis</b>, where two organisms live together and both benefit.\""},
+   {"word":"ecosystems","def":"communities of living things interacting with their environment","hint":"\"Coral reefs are one of the richest <b>ecosystems</b> on Earth.\""},
+   {"word":"bleaching","def":"the process where coral turns white after expelling its algae due to warm water","hint":"\"turning the coral white in a process called <b>bleaching</b>.\""},
+   {"word":"habitats","def":"the natural environments where living things make their home","hint":"\"to protect these fragile and vital <b>habitats</b>.\""}
+ ],
+ "bank":["polyps","reef","symbiosis","ecosystems","bleaching","habitats","zooxanthellae","calcium"],
+ "fills":[
+   {"text":"Tiny animals called ___ build coral reefs from their hard skeletons.","a":"polyps"},
+   {"text":"A coral ___ can take thousands of years to grow.","a":"reef"},
+   {"text":"Coral and algae living together and both benefiting is an example of ___.","a":"symbiosis"},
+   {"text":"Coral reefs are among the richest ___ on Earth.","a":"ecosystems"},
+   {"text":"Coral ___ occurs when warm water makes the coral expel its algae.","a":"bleaching"},
+   {"text":"Reefs are important ___ for about a quarter of all ocean species.","a":"habitats"},
+   {"text":"The microscopic algae living inside coral are called ___.","a":"zooxanthellae"},
+   {"text":"Coral polyps build their hard cups from a mineral called ___ carbonate.","a":"calcium","challenge":True}
+ ]
+},
+{
+ "activityId":"seaturtles",
+ "projectKey":"seaturtles",
+ "name":"Amara","hubKey":"amaraReading","hubFile":"index.html",
+ "useLead":"Choose the right word for each blank. Challenge question marked ★.",
+ "title":"Sea Turtles",
+ "heroEmoji":"\U0001f422","watermark":"\U0001f30a","pageTitle":"Sea Turtles","diagramFile":"diagrams/seaturtles.svg",
+ "win":"PERFECT, Amara! Shell yeah! \U0001f422",
+ "cheer":"You swam through it perfectly! \U0001f30a",
+ "palette":{"primary":"#2e7d32","dark":"#1b5e20","deep":"#0a3d0e","accent":"#81c784","accentSoft":"#e8f5e9","cream":"#f2fef3","bgTop":"#e8faf0","bgBottom":"#d8f5e6","glow1":"#2e7d3222","glow2":"#0a3d0e18"},
+ "passageTitle":"Sea Turtles",
+ "passageHtml":
+"<p>Sea turtles have swum in Earth's oceans for over 100 million years, making them older than many dinosaurs. Their most recognisable feature is their hard protective shell, called a <span class=\"voc\">carapace</span>. Unlike land tortoises, sea turtles cannot pull their head or <span class=\"voc\">flippers</span> inside their shell. Their flippers are perfectly shaped for swimming — powerful enough to propel them thousands of kilometres across open ocean as they <span class=\"voc\">migrate</span> between feeding and nesting grounds.</p>"
+"<p>Female sea turtles make a remarkable journey every few years, returning to the exact beach where they were born to lay their eggs. After digging a hole in the sand, the female lays up to 100 eggs. When the eggs hatch, tiny <span class=\"voc\">hatchlings</span> scramble toward the sea. Many are eaten by birds and crabs on the short journey. Sadly, all species of sea turtles are now either <span class=\"voc\">endangered</span> or threatened due to pollution, hunting, and loss of nesting beaches. Researchers use satellite tags to track their migrations and help with <span class=\"voc\">conservation</span> efforts.</p>",
+ "questions":[
+   {"type":"Main idea","q":"This passage is mainly about —","opts":["why sea turtles live longer than most other reptiles","the biology, behaviour, and conservation of sea turtles","how sea turtle hatchlings survive the journey to the ocean"],"a":1},
+   {"type":"Detail","q":"How long have sea turtles been on Earth?","opts":["About 10 million years","Over 100 million years","About 65 million years — since the time of the last dinosaurs"],"a":1},
+   {"type":"Vocabulary","q":"The \"carapace\" is —","opts":["the flat shape of a sea turtle's flipper","the hard protective shell on a sea turtle's back","the beach where a female sea turtle lays her eggs"],"a":1},
+   {"type":"Detail","q":"Why do female sea turtles return to the beach where they were born?","opts":["To find food in the shallow water","To lay their eggs in the same place they hatched","To meet other turtles for migration"],"a":1},
+   {"type":"Vocabulary","q":"\"Endangered\" species are —","opts":["species that are very fast swimmers","species at risk of dying out completely","species that are protected by law"],"a":1},
+   {"type":"Cause & effect","q":"Sea turtle numbers are falling because of —","opts":["competition with sharks and other large predators","natural changes to ocean currents and water temperature","pollution, hunting, and the destruction of nesting beaches"],"a":2}
+ ],
+ "match":[
+   {"word":"carapace","def":"the hard protective shell on the back of a sea turtle","hint":"\"Their most recognisable feature is their hard protective shell, called a <b>carapace</b>.\""},
+   {"word":"flippers","def":"the wide, paddle-shaped limbs sea turtles use to swim","hint":"\"sea turtles cannot pull their head or <b>flippers</b> inside their shell.\""},
+   {"word":"migrate","def":"to travel long distances between feeding and nesting grounds","hint":"\"they <b>migrate</b> between feeding and nesting grounds.\""},
+   {"word":"hatchlings","def":"baby turtles that have just emerged from their eggs","hint":"\"tiny <b>hatchlings</b> scramble toward the sea.\""},
+   {"word":"endangered","def":"at serious risk of dying out if not protected","hint":"\"all species of sea turtles are now either <b>endangered</b> or threatened.\""},
+   {"word":"conservation","def":"the effort to protect and preserve wildlife and habitats","hint":"\"Researchers use satellite tags to help with <b>conservation</b> efforts.\""}
+ ],
+ "bank":["carapace","flippers","migrate","hatchlings","endangered","conservation","nesting","reptiles"],
+ "fills":[
+   {"text":"The hard shell on a sea turtle's back is called its ___.","a":"carapace"},
+   {"text":"Sea turtles use their broad ___ to swim powerfully through the ocean.","a":"flippers"},
+   {"text":"Every few years, sea turtles ___ back to the beach where they were born.","a":"migrate"},
+   {"text":"Tiny ___ scramble from the sand to the sea as soon as they hatch.","a":"hatchlings"},
+   {"text":"All species of sea turtle are either ___ or threatened.","a":"endangered"},
+   {"text":"Scientists use satellite tags to support sea turtle ___.","a":"conservation"},
+   {"text":"Female sea turtles come ashore to find a ___ site on the beach.","a":"nesting"},
+   {"text":"Sea turtles belong to the group of scaly air-breathing animals called ___.","a":"reptiles","challenge":True}
+ ]
+},
+{
+ "activityId":"deepsea",
+ "projectKey":"deepsea",
+ "name":"Amara","hubKey":"amaraReading","hubFile":"index.html",
+ "useLead":"Choose the right word for each blank. Challenge question marked ★.",
+ "title":"The Deep Sea",
+ "heroEmoji":"\U0001f991","watermark":"🌊","pageTitle":"The Deep Sea","diagramFile":"diagrams/deepsea.svg",
+ "win":"PERFECT, Amara! Fathoms deep! \U0001f991",
+ "cheer":"You plunged to the bottom and came back! 🌊",
+ "palette":{"primary":"#1a237e","dark":"#0d1b6e","deep":"#050d4a","accent":"#7986cb","accentSoft":"#e8eaf6","cream":"#f3f4fd","bgTop":"#eceeff","bgBottom":"#e0e4f8","glow1":"#1a237e22","glow2":"#050d4a18"},
+ "passageTitle":"The Deep Sea",
+ "passageHtml":
+"<p>Below 200 metres, sunlight fades and the ocean grows completely dark. This is the deep sea, and it covers more than half of Earth's surface. The water <span class=\"voc\">pressure</span> at great depths is crushing — at the bottom of the Mariana Trench, the deepest known point on Earth, pressure is over 1,000 times greater than at the surface. Yet life still finds a way. Deep sea creatures have <span class=\"voc\">adapted</span> to survive in the cold, dark, and high-pressure environment in remarkable ways.</p>"
+"<p>One extraordinary adaptation is <span class=\"voc\">bioluminescence</span> — the ability to produce light using chemical reactions in the body. The anglerfish dangles a glowing lure above its mouth to attract prey in the darkness. Other creatures use light to communicate or to confuse <span class=\"voc\">predators</span>. Near the ocean floor, hot water vents called hydrothermal vents release scorching minerals. Bacteria around these vents perform a process called <span class=\"voc\">chemosynthesis</span>, making food from chemicals instead of sunlight. These vents support entire food chains in the <span class=\"voc\">abyss</span>, completely independent of the sun.</p>",
+ "questions":[
+   {"type":"Main idea","q":"This passage is mainly about —","opts":["why the Mariana Trench is the deepest place on Earth","how life survives in the extreme conditions of the deep sea","how scientists build submarines to reach the ocean floor"],"a":1},
+   {"type":"Detail","q":"At what depth does the deep sea begin?","opts":["Below 20 metres","Below 200 metres","Below 2,000 metres"],"a":1},
+   {"type":"Vocabulary","q":"\"Bioluminescence\" is —","opts":["the ability of deep sea creatures to produce their own light","the crushing water pressure at the ocean floor","the process of making food from chemicals instead of sunlight"],"a":0},
+   {"type":"Vocabulary","q":"\"Adapted\" means —","opts":["moved to a new part of the ocean","changed over time to suit the environment","hunted prey in complete darkness"],"a":1},
+   {"type":"Detail","q":"What is \"chemosynthesis\"?","opts":["A way of producing light using chemicals","Making food from chemicals rather than from sunlight","A type of hunting used by anglerfish"],"a":1},
+   {"type":"Inference","q":"The fact that life thrives around hydrothermal vents shows that —","opts":["all life on Earth ultimately depends on sunlight","some ecosystems can survive without any sunlight at all","the deep ocean is actually warmer than the surface"],"a":1}
+ ],
+ "match":[
+   {"word":"pressure","def":"the crushing force exerted by deep water pressing down from above","hint":"\"The water <b>pressure</b> at great depths is crushing.\""},
+   {"word":"adapted","def":"changed over time to be well-suited to a particular environment","hint":"\"Deep sea creatures have <b>adapted</b> to survive in the cold, dark, high-pressure environment.\""},
+   {"word":"bioluminescence","def":"the ability of living things to produce their own light","hint":"\"One extraordinary adaptation is <b>bioluminescence</b> — the ability to produce light.\""},
+   {"word":"predators","def":"animals that hunt and eat other animals","hint":"\"Other creatures use light to communicate or to confuse <b>predators</b>.\""},
+   {"word":"chemosynthesis","def":"the process of making food using chemicals instead of sunlight","hint":"\"Bacteria around these vents perform a process called <b>chemosynthesis</b>.\""},
+   {"word":"abyss","def":"the very deepest, darkest zone of the ocean","hint":"\"These vents support entire food chains in the <b>abyss</b>.\""}
+ ],
+ "bank":["pressure","adapted","bioluminescence","predators","chemosynthesis","abyss","hydrothermal","trench"],
+ "fills":[
+   {"text":"The crushing force of deep water is called ___.","a":"pressure"},
+   {"text":"Deep sea creatures have ___ to survive extreme cold and darkness.","a":"adapted"},
+   {"text":"Many deep sea animals use ___ to make their own glow in the dark.","a":"bioluminescence"},
+   {"text":"The anglerfish uses its glowing lure to attract prey and confuse ___.","a":"predators"},
+   {"text":"Bacteria near hot vents use ___ to make food from chemicals.","a":"chemosynthesis"},
+   {"text":"The deepest, darkest zone of the ocean is called the ___.","a":"abyss"},
+   {"text":"Hot water vents on the ocean floor are called ___ vents.","a":"hydrothermal"},
+   {"text":"The deepest known point on Earth is in the Mariana ___.","a":"trench","challenge":True}
+ ]
+}
+
 ]
 
 DEFAULT_USE_LEAD = ("Tap a word to drop it in the blank you've selected, or just type it. "

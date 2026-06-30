@@ -1,0 +1,40 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+  <rect width="340" height="200" fill="#e3f2fd"/>
+  <!-- ocean -->
+  <rect x="0" y="70" width="340" height="130" fill="#1565c0" opacity="0.15"/>
+  <rect x="0" y="90" width="340" height="110" fill="#1976d2" opacity="0.15"/>
+  <!-- whale body -->
+  <ellipse cx="170" cy="130" rx="120" ry="42" fill="#37474f" stroke="#263238" stroke-width="2"/>
+  <!-- head -->
+  <ellipse cx="285" cy="128" rx="42" ry="32" fill="#37474f" stroke="#263238" stroke-width="2"/>
+  <!-- lighter belly -->
+  <ellipse cx="175" cy="148" rx="100" ry="20" fill="#78909c"/>
+  <!-- tail flukes -->
+  <path d="M50,128 Q30,108 20,95 Q35,120 50,128" fill="#37474f" stroke="#263238" stroke-width="1.5"/>
+  <path d="M50,128 Q30,148 18,160 Q35,138 50,128" fill="#37474f" stroke="#263238" stroke-width="1.5"/>
+  <!-- pectoral flipper -->
+  <ellipse cx="225" cy="158" rx="30" ry="10" fill="#455a64" stroke="#263238" stroke-width="1.5" transform="rotate(-20,225,158)"/>
+  <!-- dorsal fin -->
+  <path d="M155,88 Q165,68 175,88" fill="#263238" stroke="#263238" stroke-width="1"/>
+  <!-- eye -->
+  <circle cx="278" cy="120" r="5" fill="#263238"/>
+  <circle cx="279" cy="119" r="2" fill="white"/>
+  <!-- blowhole + spout -->
+  <ellipse cx="272" cy="97" rx="7" ry="3" fill="#546e7a"/>
+  <path d="M272,97 Q268,75 265,55" fill="none" stroke="#90caf9" stroke-width="3" stroke-linecap="round"/>
+  <path d="M272,97 Q276,73 279,52" fill="none" stroke="#90caf9" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- mouth / baleen hint -->
+  <path d="M295,128 Q310,132 318,128" fill="none" stroke="#78909c" stroke-width="2"/>
+  <!-- Labels -->
+  <text x="268" y="45" font-size="9" fill="#0d47a1" font-weight="bold">BLOWHOLE</text>
+  <line x1="272" y1="96" x2="272" y2="90" stroke="#0d47a1" stroke-width="1"/>
+  <text x="155" y="65" font-size="9" fill="#0d47a1" font-weight="bold">DORSAL FIN</text>
+  <line x1="167" y1="76" x2="167" y2="86" stroke="#0d47a1" stroke-width="1"/>
+  <text x="220" y="178" font-size="9" fill="#0d47a1" font-weight="bold">FLIPPER</text>
+  <line x1="228" y1="172" x2="228" y2="165" stroke="#0d47a1" stroke-width="1"/>
+  <text x="18" y="88" font-size="9" fill="#0d47a1" font-weight="bold">FLUKES</text>
+  <line x1="36" y1="92" x2="36" y2="112" stroke="#0d47a1" stroke-width="1"/>
+  <text x="300" y="145" font-size="9" fill="#0d47a1" font-weight="bold">MOUTH</text>
+  <line x1="308" y1="140" x2="308" y2="133" stroke="#0d47a1" stroke-width="1"/>
+  <text x="170" y="195" text-anchor="middle" font-size="11" fill="#0d47a1" font-weight="bold">Anatomy of a Whale</text>
+</svg>

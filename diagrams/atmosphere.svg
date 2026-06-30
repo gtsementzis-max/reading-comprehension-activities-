@@ -1,0 +1,41 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+  <rect width="340" height="200" fill="#000a1a"/>
+  <!-- Exosphere -->
+  <rect x="0" y="0" width="340" height="26" fill="#0d1b3e"/>
+  <text x="100" y="17" font-size="9" fill="#9fa8da" font-weight="bold">EXOSPHERE</text>
+  <text x="100" y="25" font-size="7" fill="#7986cb">satellites orbit here</text>
+  <!-- Thermosphere -->
+  <rect x="0" y="26" width="340" height="26" fill="#1a237e"/>
+  <text x="100" y="42" font-size="9" fill="#90caf9" font-weight="bold">THERMOSPHERE</text>
+  <text x="100" y="51" font-size="7" fill="#64b5f6">aurora borealis; very hot but thin air</text>
+  <!-- Mesosphere -->
+  <rect x="0" y="52" width="340" height="30" fill="#1565c0"/>
+  <text x="100" y="68" font-size="9" fill="#bbdefb" font-weight="bold">MESOSPHERE</text>
+  <text x="100" y="78" font-size="7" fill="#90caf9">meteors burn up here</text>
+  <!-- shooting star -->
+  <line x1="82" y1="54" x2="68" y2="68" stroke="#f9e84a" stroke-width="2" stroke-linecap="round"/>
+  <!-- Stratosphere -->
+  <rect x="0" y="82" width="340" height="38" fill="#1976d2"/>
+  <text x="100" y="98" font-size="9" fill="white" font-weight="bold">STRATOSPHERE</text>
+  <text x="100" y="110" font-size="7" fill="#bbdefb">ozone layer blocks UV rays</text>
+  <ellipse cx="64" cy="100" rx="24" ry="8" fill="#8bc34a" opacity="0.5"/>
+  <text x="64" y="103" text-anchor="middle" font-size="7" fill="white">OZONE</text>
+  <!-- Troposphere -->
+  <rect x="0" y="120" width="340" height="45" fill="#42a5f5"/>
+  <text x="100" y="136" font-size="9" fill="white" font-weight="bold">TROPOSPHERE</text>
+  <text x="100" y="147" font-size="7" fill="#e3f2fd">weather happens here; we breathe here</text>
+  <!-- clouds -->
+  <ellipse cx="56" cy="140" rx="18" ry="8" fill="white" opacity="0.7"/>
+  <ellipse cx="68" cy="136" rx="14" ry="7" fill="white" opacity="0.7"/>
+  <!-- plane -->
+  <text x="56" y="158" text-anchor="middle" font-size="12">✈</text>
+  <!-- Earth surface -->
+  <rect x="0" y="165" width="340" height="35" fill="#4caf50"/>
+  <text x="170" y="183" text-anchor="middle" font-size="10" fill="white" font-weight="bold">EARTH'S SURFACE</text>
+  <!-- height label left -->
+  <text x="6" y="15" font-size="7" fill="#9fa8da">700km</text>
+  <text x="6" y="42" font-size="7" fill="#90caf9">500km</text>
+  <text x="6" y="68" font-size="7" fill="#bbdefb">80km</text>
+  <text x="6" y="105" font-size="7" fill="white">50km</text>
+  <text x="6" y="150" font-size="7" fill="white">12km</text>
+</svg>

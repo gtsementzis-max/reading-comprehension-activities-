@@ -1,0 +1,50 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif">
+  <rect width="340" height="200" fill="#01002a"/>
+  <!-- depth gradient bands -->
+  <rect x="0" y="0" width="340" height="35" fill="#1565c0" opacity="0.5"/>
+  <rect x="0" y="35" width="340" height="35" fill="#0d47a1" opacity="0.5"/>
+  <rect x="0" y="70" width="340" height="35" fill="#1a237e" opacity="0.6"/>
+  <rect x="0" y="105" width="340" height="35" fill="#0a0a40" opacity="0.7"/>
+  <rect x="0" y="140" width="340" height="25" fill="#050520"/>
+  <!-- depth labels right -->
+  <text x="300" y="18" font-size="8" fill="#90caf9">0–200m</text>
+  <text x="300" y="50" font-size="8" fill="#64b5f6">200–1000m</text>
+  <text x="300" y="85" font-size="8" fill="#42a5f5">1000–4000m</text>
+  <text x="300" y="120" font-size="8" fill="#2196f3">4000–6000m</text>
+  <text x="300" y="155" font-size="8" fill="#1565c0">6000m+</text>
+  <!-- zone names left -->
+  <text x="5" y="18" font-size="8" fill="#e3f2fd" font-weight="bold">SUNLIGHT</text>
+  <text x="5" y="50" font-size="8" fill="#bbdefb" font-weight="bold">TWILIGHT</text>
+  <text x="5" y="85" font-size="8" fill="#90caf9" font-weight="bold">MIDNIGHT</text>
+  <text x="5" y="120" font-size="8" fill="#64b5f6" font-weight="bold">ABYSSAL</text>
+  <text x="5" y="155" font-size="8" fill="#42a5f5" font-weight="bold">HADAL</text>
+  <!-- anglerfish body -->
+  <ellipse cx="170" cy="115" rx="30" ry="18" fill="#2e2e4e" stroke="#555" stroke-width="1.5"/>
+  <!-- anglerfish lure -->
+  <line x1="170" y1="97" x2="160" y2="75" stroke="#444" stroke-width="2"/>
+  <circle cx="158" cy="72" r="6" fill="#f9e84a" opacity="0.9"/>
+  <circle cx="158" cy="72" r="10" fill="#f9e84a" opacity="0.3"/>
+  <!-- anglerfish mouth -->
+  <path d="M142,115 Q156,128 170,115" fill="#1a1a2e" stroke="#555" stroke-width="1"/>
+  <!-- sharp teeth -->
+  <line x1="148" y1="115" x2="150" y2="123" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="155" y1="118" x2="156" y2="126" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="162" y1="119" x2="163" y2="127" stroke="#ccc" stroke-width="1.5"/>
+  <!-- anglerfish eye -->
+  <circle cx="180" cy="110" r="5" fill="#444"/>
+  <circle cx="181" cy="109" r="2" fill="#aaa"/>
+  <!-- bioluminescence glow -->
+  <circle cx="158" cy="72" r="20" fill="#f9e84a" opacity="0.08"/>
+  <!-- label -->
+  <text x="130" y="143" font-size="8" fill="#f9e84a" font-weight="bold">BIOLUMINESCENT LURE</text>
+  <line x1="158" y1="84" x2="152" y2="90" stroke="#f9e84a" stroke-width="1"/>
+  <!-- small fish being attracted -->
+  <ellipse cx="220" cy="90" rx="10" ry="5" fill="#90caf9" opacity="0.7"/>
+  <polygon points="230,90 237,86 237,94" fill="#74b9ff" opacity="0.7"/>
+  <!-- ocean floor -->
+  <rect x="0" y="165" width="340" height="35" fill="#1a0a00" opacity="0.9"/>
+  <ellipse cx="80" cy="168" rx="35" ry="6" fill="#2a1500" opacity="0.8"/>
+  <ellipse cx="250" cy="170" rx="40" ry="5" fill="#2a1500" opacity="0.8"/>
+  <text x="170" y="185" text-anchor="middle" font-size="9" fill="#42a5f5">ocean floor</text>
+  <text x="170" y="197" text-anchor="middle" font-size="10" fill="#90caf9" font-weight="bold">Deep Sea Zones</text>
+</svg>
