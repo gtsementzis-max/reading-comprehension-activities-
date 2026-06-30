@@ -342,7 +342,7 @@
         var k=bar.getAttribute('data-k');
         var total=parseInt(bar.getAttribute('data-total'),10);
         var rec=data[k];
-        if(!rec||rec.best!==total) allDone=false;
+        if(!rec||!rec.attempts) allDone=false;
       });
 
       /* remove any old done-chip so we don't duplicate */
