@@ -69,6 +69,9 @@
   .passage p{margin:0 0 14px}
   .passage p:last-child{margin-bottom:0}
   .voc{background:var(--c-accent-soft);border-bottom:2px solid var(--c-accent);border-radius:5px;padding:0 3px;font-weight:700;color:var(--c-deep)}
+  .voc[data-def]{cursor:help}
+  #vocTip{position:fixed;left:0;top:-9999px;z-index:999;max-width:230px;background:var(--c-dark);color:#fff;font-family:'Nunito',sans-serif;font-weight:700;font-size:.85rem;line-height:1.35;padding:8px 12px;border-radius:10px;box-shadow:var(--shadow);pointer-events:none;opacity:0;transform:translateY(-6px);transition:opacity .12s, transform .12s}
+  #vocTip.show{opacity:1;transform:translateY(-10px)}
   .q{margin-bottom:18px}
   .q .qtext{font-weight:800;margin-bottom:10px}
   .q .qtext .badge{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;background:var(--c-accent-soft);color:var(--c-dark);padding:2px 8px;border-radius:999px;margin-right:8px;vertical-align:middle}
@@ -251,6 +254,40 @@ const NAME    = MODULE.name || 'Amara';
 const TITLE   = MODULE.title;
 const QUESTIONS = MODULE.questions, MATCH = MODULE.match, BANK = MODULE.bank, FILLS = MODULE.fills;
 const TOTAL = QUESTIONS.length + MATCH.length + FILLS.length;
+
+// Vocabulary hover/tap definitions: any word in MATCH gets a tooltip wherever
+// it's highlighted in the passage. Works with mouse hover, keyboard focus, and tap.
+(function(){
+  const defMap = {};
+  MATCH.forEach(m=>{ defMap[m.word.toLowerCase()] = m.def; });
+  const tip = document.createElement('div');
+  tip.id = 'vocTip';
+  document.body.appendChild(tip);
+  function showTip(el){
+    const def = defMap[el.textContent.trim().toLowerCase()];
+    if(!def) return;
+    tip.textContent = def;
+    const r = el.getBoundingClientRect();
+    tip.style.left = Math.max(8, Math.min(window.innerWidth-238, r.left + r.width/2 - 115)) + 'px';
+    tip.style.top = Math.max(8, r.top - 44) + 'px';
+    tip.classList.add('show');
+  }
+  function hideTip(){ tip.classList.remove('show'); }
+  document.querySelectorAll('.passage .voc').forEach(span=>{
+    const def = defMap[span.textContent.trim().toLowerCase()];
+    if(!def) return;
+    span.dataset.def = def;
+    span.tabIndex = 0;
+    span.setAttribute('aria-label', span.textContent.trim()+': '+def);
+    span.addEventListener('mouseenter', ()=>showTip(span));
+    span.addEventListener('mouseleave', hideTip);
+    span.addEventListener('focus', ()=>showTip(span));
+    span.addEventListener('blur', hideTip);
+    span.addEventListener('click', e=>{ e.stopPropagation(); tip.classList.contains('show') ? hideTip() : showTip(span); });
+  });
+  document.addEventListener('scroll', hideTip, true);
+  document.addEventListener('click', hideTip);
+})();
 
 let selected = Array(QUESTIONS.length).fill(null);
 let quizScore=null, matchScore=null, fillScore=null, focusedFill=null;
