@@ -1,0 +1,39 @@
+<svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="340" height="210" fill="#f5e2d5"/>
+  <text x="170" y="15" text-anchor="middle" font-size="12" font-weight="bold" fill="#5e220c">THE PARTS OF A STORY</text>
+
+  <!-- SETTING band -->
+  <rect x="12" y="24" width="316" height="44" rx="6" fill="#e7f2e4" stroke="#3f8a4c" stroke-width="1.5"/>
+  <text x="20" y="38" font-size="9" font-weight="bold" fill="#2c6b39">SETTING — where &amp; when</text>
+  <!-- little green-gables house -->
+  <rect x="24" y="42" width="30" height="20" fill="#cfe6cf" stroke="#3f8a4c" stroke-width="1.3"/>
+  <polygon points="24,42 39,30 54,42" fill="#8f3514" stroke="#5e220c" stroke-width="1.2"/>
+  <rect x="35" y="50" width="8" height="12" fill="#8f3514"/>
+  <text x="66" y="52" font-size="9" fill="#26303a">Green Gables farm, in Avonlea</text>
+  <text x="66" y="63" font-size="9" fill="#26303a">on Prince Edward Island, long ago</text>
+
+  <!-- CHARACTERS band -->
+  <rect x="12" y="74" width="316" height="46" rx="6" fill="#fbeee6" stroke="#b5451b" stroke-width="1.5"/>
+  <text x="20" y="88" font-size="9" font-weight="bold" fill="#8f3514">CHARACTERS — who is in it</text>
+  <!-- three heads -->
+  <circle cx="40" cy="104" r="9" fill="#e0c069" stroke="#8f3514" stroke-width="1.2"/>
+  <text x="40" y="118" text-anchor="middle" font-size="7.5" fill="#26303a">Matthew</text>
+  <circle cx="100" cy="104" r="9" fill="#b0bec5" stroke="#546b78" stroke-width="1.2"/>
+  <text x="100" y="118" text-anchor="middle" font-size="7.5" fill="#26303a">Marilla</text>
+  <circle cx="165" cy="104" r="9" fill="#e08a5f" stroke="#b5451b" stroke-width="1.2"/>
+  <!-- Anne's red braids -->
+  <path d="M156,100 q-5,8 -3,14" stroke="#b5451b" stroke-width="2.4" fill="none"/>
+  <path d="M174,100 q5,8 3,14" stroke="#b5451b" stroke-width="2.4" fill="none"/>
+  <text x="165" y="118" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#8f3514">Anne</text>
+
+  <!-- PROBLEM band -->
+  <rect x="12" y="126" width="316" height="30" rx="6" fill="#fdf3d6" stroke="#c79a2b" stroke-width="1.5"/>
+  <text x="20" y="139" font-size="9" font-weight="bold" fill="#8a6a12">PROBLEM — what goes wrong</text>
+  <text x="20" y="151" font-size="9" fill="#26303a">They asked the orphanage for a BOY — but a GIRL arrived!</text>
+
+  <!-- ANNE'S TRAITS band -->
+  <rect x="12" y="162" width="316" height="42" rx="6" fill="#f7e3d6" stroke="#b5451b" stroke-width="1.5"/>
+  <text x="20" y="175" font-size="9" font-weight="bold" fill="#8f3514">ANNE'S TRAITS — what she is like</text>
+  <text x="20" y="188" font-size="8.5" fill="#26303a"><tspan font-weight="bold">Looks:</tspan> red braids, freckles, thin, big eyes</text>
+  <text x="20" y="199" font-size="8.5" fill="#26303a"><tspan font-weight="bold">Personality:</tspan> imaginative, talkative, dramatic, spirited</text>
+</svg>

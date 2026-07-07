@@ -132,7 +132,7 @@
 
   <div class="summary">
     <div class="stat"><div class="n" id="stars">0</div><div class="l">activities at full marks</div></div>
-    <div class="stat"><div class="n" id="completed">0 / 60</div><div class="l">activities tried</div></div>
+    <div class="stat"><div class="n" id="completed">0 / 93</div><div class="l">activities tried</div></div>
     <div class="stat"><div class="n" id="attempts">0</div><div class="l">total tries</div></div>
   </div>
 
@@ -349,6 +349,13 @@
       <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="deepsea:use"></span><div class="barwrap"><div class="bar" data-k="deepsea:use" data-total="8"></div></div></div>
     </div>
 
+    <div class="proj">
+      <div class="proj-head"><span class="topic-icon">🏡</span><h2>Anne of Green Gables</h2><a class="open" href="amara-anne-of-green-gables-reading.html" style="background:#b5451b">Open</a></div>
+      <div class="act-row"><span class="act-name">Comprehend</span><span class="act-score" data-s="anne:comprehend"></span><div class="barwrap"><div class="bar" data-k="anne:comprehend" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Match</span><span class="act-score" data-s="anne:match"></span><div class="barwrap"><div class="bar" data-k="anne:match" data-total="6"></div></div></div>
+      <div class="act-row"><span class="act-name">Use</span><span class="act-score" data-s="anne:use"></span><div class="barwrap"><div class="bar" data-k="anne:use" data-total="8"></div></div></div>
+    </div>
+
   </div><!-- /#active-grid -->
 
   <!-- Finished section — hidden until at least one project is complete -->
@@ -375,7 +382,7 @@
   function render(){
     var data={};
     try{ data=JSON.parse(localStorage.getItem('amaraReading')||'{}'); }catch(e){ data={}; }
-    var totalActivities=70, fullMarks=0, tried=0, attempts=0;
+    var totalActivities=93, fullMarks=0, tried=0, attempts=0;
     document.querySelectorAll('.bar').forEach(function(bar){
       var k=bar.getAttribute('data-k'), total=parseInt(bar.getAttribute('data-total'),10);
       var rec=data[k], scoreEl=document.querySelector('[data-s="'+k+'"]');
