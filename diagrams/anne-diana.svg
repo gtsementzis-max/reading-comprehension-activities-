@@ -1,0 +1,28 @@
+<svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="340" height="210" fill="#f5dbe4"/>
+  <text x="170" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#5e142b">PLOT MOUNTAIN — the shape of a story</text>
+
+  <!-- mountain / story arc -->
+  <path d="M30,148 L95,112 L170,58 L245,112 L310,148" fill="none" stroke="#b12a54" stroke-width="2.5" stroke-linejoin="round"/>
+  <line x1="24" y1="152" x2="316" y2="152" stroke="#8c1f41" stroke-width="1.2"/>
+
+  <!-- plot points -->
+  <circle cx="30" cy="148" r="9" fill="#fff6f9" stroke="#b12a54" stroke-width="1.8"/>
+  <text x="30" y="151" text-anchor="middle" font-size="9" font-weight="bold" fill="#8c1f41">1</text>
+  <circle cx="95" cy="112" r="9" fill="#fff6f9" stroke="#b12a54" stroke-width="1.8"/>
+  <text x="95" y="115" text-anchor="middle" font-size="9" font-weight="bold" fill="#8c1f41">2</text>
+  <circle cx="170" cy="58" r="10" fill="#b12a54" stroke="#5e142b" stroke-width="1.8"/>
+  <text x="170" y="61" text-anchor="middle" font-size="9" font-weight="bold" fill="#fff">3</text>
+  <circle cx="245" cy="112" r="9" fill="#fff6f9" stroke="#b12a54" stroke-width="1.8"/>
+  <text x="245" y="115" text-anchor="middle" font-size="9" font-weight="bold" fill="#8c1f41">4</text>
+  <circle cx="310" cy="148" r="9" fill="#fff6f9" stroke="#b12a54" stroke-width="1.8"/>
+  <text x="310" y="151" text-anchor="middle" font-size="9" font-weight="bold" fill="#8c1f41">5</text>
+
+  <text x="170" y="46" text-anchor="middle" font-size="8" font-weight="bold" fill="#5e142b">CLIMAX</text>
+
+  <!-- key -->
+  <text x="16" y="172" font-size="7.6" fill="#26303a"><tspan font-weight="bold">1 Exposition</tspan> — Anne &amp; Diana become "bosom friends"</text>
+  <text x="16" y="182" font-size="7.6" fill="#26303a"><tspan font-weight="bold">2 Rising action</tspan> — the cordial mix-up; the friendship is forbidden</text>
+  <text x="16" y="192" font-size="7.6" fill="#26303a"><tspan font-weight="bold">3 Climax</tspan> — Anne works all night to save Minnie May from croup</text>
+  <text x="16" y="202" font-size="7.6" fill="#26303a"><tspan font-weight="bold">4 Falling action</tspan> — the doctor praises Anne &#183; <tspan font-weight="bold">5 Resolution</tspan> — they reconcile</text>
+</svg>
