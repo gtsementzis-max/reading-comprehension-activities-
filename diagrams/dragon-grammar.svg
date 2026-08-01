@@ -1,0 +1,34 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <rect width="340" height="200" fill="#fdf4f3"/>
+  <text x="170" y="15" text-anchor="middle" font-size="12" font-weight="bold" fill="#4a0f18">NOUN · VERB · ARTICLE</text>
+
+  <!-- Worked example sentence, laid out in segments so the markers line up -->
+  <rect x="12" y="26" width="316" height="34" rx="7" fill="#f9e3e6" stroke="#8e1f2f" stroke-width="1.5"/>
+  <text x="32"  y="48" text-anchor="middle" font-size="12" fill="#4a0f18">The</text>
+  <text x="72"  y="48" text-anchor="middle" font-size="12" fill="#4a0f18">dragon</text>
+  <text x="130" y="48" text-anchor="middle" font-size="12" fill="#4a0f18">guarded</text>
+  <text x="170" y="48" text-anchor="middle" font-size="12" fill="#4a0f18">a</text>
+  <text x="218" y="48" text-anchor="middle" font-size="12" fill="#8a6a6e">glittering</text>
+  <text x="282" y="48" text-anchor="middle" font-size="12" fill="#4a0f18">hoard.</text>
+
+  <line x1="20"  y1="55" x2="44"  y2="55" stroke="#ef6c00" stroke-width="2.5"/>
+  <line x1="49"  y1="55" x2="95"  y2="55" stroke="#00695c" stroke-width="2.5"/>
+  <line x1="103" y1="55" x2="157" y2="55" stroke="#b3261e" stroke-width="2.5"/>
+  <line x1="164" y1="55" x2="176" y2="55" stroke="#ef6c00" stroke-width="2.5"/>
+  <line x1="261" y1="55" x2="303" y2="55" stroke="#00695c" stroke-width="2.5"/>
+
+  <!-- The three rules -->
+  <circle cx="22" cy="80" r="6" fill="#00695c"/>
+  <text x="36" y="83" font-size="9" font-weight="bold" fill="#00695c">NOUN</text>
+  <text x="36" y="95" font-size="8" fill="#4a3b3d">names a person, place, animal, or thing — dragon, cavern, bucket</text>
+
+  <circle cx="22" cy="116" r="6" fill="#b3261e"/>
+  <text x="36" y="119" font-size="9" font-weight="bold" fill="#b3261e">VERB</text>
+  <text x="36" y="131" font-size="8" fill="#4a3b3d">shows an action or a state of being — guarded, climbed, melted</text>
+
+  <circle cx="22" cy="152" r="6" fill="#ef6c00"/>
+  <text x="36" y="155" font-size="9" font-weight="bold" fill="#ef6c00">ARTICLE</text>
+  <text x="36" y="167" font-size="8" fill="#4a3b3d">only three words — a, an, the — and each one sits before a noun</text>
+
+  <text x="170" y="188" text-anchor="middle" font-size="8" font-style="italic" fill="#8a6a6e">glittering describes the hoard, so it is none of the three</text>
+</svg>
